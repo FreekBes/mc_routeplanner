@@ -1,0 +1,252 @@
+body {
+    font-size: 15px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    background: #383839;
+    color: #EDEDED;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+#routeform {
+    text-align: center;
+    margin-left: -75px;
+}
+
+table {
+    display: inline-table;
+    width: 500px;
+    max-width: 100%;
+}
+
+th {
+    padding: 8px 16px;
+    width: 41px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+td {
+    text-align: left;
+    vertical-align: middle;
+}
+
+i {
+    color: #cacaca;
+}
+
+th:after {
+    content: ':';
+}
+
+.autocomplete {
+    position: relative;
+    width: 400px;
+    max-width: 80%;
+}
+
+input {
+    border: 1px solid #737475;
+    background-color: #2D2E2E;
+    color: #EDEDED;
+    padding: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    outline: 0 !important;
+    transition: 0.35s;
+}
+
+input[type=text]:active, input[type=text]:focus {
+    background-color: #242424;
+    transition: 0.05s;
+}
+
+input[type=text] {
+    width: 100%;
+}
+
+input[type=submit] {
+    background-color: #1e90ff;
+    border: 1px solid #1873cc;
+    color: #EDEDED;
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #349bff;
+    transition: 0.05s;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #737475;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 1px;
+    right: 1px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 290px;
+    border-top: 1px solid #737475;
+    border-bottom: 1px solid #737475;
+    border-radius: 3px;
+}
+
+.item {
+    padding: 10px;
+    background-color: #2D2E2E;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    min-height: 52px;
+    transition: 0.15s;
+}
+
+.autocomplete-items .item {
+    background-color: #2D2E2E;
+    cursor: pointer;
+    border-bottom: 1px solid #737475;
+}
+
+.autocomplete-items .item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-items .item:hover {
+    background-color: #424242;
+    transition: 0.05s;
+}
+
+.autocomplete-active {
+    background-color: dodgerblue !important;
+    color: #ffffff;
+    transition: 0.05s !important;
+}
+
+.item img {
+    display: block;
+    float: left;
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+    font-size: 12px;
+    line-height: 32px;
+    -webkit-filter: invert(0);
+    -moz-filter: invert(0);
+    filter: invert(0);
+}
+
+.autocomplete-list-item-details {
+    display: block;
+}
+
+.autocomplete-list-item-details span {
+    display: block;
+    font-size: 15px;
+    height: 17px;
+    font-weight: bold;
+}
+
+.autocomplete-list-item-details small {
+    display: block;
+    font-size: 13px;
+    height: 15px;
+    color: #cacaca;
+}
+
+.autocomplete-active img {
+    -webkit-filter: invert(1) !important;
+    -moz-filter: invert(1) !important;
+    filter: invert(1) !important;
+    transition: 0.05s !important;
+}
+
+.warning {
+    display: block;
+    margin: 32px 12px;
+    background-color: #FFCB2E;
+    border: solid 2px #CCA224;
+    padding: 8px;
+    border-radius: 3px;
+    color: #4C3C0D;
+    font-size: 15px;
+    text-align: center;
+}
+
+#output {
+    margin: 32px auto;
+    display: block;
+    max-width: 100%;
+    width: 600px;
+}
+
+#output .step .item {
+    margin: 24px 0px 6px 0px;
+    border-radius: 3px;
+}
+
+#output .step .stationdetails {
+    padding: 0px 12px;
+}
+
+.map {
+    display: block;
+    border: 1px solid #737475;
+    border-radius: 3px;
+    background-color: #2D2E2E;
+    margin: 6px auto 0px auto;
+    overflow: hidden !important;
+    background-image: url('map/loading.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15%;
+    font-size: 13px;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th {
+        display: block;
+        margin: 0 auto;
+        padding: 0px;
+        padding-top: 12px;
+        padding-left: 4px;
+        text-align: left;
+        font-weight: normal;
+        width: 100%;
+    }
+    
+    td {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .autocomplete {
+        max-width: initial;
+        width: initial;
+    }
+
+    #routeform {
+        margin-left: initial;
+    }
+
+    .autocomplete-items {
+        max-height: 180px;
+    }
+}

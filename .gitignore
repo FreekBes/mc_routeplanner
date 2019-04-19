@@ -1,0 +1,9 @@
+map/images/*
+map/js/*
+map/*.geojson
+map/*.png
+map/*.js
+map/*.log
+map/*.css
+map/*.html
+mcpe_viz/*

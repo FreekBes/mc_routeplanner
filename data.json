@@ -1,0 +1,904 @@
+{
+    "operators": {
+        "OSS": {
+            "id": "OSS",
+            "name": "Officiële Serverspoorwegen",
+            "run_by": "CraftingTimes",
+            "started": 2018,
+            "main_station": "Kbr"
+        },
+        "SMS": {
+            "id": "SML",
+            "name": "Spitsbergse Mijnlijn",
+            "run_by": "CraftingTimes",
+            "started": 2019,
+            "main_station": "Sbnm"
+        }
+    },
+    "stations": [
+        {
+            "id": "Kbr",
+            "name": "Kerkbrugge CS",
+            "location": "Kerkbrugge",
+            "former_name": "Kerkbrugge",
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2018,
+            "platforms": 6,
+            "coords": [31, 68, -35]
+        },
+        {
+            "id": "Kbrl",
+            "name": "Kerkbrugge Lasagnafarm",
+            "location": "Kerkbrugge",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [94, 67, 20]
+        },
+        {
+            "id": "Kbrs",
+            "name": "Kerkbrugge Stadhuis",
+            "location": "Kerkbrugge",
+            "former_name": "Kerkbrugge Nether Shrine",
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-45, 69, 20]
+        },
+        {
+            "id": "Mrs",
+            "name": "Meersburg",
+            "location": "Meersburg",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [219, 64, -267]
+        },
+        {
+            "id": "Hmsd",
+            "name": "Hamsterdijk",
+            "location": "Hamsterdijk",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2018,
+            "platforms": 2,
+            "coords": [15, 65, 437]
+        },
+        {
+            "id": "Riv",
+            "name": "Rivierdam CS",
+            "location": "Rivierdam",
+            "former_name": "Mina's dorp Centraal",
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2018,
+            "platforms": 4,
+            "coords": [-569, 67, 973]
+        },
+        {
+            "id": "Riva",
+            "name": "Rivierdam Achterland",
+            "location": "Rivierdam",
+            "former_name": "Mina's dorp Rivierzijde",
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 1,
+            "coords": [-639, 64, 820]
+        },
+        {
+            "id": "Prfn",
+            "name": "Pierrefonds",
+            "location": "Pierrefonds",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2018,
+            "platforms": 2,
+            "coords": [-1141, 79, 987]
+        },
+        {
+            "id": "Hsvn",
+            "name": "Hamstervania",
+            "location": "Hamstervania",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": 2018,
+            "platforms": 2,
+            "coords": [-1924, 79, 1007]
+        },
+        {
+            "id": "End",
+            "name": "End Portal",
+            "location": "End Village",
+            "former_name": "The End",
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 1,
+            "coords": [-847, 67, -355]
+        },
+        {
+            "id": "Spkp",
+            "name": "Spoorkruispunt",
+            "location": "",
+            "former_name": "Overstappunt",
+            "building": false,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-845, 64, -35]
+        },
+        {
+            "id": "Sbn",
+            "name": "Spitsbergen",
+            "location": "Spitsbergen",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 3,
+            "coords": [-4383, 69, 972]
+        },
+        {
+            "id": "Sbnm",
+            "name": "Spitsbergen Mijn",
+            "location": "Spitsbergen",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2019,
+            "platforms": 1,
+            "coords": [-4425, 29, 950]
+        },
+        {
+            "id": "Bosd",
+            "name": "Bosdorp",
+            "location": "Bosdorp",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [19, 64, -499]
+        },
+        {
+            "id": "Evrl",
+            "name": "Everlo",
+            "location": "Everlo",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-1302, 72, 190]
+        }
+    ],
+    "routes": [
+        {
+            "type": "train",
+            "line_number": 1,
+            "line_name": "T1",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Mrs",
+                    "platform_forth": 1,
+                    "time_forth": 58,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Kbr",
+                    "platform_forth": 4,
+                    "time_forth": 40,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 3,
+                    "time_back": 58,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Hmsd",
+                    "platform_forth": 1,
+                    "time_forth": 82,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 2,
+                    "time_back": 40,
+                    "warnings_back": ["hyperspeed"]
+                },
+                {
+                    "halt": "Riv",
+                    "platform_forth": 2,
+                    "time_forth": 42,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 1,
+                    "time_back": 82,
+                    "warnings_back": ["hyperspeed"]
+                },
+                {
+                    "halt": "Prfn",
+                    "platform_forth": 2,
+                    "time_forth": 57,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 1,
+                    "time_back": 42,
+                    "warnings_back": ["hyperspeed"]
+                },
+                {
+                    "halt": "Hsvn",
+                    "platform_forth": 2,
+                    "time_forth": 160,
+                    "warnings_forth": ["single_track", "skeletons", "hyperspeed"],
+                    "platform_back": 1,
+                    "time_back": 57,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Sbn",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": ["single_track", "skeletons"],
+                    "platform_back": 2,
+                    "time_back": 160,
+                    "warnings_back": ["single_track", "skeletons", "hyperspeed"]
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_number": 2,
+            "line_name": "T2",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Bosd",
+                    "platform_forth": 1,
+                    "time_forth": 40,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 2,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Kbr",
+                    "platform_forth": 2,
+                    "time_forth": 71,
+                    "warnings_forth": ["single_track", "hyperspeed"],
+                    "platform_back": 1,
+                    "time_back": 40,
+                    "warnings_back": ["hyperspeed"]
+                },
+                {
+                    "halt": "Spkp",
+                    "platform_forth": 1,
+                    "time_forth": 52,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 2,
+                    "time_back": 71,
+                    "warnings_back": ["single_track", "hyperspeed"]
+                },
+                {
+                    "halt": "Evrl",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 52,
+                    "warnings_back": ["hyperspeed"]
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_number": 3,
+            "line_name": "T3",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Riv",
+                    "platform_forth": 4,
+                    "time_forth": 30,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 3,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Riva",
+                    "platform_forth": 1,
+                    "time_forth": 83,
+                    "warnings_forth": ["single_track", "shared_platform", "hyperspeed"],
+                    "platform_back": 1,
+                    "time_back": 30,
+                    "warnings_back": ["single_track", "shared_platform"]
+                },
+                {
+                    "halt": "Spkp",
+                    "platform_forth": 3,
+                    "time_forth": 42,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 4,
+                    "time_back": 83,
+                    "warnings_back": ["single_track", "shared_platform", "hyperspeed"]
+                },
+                {
+                    "halt": "End",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 1,
+                    "time_back": 42,
+                    "warnings_back": ["single_track", "shared_platform"]
+                }
+            ]
+        },
+        {
+            "type": "subway",
+            "line_number": 1,
+            "line_name": "M1",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Kbrl",
+                    "platform_forth": 1,
+                    "time_forth": 15,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Kbr",
+                    "platform_forth": 5,
+                    "time_forth": 24,
+                    "warnings_forth": [],
+                    "platform_back": 6,
+                    "time_back": 15,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Kbrs",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 24,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "mine",
+            "line_number": 1,
+            "line_name": "D1",
+            "operator": "SML",
+            "halts": [
+                {
+                    "halt": "Sbn",
+                    "platform_forth": 3,
+                    "time_forth": 40,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 3,
+                    "time_back": false,
+                    "warnings_back": ["single_track", "mine_track"]
+                },
+                {
+                    "halt": "Sbnm",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 1,
+                    "time_back": 40,
+                    "warnings_back": ["single_track", "mine_track"]
+                }
+            ]
+        }
+    ],
+
+    "locations": [
+        {
+            "name": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Hamsterdijk",
+            "closest_station": "Hmsd",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Rivierdam",
+            "closest_station": "Riv",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "End Village",
+            "closest_station": "End",
+            "has_station_with_same_name": false,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Spitsbergen",
+            "closest_station": "Sbn",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Hamstervania",
+            "closest_station": "Hsvn",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Pierrefonds",
+            "closest_station": "Prfn",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Meersburg",
+            "closest_station": "Mrs",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Bosdorp",
+            "closest_station": "Bosd",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Everlo",
+            "closest_station": "Evrl",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        }
+    ],
+
+    "pois": [
+        {
+            "type": "end_portal",
+            "name": "End Portal",
+            "location": "End Village",
+            "closest_station": "End",
+            "coords": [-852, 73, -362]
+        },
+        {
+            "type": "nether_portal",
+            "name": "Nether Shrine",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrs",
+            "coords": [-54, 69, 17]
+        },
+		{
+            "type": "spawn",
+            "name": "Spawn",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [28, 68, 33]
+        },
+        {
+            "type": "farm",
+            "name": "Lasagnafarm",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrl",
+            "coords": [82, 67, 20]
+        },
+		{
+            "type": "farm",
+            "name": "Wheatfarm",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [69, 66, -93]
+        },
+        {
+            "type": "farm",
+            "name": "Beesten",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [-39, 68, -56]
+        },
+        {
+            "type": "farm",
+            "name": "Kassen",
+            "location": "Spitsbergen",
+            "closest_station": "Sbn",
+            "coords": [-4432, 67, 1000]
+        },
+        {
+            "type": "farm",
+            "name": "Amaro's Wortelfarm",
+            "location": "Hamsterdijk",
+            "closest_station": "Hmsd",
+            "coords": [0, 73, 433]
+        },
+        {
+            "type": "farm",
+            "name": "Boerderij",
+            "location": "Rivierdam",
+            "closest_station": "Riva",
+            "coords": [-546, 64, 840]
+        },
+        {
+            "type": "other",
+            "name": "Stadhuis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrs",
+            "coords": [-22, 71, 0]
+        },
+        {
+            "type": "community_building",
+            "name": "Communityhuis Kerkbrugge",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrl",
+            "coords": [38, 67, 26]
+        },
+        {
+            "type": "community_building",
+            "name": "Communityhuis Spitsbergen",
+            "location": "Spitsbergen",
+            "closest_station": "Sbn",
+            "coords": [-4382, 70, 957]
+        },
+        {
+            "type": "community_building",
+            "name": "Houthakkershutje",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrs",
+            "coords": [-15, 72, 173]
+        },
+        {
+            "type": "church",
+            "name": "Kerk van Notch",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [17, 68, 20]
+        },
+        {
+            "type": "food",
+            "name": "Café voor Pampus",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrs",
+            "coords": [-28, 69, 20]
+        },
+        {
+            "type": "food",
+            "name": "Etenopslag",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrl",
+            "coords": [57, 67, 20]
+        },
+        {
+            "type": "food",
+            "name": "Gratis kip & veren",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrl",
+            "coords": [99, 67, 20]
+        },
+        {
+            "type": "shop",
+            "name": "Bakkerij Lekker Brood",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrl",
+            "coords": [66, 67, 20]
+        },
+        {
+            "type": "shop",
+            "name": "Amaro's Illegale Praktijken & co.",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrl",
+            "coords": [47, 67, 20]
+        },
+        {
+            "type": "stable",
+            "name": "Grote Paardenstal",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrs",
+            "coords": [-49, 70, 59]
+        },
+        {
+            "type": "stable",
+            "name": "Kleine Paardenstal",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrl",
+            "coords": [52, 67, 20]
+        },
+        {
+            "type": "stable",
+            "name": "Paardenstal",
+            "location": "Rivierdam",
+            "closest_station": "Riv",
+            "coords": [-560, 64, 866]
+        },
+        {
+            "type": "castle",
+            "name": "Kasteel Pierrefonds",
+            "location": "Pierrefonds",
+            "closest_station": "Prfn",
+            "coords": [-1107, 79, 1023]
+        },
+        {
+            "type": "castle",
+            "name": "Slot Hamstervania",
+            "location": "Hamstervania",
+            "closest_station": "Hsvn",
+            "coords": [-1924, 79, 1030]
+        },
+        {
+            "type": "viewpoint",
+            "name": "Klokkentoren",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrl",
+            "coords": [108, 67, -13]
+        },
+        {
+            "type": "viewpoint",
+            "name": "Verdedigingstoren",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [85, 67, -37]
+        },
+        {
+            "type": "viewpoint",
+            "name": "Uitkijktoren",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrs",
+            "coords": [-38, 70, 61]
+        },
+        {
+            "type": "viewpoint",
+            "name": "Stationstoren",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [29, 68, -55]
+        },
+        {
+            "type": "viewpoint",
+            "name": "Uitkijktoren",
+            "location": "Hamsterdijk",
+            "closest_station": "Hmsd",
+            "coords": [0, 73, 433]
+        },
+        {
+            "type": "gate",
+            "name": "Toegangspoort",
+            "location": "Rivierdam",
+            "closest_station": "Riv",
+            "coords": [-530, 64, 865]
+        },
+        {
+            "type": "gate",
+            "name": "Bospoort",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [37, 68, 81]
+        },
+        {
+            "type": "gate",
+            "name": "Paardenpoort",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrs",
+            "coords": [-39, 70, 81]
+        },
+        {
+            "type": "gate",
+            "name": "Steigerpoort",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbrs",
+            "coords": [-74, 69, 19]
+        },
+        {
+            "type": "gate",
+            "name": "Mesapoort",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [-74, 67, -56]
+        },
+        {
+            "type": "gate",
+            "name": "Scheve Poort",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [37, 68, -69]
+        },
+        {
+            "type": "gate",
+            "name": "Kanaalpoort",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [113, 67, -31]
+        },
+        {
+            "type": "terrain",
+            "name": "Mesa",
+            "location": "",
+            "closest_station": "Kbr",
+            "coords": [-272, 65, -172]
+        },
+        {
+            "type": "terrain",
+            "name": "Savanne",
+            "location": "",
+            "closest_station": "Hmsd",
+            "coords": [-24, 64, 947]
+        },
+        {
+            "type": "other",
+            "name": "Leila's Shack",
+            "location": "",
+            "closest_station": "Bosd",
+            "coords": [1720, 72, -2424]
+        },
+        {
+            "type": "other",
+            "name": "Mission: Fail Mining Shelter",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [11, 63, 7]
+        },
+        {
+            "type": "other",
+            "name": "Muurtunnel",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [-57, 70, 50]
+        },
+        {
+            "type": "other",
+            "name": "BegrAFKplaats",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [18, 68, 35]
+        },
+        {
+            "type": "home",
+            "name": "Mina's huis",
+            "location": "Rivierdam",
+            "closest_station": "Riv",
+            "coords": [-613, 64, 858]
+        },
+        {
+            "type": "home",
+            "name": "Freeks huis",
+            "location": "Rivierdam",
+            "closest_station": "Riv",
+            "coords": [-597, 64, 867]
+        },
+        {
+            "type": "home",
+            "name": "Leila's huis",
+            "location": "Rivierdam",
+            "closest_station": "Riv",
+            "coords": [-589, 64, 867]
+        },
+        {
+            "type": "home",
+            "name": "Freeks huis",
+            "location": "Spitsbergen",
+            "closest_station": "Sbn",
+            "coords": [-4403, 64, 961]
+        },
+        {
+            "type": "home",
+            "name": "Leila's huis",
+            "location": "Spitsbergen",
+            "closest_station": "Sbn",
+            "coords": [-4432, 64, 961]
+        },
+        {
+            "type": "home",
+            "name": "Freeks grote huis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [71, 67, -20]
+        },
+        {
+            "type": "home",
+            "name": "Freeks kleine huis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [38, 67, -19]
+        },
+        {
+            "type": "home",
+            "name": "Amaro's huis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [48, 67, -15]
+        },
+        {
+            "type": "home",
+            "name": "Mina's huis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [36, 67, -18]
+        },
+        {
+            "type": "home",
+            "name": "Luke's huis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [38, 67, -31]
+        },
+        {
+            "type": "home",
+            "name": "Youri's huis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [38, 67, -41]
+        },
+        {
+            "type": "home",
+            "name": "Ross' huis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [52, 67, -37]
+        },
+        {
+            "type": "home",
+            "name": "Leila's huis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [67, 67, -38]
+        },
+        {
+            "type": "home",
+            "name": "Jorans huis",
+            "location": "Kerkbrugge",
+            "closest_station": "Kbr",
+            "coords": [36, 68, 63]
+        },
+        {
+            "type": "home",
+            "name": "Amaro's huis",
+            "location": "Hamsterdijk",
+            "closest_station": "Hmsd",
+            "coords": [0, 73, 433]
+        },
+        {
+            "type": "home",
+            "name": "Freeks huis",
+            "location": "Meersburg",
+            "closest_station": "Mrs",
+            "coords": [183, 63, -252]
+        }
+    ]
+}

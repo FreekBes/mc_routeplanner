@@ -1,0 +1,15 @@
+{
+	"lang": "nl-NL",
+	"dir": "ltr",
+	"name": "Routeplanner voor Freeks Realm",
+	"short_name": "Routeplanner Freeks Realm",
+	"description": "Plan routes voor gebruik op Freeks Minecraft Realm",
+	"developer": "Freek Bes",
+	"start_url": "/routeplanner/index.php",
+	"scope": "/routeplanner/",
+	"gcm_sender_id": "103953800507",
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "#383839",
+	"theme_color": "#1e90ff"
+}
