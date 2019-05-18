@@ -195,6 +195,18 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-1302, 72, 190]
+        },
+        {
+            "id": "Obk",
+            "name": "Oosterbeek CS",
+            "location": "Oosterbeek",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 8,
+            "coords": [-1439, 67, 979]
         }
     ],
     "routes": [
@@ -243,11 +255,20 @@
                 {
                     "halt": "Prfn",
                     "platform_forth": 2,
-                    "time_forth": 57,
-                    "warnings_forth": ["hyperspeed"],
+                    "time_forth": 49,
+                    "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 42,
                     "warnings_back": ["hyperspeed"]
+                },
+                {
+                    "halt": "Obk",
+                    "platform_forth": 4,
+                    "time_forth": 49,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 3,
+                    "time_back": 49,
+                    "warnings_back": []
                 },
                 {
                     "halt": "Hsvn",
@@ -255,8 +276,8 @@
                     "time_forth": 160,
                     "warnings_forth": ["single_track", "skeletons", "hyperspeed"],
                     "platform_back": 1,
-                    "time_back": 57,
-                    "warnings_back": []
+                    "time_back": 49,
+                    "warnings_back": ["hyperspeed"]
                 },
                 {
                     "halt": "Sbn",
@@ -305,10 +326,19 @@
                 {
                     "halt": "Evrl",
                     "platform_forth": 2,
-                    "time_forth": false,
-                    "warnings_forth": [],
+                    "time_forth": 82,
+                    "warnings_forth": ["hyperspeed"],
                     "platform_back": 1,
                     "time_back": 52,
+                    "warnings_back": ["hyperspeed"]
+                },
+                {
+                    "halt": "Obk",
+                    "platform_forth": 6,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 5,
+                    "time_back": 82,
                     "warnings_back": ["hyperspeed"]
                 }
             ]
@@ -487,6 +517,13 @@
         {
             "name": "Everlo",
             "closest_station": "Evrl",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Oosterbeek",
+            "closest_station": "Obk",
             "has_station_with_same_name": true,
             "has_own_station": true,
             "coords": null
@@ -787,118 +824,6 @@
             "location": "Kerkbrugge",
             "closest_station": "Kbr",
             "coords": [18, 68, 35]
-        },
-        {
-            "type": "home",
-            "name": "Mina's huis",
-            "location": "Rivierdam",
-            "closest_station": "Riv",
-            "coords": [-613, 64, 858]
-        },
-        {
-            "type": "home",
-            "name": "Freeks huis",
-            "location": "Rivierdam",
-            "closest_station": "Riv",
-            "coords": [-597, 64, 867]
-        },
-        {
-            "type": "home",
-            "name": "Leila's huis",
-            "location": "Rivierdam",
-            "closest_station": "Riv",
-            "coords": [-589, 64, 867]
-        },
-        {
-            "type": "home",
-            "name": "Freeks huis",
-            "location": "Spitsbergen",
-            "closest_station": "Sbn",
-            "coords": [-4403, 64, 961]
-        },
-        {
-            "type": "home",
-            "name": "Leila's huis",
-            "location": "Spitsbergen",
-            "closest_station": "Sbn",
-            "coords": [-4432, 64, 961]
-        },
-        {
-            "type": "home",
-            "name": "Freeks grote huis",
-            "location": "Kerkbrugge",
-            "closest_station": "Kbr",
-            "coords": [71, 67, -20]
-        },
-        {
-            "type": "home",
-            "name": "Freeks kleine huis",
-            "location": "Kerkbrugge",
-            "closest_station": "Kbr",
-            "coords": [38, 67, -19]
-        },
-        {
-            "type": "home",
-            "name": "Amaro's huis",
-            "location": "Kerkbrugge",
-            "closest_station": "Kbr",
-            "coords": [48, 67, -15]
-        },
-        {
-            "type": "home",
-            "name": "Mina's huis",
-            "location": "Kerkbrugge",
-            "closest_station": "Kbr",
-            "coords": [36, 67, -18]
-        },
-        {
-            "type": "home",
-            "name": "Luke's huis",
-            "location": "Kerkbrugge",
-            "closest_station": "Kbr",
-            "coords": [38, 67, -31]
-        },
-        {
-            "type": "home",
-            "name": "Youri's huis",
-            "location": "Kerkbrugge",
-            "closest_station": "Kbr",
-            "coords": [38, 67, -41]
-        },
-        {
-            "type": "home",
-            "name": "Ross' huis",
-            "location": "Kerkbrugge",
-            "closest_station": "Kbr",
-            "coords": [52, 67, -37]
-        },
-        {
-            "type": "home",
-            "name": "Leila's huis",
-            "location": "Kerkbrugge",
-            "closest_station": "Kbr",
-            "coords": [67, 67, -38]
-        },
-        {
-            "type": "home",
-            "name": "Jorans huis",
-            "location": "Kerkbrugge",
-            "closest_station": "Kbr",
-            "coords": [36, 68, 63]
-        },
-        {
-            "type": "home",
-            "name": "Amaro's huis",
-            "location": "Hamsterdijk",
-            "closest_station": "Hmsd",
-            "coords": [0, 73, 433]
-        },
-        {
-            "type": "home",
-            "name": "Freeks huis",
-            "location": "Meersburg",
-            "closest_station": "Mrs",
-            "coords": [183, 63, -252]
         }
     ]
 }
