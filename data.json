@@ -133,8 +133,8 @@
             "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 1,
-            "coords": [-847, 67, -355]
+            "platforms": 2,
+            "coords": [-847, 67, -360]
         },
         {
             "id": "Spkp",
@@ -145,7 +145,7 @@
             "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 2,
+            "platforms": 4,
             "coords": [-845, 64, -35]
         },
         {
@@ -209,7 +209,7 @@
             "coords": [-1439, 67, 979]
         },
 		{
-			"id": "Slm",
+			"id": "Slms",
 			"name": "Slijmstad",
 			"location": "Slijmstad",
 			"former_name": null,
@@ -219,6 +219,18 @@
 			"opened": 2019,
 			"platforms": 1,
 			"coords": [-2350, 64, 988]
+		},
+		{
+			"id": "Wtsl",
+			"name": "Watersluis",
+			"location": "Watersluis",
+			"former_name": null,
+			"building": false,
+			"roofed": false,
+			"underground": false,
+			"opened": 2019,
+			"platforms": 1,
+			"coords": [-861, 63, -646]
 		}
     ],
     "routes": [
@@ -286,13 +298,13 @@
                     "halt": "Hsvn",
                     "platform_forth": 2,
                     "time_forth": 45,
-                    "warnings_forth": ["single_track", "hyperspeed", "shared_platform"],
+                    "warnings_forth": ["hyperspeed", "single_track", "shared_platform"],
                     "platform_back": 1,
                     "time_back": 49,
                     "warnings_back": ["hyperspeed"]
                 },
 				{
-					"halt": "Slm",
+					"halt": "Slms",
 					"platform_forth": 1,
 					"time_forth": 193,
 					"warnings_forth": ["single_track", "skeletons", "hyperspeed", "shared_platform"],
@@ -400,12 +412,21 @@
                 {
                     "halt": "End",
                     "platform_forth": 1,
-                    "time_forth": false,
+                    "time_forth": 43,
                     "warnings_forth": ["single_track"],
-                    "platform_back": 1,
+                    "platform_back": 2,
                     "time_back": 42,
-                    "warnings_back": ["single_track", "shared_platform"]
-                }
+                    "warnings_back": ["single_track"]
+                },
+				{
+					"halt": "Wtsl",
+					"platform_forth": 1,
+					"time_forth": false,
+					"warnings_forth": [],
+					"platform_back": 1,
+					"time_back": 43,
+					"warnings_back": ["single_track"]
+				}
             ]
         },
         {
@@ -453,19 +474,19 @@
                     "halt": "Sbn",
                     "platform_forth": 3,
                     "time_forth": 40,
-                    "warnings_forth": ["single_track"],
+                    "warnings_forth": ["mine_track", "skeletons"],
                     "platform_back": 3,
                     "time_back": false,
-                    "warnings_back": ["single_track", "mine_track"]
+                    "warnings_back": []
                 },
                 {
                     "halt": "Sbnm",
                     "platform_forth": 1,
                     "time_forth": false,
-                    "warnings_forth": ["single_track"],
+                    "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 40,
-                    "warnings_back": ["single_track", "mine_track"]
+                    "warnings_back": ["mine_track", "skeletons"]
                 }
             ]
         }
@@ -551,10 +572,17 @@
         },
 		{
 			"name": "Slijmstad",
-			"closest_station": "Slm",
+			"closest_station": "Slms",
 			"has_station_with_same_name": true,
 			"has_own_station": true,
 			"coords": null
+		},
+		{
+			"name": "Watersluis",
+			"closest_station": "Wtsl",
+			"has_station_with_same_name": true,
+			"has_own_station": true,
+			"coords": []
 		}
     ],
 
