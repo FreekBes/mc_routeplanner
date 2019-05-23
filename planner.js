@@ -560,12 +560,17 @@ var planner = {
                         case "shared_platform":
                             writtenWarnings.push("Deze route gaat langs een gedeeld perron.");
                             break;
-                        case "hyperspeed":
+						case "mine_track":
+							writtenWarnings.push("Deze route gaat gedeeltelijk over een mijnspoor.");
+							break;
+                        /*
+						case "hyperspeed":
                             writtenWarnings.push("Deze route gaat gedeeltelijk over een hyperspeed-traject.");
                             break;
+						*/
                     }
                 }
-                warning.innerHTML = "<b>"+solutions.warnings.length+" waarschuwing"+(solutions.warnings.length == 1 ? "" : "en")+" voor dit traject:</b><br/>" + writtenWarnings.join("<br/>");
+                warning.innerHTML = "<b>"+writtenWarnings.length+" waarschuwing"+(writtenWarnings.length == 1 ? "" : "en")+" voor dit traject:</b><br/>" + writtenWarnings.join("<br/>");
                 outputField.appendChild(warning);
             }
 
