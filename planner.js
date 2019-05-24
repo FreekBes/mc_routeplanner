@@ -338,7 +338,7 @@ var planner = {
         }
     },
 
-    insertMapOld: function(start, end) {
+    insertMapOldest: function(start, end) {
         var mapElem = document.createElement("iframe");
         mapElem.innerHTML = "Maps are not supported by your browser. You'll have to find out where to go by yourself.";
         mapElem.setAttribute("class", "map");
@@ -348,6 +348,23 @@ var planner = {
     },
 
     insertMap: function(start, end, step) {
+        return new Promise(function(resolve, reject) {
+            var mapElem = document.createElement("img");
+            mapElem.setAttribute("class", "map");
+            mapElem.setAttribute("title", "Looproute");
+            mapElem.addEventListener("load", resolve);
+            mapElem.addEventListener("error", reject);
+            mapElem.setAttribute("alt", "Looproute kan niet worden weergegeven. Sorry voor het ongemak.");
+            mapElem.setAttribute("src", "map.php?start="+start.join(",")+"&end="+end.join(",")+"&size=500");
+            mapElem.setAttribute("width", "300");
+            mapElem.setAttribute("height", "300");
+            step.appendChild(mapElem);
+        });
+    },
+
+    insertMapOld: function(start, end, step) {
+        console.log(start.join(","));
+        console.log(end.join(","));
         var mapSource = 'map/map-2019-03-17.png';
 
         var minWorldX = -6352;
@@ -380,7 +397,7 @@ var planner = {
                 mapImg.onload = function() {
                     console.log("Map image loaded!");
                     var topLeftCorner = [];
-                    topLeftCorner[0] = getDifference(minWorldX, (start[0] < end[0] ? start[0] : end[0])) -14;
+                    topLeftCorner[0] = getDifference(minWorldX, (start[0] < end[0] ? start[0] : end[0])) - 14;
                     topLeftCorner[1] = getDifference(minWorldY, (start[2] < end[2] ? start[2] : end[2])) - 14;
                     console.log("topLeftCorner", topLeftCorner);
                     var bottomRightCorner = [];
@@ -599,10 +616,7 @@ var planner = {
                 }
                 stepinner += '.</div>';
                 step.innerHTML += stepinner;
-                planner.insertMap(planner.from.coords, halt.coords, step)
-                    .then(function(data) {
-                        console.log("Map loaded");
-                    });
+                planner.insertMap(planner.from.coords, halt.coords, step);
                 outputField.appendChild(step);
             }
             for (i = 0; i < solutions.halts.length; i++) {
@@ -676,10 +690,7 @@ var planner = {
                     step.innerHTML += stepinner;
                     if (planner.to.type != "station" && planner.to.coords != null) {
                         // step.appendChild(planner.insertMap(halt.coords, planner.to.coords));
-                        planner.insertMap(halt.coords, planner.to.coords, step)
-                            .then(function(data) {
-                                console.log("Map loaded");
-                            });
+                        planner.insertMap(halt.coords, planner.to.coords, step);
                     }
                     outputField.appendChild(step);
                 }
@@ -719,10 +730,7 @@ var planner = {
             stepinner += '.</div>';
             step.innerHTML += stepinner;
             // step.appendChild(planner.insertMap(planner.from.coords, planner.to.coords));
-            planner.insertMap(planner.from.coords, planner.to.coords, step)
-                .then(function(data) {
-                    console.log("Map loaded");
-                });
+            planner.insertMap(planner.from.coords, planner.to.coords, step);
             outputField.appendChild(step);
 
             stepinner = "";
