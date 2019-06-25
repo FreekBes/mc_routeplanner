@@ -563,8 +563,6 @@ var planner = {
             console.log(solutions);
 
             if (solutions.warnings.length > 0) {
-                var warning = document.createElement("div");
-                warning.setAttribute("class", "warning");
                 var writtenWarnings = [];
                 for (i = 0; i < solutions.warnings.length; i++) {
                     switch (solutions.warnings[i]) {
@@ -587,8 +585,16 @@ var planner = {
 						*/
                     }
                 }
-                warning.innerHTML = "<b>"+writtenWarnings.length+" waarschuwing"+(writtenWarnings.length == 1 ? "" : "en")+" voor dit traject:</b><br/>" + writtenWarnings.join("<br/>");
-                outputField.appendChild(warning);
+
+                if (writtenWarnings.length > 0) {
+                    var warning = document.createElement("div");
+                    warning.setAttribute("class", "warning");
+                    warning.innerHTML = "<b>"+writtenWarnings.length+" waarschuwing"+(writtenWarnings.length == 1 ? "" : "en")+" voor dit traject:</b><br/>" + writtenWarnings.join("<br/>");
+                    outputField.appendChild(warning);
+                }
+                else {
+                    console.log("Alle waarschuwingen voor dit traject zijn genegeerd.");
+                }
             }
 
             var lastLine = null;
