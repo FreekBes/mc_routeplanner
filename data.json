@@ -243,7 +243,19 @@
 			"opened": 2019,
 			"platforms": 1,
 			"coords": [-861, 63, -646]
-		}
+        },
+        {
+            "id": "Gdmn",
+            "name": "Goudmijn",
+            "location": "",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [24, 73, -1414]
+        }
     ],
     "routes": [
         {
@@ -350,6 +362,15 @@
             "line_name": "T2",
             "operator": "OSS",
             "halts": [
+                {
+                    "halt": "Gdmn",
+                    "platform_forth": 1,
+                    "time_forth": 60,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 2,
+                    "time_back": false,
+                    "warnings_back": []
+                },
                 {
                     "halt": "Bosd",
                     "platform_forth": 1,
@@ -864,8 +885,8 @@
             "type": "terrain",
             "name": "Mesa",
             "location": "",
-            "closest_station": "Kbr",
-            "coords": [-272, 65, -172]
+            "closest_station": "Gdmn",
+            "coords": [-1, 70, -1456]
         },
         {
             "type": "terrain",
