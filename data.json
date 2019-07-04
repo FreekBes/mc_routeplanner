@@ -377,7 +377,7 @@
                     "time_forth": 40,
                     "warnings_forth": ["hyperspeed"],
                     "platform_back": 2,
-                    "time_back": false,
+                    "time_back": 60,
                     "warnings_back": []
                 },
                 {
