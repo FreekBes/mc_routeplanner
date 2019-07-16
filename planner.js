@@ -275,7 +275,7 @@ var planner = {
         var results = [];
         if (text.length > 0) {
             for (i = 0; i < planner.data.stations.length; i++) {
-                if (planner.data.stations[i].name.toLowerCase().indexOf(text) > -1 || planner.data.stations[i].location.toLowerCase().indexOf(text) > -1 || (planner.data.stations[i].former_name != null && planner.data.stations[i].former_name.toLowerCase().indexOf(text) > -1)) {
+                if (planner.data.stations[i].name.toLowerCase().indexOf(text) > -1 || (planner.data.stations[i].location != null && planner.data.stations[i].location.toLowerCase().indexOf(text) > -1) || (planner.data.stations[i].former_name != null && planner.data.stations[i].former_name.toLowerCase().indexOf(text) > -1)) {
                     var tempData = {
                         type: "station",
                         name: planner.data.stations[i].name,
@@ -299,7 +299,7 @@ var planner = {
                 }
             }
             for (i = 0; i < planner.data.pois.length; i++) {
-                if (planner.data.pois[i].name.toLowerCase().indexOf(text) > -1 || planner.data.pois[i].location.toLowerCase().indexOf(text) > -1) {
+                if (planner.data.pois[i].name.toLowerCase().indexOf(text) > -1 || (planner.data.pois[i].location != null && planner.data.pois[i].location.toLowerCase().indexOf(text) > -1)) {
                     var tempData = {
                         type: "poi",
                         subtype: planner.data.pois[i].type,

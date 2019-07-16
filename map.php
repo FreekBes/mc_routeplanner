@@ -56,13 +56,13 @@ header('Content-Type: image/png');
 header('Cache-Control: max-age=604800, public');
 header('Expires: '. gmdate('D, d M Y H:i:s \G\M\T', time() + 604800));
 
-$mapDate = "2019-03-17";
+$mapDate = "2019-07-16";
 $mapSource = "map/map-".$mapDate.".png";
 
-$minWorldX = -6352;
-$maxWorldX = 11440 + 15;
-$minWorldY = -3856;
-$maxWorldY = 5280 + 15;
+$minWorldX = -2096;
+$maxWorldX = 1520 + 15;
+$minWorldY = -1472;
+$maxWorldY = 3776 + 15;
 $mapWidth = -$minWorldX + $maxWorldX;
 $mapHeight = -$minWorldY + $maxWorldY;
 
