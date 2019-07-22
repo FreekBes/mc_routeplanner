@@ -245,6 +245,12 @@ var planner = {
                     case "terrain":
                         bhtml += "Landschap";
                         break;
+                    case "town_hall":
+                        bhtml += "Stadhuis";
+                        break;
+                    case "mine":
+                        bhtml += "Mijn";
+                        break;
                     default:
                         bhtml += 'Overig';
                         break;
