@@ -180,6 +180,9 @@ var planner = {
                     case "terrain":
                         bhtml += '<img src="icons/terrain.png" alt="Landschap" />';
                         break;
+                    case "mine":
+                        bhtml += '<img src="icons/mine.png" alt="Mijn" />';
+                        break;
                     default:
                         bhtml += '<img src="icons/place.png" alt="Overig" />';
                         break;
