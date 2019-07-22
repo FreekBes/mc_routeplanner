@@ -34,7 +34,7 @@
             "coords": [-241, 68, 24]
         },
         {
-            "id": "Spa",
+            "id": "Spn",
             "name": "Spawn",
             "location": null,
             "former_name": null,
@@ -44,6 +44,30 @@
             "opened": 2019,
             "platforms": 1,
             "coords": [-12, 72, -53]
+        },
+        {
+            "id": "Eik",
+            "name": "Eikwoude",
+            "location": "Eikwoude",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-705, 70, 150]
+        },
+        {
+            "id": "End",
+            "name": "End Portal",
+            "location": "End Village",
+            "former_name": "End Village",
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-1103, 72, 163]
         }
     ],
     "routes": [
@@ -54,7 +78,7 @@
             "operator": "OSS",
             "halts": [
                 {
-                    "halt": "Spa",
+                    "halt": "Spn",
                     "platform_forth": 1,
                     "time_forth": 36,
                     "warnings_forth": [],
@@ -81,6 +105,41 @@
                     "warnings_back": []
                 }
             ]
+        },
+        {
+            "type": "train",
+            "line_number": 2,
+            "line_name": "T2",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Tcs",
+                    "platform_forth": 5,
+                    "time_forth": 61,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 4,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Eik",
+                    "platform_forth": 2,
+                    "time_forth": 49,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 1,
+                    "time_back": 61,
+                    "warnings_back": ["hyperspeed"]
+                },
+                {
+                    "halt": "End",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 49,
+                    "warnings_back": ["hyperspeed"]
+                }
+            ]
         }
     ],
 
@@ -91,6 +150,27 @@
             "has_station_with_same_name": true,
             "has_own_station": true,
             "coords": null
+        },
+        {
+            "name": "Eikwoude",
+            "closest_station": "Eik",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Village",
+            "closest_station": "Tcs",
+            "has_station_with_same_name": false,
+            "has_own_station": false,
+            "coords": [-232, 69, -228]
+        },
+        {
+            "name": "End Village",
+            "closest_station": "End",
+            "has_station_with_same_name": false,
+            "has_own_station": true,
+            "coords": [-1111, 71, 171]
         }
     ],
 
@@ -99,7 +179,7 @@
             "type": "spawn",
             "name": "World Spawn",
             "location": null,
-            "closest_station": "Spa",
+            "closest_station": "Spn",
             "coords": [1, 64, -16]
         },
         {
@@ -108,6 +188,41 @@
             "location": "Torenburg",
             "closest_station": "Tdal",
             "coords": [-250, 70, 22]
+        },
+        {
+            "type": "farm",
+            "name": "Lasagnafarm",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-309, 66, 111]
+        },
+        {
+            "type": "mine",
+            "name": "Dalmijn",
+            "location": "Torenburg",
+            "closest_station": "Tdal",
+            "coords": [-256, 70, 33]
+        },
+        {
+            "type": "shop",
+            "name": "Torenburger Markt",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-255, 64, 119]
+        },
+        {
+            "type": "other",
+            "name": "Stadhuis",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-257, 66, 108]
+        },
+        {
+            "type": "castle",
+            "name": "Stronghold",
+            "location": "End Village",
+            "closest_station": "End",
+            "coords": [-1134, 70, 167]
         }
     ]
 }
