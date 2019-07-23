@@ -68,6 +68,18 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-1103, 72, 163]
+        },
+        {
+            "id": "Pml",
+            "name": "Post Malone",
+            "location": "Post Malone",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-160, 71, 2079]
         }
     ],
     "routes": [
@@ -140,6 +152,32 @@
                     "warnings_back": ["hyperspeed"]
                 }
             ]
+        },
+        {
+            "type": "train",
+            "line_number": 3,
+            "line_name": "T3",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Tcs",
+                    "platform_forth": 2,
+                    "time_forth": 248,
+                    "warnings_forth": ["hyperspeed", "skeletons"],
+                    "platform_back": 3,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Pml",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 248,
+                    "warnings_back": ["hyperspeed", "skeletons"]
+                }
+            ]
         }
     ],
 
@@ -171,6 +209,13 @@
             "has_station_with_same_name": false,
             "has_own_station": true,
             "coords": [-1111, 71, 171]
+        },
+        {
+            "name": "Post Malone",
+            "closest_station": "Pml",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": [-195, 71, 2045]
         }
     ],
 
@@ -223,6 +268,20 @@
             "location": "End Village",
             "closest_station": "End",
             "coords": [-1134, 70, 167]
+        },
+        {
+            "type": "nether_portal",
+            "name": "Nether Portal",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-268, 66, 103]
+        },
+        {
+            "type": "other",
+            "name": "Enchanting Table",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-247, 66, 103]
         }
     ]
 }
