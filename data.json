@@ -80,6 +80,29 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-160, 71, 2079]
+        },
+        {
+            "id": "Skp",
+            "name": "Spoorkruispunt",
+            "location": null,
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2019,
+            "platforms": 3,
+            "coords": [399, 85, 155]
+        },
+        {
+            "id": "Hevn",
+            "name": "Heaven",
+            "location": "Heaven",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [382, 79, -419]
         }
     ],
     "routes": [
@@ -93,7 +116,7 @@
                     "halt": "Spn",
                     "platform_forth": 1,
                     "time_forth": 36,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 1,
                     "time_back": false,
                     "warnings_back": []
@@ -102,10 +125,10 @@
                     "halt": "Tdal",
                     "platform_forth": 2,
                     "time_forth": 21,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 1,
                     "time_back": 36,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Tcs",
@@ -114,7 +137,7 @@
                     "warnings_forth": [],
                     "platform_back": 6,
                     "time_back": 21,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 }
             ]
         },
@@ -125,13 +148,22 @@
             "operator": "OSS",
             "halts": [
                 {
+                    "halt": "Skp",
+                    "platform_forth": 2,
+                    "time_forth": 75,
+                    "warnings_forth": ["hyperspeed"],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
                     "halt": "Tcs",
                     "platform_forth": 5,
                     "time_forth": 61,
                     "warnings_forth": ["hyperspeed"],
                     "platform_back": 4,
-                    "time_back": false,
-                    "warnings_back": []
+                    "time_back": 75,
+                    "warnings_back": ["hyperspeed"]
                 },
                 {
                     "halt": "Eik",
@@ -178,6 +210,32 @@
                     "warnings_back": ["hyperspeed", "skeletons"]
                 }
             ]
+        },
+        {
+            "type": "train",
+            "line_number": 5,
+            "line_name": "T5",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Skp",
+                    "platform_forth": 3,
+                    "time_forth": 70,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 3,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Hevn",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 70,
+                    "warnings_back": ["single_track"]
+                }
+            ]
         }
     ],
 
@@ -216,6 +274,20 @@
             "has_station_with_same_name": true,
             "has_own_station": true,
             "coords": [-195, 71, 2045]
+        },
+        {
+            "name": "Heaven",
+            "closest_station": "Hevn",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Spookywooky",
+            "closest_station": "Hevn",
+            "has_station_with_same_name": false,
+            "has_own_station": false,
+            "coords": [202, 66, -270]
         }
     ],
 

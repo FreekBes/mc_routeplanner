@@ -56,7 +56,7 @@ header('Content-Type: image/png');
 header('Cache-Control: max-age=604800, public');
 header('Expires: '. gmdate('D, d M Y H:i:s \G\M\T', time() + 604800));
 
-$mapDate = "2019-07-22";
+$mapDate = "2019-07-23";
 $mapSource = "map/map-".$mapDate.".png";
 
 $minWorldX = -2864;
