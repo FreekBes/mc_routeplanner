@@ -100,9 +100,33 @@
             "former_name": null,
             "building": false,
             "roofed": true,
+            "underground": false,
             "opened": 2019,
             "platforms": 2,
             "coords": [382, 79, -419]
+        },
+        {
+            "id": "Skwk",
+            "name": "Spookywooky",
+            "location": "Spookywooky",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [182, 67, -326]
+        },
+        {
+            "id": "Vil",
+            "name": "Village",
+            "location": "Village",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 4,
+            "coords": [-265, 71, 307]
         }
     ],
     "routes": [
@@ -192,12 +216,21 @@
             "operator": "OSS",
             "halts": [
                 {
+                    "halt": "Vil",
+                    "platform_forth": 1,
+                    "time_forth": 67,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
                     "halt": "Tcs",
                     "platform_forth": 2,
                     "time_forth": 248,
                     "warnings_forth": ["hyperspeed", "skeletons"],
                     "platform_back": 3,
-                    "time_back": false,
+                    "time_back": 67,
                     "warnings_back": []
                 },
                 {
@@ -236,6 +269,41 @@
                     "warnings_back": ["single_track"]
                 }
             ]
+        },
+        {
+            "type": "train",
+            "line_number": 7,
+            "line_name": "T7",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Vil",
+                    "platform_forth": 3,
+                    "time_forth": 57,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 4,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Skwk",
+                    "platform_forth": 1,
+                    "time_forth": 33,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 2,
+                    "time_back": 57,
+                    "warnings_back": ["single_track"]
+                },
+                {
+                    "halt": "Hevn",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 33,
+                    "warnings_back": ["single_track"]
+                }
+            ]
         }
     ],
 
@@ -256,9 +324,9 @@
         },
         {
             "name": "Village",
-            "closest_station": "Tcs",
-            "has_station_with_same_name": false,
-            "has_own_station": false,
+            "closest_station": "Vil",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
             "coords": [-232, 69, -228]
         },
         {
@@ -284,9 +352,9 @@
         },
         {
             "name": "Spookywooky",
-            "closest_station": "Hevn",
-            "has_station_with_same_name": false,
-            "has_own_station": false,
+            "closest_station": "Skwk",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
             "coords": [202, 66, -270]
         }
     ],
@@ -354,6 +422,13 @@
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-247, 66, 103]
+        },
+        {
+            "type": "stable",
+            "name": "Paardenstal",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-293, 66, 130]
         }
     ]
 }
