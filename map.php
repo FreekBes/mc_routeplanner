@@ -67,7 +67,8 @@ $mapWidth = -$minWorldX + $maxWorldX;
 $mapHeight = -$minWorldY + $maxWorldY;
 
 if (!isset($_GET["start"]) || !isset($_GET["end"])) {
-    http_response_code(400);
+    // http_response_code(400);
+    header("Location: ".$mapSource);
     die();
 }
 else {
