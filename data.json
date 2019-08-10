@@ -429,6 +429,20 @@
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-293, 66, 130]
+        },
+        {
+            "type": "terrain",
+            "name": "Jungle",
+            "location": null,
+            "closest_station": "Vil",
+            "coords": [2962, 64, -3872]
+        },
+        {
+            "type": "end_portal",
+            "name": "End Portal",
+            "location": "End Village",
+            "closest_station": "End",
+            "coords": [-1134, 70, 167]
         }
     ]
 }
