@@ -443,6 +443,48 @@
             "location": "End Village",
             "closest_station": "End",
             "coords": [-1134, 70, 167]
+        },
+        {
+            "type": "farm",
+            "name": "Schapenfarm",
+            "location": "Heaven",
+            "closest_station": "Hevn",
+            "coords": [408, 90, -452]
+        },
+        {
+            "type": "food",
+            "name": "Bakkerij Lekker Brood",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-303, 64, 91]
+        },
+        {
+            "type": "terrain",
+            "name": "Ice Peaks",
+            "location": null,
+            "closest_station": "Pml",
+            "coords": [236, 80, 2099]
+        },
+        {
+            "type": "nether_portal",
+            "name": "Nether Portal",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-181, 70, 2114]
+        },
+        {
+            "type": "mine",
+            "name": "Mijn",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-168, 70, 2098]
+        },
+        {
+            "type": "viewpoint",
+            "name": "Illager Outpost",
+            "location": null,
+            "closest_station": "Skp",
+            "coords": [279, 70, 584]
         }
     ]
 }
