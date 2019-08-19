@@ -127,6 +127,18 @@
             "opened": 2019,
             "platforms": 4,
             "coords": [-265, 71, 307]
+        },
+        {
+            "id": "Hvl",
+            "name": "Hoogvallei",
+            "location": "Hoogvallei",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 4,
+            "coords": [-145, 71, 1238]
         }
     ],
     "routes": [
@@ -175,7 +187,7 @@
                     "halt": "Skp",
                     "platform_forth": 2,
                     "time_forth": 75,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": false,
                     "warnings_back": []
@@ -184,19 +196,19 @@
                     "halt": "Tcs",
                     "platform_forth": 5,
                     "time_forth": 61,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 4,
                     "time_back": 75,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 },
                 {
                     "halt": "Eik",
                     "platform_forth": 2,
                     "time_forth": 49,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 61,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 },
                 {
                     "halt": "End",
@@ -205,7 +217,7 @@
                     "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": 49,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 }
             ]
         },
@@ -227,10 +239,19 @@
                 {
                     "halt": "Tcs",
                     "platform_forth": 2,
-                    "time_forth": 248,
-                    "warnings_forth": ["hyperspeed", "skeletons"],
+                    "time_forth": 140,
+                    "warnings_forth": [],
                     "platform_back": 3,
                     "time_back": 67,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Hvl",
+                    "platform_forth": 3,
+                    "time_forth": 108,
+                    "warnings_forth": ["skeletons"],
+                    "platform_back": 4,
+                    "time_back": 140,
                     "warnings_back": []
                 },
                 {
@@ -239,8 +260,8 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 1,
-                    "time_back": 248,
-                    "warnings_back": ["hyperspeed", "skeletons"]
+                    "time_back": 108,
+                    "warnings_back": ["skeletons"]
                 }
             ]
         },
@@ -356,6 +377,13 @@
             "has_station_with_same_name": true,
             "has_own_station": true,
             "coords": [202, 66, -270]
+        },
+        {
+            "name": "Hoogvallei",
+            "closest_station": "Hvl",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
         }
     ],
 
