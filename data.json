@@ -139,6 +139,30 @@
             "opened": 2019,
             "platforms": 4,
             "coords": [-145, 71, 1238]
+        },
+        {
+            "id": "Edmr",
+            "name": "Esdoornermeer",
+            "location": null,
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [634, 72, 1212]
+        },
+        {
+            "id": "Hms",
+            "name": "Hamsterdam",
+            "location": "Hamsterdam",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 1,
+            "coords": [1026, 64, 1202]
         }
     ],
     "routes": [
@@ -293,6 +317,41 @@
         },
         {
             "type": "train",
+            "line_number": 6,
+            "line_name": "T6",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Hvl",
+                    "platform_forth": 2,
+                    "time_forth": 104,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Edmr",
+                    "platform_forth": 2,
+                    "time_forth": 50,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 1,
+                    "time_back": 104,
+                    "warnings_back": ["single_track"]
+                },
+                {
+                    "halt": "Hms",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 50,
+                    "warnings_back": ["single_track"]
+                }
+            ]
+        },
+        {
+            "type": "train",
             "line_number": 7,
             "line_name": "T7",
             "operator": "OSS",
@@ -381,6 +440,13 @@
         {
             "name": "Hoogvallei",
             "closest_station": "Hvl",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null
+        },
+        {
+            "name": "Hamsterdam",
+            "closest_station": "Hms",
             "has_station_with_same_name": true,
             "has_own_station": true,
             "coords": null
