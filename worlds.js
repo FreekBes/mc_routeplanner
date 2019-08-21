@@ -10,6 +10,12 @@ var worlds = {
         displayName: "Freeks Realm [OUD]",
         data: "data-oud.json",
         mapSupported: false
+    },
+    blr: {
+        name: "BLR Server (2013-2017)",
+        displayName: "BLR Server",
+        data: "data-blr.json",
+        mapSupported: false
     }
 };
 

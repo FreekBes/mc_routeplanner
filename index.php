@@ -8,6 +8,9 @@
         case "fro":
             $world = "Freeks Realm [OUD]";
             break;
+        case "blr":
+            $world = "BLR Server";
+            break;
         default:
             header("Location: ?w=frn");
             http_response_code(302);
