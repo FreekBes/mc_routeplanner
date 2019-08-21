@@ -6,9 +6,70 @@ body {
     color: #EDEDED;
 }
 
-h1 {
+#worldselector-outer {
+    display: block;
     text-align: center;
+    margin: 36px 0px 56px 0px;
+    white-space: nowrap;
+}
+
+#worldselector {
+    display: inline-block;
     font-size: 32px;
+    border: none;
+    border-color: #383839;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    outline: none;
+    background: transparent;
+    color: #EDEDED;
+    font-weight: bold;
+    padding: 3px 0px 3px 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    vertical-align: middle;
+    height: 42px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+#worldselector::-ms-expand {
+    display: none;
+}
+
+#worldselector:hover, #worldselector:focus, #worldselector:hover + #fakedownarrow, #worldselector:focus + #fakedownarrow {
+    background: #2D2E2E;
+    outline: 0;
+}
+
+#worldselector:active, #worldselector:active + #fakedownarrow {
+    background: #2b2b2c;
+    outline: 0;
+}
+
+#worldselector option, #worldselector optgroup {
+    font-size: 16px;
+    color: #EDEDED;
+    background: #242424;
+    cursor: default;
+}
+
+#fakedownarrow {
+    display: inline-block;
+    vertical-align: middle;
+    color: #BDBDBD;
+    margin: 0px;
+    padding: 13px 8px 0px 8px;
+    height: 42px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
 }
 
 #routeform {
@@ -216,8 +277,8 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width: 500px) {
-    h1 {
-        font-size: 24px;
+    #worldselector {
+        font-size: 19px;
     }
 
     table {

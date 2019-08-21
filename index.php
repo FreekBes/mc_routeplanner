@@ -1,15 +1,27 @@
 <?PHP
-
+    $w = $_GET["w"];
+    $world = "";
+    switch ($w) {
+        case "frn":
+            $world = "Freeks Realm";
+            break;
+        default:
+            header("Location: ?w=frn");
+            http_response_code(302);
+            die();
+            break;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="nl">
     <head>
     <link rel="manifest" href="manifest.json" />
-        <title>Routeplanner voor Freeks Realm</title>
+        <title>Routeplanner voor <?PHP echo $world; ?></title>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <link rel="stylesheet" href="styles.css" />
         <script src="jquery.min.js"></script>
         <script><?PHP echo readfile("useful.js"); ?></script>
+        <script><?PHP echo readfile("worlds.js"); ?></script>
         <script><?PHP echo readfile("planner.js"); ?></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -18,10 +30,27 @@
         <meta name="theme-color" content="#1e90ff" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="apple-mobile-web-app-title" content="Routeplanner voor Freeks Realm" />
+        <meta name="apple-mobile-web-app-title" content="Routeplanner voor <?PHP echo $world; ?>" />
     </head>
-    <body onload="planner.init();">
-        <h1>Routeplanner voor Freeks Realm</h1>
+    <body onload="startInit();">
+        <div id="worldselector-outer">
+            <select id="worldselector" title="Selecteer om een andere wereld te kiezen...">
+                <option selected disabled>Routeplanner voor <?PHP echo $world; ?></option>
+                <optgroup label="Of kies een andere wereld:" id="worldopts"></optgroup>
+            </select><span id="fakedownarrow">&#x25BE;</span>
+        </div>
+        <script>
+            document.getElementById("worldselector").addEventListener("change", function(event) {
+                document.location.href = "?w=" + event.target.value;
+            });
+            var worldOpts = document.getElementById("worldopts");
+            for (var i = 0; i < possibleWorlds.length; i++) {
+                var worldOpt = document.createElement("option");
+                worldOpt.setAttribute("value", possibleWorlds[i]);
+                worldOpt.innerHTML = worlds[possibleWorlds[i]].name;
+                worldOpts.appendChild(worldOpt);
+            }
+        </script>
         <form id="routeform">
             <table>
                 <tr>
@@ -39,6 +68,5 @@
             </table>
         </form>
         <div id="output"></div>
-        <!-- <img src="map/map.png" id="map_src" style="display: none;" onload="console.log('Map image loaded');" /> -->
     </body>
 </html>

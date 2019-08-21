@@ -5,10 +5,11 @@ var planner = {
     to: null,
     currentFocus: -1,
 
-    init: function() {
-        $.getJSON( "data.json", {noCache: Math.random()} )
+    init: function(worldToLoad) {
+        document.title = "Routeplanner voor " + worlds[worldToLoad].displayName;
+        $.getJSON( worlds[worldToLoad]["data"], {noCache: Math.random()} )
             .done(function(json) {
-                console.log("Data.json fetched");
+                console.log(worlds[worldToLoad]["data"] + " fetched");
                 json.stations = json.stations.sort(compareNames);
                 json.locations = json.locations.sort(compareNames);
                 json.pois = json.pois.sort(compareNames);
@@ -50,7 +51,7 @@ var planner = {
                 console.log(planner.graph);
             })
             .fail(function() {
-                console.error("Could not fetch data.json");
+                console.error("Could not fetch " + worlds[worldToLoad]["data"]);
             });
 
         var autocompletes = document.getElementsByClassName("autocomplete");
@@ -631,7 +632,9 @@ var planner = {
                 }
                 stepinner += '.</div>';
                 step.innerHTML += stepinner;
-                planner.insertMap(planner.from.coords, halt.coords, step);
+                if (worlds[worldToLoad]["mapSupported"]) {
+                    planner.insertMap(planner.from.coords, halt.coords, step);
+                }
                 outputField.appendChild(step);
             }
             for (i = 0; i < solutions.halts.length; i++) {
@@ -704,8 +707,10 @@ var planner = {
                     }
                     step.innerHTML += stepinner;
                     if (planner.to.type != "station" && planner.to.coords != null) {
-                        // step.appendChild(planner.insertMap(halt.coords, planner.to.coords));
-                        planner.insertMap(halt.coords, planner.to.coords, step);
+                        if (worlds[worldToLoad]["mapSupported"]) {
+                            // step.appendChild(planner.insertMap(halt.coords, planner.to.coords));
+                            planner.insertMap(halt.coords, planner.to.coords, step);
+                        }
                     }
                     outputField.appendChild(step);
                 }
@@ -744,8 +749,10 @@ var planner = {
             }
             stepinner += '.</div>';
             step.innerHTML += stepinner;
-            // step.appendChild(planner.insertMap(planner.from.coords, planner.to.coords));
-            planner.insertMap(planner.from.coords, planner.to.coords, step);
+            if (worlds[worldToLoad]["mapSupported"]) {
+                // step.appendChild(planner.insertMap(planner.from.coords, planner.to.coords));
+                planner.insertMap(planner.from.coords, planner.to.coords, step);
+            }
             outputField.appendChild(step);
 
             stepinner = "";
