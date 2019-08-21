@@ -5,6 +5,9 @@
         case "frn":
             $world = "Freeks Realm";
             break;
+        case "fro":
+            $world = "Freeks Realm [OUD]";
+            break;
         default:
             header("Location: ?w=frn");
             http_response_code(302);
@@ -35,7 +38,7 @@
     <body onload="startInit();">
         <div id="worldselector-outer">
             <select id="worldselector" title="Selecteer om een andere wereld te kiezen...">
-                <option selected disabled>Routeplanner voor <?PHP echo $world; ?></option>
+                <option selected disabled>Routeplanner <?PHP echo $world; ?></option>
                 <optgroup label="Of kies een andere wereld:" id="worldopts"></optgroup>
             </select><span id="fakedownarrow">&#x25BE;</span>
         </div>
