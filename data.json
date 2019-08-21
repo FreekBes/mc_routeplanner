@@ -393,63 +393,72 @@
             "closest_station": "Tcs",
             "has_station_with_same_name": true,
             "has_own_station": true,
-            "coords": null
+            "coords": null,
+            "builtBy": "Freek"
         },
         {
             "name": "Eikwoude",
             "closest_station": "Eik",
             "has_station_with_same_name": true,
             "has_own_station": true,
-            "coords": null
+            "coords": null,
+            "builtBy": null
         },
         {
             "name": "Village",
             "closest_station": "Vil",
             "has_station_with_same_name": true,
             "has_own_station": true,
-            "coords": [-232, 69, -228]
+            "coords": [-232, 69, -228],
+            "builtBy": null
         },
         {
             "name": "End Village",
             "closest_station": "End",
             "has_station_with_same_name": false,
             "has_own_station": true,
-            "coords": [-1111, 71, 171]
+            "coords": [-1111, 71, 171],
+            "builtBy": null
         },
         {
             "name": "Post Malone",
             "closest_station": "Pml",
             "has_station_with_same_name": true,
             "has_own_station": true,
-            "coords": [-195, 71, 2045]
+            "coords": [-195, 71, 2045],
+            "builtBy": "Jordy en Amaro"
         },
         {
             "name": "Heaven",
             "closest_station": "Hevn",
             "has_station_with_same_name": true,
             "has_own_station": true,
-            "coords": null
+            "coords": null,
+            "builtBy": "Maxime"
         },
         {
             "name": "Spookywooky",
             "closest_station": "Skwk",
             "has_station_with_same_name": true,
             "has_own_station": true,
-            "coords": [202, 66, -270]
+            "coords": [202, 66, -270],
+            "builtBy": "Lotti"
         },
         {
             "name": "Hoogvallei",
             "closest_station": "Hvl",
             "has_station_with_same_name": true,
             "has_own_station": true,
-            "coords": null
+            "coords": null,
+            "builtBy": "Onbekend"
         },
         {
             "name": "Hamsterdam",
             "closest_station": "Hms",
             "has_station_with_same_name": true,
             "has_own_station": true,
-            "coords": null
+            "coords": null,
+            "builtBy": "Freek"
         }
     ],
 
