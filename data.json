@@ -175,6 +175,18 @@
             "opened": 2019,
             "platforms": 1,
             "coords": [1026, 64, 1202]
+        },
+        {
+            "id": "Lvdp",
+            "name": "Lavadorp",
+            "location": "Lavadorp",
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-282, 69, -745]
         }
     ],
     "routes": [
@@ -222,7 +234,7 @@
                 {
                     "halt": "Skp",
                     "platform_forth": 2,
-                    "time_forth": 75,
+                    "time_forth": 48,
                     "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": false,
@@ -231,19 +243,19 @@
                 {
                     "halt": "Tcs",
                     "platform_forth": 5,
-                    "time_forth": 61,
+                    "time_forth": 42,
                     "warnings_forth": [],
                     "platform_back": 4,
-                    "time_back": 75,
+                    "time_back": 48,
                     "warnings_back": []
                 },
                 {
                     "halt": "Eik",
                     "platform_forth": 2,
-                    "time_forth": 49,
+                    "time_forth": 29,
                     "warnings_forth": [],
                     "platform_back": 1,
-                    "time_back": 61,
+                    "time_back": 42,
                     "warnings_back": []
                 },
                 {
@@ -252,7 +264,7 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 2,
-                    "time_back": 49,
+                    "time_back": 29,
                     "warnings_back": []
                 }
             ]
@@ -264,12 +276,21 @@
             "operator": "OSS",
             "halts": [
                 {
-                    "halt": "Vil",
+                    "halt": "Lvdp",
                     "platform_forth": 1,
-                    "time_forth": 67,
+                    "time_forth": 35,
                     "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vil",
+                    "platform_forth": 1,
+                    "time_forth": 43,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 35,
                     "warnings_back": []
                 },
                 {
@@ -278,13 +299,13 @@
                     "time_forth": 20,
                     "warnings_forth": [],
                     "platform_back": 3,
-                    "time_back": 67,
+                    "time_back": 43,
                     "warnings_back": []
                 },
                 {
                     "halt": "Tspz",
                     "platform_forth": 2,
-                    "time_forth": 120,
+                    "time_forth": 66,
                     "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 20,
@@ -293,10 +314,10 @@
                 {
                     "halt": "Hvl",
                     "platform_forth": 3,
-                    "time_forth": 108,
+                    "time_forth": 60,
                     "warnings_forth": ["skeletons"],
                     "platform_back": 4,
-                    "time_back": 140,
+                    "time_back": 66,
                     "warnings_back": []
                 },
                 {
@@ -305,7 +326,7 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 1,
-                    "time_back": 108,
+                    "time_back": 60,
                     "warnings_back": ["skeletons"]
                 }
             ]
@@ -319,7 +340,7 @@
                 {
                     "halt": "Skp",
                     "platform_forth": 3,
-                    "time_forth": 70,
+                    "time_forth": 43,
                     "warnings_forth": ["single_track"],
                     "platform_back": 3,
                     "time_back": false,
@@ -331,7 +352,7 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 1,
-                    "time_back": 70,
+                    "time_back": 43,
                     "warnings_back": ["single_track"]
                 }
             ]
@@ -345,7 +366,7 @@
                 {
                     "halt": "Hvl",
                     "platform_forth": 2,
-                    "time_forth": 104,
+                    "time_forth": 60,
                     "warnings_forth": ["single_track"],
                     "platform_back": 1,
                     "time_back": false,
@@ -354,10 +375,10 @@
                 {
                     "halt": "Edmr",
                     "platform_forth": 2,
-                    "time_forth": 50,
+                    "time_forth": 27,
                     "warnings_forth": ["single_track"],
                     "platform_back": 1,
-                    "time_back": 104,
+                    "time_back": 60,
                     "warnings_back": ["single_track"]
                 },
                 {
@@ -366,7 +387,7 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 1,
-                    "time_back": 50,
+                    "time_back": 27,
                     "warnings_back": ["single_track"]
                 }
             ]
@@ -380,7 +401,7 @@
                 {
                     "halt": "Vil",
                     "platform_forth": 3,
-                    "time_forth": 57,
+                    "time_forth": 35,
                     "warnings_forth": ["single_track"],
                     "platform_back": 4,
                     "time_back": false,
@@ -389,10 +410,10 @@
                 {
                     "halt": "Skwk",
                     "platform_forth": 1,
-                    "time_forth": 33,
+                    "time_forth": 26,
                     "warnings_forth": ["single_track"],
                     "platform_back": 2,
-                    "time_back": 57,
+                    "time_back": 35,
                     "warnings_back": ["single_track"]
                 },
                 {
@@ -401,7 +422,7 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 2,
-                    "time_back": 33,
+                    "time_back": 26,
                     "warnings_back": ["single_track"]
                 }
             ]
@@ -558,7 +579,7 @@
             "type": "terrain",
             "name": "Jungle",
             "location": null,
-            "closest_station": "Vil",
+            "closest_station": "Lvdp",
             "coords": [2962, 64, -3872]
         },
         {
