@@ -114,7 +114,7 @@
             "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 2,
+            "platforms": 3,
             "coords": [382, 79, -419]
         },
         {
@@ -187,6 +187,18 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-282, 69, -745]
+        },
+        {
+            "id": "Zbrg",
+            "name": "Zandbrug",
+            "location": "Zandbrug",
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [399, 72, -1176]
         }
     ],
     "routes": [
@@ -340,7 +352,7 @@
                 {
                     "halt": "Skp",
                     "platform_forth": 3,
-                    "time_forth": 43,
+                    "time_forth": 48,
                     "warnings_forth": ["single_track"],
                     "platform_back": 3,
                     "time_back": false,
@@ -349,11 +361,20 @@
                 {
                     "halt": "Hevn",
                     "platform_forth": 1,
+                    "time_forth": 58,
+                    "warnings_forth": ["single_track", "zombies"],
+                    "platform_back": 2,
+                    "time_back": 49,
+                    "warnings_back": ["single_track"]
+                },
+                {
+                    "halt": "Zbrg",
+                    "platform_forth": 1,
                     "time_forth": false,
                     "warnings_forth": [],
-                    "platform_back": 1,
-                    "time_back": 43,
-                    "warnings_back": ["single_track"]
+                    "platform_back": 2,
+                    "time_back": 59,
+                    "warnings_back": ["single_track", "zombies"]
                 }
             ]
         },
@@ -410,7 +431,7 @@
                 {
                     "halt": "Skwk",
                     "platform_forth": 1,
-                    "time_forth": 26,
+                    "time_forth": 25,
                     "warnings_forth": ["single_track"],
                     "platform_back": 2,
                     "time_back": 35,
@@ -418,11 +439,11 @@
                 },
                 {
                     "halt": "Hevn",
-                    "platform_forth": 2,
+                    "platform_forth": 3,
                     "time_forth": false,
                     "warnings_forth": [],
-                    "platform_back": 2,
-                    "time_back": 26,
+                    "platform_back": 3,
+                    "time_back": 25,
                     "warnings_back": ["single_track"]
                 }
             ]
@@ -505,6 +526,14 @@
         {
             "name": "Lavadorp",
             "closest_station": "Lvdp",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null,
+            "builtBy": null
+        },
+        {
+            "name": "Zandbrug",
+            "closest_station": "Zbrg",
             "has_station_with_same_name": true,
             "has_own_station": true,
             "coords": null,
