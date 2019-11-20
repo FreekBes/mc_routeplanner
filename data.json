@@ -253,7 +253,7 @@
                     "halt": "Eik",
                     "platform_forth": 2,
                     "time_forth": 29,
-                    "warnings_forth": [],
+                    "warnings_forth": ["zombies"],
                     "platform_back": 1,
                     "time_back": 42,
                     "warnings_back": []
@@ -265,7 +265,7 @@
                     "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": 29,
-                    "warnings_back": []
+                    "warnings_back": ["zombies"]
                 }
             ]
         },
@@ -501,6 +501,14 @@
             "has_own_station": true,
             "coords": null,
             "builtBy": "Freek"
+        },
+        {
+            "name": "Lavadorp",
+            "closest_station": "Lvdp",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null,
+            "builtBy": null
         }
     ],
 

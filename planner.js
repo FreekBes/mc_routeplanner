@@ -582,6 +582,9 @@ var planner = {
                         case "skeletons":
                             writtenWarnings.push("Op deze route kunnen veel skeletons voorkomen.");
                             break;
+                        case "zombies":
+                            writtenWarnings.push("Op deze route kunnen veel zombies voorkomen.");
+                            break;
                         case "shared_platform":
                             writtenWarnings.push("Deze route gaat langs een gedeeld perron.");
                             break;
