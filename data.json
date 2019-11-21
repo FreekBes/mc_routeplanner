@@ -190,15 +190,39 @@
         },
         {
             "id": "Zbrg",
-            "name": "Zandbrug",
-            "location": "Zandbrug",
-            "former_name": null,
+            "name": "Zandberg",
+            "location": "Zandberg",
+            "former_name": "Zandbrug",
             "building": true,
             "roofed": false,
             "underground": false,
             "opened": 2019,
             "platforms": 2,
             "coords": [399, 72, -1176]
+        },
+        {
+            "id": "Tbrg",
+            "name": "Taigaberg",
+            "location": null,
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2019,
+            "platforms": 4,
+            "coords": [401, 72, -2300]
+        },
+        {
+            "id": "Mlnb",
+            "name": "Meloenbeek",
+            "location": "Meloenbeek",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-2528, 72, 159]
         }
     ],
     "routes": [
@@ -273,10 +297,19 @@
                 {
                     "halt": "End",
                     "platform_forth": 1,
-                    "time_forth": false,
-                    "warnings_forth": [],
+                    "time_forth": 97,
+                    "warnings_forth": ["zombies"],
                     "platform_back": 2,
                     "time_back": 29,
+                    "warnings_back": ["zombies"]
+                },
+                {
+                    "halt": "Mlnb",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 97,
                     "warnings_back": ["zombies"]
                 }
             ]
@@ -370,10 +403,19 @@
                 {
                     "halt": "Zbrg",
                     "platform_forth": 1,
-                    "time_forth": false,
-                    "warnings_forth": [],
+                    "time_forth": 86,
+                    "warnings_forth": ["single_track", "zombies"],
                     "platform_back": 2,
                     "time_back": 59,
+                    "warnings_back": ["single_track", "zombies"]
+                },
+                {
+                    "halt": "Tbrg",
+                    "platform_forth": 4,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 4,
+                    "time_back": 86,
                     "warnings_back": ["single_track", "zombies"]
                 }
             ]
@@ -532,8 +574,16 @@
             "builtBy": null
         },
         {
-            "name": "Zandbrug",
+            "name": "Zandberg",
             "closest_station": "Zbrg",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null,
+            "builtBy": null
+        },
+        {
+            "name": "Meloenbeek",
+            "closest_station": "Mlnb",
             "has_station_with_same_name": true,
             "has_own_station": true,
             "coords": null,
