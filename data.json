@@ -724,6 +724,20 @@
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-268, 64, 123]
+        },
+        {
+            "type": "shop",
+            "name": "Houthandel Grooteboom",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-296, 66, 109]
+        },
+        {
+            "type": "shop",
+            "name": "Steenhandel Keigoed",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-284, 66, 106]
         }
     ]
 }
