@@ -738,6 +738,20 @@
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-284, 66, 106]
+        },
+        {
+            "type": "shop",
+            "name": "Natuurwinkel Groen Gras",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-271, 64, 130]
+        },
+        {
+            "type": "shop",
+            "name": "Muziekwinkel SquareSound",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-281, 66, 77]
         }
     ]
 }
