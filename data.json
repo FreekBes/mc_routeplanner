@@ -752,6 +752,13 @@
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-281, 66, 77]
+        },
+        {
+            "type": "shop",
+            "name": "Dyewinkel De Axolotl",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-229, 66, 128]
         }
     ]
 }
