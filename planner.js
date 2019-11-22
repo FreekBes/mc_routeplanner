@@ -154,6 +154,9 @@ var planner = {
                     case 'community_building':
                         bhtml += '<img src="icons/bed.png" alt="Communityhuis" />';
                         break;
+                    case 'bank':
+                        bhtml += '<img src="icons/bank.png" alt="Bank />';
+                        break;
                     case 'home':
                         bhtml += '<img src="icons/home.png" alt="Huis" />';
                         break;
@@ -218,6 +221,9 @@ var planner = {
                         break;
                     case 'community_building':
                         bhtml += 'Communityhuis';
+                        break;
+                    case 'bank':
+                        bhtml += 'Bank';
                         break;
                     case 'castle':
                         bhtml += 'Kasteel';
