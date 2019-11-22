@@ -717,6 +717,13 @@
             "location": null,
             "closest_station": "Skp",
             "coords": [279, 70, 584]
+        },
+        {
+            "type": "bank",
+            "name": "Bank Torenburg",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-268, 64, 123]
         }
     ]
 }

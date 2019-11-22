@@ -155,7 +155,7 @@ var planner = {
                         bhtml += '<img src="icons/bed.png" alt="Communityhuis" />';
                         break;
                     case 'bank':
-                        bhtml += '<img src="icons/bank.png" alt="Bank />';
+                        bhtml += '<img src="icons/bank.png" alt="Bank" />';
                         break;
                     case 'home':
                         bhtml += '<img src="icons/home.png" alt="Huis" />';
