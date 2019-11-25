@@ -223,6 +223,18 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-2528, 72, 159]
+        },
+        {
+            "id": "Min",
+            "name": "Mina's Dorp",
+            "location": "Mina's Dorp",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 4,
+            "coords": [-2698, 65, 350]
         }
     ],
     "routes": [
@@ -306,11 +318,20 @@
                 {
                     "halt": "Mlnb",
                     "platform_forth": 2,
-                    "time_forth": false,
+                    "time_forth": 30,
                     "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 97,
                     "warnings_back": ["zombies"]
+                },
+                {
+                    "halt": "Min",
+                    "platform_forth": 3,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 30,
+                    "warnings_back": []
                 }
             ]
         },
@@ -588,6 +609,14 @@
             "has_own_station": true,
             "coords": null,
             "builtBy": null
+        },
+        {
+            "name": "Mina's Dorp",
+            "closest_station": "Min",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null,
+            "builtBy": "Mina"
         }
     ],
 
