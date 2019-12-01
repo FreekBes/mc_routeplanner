@@ -235,6 +235,18 @@
             "opened": 2019,
             "platforms": 4,
             "coords": [-2698, 65, 350]
+        },
+        {
+            "id": "Shvn",
+            "name": "Sneeuwhaven",
+            "location": "Sneeuwhaven",
+            "former_name": "Taigahaven",
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-152, 72, 2392]
         }
     ],
     "routes": [
@@ -389,10 +401,19 @@
                 {
                     "halt": "Pml",
                     "platform_forth": 2,
+                    "time_forth": 26,
+                    "warnings_forth": ["skeletons"],
+                    "platform_back": 1,
+                    "time_back": 60,
+                    "warnings_back": ["skeletons"]
+                },
+                {
+                    "halt": "Shvn",
+                    "platform_forth": 2,
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 1,
-                    "time_back": 60,
+                    "time_back": 26,
                     "warnings_back": ["skeletons"]
                 }
             ]
@@ -617,6 +638,14 @@
             "has_own_station": true,
             "coords": null,
             "builtBy": "Mina"
+        },
+        {
+            "name": "Sneeuwhaven",
+            "closest_station": "Shvn",
+            "has_station_with_same_name": true,
+            "has_own_station": true,
+            "coords": null,
+            "builtBy": "Freek"
         }
     ],
 
