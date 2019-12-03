@@ -247,6 +247,18 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-152, 72, 2392]
+        },
+        {
+            "id": "Tlsf",
+            "name": "Torenburg Lasagnafarm",
+            "location": "Torenburg",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-452, 66, 159]
         }
     ],
     "routes": [
@@ -303,10 +315,19 @@
                 {
                     "halt": "Tcs",
                     "platform_forth": 5,
-                    "time_forth": 42,
+                    "time_forth": 31,
                     "warnings_forth": [],
                     "platform_back": 4,
                     "time_back": 48,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Tlsf",
+                    "platform_forth": 1,
+                    "time_forth": 21,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 31,
                     "warnings_back": []
                 },
                 {
@@ -315,7 +336,7 @@
                     "time_forth": 29,
                     "warnings_forth": ["zombies"],
                     "platform_back": 1,
-                    "time_back": 42,
+                    "time_back": 21,
                     "warnings_back": []
                 },
                 {
@@ -668,8 +689,8 @@
             "type": "farm",
             "name": "Lasagnafarm",
             "location": "Torenburg",
-            "closest_station": "Tcs",
-            "coords": [-309, 66, 111]
+            "closest_station": "Tlsf",
+            "coords": [-394, 64, 115]
         },
         {
             "type": "mine",
