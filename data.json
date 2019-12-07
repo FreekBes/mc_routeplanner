@@ -138,7 +138,7 @@
             "underground": false,
             "opened": 2019,
             "platforms": 4,
-            "coords": [-265, 71, 307]
+            "coords": [-265, 71, -307]
         },
         {
             "id": "Hvl",
@@ -259,6 +259,18 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-452, 66, 159]
+        },
+        {
+            "id": "Adw",
+            "name": "Adliswil",
+            "location": "Adliswil",
+            "former_name": "Luke's Dorp",
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-283, 69, -1332]
         }
     ],
     "routes": [
@@ -375,12 +387,21 @@
             "operator": "OSS",
             "halts": [
                 {
+                    "halt": "Adw",
+                    "platform_forth": 2,
+                    "time_forth": 45,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
                     "halt": "Lvdp",
                     "platform_forth": 1,
                     "time_forth": 35,
                     "warnings_forth": [],
                     "platform_back": 2,
-                    "time_back": false,
+                    "time_back": 45,
                     "warnings_back": []
                 },
                 {
@@ -667,6 +688,14 @@
             "has_own_station": true,
             "coords": null,
             "builtBy": "Freek"
+        },
+        {
+            "name": "Adliswil",
+            "closest_station": "Adw",
+            "has_station_with_same_name": false,
+            "has_own_station": false,
+            "coords": [-480, 39, -1334],
+            "builtBy": "Luke"
         }
     ],
 
