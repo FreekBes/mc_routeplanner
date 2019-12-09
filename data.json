@@ -34,16 +34,28 @@
             "coords": [-241, 68, 24]
         },
         {
-            "id": "Tspz",
-            "name": "Torenburg Spoorzijde",
+            "id": "Tzui",
+            "name": "Torenburg Zuid",
             "location": "Torenburg",
-            "former_name": null,
+            "former_name": "Torenburg Spoorzijde",
             "building": true,
             "roofed": true,
             "underground": false,
             "opened": 2019,
             "platforms": 2,
             "coords": [-164, 72, 244]
+        },
+        {
+            "id": "Tnrd",
+            "name": "Torenburg Noord",
+            "location": "Torenburg",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [-274, 67, -14]
         },
         {
             "id": "Spn",
@@ -112,7 +124,7 @@
             "former_name": null,
             "building": false,
             "roofed": true,
-            "underground": false,
+            "underground": true,
             "opened": 2019,
             "platforms": 3,
             "coords": [382, 79, -419]
@@ -124,6 +136,7 @@
             "former_name": null,
             "building": false,
             "roofed": false,
+            "underground": false,
             "opened": 2019,
             "platforms": 2,
             "coords": [182, 67, -326]
@@ -407,10 +420,19 @@
                 {
                     "halt": "Vil",
                     "platform_forth": 1,
-                    "time_forth": 43,
+                    "time_forth": 29,
                     "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": 35,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Tnrd",
+                    "platform_forth": 1,
+                    "time_forth": 27,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 29,
                     "warnings_back": []
                 },
                 {
@@ -419,11 +441,11 @@
                     "time_forth": 20,
                     "warnings_forth": [],
                     "platform_back": 3,
-                    "time_back": 43,
+                    "time_back": 27,
                     "warnings_back": []
                 },
                 {
-                    "halt": "Tspz",
+                    "halt": "Tzui",
                     "platform_forth": 2,
                     "time_forth": 66,
                     "warnings_forth": [],
@@ -693,7 +715,7 @@
             "name": "Adliswil",
             "closest_station": "Adw",
             "has_station_with_same_name": false,
-            "has_own_station": false,
+            "has_own_station": true,
             "coords": [-480, 39, -1334],
             "builtBy": "Luke"
         }
