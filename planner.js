@@ -187,6 +187,12 @@ var planner = {
                     case "mine":
                         bhtml += '<img src="icons/mine.png" alt="Mijn" />';
                         break;
+                    case "art":
+                        bhtml += '<img src="icons/place.png" alt="Kunstwerk" />';
+                        break;
+                    case "enchanting_table":
+                        bhtml += '<img src="icons/place.png" alt="Enchanting Table" />';
+                        break;
                     default:
                         bhtml += '<img src="icons/place.png" alt="Overig" />';
                         break;
@@ -242,7 +248,7 @@ var planner = {
                         break;
                     case 'shop':
                         bhtml += 'Winkel';
-                        break; 
+                        break;
                     case 'food':
                         bhtml += 'Eten';
                         break; 
@@ -257,6 +263,12 @@ var planner = {
                         break;
                     case "mine":
                         bhtml += "Mijn";
+                        break;
+                    case "art":
+                        bhtml += "Kunstwerk";
+                        break;
+                    case "enchanting_table":
+                        bhtml += "Enchanting Table";
                         break;
                     default:
                         bhtml += 'Overig';

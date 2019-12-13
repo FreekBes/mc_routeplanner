@@ -773,14 +773,14 @@
         },
         {
             "type": "nether_portal",
-            "name": "Nether Portal",
+            "name": "Netherzaal",
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-268, 66, 103]
         },
         {
-            "type": "other",
-            "name": "Enchanting Table",
+            "type": "enchanting_table",
+            "name": "Enchantingzaal",
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-247, 66, 103]
@@ -889,6 +889,27 @@
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-229, 66, 128]
+        },
+        {
+            "type": "community_building",
+            "name": "Dokhuis",
+            "location": "Torenburg",
+            "closest_station": "Tnrd",
+            "coords": [-293, 64, -19]
+        },
+        {
+            "type": "viewpoint",
+            "name": "Keepleintorens",
+            "location": "Torenburg",
+            "closest_station": "Tnrd",
+            "coords": [-318, 64, 13]
+        },
+        {
+            "type": "art",
+            "name": "Keemonument",
+            "location": "Torenburg",
+            "closest_station": "Tnrd",
+            "coords": [-305, 64, 18]
         }
     ]
 }
