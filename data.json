@@ -891,7 +891,7 @@
             "coords": [-229, 66, 128]
         },
         {
-            "type": "community_building",
+            "type": "other",
             "name": "Dokhuis",
             "location": "Torenburg",
             "closest_station": "Tnrd",
@@ -910,6 +910,20 @@
             "location": "Torenburg",
             "closest_station": "Tnrd",
             "coords": [-305, 64, 18]
+        },
+        {
+            "type": "bank",
+            "name": "Bank Adliswil",
+            "location": "Adliswil",
+            "closest_station": "Adw",
+            "coords": [-469, 69, -1352]
+        },
+        {
+            "type": "shop",
+            "name": "Terracottawinkel Kleurige Steen",
+            "location": "Adliswil",
+            "closest_station": "Adw",
+            "coords": [-472, 69, -1355]
         }
     ]
 }
