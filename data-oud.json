@@ -643,6 +643,7 @@
 
     "pois": [
         {
+            "id": "1ec30122",
             "type": "end_portal",
             "name": "End Portal",
             "location": "End Village",
@@ -650,6 +651,7 @@
             "coords": [-852, 73, -362]
         },
         {
+            "id": "4e78e6fb",
             "type": "nether_portal",
             "name": "Nether Shrine",
             "location": "Kerkbrugge",
@@ -657,6 +659,7 @@
             "coords": [-54, 69, 17]
         },
 		{
+            "id": "f40fed55",
             "type": "spawn",
             "name": "Spawn",
             "location": "Kerkbrugge",
@@ -664,6 +667,7 @@
             "coords": [28, 68, 33]
         },
         {
+            "id": "fc4237ee",
             "type": "farm",
             "name": "Lasagnafarm",
             "location": "Kerkbrugge",
@@ -671,6 +675,7 @@
             "coords": [82, 67, 20]
         },
 		{
+            "id": "dfd5999c",
             "type": "farm",
             "name": "Wheatfarm",
             "location": "Kerkbrugge",
@@ -678,6 +683,7 @@
             "coords": [69, 66, -93]
         },
         {
+            "id": "a9bd8c93",
             "type": "farm",
             "name": "Beesten",
             "location": "Kerkbrugge",
@@ -685,6 +691,7 @@
             "coords": [-39, 68, -56]
         },
         {
+            "id": "30b0480f",
             "type": "farm",
             "name": "Kassen",
             "location": "Spitsbergen",
@@ -692,6 +699,7 @@
             "coords": [-4432, 67, 1000]
         },
         {
+            "id": "38682e59",
             "type": "farm",
             "name": "Amaro's Wortelfarm",
             "location": "Hamsterdijk",
@@ -699,6 +707,7 @@
             "coords": [0, 73, 433]
         },
         {
+            "id": "1eb41951",
             "type": "farm",
             "name": "Boerderij",
             "location": "Rivierdam",
@@ -706,6 +715,7 @@
             "coords": [-546, 64, 840]
         },
         {
+            "id": "7a57f3a6",
             "type": "other",
             "name": "Stadhuis",
             "location": "Kerkbrugge",
@@ -713,6 +723,7 @@
             "coords": [-22, 71, 0]
         },
         {
+            "id": "0a70dbe2",
             "type": "community_building",
             "name": "Communityhuis Kerkbrugge",
             "location": "Kerkbrugge",
@@ -720,6 +731,7 @@
             "coords": [38, 67, 26]
         },
         {
+            "id": "17be5ea3",
             "type": "community_building",
             "name": "Communityhuis Spitsbergen",
             "location": "Spitsbergen",
@@ -727,6 +739,7 @@
             "coords": [-4382, 70, 957]
         },
         {
+            "id": "6f99f19b",
             "type": "community_building",
             "name": "Houthakkershutje",
             "location": "Kerkbrugge",
@@ -734,6 +747,7 @@
             "coords": [-15, 72, 173]
         },
         {
+            "id": "bc2da85e",
             "type": "church",
             "name": "Kerk van Notch",
             "location": "Kerkbrugge",
@@ -741,6 +755,7 @@
             "coords": [17, 68, 20]
         },
         {
+            "id": "303496e4",
             "type": "food",
             "name": "Café voor Pampus",
             "location": "Kerkbrugge",
@@ -748,6 +763,7 @@
             "coords": [-28, 69, 20]
         },
         {
+            "id": "c2523f3a",
             "type": "food",
             "name": "Etenopslag",
             "location": "Kerkbrugge",
@@ -755,6 +771,7 @@
             "coords": [57, 67, 20]
         },
         {
+            "id": "ece680d3",
             "type": "food",
             "name": "Gratis kip & veren",
             "location": "Kerkbrugge",
@@ -762,6 +779,7 @@
             "coords": [99, 67, 20]
         },
         {
+            "id": "4986dc30",
             "type": "shop",
             "name": "Bakkerij Lekker Brood",
             "location": "Kerkbrugge",
@@ -769,6 +787,7 @@
             "coords": [66, 67, 20]
         },
         {
+            "id": "01ad2fc1",
             "type": "shop",
             "name": "Amaro's Illegale Praktijken & co.",
             "location": "Kerkbrugge",
@@ -776,6 +795,7 @@
             "coords": [47, 67, 20]
         },
         {
+            "id": "5a58941b",
             "type": "stable",
             "name": "Grote Paardenstal",
             "location": "Kerkbrugge",
@@ -783,6 +803,7 @@
             "coords": [-49, 70, 59]
         },
         {
+            "id": "f396caf1",
             "type": "stable",
             "name": "Kleine Paardenstal",
             "location": "Kerkbrugge",
@@ -790,6 +811,7 @@
             "coords": [52, 67, 20]
         },
         {
+            "id": "b5e0b41d",
             "type": "stable",
             "name": "Paardenstal",
             "location": "Rivierdam",
@@ -797,6 +819,7 @@
             "coords": [-560, 64, 866]
         },
         {
+            "id": "f4a5521d",
             "type": "castle",
             "name": "Kasteel Pierrefonds",
             "location": "Pierrefonds",
@@ -804,6 +827,7 @@
             "coords": [-1107, 79, 1023]
         },
         {
+            "id": "f5bd8f5f",
             "type": "castle",
             "name": "Slot Hamstervania",
             "location": "Hamstervania",
@@ -811,6 +835,7 @@
             "coords": [-1924, 79, 1030]
         },
         {
+            "id": "84955268",
             "type": "viewpoint",
             "name": "Klokkentoren",
             "location": "Kerkbrugge",
@@ -818,6 +843,7 @@
             "coords": [108, 67, -13]
         },
         {
+            "id": "f00f4097",
             "type": "viewpoint",
             "name": "Verdedigingstoren",
             "location": "Kerkbrugge",
@@ -825,6 +851,7 @@
             "coords": [85, 67, -37]
         },
         {
+            "id": "6afd15f8",
             "type": "viewpoint",
             "name": "Uitkijktoren",
             "location": "Kerkbrugge",
@@ -832,6 +859,7 @@
             "coords": [-38, 70, 61]
         },
         {
+            "id": "fc27c8a6",
             "type": "viewpoint",
             "name": "Stationstoren",
             "location": "Kerkbrugge",
@@ -839,6 +867,7 @@
             "coords": [29, 68, -55]
         },
         {
+            "id": "fddbf202",
             "type": "viewpoint",
             "name": "Uitkijktoren",
             "location": "Hamsterdijk",
@@ -846,6 +875,7 @@
             "coords": [0, 73, 433]
         },
         {
+            "id": "85ecde91",
             "type": "gate",
             "name": "Toegangspoort",
             "location": "Rivierdam",
@@ -853,6 +883,7 @@
             "coords": [-530, 64, 865]
         },
         {
+            "id": "6afb78ab",
             "type": "gate",
             "name": "Bospoort",
             "location": "Kerkbrugge",
@@ -860,6 +891,7 @@
             "coords": [37, 68, 81]
         },
         {
+            "id": "b1c64b51",
             "type": "gate",
             "name": "Paardenpoort",
             "location": "Kerkbrugge",
@@ -867,6 +899,7 @@
             "coords": [-39, 70, 81]
         },
         {
+            "id": "229c93a6",
             "type": "gate",
             "name": "Steigerpoort",
             "location": "Kerkbrugge",
@@ -874,6 +907,7 @@
             "coords": [-74, 69, 19]
         },
         {
+            "id": "7b153602",
             "type": "gate",
             "name": "Mesapoort",
             "location": "Kerkbrugge",
@@ -881,6 +915,7 @@
             "coords": [-74, 67, -56]
         },
         {
+            "id": "5bcb7040",
             "type": "gate",
             "name": "Scheve Poort",
             "location": "Kerkbrugge",
@@ -888,6 +923,7 @@
             "coords": [37, 68, -69]
         },
         {
+            "id": "e674e2d7",
             "type": "gate",
             "name": "Kanaalpoort",
             "location": "Kerkbrugge",
@@ -895,6 +931,7 @@
             "coords": [113, 67, -31]
         },
         {
+            "id": "8932cd1f",
             "type": "terrain",
             "name": "Mesa",
             "location": "",
@@ -902,6 +939,7 @@
             "coords": [-1, 70, -1456]
         },
         {
+            "id": "40e15f58",
             "type": "terrain",
             "name": "Savanne",
             "location": "",
@@ -909,6 +947,7 @@
             "coords": [-24, 64, 947]
         },
         {
+            "id": "315d6fe3",
             "type": "other",
             "name": "Leila's Shack",
             "location": "",
@@ -916,6 +955,7 @@
             "coords": [1720, 72, -2424]
         },
         {
+            "id": "ad3f1b41",
             "type": "other",
             "name": "Mission: Fail Mining Shelter",
             "location": "Kerkbrugge",
@@ -923,6 +963,7 @@
             "coords": [11, 63, 7]
         },
         {
+            "id": "837adb92",
             "type": "other",
             "name": "Muurtunnel",
             "location": "Kerkbrugge",
@@ -930,6 +971,7 @@
             "coords": [-57, 70, 50]
         },
         {
+            "id": "4f90ae84",
             "type": "other",
             "name": "BegrAFKplaats",
             "location": "Kerkbrugge",

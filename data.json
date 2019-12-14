@@ -723,6 +723,7 @@
 
     "pois": [
 		{
+            "id": "0df703e9",
             "type": "spawn",
             "name": "World Spawn",
             "location": null,
@@ -730,6 +731,7 @@
             "coords": [1, 64, -16]
         },
         {
+            "id": "92ec589c",
             "type": "farm",
             "name": "Kleine Wheatfarm",
             "location": "Torenburg",
@@ -737,6 +739,7 @@
             "coords": [-250, 70, 22]
         },
         {
+            "id": "2fe037cb",
             "type": "farm",
             "name": "Lasagnafarm",
             "location": "Torenburg",
@@ -744,6 +747,7 @@
             "coords": [-394, 64, 115]
         },
         {
+            "id": "d6441a81",
             "type": "mine",
             "name": "Dalmijn",
             "location": "Torenburg",
@@ -751,6 +755,7 @@
             "coords": [-256, 70, 33]
         },
         {
+            "id": "6326314a",
             "type": "shop",
             "name": "Torenburger Markt",
             "location": "Torenburg",
@@ -758,6 +763,7 @@
             "coords": [-255, 64, 119]
         },
         {
+            "id": "84de6367",
             "type": "town_hall",
             "name": "Stadhuis",
             "location": "Torenburg",
@@ -765,6 +771,7 @@
             "coords": [-257, 66, 108]
         },
         {
+            "id": "0f7c1f11",
             "type": "castle",
             "name": "Stronghold",
             "location": "End Village",
@@ -772,6 +779,7 @@
             "coords": [-1134, 70, 167]
         },
         {
+            "id": "4e33ed4f",
             "type": "nether_portal",
             "name": "Netherzaal",
             "location": "Torenburg",
@@ -779,6 +787,7 @@
             "coords": [-268, 66, 103]
         },
         {
+            "id": "fd8d43f6",
             "type": "enchanting_table",
             "name": "Enchantingzaal",
             "location": "Torenburg",
@@ -786,6 +795,7 @@
             "coords": [-247, 66, 103]
         },
         {
+            "id": "cad16064",
             "type": "stable",
             "name": "Paardenstal",
             "location": "Torenburg",
@@ -793,6 +803,7 @@
             "coords": [-293, 66, 130]
         },
         {
+            "id": "013224e0",
             "type": "terrain",
             "name": "Jungle",
             "location": null,
@@ -800,6 +811,7 @@
             "coords": [2962, 64, -3872]
         },
         {
+            "id": "607beb8e",
             "type": "end_portal",
             "name": "End Portal",
             "location": "End Village",
@@ -807,6 +819,7 @@
             "coords": [-1134, 70, 167]
         },
         {
+            "id": "8848ec69",
             "type": "farm",
             "name": "Schapenfarm",
             "location": "Heaven",
@@ -814,6 +827,7 @@
             "coords": [408, 90, -452]
         },
         {
+            "id": "42609829",
             "type": "food",
             "name": "Bakkerij Lekker Brood",
             "location": "Torenburg",
@@ -821,6 +835,7 @@
             "coords": [-303, 64, 91]
         },
         {
+            "id": "c18a0082",
             "type": "terrain",
             "name": "Ice Peaks",
             "location": null,
@@ -828,6 +843,7 @@
             "coords": [236, 80, 2099]
         },
         {
+            "id": "73fa4583",
             "type": "nether_portal",
             "name": "Nether Portal",
             "location": "Post Malone",
@@ -835,6 +851,7 @@
             "coords": [-181, 70, 2114]
         },
         {
+            "id": "7a15c9fc",
             "type": "mine",
             "name": "Mijn",
             "location": "Post Malone",
@@ -842,6 +859,7 @@
             "coords": [-168, 70, 2098]
         },
         {
+            "id": "33df675d",
             "type": "viewpoint",
             "name": "Illager Outpost",
             "location": null,
@@ -849,6 +867,7 @@
             "coords": [279, 70, 584]
         },
         {
+            "id": "701ab596",
             "type": "bank",
             "name": "Bank Torenburg",
             "location": "Torenburg",
@@ -856,6 +875,7 @@
             "coords": [-268, 64, 123]
         },
         {
+            "id": "a6173c27",
             "type": "shop",
             "name": "Houthandel Grooteboom",
             "location": "Torenburg",
@@ -863,6 +883,7 @@
             "coords": [-296, 66, 109]
         },
         {
+            "id": "52b4bcaa",
             "type": "shop",
             "name": "Steenhandel Keigoed",
             "location": "Torenburg",
@@ -870,6 +891,7 @@
             "coords": [-284, 66, 106]
         },
         {
+            "id": "beb1ebec",
             "type": "shop",
             "name": "Natuurwinkel Groen Gras",
             "location": "Torenburg",
@@ -877,6 +899,7 @@
             "coords": [-271, 64, 130]
         },
         {
+            "id": "096113b4",
             "type": "shop",
             "name": "Muziekwinkel SquareSound",
             "location": "Torenburg",
@@ -884,6 +907,7 @@
             "coords": [-281, 66, 77]
         },
         {
+            "id": "d61b5eb4",
             "type": "shop",
             "name": "Dyewinkel De Axolotl",
             "location": "Torenburg",
@@ -891,6 +915,7 @@
             "coords": [-229, 66, 128]
         },
         {
+            "id": "f6c106cf",
             "type": "other",
             "name": "Dokhuis",
             "location": "Torenburg",
@@ -898,6 +923,7 @@
             "coords": [-293, 64, -19]
         },
         {
+            "id": "3cf9a5f9",
             "type": "viewpoint",
             "name": "Keepleintorens",
             "location": "Torenburg",
@@ -905,6 +931,7 @@
             "coords": [-318, 64, 13]
         },
         {
+            "id": "88df6169",
             "type": "art",
             "name": "Keemonument",
             "location": "Torenburg",
@@ -912,6 +939,7 @@
             "coords": [-305, 64, 18]
         },
         {
+            "id": "cae0c5ab",
             "type": "bank",
             "name": "Bank Adliswil",
             "location": "Adliswil",
@@ -919,6 +947,7 @@
             "coords": [-469, 69, -1352]
         },
         {
+            "id": "e6563235",
             "type": "shop",
             "name": "Terracottawinkel Kleurige Steen",
             "location": "Adliswil",
