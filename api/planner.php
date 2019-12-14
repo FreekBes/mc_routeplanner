@@ -72,5 +72,6 @@
         }
     }
 
-    returnData("A", $graph->get_nodes())
+    // returnData("A", $graph->get_nodes());
+    returnData("A", $graph->calculate("Tcs"));
 ?>
