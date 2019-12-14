@@ -45,18 +45,6 @@
                 <optgroup label="Of kies een andere wereld:" id="worldopts"></optgroup>
             </select><span id="fakedownarrow">&#x25BE;</span>
         </div>
-        <script>
-            document.getElementById("worldselector").addEventListener("change", function(event) {
-                document.location.href = "?w=" + event.target.value;
-            });
-            var worldOpts = document.getElementById("worldopts");
-            for (var i = 0; i < possibleWorlds.length; i++) {
-                var worldOpt = document.createElement("option");
-                worldOpt.setAttribute("value", possibleWorlds[i]);
-                worldOpt.innerHTML = worlds[possibleWorlds[i]].name;
-                worldOpts.appendChild(worldOpt);
-            }
-        </script>
         <form id="routeform">
             <table>
                 <tr>

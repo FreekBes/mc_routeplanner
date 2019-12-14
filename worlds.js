@@ -1,30 +1,27 @@
-var worlds = {
-    frn: {
-        name: "Freeks Realm (2019 Reset)",
-        displayName: "Freeks Realm",
-        data: "data.json",
-        mapSupported: true
-    },
-    fro: {
-        name: "Freeks Realm (2015-2019)",
-        displayName: "Freeks Realm [OUD]",
-        data: "data-oud.json",
-        mapSupported: false
-    },
-    blr: {
-        name: "BLR Server (2013-2017)",
-        displayName: "BLR Server",
-        data: "data-blr.json",
-        mapSupported: false
-    }
-};
+var worlds = null;
 
-var possibleWorlds = Object.keys(worlds);
+var possibleWorlds = null;
 var worldToLoad = null;
 function startInit() {
-    worldToLoad = getParameterByName("w");
-    if (worldToLoad == undefined || worldToLoad == null || possibleWorlds.indexOf(worldToLoad) < 0) {
-        worldToLoad = "frn";
-    }
-    planner.init(worldToLoad);
+    $.getJSON("worlds.json", {noCache: Math.random()} )
+        .done(function(json) {
+            worlds = json;
+            possibleWorlds = Object.keys(worlds);
+            worldToLoad = getParameterByName("w");
+            if (worldToLoad == undefined || worldToLoad == null || possibleWorlds.indexOf(worldToLoad) < 0) {
+                worldToLoad = "frn";
+            }
+            planner.init(worldToLoad);
+
+            document.getElementById("worldselector").addEventListener("change", function(event) {
+                document.location.href = "?w=" + event.target.value;
+            });
+            var worldOpts = document.getElementById("worldopts");
+            for (var i = 0; i < possibleWorlds.length; i++) {
+                var worldOpt = document.createElement("option");
+                worldOpt.setAttribute("value", possibleWorlds[i]);
+                worldOpt.innerHTML = worlds[possibleWorlds[i]].name;
+                worldOpts.appendChild(worldOpt);
+            }
+        });
 }
