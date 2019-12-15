@@ -2264,6 +2264,7 @@
 
     "pois": [
         {
+            "id": "d8c24b45",
             "type": "spawn",
             "name": "World Spawn",
             "location": "Walbrugge",
