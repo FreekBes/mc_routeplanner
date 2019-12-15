@@ -201,7 +201,9 @@ var planner = {
         b.setAttribute("class", "timeline-station"+(transfer ? ' transfer' : '')+(start ? ' start' : '')+(end ? ' end' : ''));
         var bhtml = "";
 
-        bhtml += '<div class="timeline-station-time">'+planner.formatSeconds(time)+'</div>';
+        var date = new Date();
+        date.setSeconds(date.getSeconds() + time);
+        bhtml += '<div class="timeline-station-time">'+date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})+'</div>';
         bhtml += '<div class="timeline-station-icon"></div>';
         bhtml += '<div class="timeline-station-name">'+name+'</div>';
         if (platform != undefined && platform != null && platform > 0) {
