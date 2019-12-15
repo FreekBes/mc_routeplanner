@@ -28,7 +28,7 @@
         <script src="jquery.min.js"></script>
         <script><?PHP echo readfile("useful.js"); ?></script>
         <script><?PHP echo readfile("worlds.js"); ?></script>
-        <script><?PHP echo readfile("planner.js"); ?></script>
+        <script><?PHP echo readfile("plannerbeta.js"); ?></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link rel="icon" type="image/ico" href="favicon.ico" />

@@ -11,7 +11,10 @@ function startInit() {
             if (worldToLoad == undefined || worldToLoad == null || possibleWorlds.indexOf(worldToLoad) < 0) {
                 worldToLoad = "frn";
             }
-            planner.init(worldToLoad);
+            document.title = "Routeplanner voor " + worlds[worldToLoad].displayName;
+            if (typeof planner != "undefined") {
+                planner.init(worldToLoad);
+            }
 
             document.getElementById("worldselector").addEventListener("change", function(event) {
                 document.location.href = "?w=" + event.target.value;

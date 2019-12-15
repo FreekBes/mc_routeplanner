@@ -1,5 +1,5 @@
 <?PHP
-    error_reporting(E_ALL); ini_set('display_errors', 1);
+    // error_reporting(E_ALL); ini_set('display_errors', 1);
 
     header('Content-Type: text/html; charset=utf-8');
 	header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
@@ -42,17 +42,8 @@
     }
 
     require_once("import/DijkstraF.php");
-    $worlds = json_decode(file_get_contents("../worlds.json"), true);
-
-    // initialize world data
-    if (isset($_GET["w"]) && array_key_exists($_GET["w"], $worlds)) {
-        $w = $_GET["w"];
-    }
-    else {
-        $w = "frn";
-    }
-    $world = $worlds[$w];
-    $worldData = json_decode(file_get_contents("../".$world["data"]), true);
+    require_once("import/worlds.php");
+    require_once("import/items.php");
 
     // initialize routes
     $graph = new Graph();
@@ -76,11 +67,24 @@
         try {
             if (isset($_GET["to"])) {
                 $route = $graph->calculate($_GET["from"], $_GET["to"]);
-                returnData("Route from ".$_GET["from"]." to ".$_GET["to"]." retrieved", $route);
+                $stuff = array();
+                $stuff["route"] = $route;
+                $stuff["items"] = array();
+                foreach($route->halts as $halt) {
+                    $stuff["items"][$halt] = station_to_item(get_object_by_id($worldData["stations"], $halt));
+                }
+                returnData("Route from ".$_GET["from"]." to ".$_GET["to"]." retrieved", $stuff);
             }
             else {
                 $routes = $graph->calculate($_GET["from"]);
-                returnData("All possible routes from ".$_GET["from"]." retrieved", $routes);
+                $stuff = array();
+                $stuff["routes"] = $routes;
+                $stuff["items"] = array();
+                $allStationIds = array_keys($routes);
+                foreach($allStationIds as $stationId) {
+                    $stuff["items"][$stationId] = station_to_item(get_object_by_id($worldData["stations"], $stationId));
+                }
+                returnData("All possible routes from ".$_GET["from"]." retrieved", $stuff);
             }
         }
         catch (Exception $e) {

@@ -73,7 +73,7 @@
             }
 
             $solutions = array();
-            $solutions[$start] = new Solution(0, array(), array(), array(), array(), array());
+            $solutions[$start] = new Solution(0, array(), array(), array(), array(), array($start));
 
             $loops = 0;
             while (true) {

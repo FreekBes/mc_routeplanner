@@ -6,7 +6,6 @@ var planner = {
     currentFocus: -1,
 
     init: function(worldToLoad) {
-        document.title = "Routeplanner voor " + worlds[worldToLoad].displayName;
         $.getJSON( worlds[worldToLoad]["data"], {noCache: Math.random()} )
             .done(function(json) {
                 console.log(worlds[worldToLoad]["data"] + " fetched");
@@ -360,9 +359,6 @@ var planner = {
                 });
                 a.appendChild(b);
             }
-        }
-        else {
-
         }
     },
 
