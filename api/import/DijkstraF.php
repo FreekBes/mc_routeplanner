@@ -79,7 +79,7 @@
             while (true) {
                 $parent = null;
                 $nearest = null;
-                $dist = 9999999999;
+                $dist = null;
                 $lines = null;
                 $durations = null;
                 $warnings = null;
@@ -113,7 +113,7 @@
                             $d = $adj[$adjKey]->duration + $solutions[$key]->distance;
                         }
 
-                        if ($d < $dist) {
+                        if (is_null($dist) || $d < $dist) {
                             $parent = $solutions[$key];
                             $nearest = $adj[$adjKey]->end;
                             $dist = $d;
@@ -134,7 +134,7 @@
                 }
 
                 // no more solutions
-                if ($dist === 9999999999) {
+                if (is_null($dist)) {
                     break;
                 }
 
