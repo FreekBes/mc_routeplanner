@@ -30,21 +30,11 @@
         $res = array();
         $res["id"] = $station["id"];
         $res["type"] = "station";
+        $res["subtype"] = "station";
         $res["name"] = $station["name"];
         $res["location"] = $station["location"];
         $res["halt"] = $station["id"];
         $res["coords"] = $station["coords"];
-        return $res;
-    }
-
-    function location_to_item($location) {
-        $res = array();
-        $res["id"] = urlencode($location["name"]);
-        $res["type"] = "location";
-        $res["name"] = $location["name"];
-        $res["location"] = '';
-        $res["halt"] = $location["closest_station"];
-        $res["coords"] = $location["coords"];
         return $res;
     }
 
