@@ -45,7 +45,6 @@
                 <optgroup label="Of kies een andere wereld:" id="worldopts"></optgroup>
             </select><span id="fakedownarrow">&#x25BE;</span>
         </div>
-        <div style="padding: 16px 8px; width: 400px; max-width: 80%; margin: 0 auto; text-align: center;"><a href="beta.php">Probeer de nieuwe beta van de Routeplanner!</a></div>
         <form id="routeform">
             <table>
                 <tr>

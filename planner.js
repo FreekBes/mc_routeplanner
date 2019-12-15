@@ -1,57 +1,5 @@
 var planner = {
-    data: {},
-    graph: {},
-    from: null,
-    to: null,
-    currentFocus: -1,
-
     init: function(worldToLoad) {
-        $.getJSON( worlds[worldToLoad]["data"], {noCache: Math.random()} )
-            .done(function(json) {
-                console.log(worlds[worldToLoad]["data"] + " fetched");
-                json.stations = json.stations.sort(compareNames);
-                json.pois = json.pois.sort(compareNames);
-                planner.data = json;
-                planner.graph = {};
-                console.log(planner.data);
-
-                for (i = 0; i < planner.data.routes.length; i++) {
-                    var lastHalt = null;
-                    for (j = 0; j < planner.data.routes[i].halts.length; j++) {
-                        if (j > 0) {
-                            var thisHalt = planner.data.routes[i].halts[j];
-                            
-                            if (typeof planner.graph[lastHalt.halt] == "undefined") {
-                                planner.graph[lastHalt.halt] = [];
-                            }
-                            planner.graph[lastHalt.halt][thisHalt.halt] = {
-                                to: thisHalt.halt,
-                                line: planner.data.routes[i].line_name,
-                                platform: lastHalt.platform_forth,
-                                duration: lastHalt.time_forth,
-                                warnings: lastHalt.warnings_forth
-                            };
-
-                            if (typeof planner.graph[thisHalt.halt] == "undefined") {
-                                planner.graph[thisHalt.halt] = [];
-                            }
-                            planner.graph[thisHalt.halt][lastHalt.halt] = {
-                                to: lastHalt.halt,
-                                line: planner.data.routes[i].line_name,
-                                platform: thisHalt.platform_back,
-                                duration: thisHalt.time_back,
-                                warnings: thisHalt.warnings_back
-                            };
-                        }
-                        lastHalt = planner.data.routes[i].halts[j];
-                    }
-                }
-                console.log(planner.graph);
-            })
-            .fail(function() {
-                console.error("Could not fetch " + worlds[worldToLoad]["data"]);
-            });
-
         var autocompletes = document.getElementsByClassName("autocomplete");
         for (i = 0; i < autocompletes.length; i++) {
             autocompletes[i].children[0].addEventListener("input", planner.autocompleteInput);
@@ -75,7 +23,6 @@ var planner = {
             document.getElementById("plan").focus();
         }
     },
-
 
     removeAutoCompletes: function() {
         planner.currentFocus = -1;
@@ -124,429 +71,56 @@ var planner = {
         }
     },
 
-    createItem: function(item) {
-        var b = document.createElement('div');
-        b.setAttribute("class", "item");
-        var bhtml = "";
-        switch (item.type) {
-            case "station":
-                bhtml += '<img src="icons/station.png" alt="Station" />';
-                break;
-            case "location":
-                bhtml += '<img src="icons/location.png" alt="Plaats" />';
-                break;
-            case "poi":
-                switch (item.subtype) {
-                    case 'spawn':
-                        bhtml += '<img src="icons/place.png" alt="Spawn" />';
-                        break;
-                    case 'end_portal':
-                        bhtml += '<img src="icons/portal.png" alt="End Portal" />';
-                        break;
-                    case 'nether_portal':
-                        bhtml += '<img src="icons/portal.png" alt="Nether Portal" />';
-                        break;
-                    case 'farm':
-                        bhtml += '<img src="icons/farm.png" alt="Farm" />';
-                        break;
-                    case 'community_building':
-                        bhtml += '<img src="icons/bed.png" alt="Communityhuis" />';
-                        break;
-                    case 'bank':
-                        bhtml += '<img src="icons/bank.png" alt="Bank" />';
-                        break;
-                    case 'home':
-                        bhtml += '<img src="icons/home.png" alt="Huis" />';
-                        break;
-                    case 'castle':
-                        bhtml += '<img src="icons/castle.png" alt="Kasteel" />';
-                        break;
-                    case 'gate':
-                        bhtml += '<img src="icons/gate.png" alt="Poort" />';
-                        break;
-                    case 'church':
-                        bhtml += '<img src="icons/church.png" alt="Kerk" />';
-                        break;
-                    case 'stable':
-                        bhtml += '<img src="icons/parking.png" alt="Paardenstal" />';
-                        break;
-                    case 'shop':
-                        bhtml += '<img src="icons/shop.png" alt="Winkel" />';
-                        break; 
-                    case 'food':
-                        bhtml += '<img src="icons/food.png" alt="Eten" />';
-                        break;
-                    case 'viewpoint':
-                        bhtml += '<img src="icons/viewpoint.png" alt="Uitzichtpunt" />';
-                        break;
-                    case "terrain":
-                        bhtml += '<img src="icons/terrain.png" alt="Landschap" />';
-                        break;
-                    case "mine":
-                        bhtml += '<img src="icons/mine.png" alt="Mijn" />';
-                        break;
-                    case "art":
-                        bhtml += '<img src="icons/place.png" alt="Kunstwerk" />';
-                        break;
-                    case "enchanting_table":
-                        bhtml += '<img src="icons/place.png" alt="Enchanting Table" />';
-                        break;
-                    default:
-                        bhtml += '<img src="icons/place.png" alt="Overig" />';
-                        break;
-                }
-                break;
-            default:
-                bhtml += '<img src="icons/place.png" alt="Overig" />';
-                break;
-        }
-        bhtml += '<span class="autocomplete-list-item-details"><span>' + item.name + '</span>';
-        bhtml += '<small class="location">';
-        switch (item.type) {
-            case "station":
-                bhtml += 'Station';
-                break;
-            case "location":
-                bhtml += 'Plaats';
-                break;
-            case "poi":
-                switch (item.subtype) {
-                    case 'spawn':
-                        bhtml += 'Spawn';
-                        break;
-                    case 'end_portal':
-                        bhtml += 'End Portal';
-                        break;
-                    case 'nether_portal':
-                        bhtml += 'Nether Portal';
-                        break;
-                    case 'farm':
-                        bhtml += 'Farm';
-                        break;
-                    case 'community_building':
-                        bhtml += 'Communityhuis';
-                        break;
-                    case 'bank':
-                        bhtml += 'Bank';
-                        break;
-                    case 'castle':
-                        bhtml += 'Kasteel';
-                        break;
-                    case 'home':
-                        bhtml += 'Huis';
-                        break;
-                    case 'gate':
-                        bhtml += 'Poort';
-                        break;
-                    case 'church':
-                        bhtml += 'Kerk';
-                        break;
-                    case 'stable':
-                        bhtml += 'Paardenstal';
-                        break;
-                    case 'shop':
-                        bhtml += 'Winkel';
-                        break;
-                    case 'food':
-                        bhtml += 'Eten';
-                        break; 
-                    case 'viewpoint':
-                        bhtml += 'Uitzichtpunt';
-                        break;
-                    case "terrain":
-                        bhtml += "Landschap";
-                        break;
-                    case "town_hall":
-                        bhtml += "Stadhuis";
-                        break;
-                    case "mine":
-                        bhtml += "Mijn";
-                        break;
-                    case "art":
-                        bhtml += "Kunstwerk";
-                        break;
-                    case "enchanting_table":
-                        bhtml += "Enchanting Table";
-                        break;
-                    default:
-                        bhtml += 'Overig';
-                        break;
-                }
-                break;
-            default:
-                bhtml += 'Overig';
-                break;
-        }
-        if (item.location != "" && item.location != null && item.location != undefined) {
-            bhtml += ' &bull; ';
-            bhtml += item.location;
-        }
-        bhtml += '</small></span>';
-        bhtml += '<input type="hidden" value="'+JSON.stringify(item).replace(/"/g, '~')+'" />';
-        b.innerHTML = bhtml;
-        return b;
-    },
-
+    autocompleteRequest: null,
     autocompleteInput: function(event, forWhat) {
-        planner.removeAutoCompletes();
-
         if (event.currentTarget.id == "from") {
             planner.setFrom(null);
         }
         else if (event.currentTarget.id == "to") {
             planner.setTo(null);
         }
+        
+        if (planner.autocompleteRequest != null) {
+            planner.autocompleteRequest.abort();
+            planner.autocompleteRequest = null;
+        }
 
         var text = event.target.value.trim().toLowerCase();
-        var results = [];
         if (text.length > 0) {
-            for (i = 0; i < planner.data.stations.length; i++) {
-                if (planner.data.stations[i].name.toLowerCase().indexOf(text) > -1 || (planner.data.stations[i].location != null && planner.data.stations[i].location.toLowerCase().indexOf(text) > -1) || (planner.data.stations[i].former_name != null && planner.data.stations[i].former_name.toLowerCase().indexOf(text) > -1)) {
-                    var tempData = {
-                        type: "station",
-                        name: planner.data.stations[i].name,
-                        location: planner.data.stations[i].location,
-                        halt: planner.data.stations[i].id,
-                        coords: planner.data.stations[i].coords
-                    };
-                    results.push(tempData);
-                }
-            }
-            for (i = 0; i < planner.data.pois.length; i++) {
-                if (planner.data.pois[i].name.toLowerCase().indexOf(text) > -1 || (planner.data.pois[i].location != null && planner.data.pois[i].location.toLowerCase().indexOf(text) > -1)) {
-                    var tempData = {
-                        type: "poi",
-                        subtype: planner.data.pois[i].type,
-                        name: planner.data.pois[i].name,
-                        location: planner.data.pois[i].location,
-                        halt: planner.data.pois[i].closest_station,
-                        coords: planner.data.pois[i].coords
-                    };
-                    results.push(tempData);
-                }
-            }
-        }
-
-        if (results.length > 0) {
-            var a = document.createElement('div');
-            a.setAttribute("id", event.target.getAttribute("id") + "-autocomplete-list");
-            a.setAttribute("class", "autocomplete-items");
-            event.target.parentNode.appendChild(a);
-
-            for (i = 0; i < results.length; i++) {
-                b = planner.createItem(results[i]);
-                b.addEventListener("click", function(event) {
-                    if (event.currentTarget.parentNode.getAttribute("id").split("-")[0] == "from") {
-                        planner.setFrom(JSON.parse(event.currentTarget.querySelector('input[type=hidden]').value.replace(/~/g, '"')));
-                    }
-                    else {
-                        planner.setTo(JSON.parse(event.currentTarget.querySelector('input[type=hidden]').value.replace(/~/g, '"')));
-                    }
+            planner.autocompleteRequest = $.getJSON( "api/autocomplete.php", {i: text, w: worldToLoad, noCache: Math.random()} )
+                .done(function(json) {
                     planner.removeAutoCompletes();
+                    if (json["data"].length > 0) {
+                        var a = document.createElement('div');
+                        a.setAttribute("id", event.target.getAttribute("id") + "-autocomplete-list");
+                        a.setAttribute("class", "autocomplete-items");
+                        event.target.parentNode.appendChild(a);
+            
+                        for (i = 0; i < json["data"].length; i++) {
+                            b = planner.createItem(json["data"][i]);
+                            b.addEventListener("click", function(event) {
+                                if (event.currentTarget.parentNode.getAttribute("id").split("-")[0] == "from") {
+                                    planner.setFrom(JSON.parse(event.currentTarget.querySelector('input[type=hidden]').value.replace(/~/g, '"')));
+                                }
+                                else {
+                                    planner.setTo(JSON.parse(event.currentTarget.querySelector('input[type=hidden]').value.replace(/~/g, '"')));
+                                }
+                                planner.removeAutoCompletes();
+                            });
+                            a.appendChild(b);
+                        }
+                    }
+                })
+                .always(function() {
+                    planner.autocompleteRequest = null;
                 });
-                a.appendChild(b);
-            }
-        }
-    },
-
-    insertMapOldest: function(start, end) {
-        var mapElem = document.createElement("iframe");
-        mapElem.innerHTML = "Maps are not supported by your browser. You'll have to find out where to go by yourself.";
-        mapElem.setAttribute("class", "map");
-        mapElem.setAttribute("sandbox", "allow-same-origin allow-scripts");
-        mapElem.setAttribute("src", "map/?start="+start.join(",")+"&end="+end.join(","));
-        return mapElem;
-    },
-
-    insertMap: function(start, end, step) {
-        return new Promise(function(resolve, reject) {
-            var mapElem = document.createElement("img");
-            mapElem.setAttribute("class", "map");
-            mapElem.setAttribute("title", "Looproute");
-            mapElem.addEventListener("load", resolve);
-            mapElem.addEventListener("error", reject);
-            mapElem.setAttribute("alt", "Looproute kan niet worden weergegeven. Sorry voor het ongemak.");
-            mapElem.setAttribute("src", "map.php?start="+start.join(",")+"&end="+end.join(",")+"&size=500");
-            mapElem.setAttribute("width", "300");
-            mapElem.setAttribute("height", "300");
-            step.appendChild(mapElem);
-        });
-    },
-
-    insertMapOld: function(start, end, step) {
-        console.log(start.join(","));
-        console.log(end.join(","));
-        var mapSource = 'map/map-2019-03-17.png';
-
-        var minWorldX = -6352;
-        var maxWorldX = 11440 + 15;
-        var minWorldY = -3856;
-        var maxWorldY = 5280 + 15;
-        var mapWidth  = -minWorldX + maxWorldX;
-        var mapHeight = -minWorldY + maxWorldY;
-
-        var mapElem = document.createElement("canvas");
-        mapElem.setAttribute("class", "map");
-        mapElem.setAttribute("title", "Looproute. LET OP: kaart is van "+mapSource.split("map-")[1].split(".")[0]+".");
-        mapElem.setAttribute("alt", "Looproute kan niet worden weergegeven.");
-        mapElem.innerHTML = "De browser die je momenteel gebruikt ondersteunt geen kaarten.";
-        var outputWidth = document.getElementById("output").clientWidth;
-        if (outputWidth >= 304) {
-            mapElem.width = 300;
         }
         else {
-            mapElem.width = outputWidth - 4;
-        }
-        mapElem.height = mapElem.width;
-        var ctx = mapElem.getContext("2d");
-        ctx.imageSmoothingEnabled = false;
-        step.appendChild(mapElem);
-
-        return new Promise(
-            function(resolve, reject) {
-                var mapImg = new Image(mapWidth, mapHeight);
-                mapImg.onload = function() {
-                    console.log("Map image loaded!");
-                    var topLeftCorner = [];
-                    topLeftCorner[0] = getDifference(minWorldX, (start[0] < end[0] ? start[0] : end[0])) - 14;
-                    topLeftCorner[1] = getDifference(minWorldY, (start[2] < end[2] ? start[2] : end[2])) - 14;
-                    console.log("topLeftCorner", topLeftCorner);
-                    var bottomRightCorner = [];
-                    bottomRightCorner[0] = getDifference(minWorldX, (start[0] > end[0] ? start[0] : end[0])) + 28;
-                    bottomRightCorner[1] = getDifference(minWorldY, (start[2] > end[2] ? start[2] : end[2])) + 28;
-                    console.log("bottomRightCorner", bottomRightCorner);
-                    var zoomedMapWidth = bottomRightCorner[0] - topLeftCorner[0];
-                    var zoomedMapHeight = bottomRightCorner[1] - topLeftCorner[1];
-                    var w = 0;
-                    if (zoomedMapHeight > zoomedMapWidth) {
-                        w = zoomedMapHeight;
-                        topLeftCorner[0] = topLeftCorner[0] - Math.round((zoomedMapHeight - zoomedMapWidth) * 0.5) - 7;
-                    }
-                    else {
-                        w = zoomedMapWidth;
-                        topLeftCorner[1] = topLeftCorner[1] - Math.round((zoomedMapWidth - zoomedMapHeight) * 0.5) - 7;
-                    }
-                    var resizedBy = mapElem.width / w;
-                    console.log("Zoomed size", w);
-                    console.log("Canvas size", mapElem.width);
-                    console.log("Resize by", resizedBy);
-                    ctx.drawImage(this, topLeftCorner[0], topLeftCorner[1], w, w, 0, 0, mapElem.width, mapElem.height);
-
-                    var newStartingX = -1 * (topLeftCorner[0] - getDifference(minWorldX, start[0] + 0.5)) * resizedBy;
-                    var newStartingY = -1 * (topLeftCorner[1] - getDifference(minWorldY, start[2] + 0.5)) * resizedBy;
-                    console.log("newStartingX", newStartingX);
-                    console.log("newStartingY", newStartingY);
-
-                    var newEndingX = -1 * (topLeftCorner[0] - getDifference(minWorldX, end[0] + 0.5)) * resizedBy;
-                    var newEndingY = -1 * (topLeftCorner[1] - getDifference(minWorldY, end[2] + 0.5)) * resizedBy;
-                    console.log("newEndingX", newEndingX);
-                    console.log("newEndingY", newEndingY);
-                    drawArrow(ctx, newStartingX, newStartingY, newEndingX, newEndingY);
-
-                    resolve([mapElem, step]);
-                };
-                console.log("Loading map image...");
-                mapImg.src = mapSource;
-            }
-        )
-    },
-
-    calculate: function(s, e) {
-        // MODIFIED FROM https://gist.github.com/jpillora/7382441
-
-        console.log(planner.graph);
-
-        var solutions = {};
-        solutions[s] = [];
-        solutions[s][0] = s;
-        solutions[s].dist = 0;
-        solutions[s].lines = [];
-        solutions[s].durations = [];
-        solutions[s].warnings = [];
-        solutions[s].platforms = [];
-        solutions[s].halts = [s];
-
-        while(true) {
-            var parent = null;
-            var nearest = null;
-            var dist = Infinity;
-            var lines = [];
-            var durations = [];
-            var warnings = [];
-            var platforms = [];
-            var halts = [];
-
-            // for each existing solution
-            for (var n in solutions) {
-                if (!solutions[n]) {
-                    continue;
-                }
-                var ndist = solutions[n].dist;
-                var nlines = solutions[n].lines;
-                var ndurations = solutions[n].durations;
-                var nwarnings = solutions[n].warnings;
-                var nplatforms = solutions[n].platforms;
-                var nhalts = solutions[n].halts;
-                var adj = planner.graph[n];
-
-                // for each of its adjacent nodes...
-                for (var a in adj) {
-                    // without a solution already...
-                    if (solutions[a]) {
-                        continue;
-                    }
-                    // choose nearest node with lowest *total* cost
-                    var d = adj[a]['duration'] + ndist;
-                    var l = nlines.concat([adj[a]['line']]);
-                    var sd = ndurations.concat([adj[a]['duration']]);
-                    var w = nwarnings.concat(adj[a]['warnings']).filter(onlyUnique);
-                    var p = nplatforms.concat([adj[a]['platform']]);
-                    var h = nhalts.concat([adj[a]['to']]);
-                    if (d < dist) {
-                        // reference parent
-                        parent = solutions[n];
-                        nearest = a;
-                        dist = d;
-                        lines = l;
-                        durations = sd;
-                        warnings = w;
-                        platforms = p;
-                        halts = h;
-                    }
-                }
-            }
-
-            // no more solutions
-            if (dist === Infinity) {
-                break;
-            }
-
-            // extens parent's solution path
-            solutions[nearest] = parent.concat(nearest);
-            // extend parent's cost
-            solutions[nearest].dist = dist;
-            solutions[nearest].lines = lines;
-            solutions[nearest].halts = halts;
-            solutions[nearest].durations = durations;
-            solutions[nearest].platforms = platforms;
-            solutions[nearest].warnings = warnings;
-        }
-
-        for (i = 0; i < solutions.length; i++) {
-            solutions[i].unshift(s);
-        }
-
-        if (e == null) {
-            return solutions;
-        }
-        if (typeof solutions[e] == "undefined") {
-            return null;
-        }
-        else {
-            return solutions[e];
+            planner.removeAutoCompletes();
         }
     },
 
+    planRequest: null,
     plan: function(event) {
         event.preventDefault();
 
@@ -565,207 +139,255 @@ var planner = {
             return;
         }
 
+        if (planner.planRequest != null) {
+            planner.planRequest.abort();
+            planner.planRequest = null;
+        }
+
         var outputField = document.getElementById("output");
         outputField.innerHTML = "";
 
-        console.log("Van " + planner.from.halt + " naar " + planner.to.halt);
-        if (planner.from.halt != planner.to.halt) {
-            var solutions = planner.calculate(planner.from.halt, planner.to.halt);
-            console.log(solutions);
+        console.log("Van " + planner.from.id + " naar " + planner.to.id);
+        if (planner.from.id != planner.to.id) {
+            planner.planRequest = $.getJSON( "api/planner.php", {from: planner.from.id, to: planner.to.id, w: worldToLoad, noCache: Math.random()} )
+                .done(function(json) {
+                    planner.planRequest = null;
+                    console.log(json);
+                    if (json["type"] == "success") {
+                        var items = json["data"]["items"];
+                        var route = json["data"]["route"];
+                        var walking = json["data"]["walking"];
+                        var toDoStartItem = true;
+                        var toDoEndItem = true;
 
-            if (solutions.warnings.length > 0) {
-                var writtenWarnings = [];
-                for (i = 0; i < solutions.warnings.length; i++) {
-                    switch (solutions.warnings[i]) {
-                        case "single_track":
-                            writtenWarnings.push("Deze route gaat gedeeltelijk over enkelspoor.");
-                            break;
-                        case "skeletons":
-                            writtenWarnings.push("Op deze route kunnen veel skeletons voorkomen.");
-                            break;
-                        case "zombies":
-                            writtenWarnings.push("Op deze route kunnen veel zombies voorkomen.");
-                            break;
-                        case "shared_platform":
-                            writtenWarnings.push("Deze route gaat langs een gedeeld perron.");
-                            break;
-						case "mine_track":
-							writtenWarnings.push("Deze route gaat gedeeltelijk over een mijnspoor.");
-							break;
-                        /*
-						case "hyperspeed":
-                            writtenWarnings.push("Deze route gaat gedeeltelijk over een hyperspeed-traject.");
-                            break;
-						*/
-                    }
-                }
-
-                if (writtenWarnings.length > 0) {
-                    var warning = document.createElement("div");
-                    warning.setAttribute("class", "warning");
-                    warning.innerHTML = "<b>"+writtenWarnings.length+" waarschuwing"+(writtenWarnings.length == 1 ? "" : "en")+" voor dit traject:</b><br/>" + writtenWarnings.join("<br/>");
-                    outputField.appendChild(warning);
-                }
-                else {
-                    console.log("Alle waarschuwingen voor dit traject zijn genegeerd.");
-                }
-            }
-
-            var lastLine = null;
-            var lastDuration = 0;
-            var step = null;
-            var stepinner = null;
-            if (planner.from.type != "station") {
-                stepinner = "";
-                step = document.createElement("div");
-                step.setAttribute("class", "step");
-                step.appendChild(planner.createItem(planner.from));
-                var halt = getObjectByKey(planner.data.stations, "id", solutions.halts[0]);
-                stepinner += '<div class="stationdetails"><b>Loop</b> naar <b>station '+halt.name + "</b>";
-                if (planner.from.coords != null && halt.coords != null) {
-                    stepinner += " ("+halt.coords.join(", ")+"; ";
-                    var distance = getDistance(planner.from.coords, halt.coords);
-                    stepinner += "ongeveer "+distance+" blok";
-                    if (distance != 1) {
-                        stepinner += "ken";
-                    }
-                    stepinner += " lopen)";
-                }
-                else {
-                    stepinner += " (onbekende afstand)";
-                }
-                stepinner += '.</div>';
-                step.innerHTML += stepinner;
-                if (worlds[worldToLoad]["mapSupported"]) {
-                    planner.insertMap(planner.from.coords, halt.coords, step);
-                }
-                outputField.appendChild(step);
-            }
-            for (i = 0; i < solutions.halts.length; i++) {
-                stepinner = "";
-                if (i < solutions.halts.length - 1) {
-                    if (lastLine != solutions.lines[i]) {
-                        if (lastLine != null) {
-                            lastDuration += solutions.durations[i - 1];
-                            stepinner += '<div class="stationdetails"><i>Na ' + secondsToString(lastDuration) + ' kom je aan op station ' + getObjectByKey(planner.data.stations, "id", solutions.halts[i]).name+':</i></div>';
-                            step.innerHTML += stepinner;
-                            stepinner = "";
+                        if (walking["from"]["required"]) {
+                            // walking is required from the start to a certain train station!
+                            var walkingStartItem = items[walking["from"]["start"]];
+                            var walkingEndItem = items[walking["from"]["end"]];
+                            var walkingHalt = planner.createTimelineItem(walkingStartItem["name"], walkingStartItem["subtype"], true, false);
+                            outputField.appendChild(walkingHalt);
+                            var timelineWalk = planner.createTimelineWalk(walkingStartItem["coords"], walkingStartItem["name"], planner.getItemIconAndName(walkingStartItem["subtype"])[1], walkingEndItem["coords"], walkingEndItem["name"], planner.getItemIconAndName(walkingEndItem["subtype"])[1]);
+                            outputField.appendChild(timelineWalk);
+                            toDoStartItem = false;
                         }
-                        lastLine = solutions.lines[i];
-                        lastDuration = 0;
-                        step = document.createElement("div");
-                        step.setAttribute("class", "step");
-                        var halt = getObjectByKey(planner.data.stations, "id", solutions.halts[i]);
-                        step.appendChild(planner.createItem({
-                            type: "station",
-                            name: halt.name,
-                            location: halt.location,
-                            halt: halt.id,
-                            coords: halt.coords
-                        }));
-                        stepinner += '<div class="stationdetails">Neem de <b>'+solutions.lines[i]+'</b> vanaf <b>spoor '+solutions.platforms[i]+'</b> (richting station <b>'+getObjectByKey(planner.data.stations, "id", solutions.halts[i+1]).name+'</b>).</div>';
-                        step.innerHTML += stepinner;
-                        outputField.appendChild(step);
-                    }
-                    else {
-                        lastDuration += solutions.durations[i - 1];
-                        stepinner += '<div class="stationdetails"><i>Sla station '+getObjectByKey(planner.data.stations, "id", solutions.halts[i]).name+' over. Hier kom je langs na '+secondsToString(lastDuration)+'.</i></div>';
-                        step.innerHTML += stepinner;
-                    }
-                }
-                else {
-                    if (lastLine != null) {
-                        lastDuration += solutions.durations[i - 1];
-                        stepinner += '<div class="stationdetails"><i>Na ' + secondsToString(lastDuration) + ' kom je aan op station ' + getObjectByKey(planner.data.stations, "id", solutions.halts[i]).name+':</i></div>';
-                        step.innerHTML += stepinner;
-                        stepinner = "";
-                    }
-                    step = document.createElement("div");
-                    step.setAttribute("class", "step");
-                    var halt = getObjectByKey(planner.data.stations, "id", solutions.halts[i]);
-                    step.appendChild(planner.createItem({
-                        type: "station",
-                        name: halt.name,
-                        location: halt.location,
-                        halt: halt.id,
-                        coords: halt.coords
-                    }));
-                    if (planner.to.type == "station") {
-                        stepinner += '<div class="stationdetails"><i>Je hebt je bestemming bereikt.</i></div>';
-                    }
-                    else {
-                        stepinner += '<div class="stationdetails"><b>Loop</b> naar <b>'+planner.to.name + "</b>";
-                        if (halt.coords != null && planner.to.coords != null) {
-                            stepinner += " ("+planner.to.coords.join(", ")+"; ";
-                            var distance = getDistance(halt.coords, planner.to.coords);
-                            stepinner += "ongeveer "+distance+" blok";
-                            if (distance != 1) {
-                                stepinner += "ken";
+
+                        if (walking["to"]["required"]) {
+                            toDoEndItem = false;
+                        }
+
+                        if (route != null) {
+                            var lastLine = null;
+                            var totalDuration = 0;
+                            for (i = 0; i < route.halts.length; i++) {
+                                if (i == 0) {
+                                    var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], route.lines[i], toDoStartItem, false);
+                                    outputField.appendChild(timelineHalt);
+                                }
+                                else if (i == route.halts.length - 1) {
+                                    totalDuration += route.durations[i-1];
+                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], null, false, toDoEndItem);
+                                    outputField.appendChild(timelineHalt);
+                                }
+                                else {
+                                    totalDuration += route.durations[i-1];
+                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2], route.lines[i], false, false);
+                                    outputField.appendChild(timelineHalt);
+                                }
+
+                                if (i < route.halts.length - 1) {
+                                    lastLine = route.lines[i];
+                                }
                             }
-                            stepinner += " lopen)";
                         }
                         else {
-                            stepinner += " (onbekende afstand)";
+                            // no public transport needed for this route
+                            // just walk
+                            var walkingHalt = planner.createTimelineItem(walkingEndItem["name"], walkingEndItem["subtype"], false, true);
+                            outputField.appendChild(walkingHalt);
                         }
-                        stepinner += '.</div>';
-                    }
-                    step.innerHTML += stepinner;
-                    if (planner.to.type != "station" && planner.to.coords != null) {
-                        if (worlds[worldToLoad]["mapSupported"]) {
-                            // step.appendChild(planner.insertMap(halt.coords, planner.to.coords));
-                            planner.insertMap(halt.coords, planner.to.coords, step);
+
+                        if (walking["to"]["required"]) {
+                            // walking is required from the end to a certain poi!
+                            var walkingStartItem = items[walking["to"]["start"]];
+                            var walkingEndItem = items[walking["to"]["end"]];
+                            var timelineWalk = planner.createTimelineWalk(walkingStartItem["coords"], walkingStartItem["name"], planner.getItemIconAndName(walkingStartItem["subtype"])[1], walkingEndItem["coords"], walkingEndItem["name"], planner.getItemIconAndName(walkingEndItem["subtype"])[1]);
+                            outputField.appendChild(timelineWalk);
+                            var walkingHalt = planner.createTimelineItem(walkingEndItem["name"], walkingEndItem["subtype"], false, true);
+                            outputField.appendChild(walkingHalt);
                         }
                     }
-                    outputField.appendChild(step);
-                }
-            }
-            if (planner.to.type != "station") {
-                stepinner = "";
-                step = document.createElement("div");
-                step.setAttribute("class", "step");
-                step.appendChild(planner.createItem(planner.to));
-                stepinner += '<div class="stationdetails"><i>Je hebt je bestemming bereikt.</i></div>';
-                step.innerHTML += stepinner;
-                outputField.appendChild(step);
-            }
+                    else {
+                        alert(json["message"]);
+                    }
+                })
+                .fail(function() {
+                    planner.planRequest = null;
+                    alert("Route kon niet worden berekend door een server error. Probeer het later opnieuw.");
+                });
         }
         else {
-            stepinner = "";
-            step = document.createElement("div");
-            step.setAttribute("class", "step");
-            step.appendChild(planner.createItem(planner.from));
-            stepinner += '<div class="stationdetails"><b>Loop</b> naar <b>';
-            if (planner.to.type == "station") {
-                stepinner += 'station ';
-            }
-            stepinner += planner.to.name + '</b>';
-            if (planner.from.coords != null && planner.to.coords != null) {
-                stepinner += " ("+planner.to.coords.join(", ")+"; ";
-                var distance = getDistance(planner.from.coords, planner.to.coords);
-                stepinner += "ongeveer "+distance+" blok";
-                if (distance != 1) {
-                    stepinner += "ken";
-                }
-                stepinner += " lopen)";
-            }
-            else {
-                stepinner += " (onbekende afstand)";
-            }
-            stepinner += '.</div>';
-            step.innerHTML += stepinner;
-            if (worlds[worldToLoad]["mapSupported"]) {
-                // step.appendChild(planner.insertMap(planner.from.coords, planner.to.coords));
-                planner.insertMap(planner.from.coords, planner.to.coords, step);
-            }
-            outputField.appendChild(step);
-
-            stepinner = "";
-            step = document.createElement("div");
-            step.setAttribute("class", "step");
-            step.appendChild(planner.createItem(planner.to));
-            stepinner += '<div class="stationdetails"><i>Je hebt je bestemming bereikt.</i></div>';
-            step.innerHTML += stepinner;
-            outputField.appendChild(step);
+            alert("Beginlocatie kan niet hetzelfde zijn als eindlocatie!");
         }
-    }
+    },
+
+    createTimelineItem: function(name, poiType, start, end) {
+        var b = document.createElement('div');
+        b.setAttribute("class", "timeline-station transfer poi"+(start ? ' start' : '')+(end ? ' end' : ''));
+        var bhtml = "";
+
+        bhtml += '<div class="timeline-station-time"></div>';
+        bhtml += '<div class="timeline-station-icon"><img class="timeline-station-poi-icon" src="'+planner.getItemIconAndName(poiType)[0]+'" alt="punt" /></div>';
+        bhtml += '<div class="timeline-station-name">'+name+'</div>';
+
+        b.innerHTML = bhtml;
+        return b;
+    },
+
+    createTimelineHalt: function(time, transfer, name, platform, line, start, end) {
+        var b = document.createElement('div');
+        b.setAttribute("class", "timeline-station"+(transfer ? ' transfer' : '')+(start ? ' start' : '')+(end ? ' end' : ''));
+        var bhtml = "";
+
+        if (time > -1) {
+            var date = new Date();
+            date.setSeconds(date.getSeconds() + time);
+            bhtml += '<div class="timeline-station-time" title="'+planner.formatSeconds(time)+'">'+date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})+'</div>';
+        }
+        else {
+            bhtml += '<div class="timeline-station-time"></div>';
+        }
+        bhtml += '<div class="timeline-station-icon"></div>';
+        bhtml += '<div class="timeline-station-name">'+name+'</div>';
+        if (platform != undefined && platform != null && platform > 0) {
+            bhtml += '<div class="timeline-station-platform">'+platform+'</div>';
+        }
+        else if (line != null) {
+            bhtml += '<div class="timeline-station-line">'+line+'</div>';
+        }
+
+        b.innerHTML = bhtml;
+        return b;
+    },
+
+    createTimelineWalk: function(fromCoords, fromName, fromType, toCoords, toName, toType) {
+        var b = document.createElement('div');
+        b.setAttribute("class", "timeline-station instruction walk");
+        var bhtml = "";
+
+        bhtml += '<div class="timeline-station-time"></div>';
+        bhtml += '<div class="timeline-station-icon"></div>';
+        bhtml += '<div class="timeline-station-name">Loop '+getDistance(fromCoords, toCoords)+' blokken naar '+toType.toLowerCase()+' '+toName+' <span style="white-space: nowrap;">('+toCoords.join(', ')+')</span></div>';
+
+        b.innerHTML = bhtml;
+        return b;
+    },
+
+    getItemIconAndName: function(type) {
+        switch (type) {
+            case 'station':
+                return ["icons/place.png", "Station"];
+            case 'spawn':
+                return ["icons/place.png", "Spawn"];
+            case 'end_portal':
+                return ["icons/portal.png", "End Portal"];
+            case 'nether_portal':
+                return ["icons/portal.png", "Nether Portal"];
+            case 'farm':
+                return ["icons/farm.png", "Farm"];
+            case 'community_building':
+                return ["icons/bed.png", "Communityhuis"];
+            case 'hotel':
+                return ["icons/bed.png", "Hotel"];
+            case 'bank':
+                return ["icons/bank.png", "Bank"];
+            case 'home':
+                return ["icons/home.png", "Huis"];
+            case 'castle':
+                return ["icons/castle.png", "Kasteel"];
+            case 'gate':
+                return ["icons/gate.png", "Poort"];
+            case 'church':
+                return ["icons/church.png", "Kerk"];
+            case 'stable':
+                return ["icons/parking.png", "Paardenstal"];
+            case 'shop':
+                return ["icons/shop.png", "Winkel"];
+            case 'food':
+                return ["icons/food.png", "Eten"];
+            case 'viewpoint':
+                return ["icons/viewpoint.png", "Uitzichtpunt"];
+            case "terrain":
+                return ["icons/terrain.png", "Landschap"];
+            case "mine":
+                return ["icons/mine.png", "Mijn"];
+            case "art":
+                return ["icons/place.png", "Kunstwerk"];
+            case "enchanting_table":
+                return ["icons/place.png", "Enchanting Table"];
+            default:
+                return ["icons/place.png", "Overig"];
+        }
+    },
+
+    createItem: function(item) {
+        var b = document.createElement('div');
+        b.setAttribute("class", "item");
+        var bhtml = "";
+        switch (item.type) {
+            case "station":
+                bhtml += '<img src="icons/station.png" alt="Station" />';
+                break;
+            case "location":
+                bhtml += '<img src="icons/location.png" alt="Plaats" />';
+                break;
+            case "poi":
+                bhtml += '<img src="'+planner.getItemIconAndName(item.subtype)[0]+'" alt="'+planner.getItemIconAndName(item.subtype)[1]+'" />';
+                break;
+            default:
+                bhtml += '<img src="icons/place.png" alt="Overig" />';
+                break;
+        }
+        bhtml += '<span class="autocomplete-list-item-details"><span>' + item.name + '</span>';
+        bhtml += '<small class="location">';
+        switch (item.type) {
+            case "station":
+                bhtml += 'Station';
+                break;
+            case "location":
+                bhtml += 'Plaats';
+                break;
+            case "poi":
+                bhtml += planner.getItemIconAndName(item.subtype)[1];
+                break;
+            default:
+                bhtml += 'Overig';
+                break;
+        }
+        if (item.location != "" && item.location != null && item.location != undefined) {
+            bhtml += ' &bull; ';
+            bhtml += item.location;
+        }
+        bhtml += '</small></span>';
+        bhtml += '<input type="hidden" value="'+JSON.stringify(item).replace(/"/g, '~')+'" />';
+        b.innerHTML = bhtml;
+        return b;
+    },
+    
+    formatSeconds: function(seconds) {
+		var s = Math.floor(seconds % 60);
+		var m = Math.floor((seconds / 60) % 60);
+		var u = Math.floor(((seconds / 60) / 60 ) % 60);
+		if (m < 10) {
+			m = '0' + m;
+		}
+		if (s < 10) {
+			s = '0' + s;
+		}
+		if (u < 1) {
+			return (m + ':' + s);
+		}
+		else if (u >= 1) {
+			return (u + ':' + m + ':' + s);
+		}
+	}
 };
