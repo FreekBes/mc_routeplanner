@@ -49,12 +49,6 @@
         $results = array();
 
         if (!isset($_GET["stations_only"])) {
-            foreach ($worldData["locations"] as $location) {
-                if ($location["has_station_with_same_name"] === false && strpos(strtolower($location["name"]), $input) > -1) {
-                    array_push($results, location_to_item($location));
-                }
-            }
-
             foreach ($worldData["pois"] as $poi) {
                 if (strpos(strtolower($poi["name"]), $input) > -1 || (!empty($poi["location"]) && strpos(strtolower($poi["location"]), $input) > -1)) {
                     array_push($results, poi_to_item($poi));

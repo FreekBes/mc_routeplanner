@@ -10,7 +10,6 @@ var planner = {
             .done(function(json) {
                 console.log(worlds[worldToLoad]["data"] + " fetched");
                 json.stations = json.stations.sort(compareNames);
-                json.locations = json.locations.sort(compareNames);
                 json.pois = json.pois.sort(compareNames);
                 planner.data = json;
                 planner.graph = {};
@@ -309,18 +308,6 @@ var planner = {
                         location: planner.data.stations[i].location,
                         halt: planner.data.stations[i].id,
                         coords: planner.data.stations[i].coords
-                    };
-                    results.push(tempData);
-                }
-            }
-            for (i = 0; i < planner.data.locations.length; i++) {
-                if (planner.data.locations[i].has_station_with_same_name == false && planner.data.locations[i].name.toLowerCase().indexOf(text) > -1) {
-                    var tempData = {
-                        type: "location",
-                        name: planner.data.locations[i].name,
-                        location: '',
-                        halt: planner.data.locations[i].closest_station,
-                        coords: planner.data.locations[i].coords
                     };
                     results.push(tempData);
                 }

@@ -80,30 +80,15 @@
                 $fromWalkingStart = null;
                 $fromWalkingEnd = null;
                 if (strlen($_GET["from"]) > 4) {
-                    // from is not a station
+                    // from is not a station, but a poi
                     $fromNoStation = true;
                     $coords = [];
-
-                    if (strlen($_GET["from"]) == 8) {
-                        // from is a poi
-                        foreach ($worldData["pois"] as $poi) {
-                            if ($poi["id"] == $_GET["from"]) {
-                                $coords = $poi["coords"];
-                                $fromWalkingStart = $poi["id"];
-                                $stuff["items"][$poi["id"]] = poi_to_item($poi);
-                                break;
-                            }
-                        }
-                    }
-                    else {
-                        // from is a location (city, village, etc)
-                        foreach ($worldData["locations"] as $location) {
-                            if ($location["name"] == $_GET["from"]) {
-                                $coords = $location["coords"];
-                                $fromWalkingStart = urlencode($location["name"]);
-                                $stuff["items"][urlencode($location["name"])] = location_to_item($location);
-                                break;
-                            }
+                    foreach ($worldData["pois"] as $poi) {
+                        if ($poi["id"] == $_GET["from"]) {
+                            $coords = $poi["coords"];
+                            $fromWalkingStart = $poi["id"];
+                            $stuff["items"][$poi["id"]] = poi_to_item($poi);
+                            break;
                         }
                     }
 
@@ -124,30 +109,15 @@
                 $toWalkingStart = null;
                 $toWalkingEnd = null;
                 if (strlen($_GET["to"]) > 4) {
-                    // to is not a station
+                    // to is not a station, but a poi
                     $toNoStation = true;
                     $coords = [];
-
-                    if (strlen($_GET["to"]) == 8) {
-                        // to is a poi
-                        foreach ($worldData["pois"] as $poi) {
-                            if ($poi["id"] == $_GET["to"]) {
-                                $coords = $poi["coords"];
-                                $toWalkingStart = $poi["id"];
-                                $stuff["items"][$poi["id"]] = poi_to_item($poi);
-                                break;
-                            }
-                        }
-                    }
-                    else {
-                        // to is a location (city, village, etc)
-                        foreach ($worldData["locations"] as $location) {
-                            if ($location["name"] == $_GET["to"]) {
-                                $coords = $location["coords"];
-                                $toWalkingStart = urlencode($location["name"]);
-                                $stuff["items"][urlencode($location["name"])] = location_to_item($location);
-                                break;
-                            }
+                    foreach ($worldData["pois"] as $poi) {
+                        if ($poi["id"] == $_GET["to"]) {
+                            $coords = $poi["coords"];
+                            $toWalkingStart = $poi["id"];
+                            $stuff["items"][$poi["id"]] = poi_to_item($poi);
+                            break;
                         }
                     }
 
@@ -165,7 +135,7 @@
                 $doCalculateRoute = true;
                 if ($fromNoStation && $toNoStation) {
                     if (points_are_walkable($stuff["items"][$fromWalkingStart]["coords"], $stuff["items"][$toWalkingEnd]["coords"], $worldData["stations"])) {
-                        // from and to are within walkable distance or the same station is closest by for both locations
+                        // from and to are within walkable distance or the same station is closest by for both pois
                         // do not calculate a route using public transport, just walk
                         $doCalculateRoute = false;
                     }
