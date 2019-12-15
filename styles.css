@@ -334,9 +334,13 @@ input[type=submit]:hover {
 }
 
 .timeline-station-platform {
-    font-size: small;
+    font-size: smaller;
     float: right;
     text-align: right;
+}
+
+.timeline-station.transfer .timeline-station-platform {
+    font-size: small;
 }
 
 .timeline-station-platform::before {

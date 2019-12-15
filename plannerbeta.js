@@ -168,12 +168,12 @@ var planner = {
                             }
                             else if (i == route.halts.length - 1) {
                                 totalDuration += route.durations[i-1];
-                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i], false, true);
+                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], false, true);
                                 outputField.appendChild(timelineHalt);
                             }
                             else {
                                 totalDuration += route.durations[i-1];
-                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i], false, false);
+                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], false, false);
                                 outputField.appendChild(timelineHalt);
                             }
 
@@ -181,110 +181,6 @@ var planner = {
                                 lastLine = route.lines[i];
                             }
                         }
-
-                        /*
-                        if (solutions.warnings.length > 0) {
-                            var writtenWarnings = [];
-                            for (i = 0; i < solutions.warnings.length; i++) {
-                                switch (solutions.warnings[i]) {
-                                    case "single_track":
-                                        writtenWarnings.push("Deze route gaat gedeeltelijk over enkelspoor.");
-                                        break;
-                                    case "skeletons":
-                                        writtenWarnings.push("Op deze route kunnen veel skeletons voorkomen.");
-                                        break;
-                                    case "zombies":
-                                        writtenWarnings.push("Op deze route kunnen veel zombies voorkomen.");
-                                        break;
-                                    case "shared_platform":
-                                        writtenWarnings.push("Deze route gaat langs een gedeeld perron.");
-                                        break;
-                                    case "mine_track":
-                                        writtenWarnings.push("Deze route gaat gedeeltelijk over een mijnspoor.");
-                                        break;
-                                }
-                            }
-            
-                            if (writtenWarnings.length > 0) {
-                                var warning = document.createElement("div");
-                                warning.setAttribute("class", "warning");
-                                warning.innerHTML = "<b>"+writtenWarnings.length+" waarschuwing"+(writtenWarnings.length == 1 ? "" : "en")+" voor dit traject:</b><br/>" + writtenWarnings.join("<br/>");
-                                outputField.appendChild(warning);
-                            }
-                            else {
-                                console.log("Alle waarschuwingen voor dit traject zijn genegeerd, of er zijn geen waarschuwingen voor dit traject.");
-                            }
-                        }
-            
-                        var lastLine = null;
-                        var lastDuration = 0;
-                        var step = null;
-                        var stepinner = null;
-                        for (i = 0; i < solutions.halts.length; i++) {
-                            stepinner = "";
-                            if (i < solutions.halts.length - 1) {
-                                if (lastLine != solutions.lines[i]) {
-                                    if (lastLine != null) {
-                                        lastDuration += solutions.durations[i - 1];
-                                        stepinner += '<div class="stationdetails"><i>Na ' + secondsToString(lastDuration) + ' kom je aan op station ' + items[solutions.halts[i]].name+':</i></div>';
-                                        step.innerHTML += stepinner;
-                                        stepinner = "";
-                                    }
-                                    lastLine = solutions.lines[i];
-                                    lastDuration = 0;
-                                    step = document.createElement("div");
-                                    step.setAttribute("class", "step");
-                                    step.appendChild(planner.createItem(items[solutions.halts[i]]));
-                                    stepinner += '<div class="stationdetails">Neem de <b>'+solutions.lines[i]+'</b> vanaf <b>spoor '+solutions.platforms[i]+'</b> (richting station <b>'+items[solutions.halts[i+1]].name+'</b>).</div>';
-                                    step.innerHTML += stepinner;
-                                    outputField.appendChild(step);
-                                }
-                                else {
-                                    lastDuration += solutions.durations[i - 1];
-                                    stepinner += '<div class="stationdetails"><i>Sla station '+items[solutions.halts[i]].name+' over. Hier kom je langs na '+secondsToString(lastDuration)+'.</i></div>';
-                                    step.innerHTML += stepinner;
-                                }
-                            }
-                            else {
-                                if (lastLine != null) {
-                                    lastDuration += solutions.durations[i - 1];
-                                    stepinner += '<div class="stationdetails"><i>Na ' + secondsToString(lastDuration) + ' kom je aan op station ' + items[solutions.halts[i]].name+':</i></div>';
-                                    step.innerHTML += stepinner;
-                                    stepinner = "";
-                                }
-                                step = document.createElement("div");
-                                step.setAttribute("class", "step");
-                                step.appendChild(planner.createItem(items[solutions.halts[i]]));
-                                if (planner.to.type == "station") {
-                                    stepinner += '<div class="stationdetails"><i>Je hebt je bestemming bereikt.</i></div>';
-                                }
-                                else {
-                                    stepinner += '<div class="stationdetails"><b>Loop</b> naar <b>'+planner.to.name + "</b>";
-                                    if (halt.coords != null && planner.to.coords != null) {
-                                        stepinner += " ("+planner.to.coords.join(", ")+"; ";
-                                        var distance = getDistance(halt.coords, planner.to.coords);
-                                        stepinner += "ongeveer "+distance+" blok";
-                                        if (distance != 1) {
-                                            stepinner += "ken";
-                                        }
-                                        stepinner += " lopen)";
-                                    }
-                                    else {
-                                        stepinner += " (onbekende afstand)";
-                                    }
-                                    stepinner += '.</div>';
-                                }
-                                step.innerHTML += stepinner;
-                                if (planner.to.type != "station" && planner.to.coords != null) {
-                                    if (worlds[worldToLoad]["mapSupported"]) {
-                                        // step.appendChild(planner.insertMap(halt.coords, planner.to.coords));
-                                        planner.insertMap(halt.coords, planner.to.coords, step);
-                                    }
-                                }
-                                outputField.appendChild(step);
-                            }
-                        }
-                        */
                     }
                     else {
                         alert(json["message"]);

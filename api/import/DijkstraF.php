@@ -6,15 +6,17 @@
         public $end;
         public $duration;
         public $line;
-        public $platform;
+        public $startplatform;
+        public $endplatform;
         public $warnings;
         
-        public function __construct($start, $end, $duration, $line, $platform, $warnings) {
+        public function __construct($start, $end, $duration, $line, $startplatform, $endplatform, $warnings) {
             $this->start = $start;
             $this->end = $end;
             $this->duration = $duration;
             $this->line = $line;
-            $this->platform = $platform;
+            $this->startplatform = $startplatform;
+            $this->endplatform = $endplatform;
             $this->warnings = $warnings;
         }
     }
@@ -40,11 +42,11 @@
     class Graph {
         private $nodes = array();
 
-        public function add_route($start, $end, $duration, $line, $platform, $warnings) {
+        public function add_route($start, $end, $duration, $line, $startplatform, $endplatform, $warnings) {
             if (!isset($this->nodes[$start])) {
                 $this->nodes[$start] = array();
             }
-            array_push($this->nodes[$start], new Route($start, $end, $duration, $line, $platform, $warnings));
+            array_push($this->nodes[$start], new Route($start, $end, $duration, $line, $startplatform, $endplatform, $warnings));
         }
 
         public function remove_node($index) {
@@ -127,7 +129,7 @@
                                 $durations = array_merge($solutions[$key]->durations, array($adj[$adjKey]->duration));
                             }
                             $warnings = array_merge($solutions[$key]->warnings, array($adj[$adjKey]->warnings));
-                            $platforms = array_merge($solutions[$key]->platforms, array($adj[$adjKey]->platform));
+                            $platforms = array_merge($solutions[$key]->platforms, array($adj[$adjKey]->startplatform, $adj[$adjKey]->endplatform));
                             $halts = array_merge($solutions[$key]->halts, array($adj[$adjKey]->end));
                         }
                     }

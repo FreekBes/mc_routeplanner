@@ -56,8 +56,8 @@
         for ($j = 0; $j < $haltCount; $j++) {
             if ($j > 0) {
                 $thisHalt = $worldData["routes"][$i]["halts"][$j];
-                $graph->add_route($lastHalt["halt"], $thisHalt["halt"], $lastHalt["time_forth"], $lineName, $lastHalt["platform_forth"], $lastHalt["warnings_forth"]);
-                $graph->add_route($thisHalt["halt"], $lastHalt["halt"], $thisHalt["time_back"], $lineName, $thisHalt["platform_back"], $thisHalt["warnings_back"]);
+                $graph->add_route($lastHalt["halt"], $thisHalt["halt"], $lastHalt["time_forth"], $lineName, $lastHalt["platform_forth"], $thisHalt["platform_forth"], $lastHalt["warnings_forth"]);
+                $graph->add_route($thisHalt["halt"], $lastHalt["halt"], $thisHalt["time_back"], $lineName, $thisHalt["platform_back"], $lastHalt["platform_back"], $thisHalt["warnings_back"]);
             }
             $lastHalt = $worldData["routes"][$i]["halts"][$j];
         }
