@@ -4,6 +4,7 @@ body {
     font-weight: normal;
     background: #383839;
     color: #EDEDED;
+    user-select: none;
 }
 
 a, a:visited {
@@ -131,6 +132,7 @@ input {
     border-radius: 3px;
     outline: 0 !important;
     transition: 0.35s;
+    user-select: all;
 }
 
 input[type=text]:active, input[type=text]:focus {
@@ -296,6 +298,10 @@ input[type=submit]:hover {
     position: relative;
 }
 
+.timeline-station.normal {
+    font-size: small;
+}
+
 .timeline-station.transfer {
     font-weight: bold !important;
     color: #EDEDED;
@@ -315,8 +321,16 @@ input[type=submit]:hover {
     padding: 7px 6px;
 }
 
+.timeline-station.normal > * {
+    padding: 0px 6px;
+}
+
 .timeline-station.instruction > * {
     padding: 20px 6px;
+}
+
+.timeline-station.filler > * {
+    height: 2px;
 }
 
 .timeline-station-time {
@@ -324,6 +338,7 @@ input[type=submit]:hover {
     font-size: smaller;
     width: 40px;
     padding-right: 0px !important;
+    text-align: center;
 }
 
 .timeline-station-icon {
@@ -341,6 +356,10 @@ input[type=submit]:hover {
     background-image: url('icons/timeline-transfer.png');
 }
 
+.timeline-station.normal .timeline-station-icon {
+    padding: 0px 8px 0px 0px;
+}
+
 .timeline-station.start .timeline-station-icon {
     background-image: url('icons/timeline-start.png');
 }
@@ -349,9 +368,10 @@ input[type=submit]:hover {
     background-image: url('icons/timeline-end.png');
 }
 
-.timeline-station.instruction .timeline-station-icon {
+.timeline-station.instruction .timeline-station-icon, .timeline-station.filler .timeline-station-icon {
     background-image: url('icons/timeline-line.png');
     padding: 0px 8px 0px 0px;
+    height: 100%;
 }
 
 .timeline-station.walk .timeline-station-icon {
@@ -366,15 +386,26 @@ input[type=submit]:hover {
 
 .timeline-station-name {
     margin-left: 40px;
+    color: #1e90ff;
+}
+
+.timeline-station.normal .timeline-station-name {
+    color: #CACACA;
 }
 
 .timeline-station.instruction .timeline-station-name {
     white-space: normal;
     height: auto;
     width: 70%;
+    line-height: normal;
+    color: inherit;
 }
 
-.timeline-station-platform, .timeline-station-line {
+.timeline-station.line-summary .timeline-station-name {
+    width: 58%;
+}
+
+.timeline-station-platform, .timeline-station-line, .timeline-station-expand {
     font-size: smaller;
     float: right;
     text-align: right;
@@ -386,6 +417,43 @@ input[type=submit]:hover {
 
 .timeline-station-platform::before {
     content: 'spoor ';
+}
+
+details > summary {
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+details > summary:hover .expand-icon {
+    transition: 0.05s;
+}
+
+details > summary:hover .expand-icon.up {
+    margin-top: 1px;
+}
+
+details > summary:hover .expand-icon.down {
+    margin-top: 6px;
+}
+
+.expand-icon {
+    display: block;
+    width: 12px;
+    margin-right: 10px;
+    opacity: 0.2;
+    transition: 0.35s;
+}
+
+.expand-icon.up {
+    margin-top: 3px;
+}
+
+.expand-icon.down {
+    margin-top: 2px;
 }
 
 @media screen and (max-width: 500px) {

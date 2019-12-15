@@ -16,8 +16,13 @@
 		$data["type"] = "error";
 		$data["message"] = $msg;
 		$data["data"] = array();
-		header('Content-Type: application/json; charset=utf-8');
-		echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+        header('Content-Type: application/json; charset=utf-8');
+        if (isset($_GET["pretty"])) {
+            echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+        }
+		else {
+            echo json_encode($data, JSON_UNESCAPED_UNICODE);
+        }
 		die();
 	}
 	
@@ -27,7 +32,12 @@
 		$data["message"] = $msg;
 		$data["data"] = array();
 		header('Content-Type: application/json; charset=utf-8');
-		echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+		if (isset($_GET["pretty"])) {
+            echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+        }
+		else {
+            echo json_encode($data, JSON_UNESCAPED_UNICODE);
+        }
 		die();
 	}
 	
@@ -37,7 +47,12 @@
 		$data["message"] = $msg;
 		$data["data"] = $stuff;
 		header('Content-Type: application/json; charset=utf-8');
-		echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+		if (isset($_GET["pretty"])) {
+            echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+        }
+		else {
+            echo json_encode($data, JSON_UNESCAPED_UNICODE);
+        }
 		die();
     }
 
@@ -73,6 +88,7 @@
 
                 $stuff = array();
                 $stuff["items"] = array();
+                $stuff["line_data"] = array();
                 
                 $fromNoStation = false;
                 $fromStation = $_GET["from"];
@@ -145,6 +161,10 @@
                     $route = $graph->calculate($fromStation, $toStation);
                     foreach($route->halts as $halt) {
                         $stuff["items"][$halt] = station_to_item(get_object_by_id($worldData["stations"], $halt));
+                    }
+                    foreach($route->lines as $line) {
+                        $stuff["line_data"][$line] = get_object_by($worldData["routes"], "line_name", $line);
+                        unset($stuff["line_data"][$line]["halts"]);
                     }
                 }
                 else {

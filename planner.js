@@ -156,6 +156,7 @@ var planner = {
                     if (json["type"] == "success") {
                         var items = json["data"]["items"];
                         var route = json["data"]["route"];
+                        var lineData = json["data"]["line_data"];
                         var walking = json["data"]["walking"];
                         var toDoStartItem = true;
                         var toDoEndItem = true;
@@ -178,20 +179,44 @@ var planner = {
                         if (route != null) {
                             var lastLine = null;
                             var totalDuration = 0;
+                            var lineGroupOutput = null;
+                            var lineGroupFirstStationAdded = false;
                             for (i = 0; i < route.halts.length; i++) {
+                                if (route.lines[i] != lastLine && i != route.halts.length - 1) {
+                                    if (lineGroupOutput != null) {
+                                        lineGroupOutput.appendChild(planner.createTimelineFiller());
+                                        outputField.appendChild(lineGroupOutput);
+                                    }
+                                    lineGroupOutput = document.createElement('details');
+                                    lineGroupFirstStationAdded = false;
+                                    var lineSummary = document.createElement('summary');
+                                    lineSummary.setAttribute("title", "Tik/klik om tussenstops te weergeven");
+                                    lineSummary.appendChild(planner.createTimelineLineSummary(route.lines[i], lineData[route.lines[i]]["type"], lineData[route.lines[i]]["operator"], items[route.halts[i+1]]["name"]));
+                                    lineGroupOutput.appendChild(lineSummary);
+                                }
+
                                 if (i == 0) {
                                     var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], route.lines[i], toDoStartItem, false);
-                                    outputField.appendChild(timelineHalt);
+                                    lineSummary.insertBefore(timelineHalt, lineSummary.firstChild);
+                                    lineGroupFirstStationAdded = true;
                                 }
                                 else if (i == route.halts.length - 1) {
                                     totalDuration += route.durations[i-1];
                                     var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], null, false, toDoEndItem);
+                                    lineGroupOutput.appendChild(planner.createTimelineFiller());
+                                    outputField.appendChild(lineGroupOutput);
                                     outputField.appendChild(timelineHalt);
                                 }
                                 else {
                                     totalDuration += route.durations[i-1];
                                     var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2], route.lines[i], false, false);
-                                    outputField.appendChild(timelineHalt);
+                                    if (!lineGroupFirstStationAdded) {
+                                        lineGroupFirstStationAdded = true;
+                                        lineSummary.insertBefore(timelineHalt, lineSummary.firstChild);
+                                    }
+                                    else {
+                                        lineGroupOutput.appendChild(timelineHalt);
+                                    }
                                 }
 
                                 if (i < route.halts.length - 1) {
@@ -245,7 +270,7 @@ var planner = {
 
     createTimelineHalt: function(time, transfer, name, platform, line, start, end) {
         var b = document.createElement('div');
-        b.setAttribute("class", "timeline-station"+(transfer ? ' transfer' : '')+(start ? ' start' : '')+(end ? ' end' : ''));
+        b.setAttribute("class", "timeline-station"+(transfer ? ' transfer' : ' normal')+(start ? ' start' : '')+(end ? ' end' : ''));
         var bhtml = "";
 
         if (time > -1) {
@@ -261,8 +286,8 @@ var planner = {
         if (platform != undefined && platform != null && platform > 0) {
             bhtml += '<div class="timeline-station-platform">'+platform+'</div>';
         }
-        else if (line != null) {
-            bhtml += '<div class="timeline-station-line">'+line+'</div>';
+        else {
+            bhtml += '<div class="timeline-station-line" title="Dit station heeft geen spoorindeling">- - - - - -</div>';
         }
 
         b.innerHTML = bhtml;
@@ -280,6 +305,53 @@ var planner = {
 
         b.innerHTML = bhtml;
         return b;
+    },
+
+    createTimelineLineSummary: function(name, type, operator, direction) {
+        var b = document.createElement('div');
+        b.setAttribute("class", "timeline-station instruction line-summary");
+        var bhtml = "";
+
+        bhtml += '<div class="timeline-station-time">'+operator+'</div>';
+        bhtml += '<div class="timeline-station-icon"></div>';
+        bhtml += '<div class="timeline-station-name"><b>'+operator+' '+planner.getPublicTransportTypeName(type).toLowerCase()+' '+name+'</b><br/><i>richting '+direction+'</i></div>';
+        if (detailsTagSupported()) {
+            bhtml += '<div class="timeline-station-expand"><img class="expand-icon up" src="icons/expand-up.png" /><img class="expand-icon down" src="icons/expand-down.png" /></div>';
+        }
+        
+        b.innerHTML = bhtml;
+        return b;
+    },
+
+    createTimelineFiller: function() {
+        var b = document.createElement('div');
+        b.setAttribute("class", "timeline-station filler");
+        var bhtml = "";
+
+        bhtml += '<div class="timeline-station-time"></div>';
+        bhtml += '<div class="timeline-station-icon"></div>';
+        bhtml += '<div class="timeline-station-name"></div>';
+
+        b.innerHTML = bhtml;
+        return b;
+    },
+    
+    getPublicTransportTypeName: function(type) {
+        switch (type) {
+            case 'train':
+                return 'Trein';
+            case 'subway':
+            case 'metro':
+                return 'Metro';
+            case 'ring_line':
+                return 'Ringlijn';
+            case 'tram':
+                return 'Tram';
+            case 'mine':
+                return 'Mijnspoor';
+            default:
+                return 'Verbinding';
+        }
     },
 
     getItemIconAndName: function(type) {

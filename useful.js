@@ -100,3 +100,8 @@ function drawArrow(ctx, fromx, fromy, tox, toy){
     ctx.lineWidth = 6;
     ctx.stroke();
 }
+
+function detailsTagSupported() {
+    var temp = document.createElement("details");
+    return (typeof temp.open === "boolean");
+}

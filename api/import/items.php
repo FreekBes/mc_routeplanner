@@ -18,8 +18,12 @@
     }
 
     function get_object_by_id($objects, $id) {
+        return get_object_by($objects, "id", $id);
+    }
+
+    function get_object_by($objects, $by_what, $value) {
         foreach ($objects as $object) {
-            if ($object["id"] == $id) {
+            if ($object[$by_what] == $value) {
                 return $object;
             }
         }
