@@ -72,6 +72,25 @@
         }
     }
 
+    if (isset($_GET["from"])) {
+        try {
+            if (isset($_GET["to"])) {
+                $route = $graph->calculate($_GET["from"], $_GET["to"]);
+                returnData("Route from ".$_GET["from"]." to ".$_GET["to"]." retrieved", $route);
+            }
+            else {
+                $routes = $graph->calculate($_GET["from"]);
+                returnData("All possible routes from ".$_GET["from"]." retrieved", $routes);
+            }
+        }
+        catch (Exception $e) {
+            returnError($e->getMessage());
+        }
+    }
+    else {
+        returnError("GET from not set");
+    }
+
     // returnData("A", $graph->get_nodes());
     returnData("A", $graph->calculate("Tcs"));
 ?>

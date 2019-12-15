@@ -56,12 +56,23 @@
         }
 
         public function get_node($key) {
-            return $this->nodes[$key];
+            if (array_key_exists($key, $this->nodes)) {
+                return $this->nodes[$key];
+            }
+            else {
+                return null;
+            }
         }
 
         public function calculate($start, $end = null) {
-            $solutions = array();
+            if (!array_key_exists($start, $this->nodes)) {
+                throw new Exception("Start station not found");
+            }
+            if (!empty($end) && !array_key_exists($end, $this->nodes)) {
+                throw new Exception("End station not found");
+            }
 
+            $solutions = array();
             $solutions[$start] = new Solution(0, array(), array(), array(), array(), array());
 
             $loops = 0;
@@ -78,7 +89,6 @@
                 // for each existing solution
                 $solutionKeys = array_keys($solutions);
                 foreach ($solutionKeys as $key) {
-                    echo $solutions[$key]->distance;
                     if (empty($solutions[$key])) {
                         continue;
                     }
@@ -89,27 +99,42 @@
                     // for each of its adjacent nodes...
                     foreach ($adjKeys as $adjKey) {
                         // without a solution already...
-                        if (!empty($solutions[$adjKey])) {
+                        if (!empty($solutions[$adj[$adjKey]->end])) {
                             continue;
                         }
 
                         // choose nearest node with lowest *total* cost
-                        $d = $adj[$adjKey]->duration + $solutions[$key]->distance;
+                        if (count($solutions[$key]->lines) > 0 && $adj[$adjKey]->line != end($solutions[$key]->lines)) {
+                            // last line doesn't equal the next one, add 15 seconds of transfer time
+                            $d = $adj[$adjKey]->duration + $solutions[$key]->distance + 15;
+                        }
+                        else {
+                            // continuing on the same line, do not add transfer time
+                            $d = $adj[$adjKey]->duration + $solutions[$key]->distance;
+                        }
+
                         if ($d < $dist) {
                             $parent = $solutions[$key];
                             $nearest = $adj[$adjKey]->end;
                             $dist = $d;
                             $lines = array_merge($solutions[$key]->lines, array($adj[$adjKey]->line));
-                            $durations = array_merge($solutions[$key]->durations, array($adj[$adjKey]->duration));
+                            if (count($solutions[$key]->lines) > 0 && $adj[$adjKey]->line != end($solutions[$key]->lines)) {
+                                // last line doesn't equal the next one, add 15 seconds of transfer time
+                                $durations = array_merge($solutions[$key]->durations, array($adj[$adjKey]->duration + 15));
+                            }
+                            else {
+                                // continuing on the same line, do not add transfer time
+                                $durations = array_merge($solutions[$key]->durations, array($adj[$adjKey]->duration));
+                            }
                             $warnings = array_merge($solutions[$key]->warnings, array($adj[$adjKey]->warnings));
                             $platforms = array_merge($solutions[$key]->platforms, array($adj[$adjKey]->platform));
-                            $halts = array_merge($solutions[$key]->platforms, array($adj[$adjKey]->end));
+                            $halts = array_merge($solutions[$key]->halts, array($adj[$adjKey]->end));
                         }
                     }
                 }
 
                 // no more solutions
-                if ($dist == INF) {
+                if ($dist === 9999999999) {
                     break;
                 }
 
@@ -121,6 +146,9 @@
                     break;
                 }
             }
+
+            // remove route from start to start from solutions
+            array_splice($solutions, 0, 1);
 
             if (!empty($end)) {
                 return $solutions[$end];
