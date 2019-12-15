@@ -173,7 +173,7 @@ var planner = {
                             }
                             else {
                                 totalDuration += route.durations[i-1];
-                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], false, false);
+                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2], false, false);
                                 outputField.appendChild(timelineHalt);
                             }
 
