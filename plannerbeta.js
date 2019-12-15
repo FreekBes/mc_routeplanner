@@ -203,7 +203,7 @@ var planner = {
 
         var date = new Date();
         date.setSeconds(date.getSeconds() + time);
-        bhtml += '<div class="timeline-station-time">'+date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})+'</div>';
+        bhtml += '<div class="timeline-station-time" title="'+planner.formatSeconds(time)+'">'+date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})+'</div>';
         bhtml += '<div class="timeline-station-icon"></div>';
         bhtml += '<div class="timeline-station-name">'+name+'</div>';
         if (platform != undefined && platform != null && platform > 0) {
