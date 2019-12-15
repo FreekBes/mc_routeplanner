@@ -155,7 +155,34 @@ var planner = {
                     console.log(json);
                     if (json["type"] == "success") {
                         var items = json["data"]["items"];
-                        var solutions = json["data"]["route"];
+                        var route = json["data"]["route"];
+
+                        var lastLine = null;
+                        var totalDuration = 0;
+                        var step = null;
+                        var stepinner = null;
+                        for (i = 0; i < route.halts.length; i++) {
+                            if (i == 0) {
+                                var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], true, false);
+                                outputField.appendChild(timelineHalt);
+                            }
+                            else if (i == route.halts.length - 1) {
+                                totalDuration += route.durations[i-1];
+                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i], false, true);
+                                outputField.appendChild(timelineHalt);
+                            }
+                            else {
+                                totalDuration += route.durations[i-1];
+                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i], false, false);
+                                outputField.appendChild(timelineHalt);
+                            }
+
+                            if (i < route.halts.length - 1) {
+                                lastLine = route.lines[i];
+                            }
+                        }
+
+                        /*
                         if (solutions.warnings.length > 0) {
                             var writtenWarnings = [];
                             for (i = 0; i < solutions.warnings.length; i++) {
@@ -175,11 +202,6 @@ var planner = {
                                     case "mine_track":
                                         writtenWarnings.push("Deze route gaat gedeeltelijk over een mijnspoor.");
                                         break;
-                                    /*
-                                    case "hyperspeed":
-                                        writtenWarnings.push("Deze route gaat gedeeltelijk over een hyperspeed-traject.");
-                                        break;
-                                    */
                                 }
                             }
             
@@ -262,6 +284,7 @@ var planner = {
                                 outputField.appendChild(step);
                             }
                         }
+                        */
                     }
                     else {
                         alert(json["message"]);
@@ -275,6 +298,22 @@ var planner = {
         else {
             alert("Beginlocatie kan niet hetzelfde zijn als eindlocatie!");
         }
+    },
+
+    createTimelineHalt: function(time, transfer, name, platform, start, end) {
+        var b = document.createElement('div');
+        b.setAttribute("class", "timeline-station"+(transfer ? ' transfer' : '')+(start ? ' start' : '')+(end ? ' end' : ''));
+        var bhtml = "";
+
+        bhtml += '<div class="timeline-station-time">'+planner.formatSeconds(time)+'</div>';
+        bhtml += '<div class="timeline-station-icon"></div>';
+        bhtml += '<div class="timeline-station-name">'+name+'</div>';
+        if (platform != undefined && platform != null && platform > 0) {
+            bhtml += '<div class="timeline-station-platform">'+platform+'</div>';
+        }
+
+        b.innerHTML = bhtml;
+        return b;
     },
 
     createItem: function(item) {
@@ -438,5 +477,23 @@ var planner = {
         bhtml += '<input type="hidden" value="'+JSON.stringify(item).replace(/"/g, '~')+'" />';
         b.innerHTML = bhtml;
         return b;
-    }
+    },
+    
+    formatSeconds: function(seconds) {
+		var s = Math.floor(seconds % 60);
+		var m = Math.floor((seconds / 60) % 60);
+		var u = Math.floor(((seconds / 60) / 60 ) % 60);
+		if (m < 10) {
+			m = '0' + m;
+		}
+		if (s < 10) {
+			s = '0' + s;
+		}
+		if (u < 1) {
+			return (m + ':' + s);
+		}
+		else if (u >= 1) {
+			return (u + ':' + m + ':' + s);
+		}
+	}
 };
