@@ -293,10 +293,17 @@ input[type=submit]:hover {
     display: block;
     white-space: nowrap;
     color: #cacaca;
+    position: relative;
 }
 
 .timeline-station.transfer {
     font-weight: bold !important;
+    color: #EDEDED;
+}
+
+.timeline-station.instruction {
+    font-style: italic;
+    font-size: small;
     color: #EDEDED;
 }
 
@@ -308,21 +315,26 @@ input[type=submit]:hover {
     padding: 7px 6px;
 }
 
+.timeline-station.instruction > * {
+    padding: 20px 6px;
+}
+
 .timeline-station-time {
     color: #1e90ff;
     font-size: smaller;
     width: 40px;
-    padding-right: 0px;
+    padding-right: 0px !important;
 }
 
 .timeline-station-icon {
+    position: absolute;
     width: 32px;
-    height: 38px;
+    height: 100%;
     padding: 0px 8px 0px 0px;
     background-image: url('icons/timeline-halt.png');
     background-position: center center;
     background-size: 28px 42px;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
 }
 
 .timeline-station.transfer .timeline-station-icon {
@@ -337,8 +349,29 @@ input[type=submit]:hover {
     background-image: url('icons/timeline-end.png');
 }
 
-.timeline-station-name {
+.timeline-station.instruction .timeline-station-icon {
+    background-image: url('icons/timeline-line.png');
+    padding: 0px 8px 0px 0px;
+}
 
+.timeline-station.walk .timeline-station-icon {
+    background-image: url('icons/timeline-walk.png');
+}
+
+.timeline-station-poi-icon {
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+}
+
+.timeline-station-name {
+    margin-left: 40px;
+}
+
+.timeline-station.instruction .timeline-station-name {
+    white-space: normal;
+    height: auto;
+    width: 70%;
 }
 
 .timeline-station-platform, .timeline-station-line {

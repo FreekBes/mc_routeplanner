@@ -147,28 +147,45 @@ var planner = {
         var outputField = document.getElementById("output");
         outputField.innerHTML = "";
 
-        console.log("Van " + planner.from.halt + " naar " + planner.to.halt);
-        if (planner.from.halt != planner.to.halt) {
-            planner.planRequest = $.getJSON( "api/planner.php", {from: planner.from.halt, to: planner.to.halt, w: worldToLoad, noCache: Math.random()} )
+        console.log("Van " + planner.from.id + " naar " + planner.to.id);
+        if (planner.from.id != planner.to.id) {
+            planner.planRequest = $.getJSON( "api/planner.php", {from: planner.from.id, to: planner.to.id, w: worldToLoad, noCache: Math.random()} )
                 .done(function(json) {
                     planner.planRequest = null;
                     console.log(json);
                     if (json["type"] == "success") {
                         var items = json["data"]["items"];
                         var route = json["data"]["route"];
+                        var walking = json["data"]["walking"];
+                        var toDoStartItem = true;
+                        var toDoEndItem = true;
 
-                        var lastLine = null;
-                        var totalDuration = 0;
+                        if (walking["from"]["required"]) {
+                            // walking is required from the start to a certain train station!
+                            var walkingStartItem = items[walking["from"]["start"]];
+                            var walkingEndItem = items[walking["from"]["end"]];
+                            var walkingHalt = planner.createTimelineItem(walkingStartItem["name"], walkingStartItem["subtype"], true, false);
+                            outputField.appendChild(walkingHalt);
+                            var timelineWalk = planner.createTimelineWalk(walkingStartItem["coords"], walkingStartItem["name"], planner.getItemIconAndName(walkingStartItem["subtype"])[1], walkingEndItem["coords"], walkingEndItem["name"], planner.getItemIconAndName(walkingEndItem["subtype"])[1]);
+                            outputField.appendChild(timelineWalk);
+                            toDoStartItem = false;
+                        }
+
+                        if (walking["to"]["required"]) {
+                            toDoEndItem = false;
+                        }
 
                         if (route != null) {
+                            var lastLine = null;
+                            var totalDuration = 0;
                             for (i = 0; i < route.halts.length; i++) {
                                 if (i == 0) {
-                                    var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], route.lines[i], true, false);
+                                    var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], route.lines[i], toDoStartItem, false);
                                     outputField.appendChild(timelineHalt);
                                 }
                                 else if (i == route.halts.length - 1) {
                                     totalDuration += route.durations[i-1];
-                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], null, false, true);
+                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], null, false, toDoEndItem);
                                     outputField.appendChild(timelineHalt);
                                 }
                                 else {
@@ -185,6 +202,18 @@ var planner = {
                         else {
                             // no public transport needed for this route
                             // just walk
+                            var walkingHalt = planner.createTimelineItem(walkingEndItem["name"], walkingEndItem["subtype"], false, true);
+                            outputField.appendChild(walkingHalt);
+                        }
+
+                        if (walking["to"]["required"]) {
+                            // walking is required from the end to a certain poi!
+                            var walkingStartItem = items[walking["to"]["start"]];
+                            var walkingEndItem = items[walking["to"]["end"]];
+                            var timelineWalk = planner.createTimelineWalk(walkingStartItem["coords"], walkingStartItem["name"], planner.getItemIconAndName(walkingStartItem["subtype"])[1], walkingEndItem["coords"], walkingEndItem["name"], planner.getItemIconAndName(walkingEndItem["subtype"])[1]);
+                            outputField.appendChild(timelineWalk);
+                            var walkingHalt = planner.createTimelineItem(walkingEndItem["name"], walkingEndItem["subtype"], false, true);
+                            outputField.appendChild(walkingHalt);
                         }
                     }
                     else {
@@ -201,14 +230,32 @@ var planner = {
         }
     },
 
+    createTimelineItem: function(name, poiType, start, end) {
+        var b = document.createElement('div');
+        b.setAttribute("class", "timeline-station transfer poi"+(start ? ' start' : '')+(end ? ' end' : ''));
+        var bhtml = "";
+
+        bhtml += '<div class="timeline-station-time"></div>';
+        bhtml += '<div class="timeline-station-icon"><img class="timeline-station-poi-icon" src="'+planner.getItemIconAndName(poiType)[0]+'" alt="punt" /></div>';
+        bhtml += '<div class="timeline-station-name">'+name+'</div>';
+
+        b.innerHTML = bhtml;
+        return b;
+    },
+
     createTimelineHalt: function(time, transfer, name, platform, line, start, end) {
         var b = document.createElement('div');
         b.setAttribute("class", "timeline-station"+(transfer ? ' transfer' : '')+(start ? ' start' : '')+(end ? ' end' : ''));
         var bhtml = "";
 
-        var date = new Date();
-        date.setSeconds(date.getSeconds() + time);
-        bhtml += '<div class="timeline-station-time" title="'+planner.formatSeconds(time)+'">'+date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})+'</div>';
+        if (time > -1) {
+            var date = new Date();
+            date.setSeconds(date.getSeconds() + time);
+            bhtml += '<div class="timeline-station-time" title="'+planner.formatSeconds(time)+'">'+date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})+'</div>';
+        }
+        else {
+            bhtml += '<div class="timeline-station-time"></div>';
+        }
         bhtml += '<div class="timeline-station-icon"></div>';
         bhtml += '<div class="timeline-station-name">'+name+'</div>';
         if (platform != undefined && platform != null && platform > 0) {
@@ -220,6 +267,66 @@ var planner = {
 
         b.innerHTML = bhtml;
         return b;
+    },
+
+    createTimelineWalk: function(fromCoords, fromName, fromType, toCoords, toName, toType) {
+        var b = document.createElement('div');
+        b.setAttribute("class", "timeline-station instruction walk");
+        var bhtml = "";
+
+        bhtml += '<div class="timeline-station-time"></div>';
+        bhtml += '<div class="timeline-station-icon"></div>';
+        bhtml += '<div class="timeline-station-name">Loop '+getDistance(fromCoords, toCoords)+' blokken naar '+toType.toLowerCase()+' '+toName+' <span style="white-space: nowrap;">('+toCoords.join(', ')+')</span></div>';
+
+        b.innerHTML = bhtml;
+        return b;
+    },
+
+    getItemIconAndName: function(type) {
+        switch (type) {
+            case 'station':
+                return ["icons/place.png", "Station"];
+            case 'spawn':
+                return ["icons/place.png", "Spawn"];
+            case 'end_portal':
+                return ["icons/portal.png", "End Portal"];
+            case 'nether_portal':
+                return ["icons/portal.png", "Nether Portal"];
+            case 'farm':
+                return ["icons/farm.png", "Farm"];
+            case 'community_building':
+                return ["icons/bed.png", "Communityhuis"];
+            case 'hotel':
+                return ["icons/bed.png", "Hotel"];
+            case 'bank':
+                return ["icons/bank.png", "Bank"];
+            case 'home':
+                return ["icons/home.png", "Huis"];
+            case 'castle':
+                return ["icons/castle.png", "Kasteel"];
+            case 'gate':
+                return ["icons/gate.png", "Poort"];
+            case 'church':
+                return ["icons/church.png", "Kerk"];
+            case 'stable':
+                return ["icons/parking.png", "Paardenstal"];
+            case 'shop':
+                return ["icons/shop.png", "Winkel"];
+            case 'food':
+                return ["icons/food.png", "Eten"];
+            case 'viewpoint':
+                return ["icons/viewpoint.png", "Uitzichtpunt"];
+            case "terrain":
+                return ["icons/terrain.png", "Landschap"];
+            case "mine":
+                return ["icons/mine.png", "Mijn"];
+            case "art":
+                return ["icons/place.png", "Kunstwerk"];
+            case "enchanting_table":
+                return ["icons/place.png", "Enchanting Table"];
+            default:
+                return ["icons/place.png", "Overig"];
+        }
     },
 
     createItem: function(item) {
@@ -234,65 +341,7 @@ var planner = {
                 bhtml += '<img src="icons/location.png" alt="Plaats" />';
                 break;
             case "poi":
-                switch (item.subtype) {
-                    case 'spawn':
-                        bhtml += '<img src="icons/place.png" alt="Spawn" />';
-                        break;
-                    case 'end_portal':
-                        bhtml += '<img src="icons/portal.png" alt="End Portal" />';
-                        break;
-                    case 'nether_portal':
-                        bhtml += '<img src="icons/portal.png" alt="Nether Portal" />';
-                        break;
-                    case 'farm':
-                        bhtml += '<img src="icons/farm.png" alt="Farm" />';
-                        break;
-                    case 'community_building':
-                        bhtml += '<img src="icons/bed.png" alt="Communityhuis" />';
-                        break;
-                    case 'bank':
-                        bhtml += '<img src="icons/bank.png" alt="Bank" />';
-                        break;
-                    case 'home':
-                        bhtml += '<img src="icons/home.png" alt="Huis" />';
-                        break;
-                    case 'castle':
-                        bhtml += '<img src="icons/castle.png" alt="Kasteel" />';
-                        break;
-                    case 'gate':
-                        bhtml += '<img src="icons/gate.png" alt="Poort" />';
-                        break;
-                    case 'church':
-                        bhtml += '<img src="icons/church.png" alt="Kerk" />';
-                        break;
-                    case 'stable':
-                        bhtml += '<img src="icons/parking.png" alt="Paardenstal" />';
-                        break;
-                    case 'shop':
-                        bhtml += '<img src="icons/shop.png" alt="Winkel" />';
-                        break; 
-                    case 'food':
-                        bhtml += '<img src="icons/food.png" alt="Eten" />';
-                        break;
-                    case 'viewpoint':
-                        bhtml += '<img src="icons/viewpoint.png" alt="Uitzichtpunt" />';
-                        break;
-                    case "terrain":
-                        bhtml += '<img src="icons/terrain.png" alt="Landschap" />';
-                        break;
-                    case "mine":
-                        bhtml += '<img src="icons/mine.png" alt="Mijn" />';
-                        break;
-                    case "art":
-                        bhtml += '<img src="icons/place.png" alt="Kunstwerk" />';
-                        break;
-                    case "enchanting_table":
-                        bhtml += '<img src="icons/place.png" alt="Enchanting Table" />';
-                        break;
-                    default:
-                        bhtml += '<img src="icons/place.png" alt="Overig" />';
-                        break;
-                }
+                bhtml += '<img src="'+planner.getItemIconAndName(item.subtype)[0]+'" alt="'+planner.getItemIconAndName(item.subtype)[1]+'" />';
                 break;
             default:
                 bhtml += '<img src="icons/place.png" alt="Overig" />';
@@ -308,68 +357,7 @@ var planner = {
                 bhtml += 'Plaats';
                 break;
             case "poi":
-                switch (item.subtype) {
-                    case 'spawn':
-                        bhtml += 'Spawn';
-                        break;
-                    case 'end_portal':
-                        bhtml += 'End Portal';
-                        break;
-                    case 'nether_portal':
-                        bhtml += 'Nether Portal';
-                        break;
-                    case 'farm':
-                        bhtml += 'Farm';
-                        break;
-                    case 'community_building':
-                        bhtml += 'Communityhuis';
-                        break;
-                    case 'bank':
-                        bhtml += 'Bank';
-                        break;
-                    case 'castle':
-                        bhtml += 'Kasteel';
-                        break;
-                    case 'home':
-                        bhtml += 'Huis';
-                        break;
-                    case 'gate':
-                        bhtml += 'Poort';
-                        break;
-                    case 'church':
-                        bhtml += 'Kerk';
-                        break;
-                    case 'stable':
-                        bhtml += 'Paardenstal';
-                        break;
-                    case 'shop':
-                        bhtml += 'Winkel';
-                        break;
-                    case 'food':
-                        bhtml += 'Eten';
-                        break; 
-                    case 'viewpoint':
-                        bhtml += 'Uitzichtpunt';
-                        break;
-                    case "terrain":
-                        bhtml += "Landschap";
-                        break;
-                    case "town_hall":
-                        bhtml += "Stadhuis";
-                        break;
-                    case "mine":
-                        bhtml += "Mijn";
-                        break;
-                    case "art":
-                        bhtml += "Kunstwerk";
-                        break;
-                    case "enchanting_table":
-                        bhtml += "Enchanting Table";
-                        break;
-                    default:
-                        bhtml += 'Overig';
-                        break;
-                }
+                bhtml += planner.getItemIconAndName(item.subtype)[1];
                 break;
             default:
                 bhtml += 'Overig';

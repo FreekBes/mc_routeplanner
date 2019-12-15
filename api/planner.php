@@ -115,7 +115,7 @@
                     foreach ($worldData["pois"] as $poi) {
                         if ($poi["id"] == $_GET["to"]) {
                             $coords = $poi["coords"];
-                            $toWalkingStart = $poi["id"];
+                            $toWalkingEnd = $poi["id"];
                             $stuff["items"][$poi["id"]] = poi_to_item($poi);
                             break;
                         }
@@ -124,7 +124,7 @@
                     if (count($coords) > 0) {
                         $station = check_for_nearest_station($coords, $worldData["stations"]);
                         $toStation = $station["id"];
-                        $toWalkingEnd = $station["id"];
+                        $toWalkingStart = $station["id"];
                         $toWalking = true;
                     }
                     else {
@@ -149,6 +149,10 @@
                 }
                 else {
                     $route = null;
+                    $fromWalkingEnd = $toWalkingEnd;
+                    $toWalking = false;
+                    $toWalkingStart = null;
+                    $toWalkingEnd = null;
                 }
 
                 $stuff["route"] = $route;
