@@ -333,13 +333,13 @@ input[type=submit]:hover {
 
 }
 
-.timeline-station-platform {
+.timeline-station-platform, .timeline-station-line {
     font-size: smaller;
     float: right;
     text-align: right;
 }
 
-.timeline-station.transfer .timeline-station-platform {
+.timeline-station.transfer .timeline-station-platform, .timeline-station.transfer .timeline-station-line {
     font-size: small;
 }
 

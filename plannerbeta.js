@@ -163,17 +163,17 @@ var planner = {
                         var stepinner = null;
                         for (i = 0; i < route.halts.length; i++) {
                             if (i == 0) {
-                                var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], true, false);
+                                var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], route.lines[i], true, false);
                                 outputField.appendChild(timelineHalt);
                             }
                             else if (i == route.halts.length - 1) {
                                 totalDuration += route.durations[i-1];
-                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], false, true);
+                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], null, false, true);
                                 outputField.appendChild(timelineHalt);
                             }
                             else {
                                 totalDuration += route.durations[i-1];
-                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2], false, false);
+                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2], route.lines[i], false, false);
                                 outputField.appendChild(timelineHalt);
                             }
 
@@ -196,7 +196,7 @@ var planner = {
         }
     },
 
-    createTimelineHalt: function(time, transfer, name, platform, start, end) {
+    createTimelineHalt: function(time, transfer, name, platform, line, start, end) {
         var b = document.createElement('div');
         b.setAttribute("class", "timeline-station"+(transfer ? ' transfer' : '')+(start ? ' start' : '')+(end ? ' end' : ''));
         var bhtml = "";
@@ -206,6 +206,9 @@ var planner = {
         bhtml += '<div class="timeline-station-name">'+name+'</div>';
         if (platform != undefined && platform != null && platform > 0) {
             bhtml += '<div class="timeline-station-platform">'+platform+'</div>';
+        }
+        else if (line != null) {
+            bhtml += '<div class="timeline-station-line">'+line+'</div>';
         }
 
         b.innerHTML = bhtml;
