@@ -24,7 +24,6 @@
     <link rel="manifest" href="manifest.json" />
         <title>Routeplanner voor <?PHP echo $world; ?></title>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <link rel="stylesheet" href="styles.css" />
         <script src="jquery.min.js"></script>
         <script><?PHP echo readfile("useful.js"); ?></script>
         <script><?PHP echo readfile("worlds.js"); ?></script>
@@ -37,6 +36,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="apple-mobile-web-app-title" content="Routeplanner voor <?PHP echo $world; ?>" />
+        <style><?PHP echo readfile("styles.css"); ?></style>
     </head>
     <body onload="startInit();">
         <div id="worldselector-outer">
@@ -45,6 +45,7 @@
                 <optgroup label="Of kies een andere wereld:" id="worldopts"></optgroup>
             </select><span id="fakedownarrow">&#x25BE;</span>
         </div>
+        <div style="padding: 16px 8px; width: 400px; max-width: 80%; margin: 0 auto; text-align: center;"><a href="beta.php">Probeer de nieuwe beta van de Routeplanner!</a></div>
         <form id="routeform">
             <table>
                 <tr>

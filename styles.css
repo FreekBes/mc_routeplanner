@@ -6,6 +6,14 @@ body {
     color: #EDEDED;
 }
 
+a, a:visited {
+    color: #1e90ff;
+}
+
+a:hover, a:focus {
+    color: #349bff;
+}
+
 #worldselector-outer {
     display: block;
     text-align: center;
