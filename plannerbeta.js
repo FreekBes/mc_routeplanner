@@ -159,27 +159,32 @@ var planner = {
 
                         var lastLine = null;
                         var totalDuration = 0;
-                        var step = null;
-                        var stepinner = null;
-                        for (i = 0; i < route.halts.length; i++) {
-                            if (i == 0) {
-                                var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], route.lines[i], true, false);
-                                outputField.appendChild(timelineHalt);
-                            }
-                            else if (i == route.halts.length - 1) {
-                                totalDuration += route.durations[i-1];
-                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], null, false, true);
-                                outputField.appendChild(timelineHalt);
-                            }
-                            else {
-                                totalDuration += route.durations[i-1];
-                                var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2], route.lines[i], false, false);
-                                outputField.appendChild(timelineHalt);
-                            }
 
-                            if (i < route.halts.length - 1) {
-                                lastLine = route.lines[i];
+                        if (route != null) {
+                            for (i = 0; i < route.halts.length; i++) {
+                                if (i == 0) {
+                                    var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], route.lines[i], true, false);
+                                    outputField.appendChild(timelineHalt);
+                                }
+                                else if (i == route.halts.length - 1) {
+                                    totalDuration += route.durations[i-1];
+                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], null, false, true);
+                                    outputField.appendChild(timelineHalt);
+                                }
+                                else {
+                                    totalDuration += route.durations[i-1];
+                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2], route.lines[i], false, false);
+                                    outputField.appendChild(timelineHalt);
+                                }
+
+                                if (i < route.halts.length - 1) {
+                                    lastLine = route.lines[i];
+                                }
                             }
+                        }
+                        else {
+                            // no public transport needed for this route
+                            // just walk
                         }
                     }
                     else {

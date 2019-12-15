@@ -42,6 +42,7 @@
     }
 
     require_once("import/DijkstraF.php");
+    require_once("import/PoiCalculator.php");
     require_once("import/worlds.php");
     require_once("import/items.php");
 
@@ -69,25 +70,145 @@
                 if ($_GET["to"] == $_GET["from"]) {
                     returnError("Beginlocatie kan niet hetzelfde zijn als eindlocatie!");
                 }
-                $route = $graph->calculate($_GET["from"], $_GET["to"]);
+
                 $stuff = array();
-                $stuff["route"] = $route;
                 $stuff["items"] = array();
-                foreach($route->halts as $halt) {
-                    $stuff["items"][$halt] = station_to_item(get_object_by_id($worldData["stations"], $halt));
+                
+                $fromNoStation = false;
+                $fromStation = $_GET["from"];
+                $fromWalking = false;
+                $fromWalkingStart = null;
+                $fromWalkingEnd = null;
+                if (strlen($_GET["from"]) > 4) {
+                    // from is not a station
+                    $fromNoStation = true;
+                    $coords = [];
+
+                    if (strlen($_GET["from"]) == 8) {
+                        // from is a poi
+                        foreach ($worldData["pois"] as $poi) {
+                            if ($poi["id"] == $_GET["from"]) {
+                                $coords = $poi["coords"];
+                                $fromWalkingStart = $poi["id"];
+                                $stuff["items"][$poi["id"]] = poi_to_item($poi);
+                                break;
+                            }
+                        }
+                    }
+                    else {
+                        // from is a location (city, village, etc)
+                        foreach ($worldData["locations"] as $location) {
+                            if ($location["name"] == $_GET["from"]) {
+                                $coords = $location["coords"];
+                                $fromWalkingStart = urlencode($location["name"]);
+                                $stuff["items"][urlencode($location["name"])] = location_to_item($location);
+                                break;
+                            }
+                        }
+                    }
+
+                    if (count($coords) > 0) {
+                        $station = check_for_nearest_station($coords, $worldData["stations"]);
+                        $fromStation = $station["id"];
+                        $fromWalkingEnd = $station["id"];
+                        $fromWalking = true;
+                    }
+                    else {
+                        returnError("Beginlocatie niet gevonden");
+                    }
                 }
+
+                $toNoStation = false;
+                $toStation = $_GET["to"];
+                $toWalking = false;
+                $toWalkingStart = null;
+                $toWalkingEnd = null;
+                if (strlen($_GET["to"]) > 4) {
+                    // to is not a station
+                    $toNoStation = true;
+                    $coords = [];
+
+                    if (strlen($_GET["to"]) == 8) {
+                        // to is a poi
+                        foreach ($worldData["pois"] as $poi) {
+                            if ($poi["id"] == $_GET["to"]) {
+                                $coords = $poi["coords"];
+                                $toWalkingStart = $poi["id"];
+                                $stuff["items"][$poi["id"]] = poi_to_item($poi);
+                                break;
+                            }
+                        }
+                    }
+                    else {
+                        // to is a location (city, village, etc)
+                        foreach ($worldData["locations"] as $location) {
+                            if ($location["name"] == $_GET["to"]) {
+                                $coords = $location["coords"];
+                                $toWalkingStart = urlencode($location["name"]);
+                                $stuff["items"][urlencode($location["name"])] = location_to_item($location);
+                                break;
+                            }
+                        }
+                    }
+
+                    if (count($coords) > 0) {
+                        $station = check_for_nearest_station($coords, $worldData["stations"]);
+                        $toStation = $station["id"];
+                        $toWalkingEnd = $station["id"];
+                        $toWalking = true;
+                    }
+                    else {
+                        returnError("Eindlocatie niet gevonden");
+                    }
+                }
+
+                $doCalculateRoute = true;
+                if ($fromNoStation && $toNoStation) {
+                    if (points_are_walkable($stuff["items"][$fromWalkingStart]["coords"], $stuff["items"][$toWalkingEnd]["coords"], $worldData["stations"])) {
+                        // from and to are within walkable distance or the same station is closest by for both locations
+                        // do not calculate a route using public transport, just walk
+                        $doCalculateRoute = false;
+                    }
+                }
+
+                if ($doCalculateRoute) {
+                    $route = $graph->calculate($fromStation, $toStation);
+                    foreach($route->halts as $halt) {
+                        $stuff["items"][$halt] = station_to_item(get_object_by_id($worldData["stations"], $halt));
+                    }
+                }
+                else {
+                    $route = null;
+                }
+
+                $stuff["route"] = $route;
+                $stuff["walking"] = array();
+                $stuff["walking"]["from"] = array();
+                $stuff["walking"]["from"]["required"] = $fromWalking;
+                $stuff["walking"]["from"]["start"] = $fromWalkingStart;
+                $stuff["walking"]["from"]["end"] = $fromWalkingEnd;
+                $stuff["walking"]["to"] = array();
+                $stuff["walking"]["to"]["required"] = $toWalking;
+                $stuff["walking"]["to"]["start"] = $toWalkingStart;
+                $stuff["walking"]["to"]["end"] = $toWalkingEnd;
                 returnData("Route from ".$_GET["from"]." to ".$_GET["to"]." retrieved", $stuff);
             }
             else {
-                $routes = $graph->calculate($_GET["from"]);
-                $stuff = array();
-                $stuff["routes"] = $routes;
-                $stuff["items"] = array();
-                $allStationIds = array_keys($routes);
-                foreach($allStationIds as $stationId) {
-                    $stuff["items"][$stationId] = station_to_item(get_object_by_id($worldData["stations"], $stationId));
+                // check if from is a station id (always 3 or 4 characters in length)
+                if (strlen($_GET["from"]) <= 4) {
+                    $routes = $graph->calculate($_GET["from"]);
+                    $stuff = array();
+                    $stuff["routes"] = $routes;
+                    $stuff["items"] = array();
+                    $allStationIds = array_keys($routes);
+                    foreach($allStationIds as $stationId) {
+                        $stuff["items"][$stationId] = station_to_item(get_object_by_id($worldData["stations"], $stationId));
+                    }
+                    returnData("All possible routes from ".$_GET["from"]." retrieved", $stuff);
                 }
-                returnData("All possible routes from ".$_GET["from"]." retrieved", $stuff);
+                else {
+                    returnError("Zonder eindlocatie kunnen alleen routes vanaf stations worden berekend.");
+                }
             }
         }
         catch (Exception $e) {

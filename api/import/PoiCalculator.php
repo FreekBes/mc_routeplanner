@@ -14,6 +14,7 @@
         foreach ($stations as $station) {
             $distance = calculate_distance($coords, $station["coords"]);
             if ($distance < $nearestDistance || is_null($nearestDistance)) {
+                $nearestDistance = $distance;
                 $nearest = $station;
             }
         }
