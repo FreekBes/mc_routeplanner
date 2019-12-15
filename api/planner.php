@@ -66,6 +66,9 @@
     if (isset($_GET["from"])) {
         try {
             if (isset($_GET["to"])) {
+                if ($_GET["to"] == $_GET["from"]) {
+                    returnError("Beginlocatie kan niet hetzelfde zijn als eindlocatie!");
+                }
                 $route = $graph->calculate($_GET["from"], $_GET["to"]);
                 $stuff = array();
                 $stuff["route"] = $route;
