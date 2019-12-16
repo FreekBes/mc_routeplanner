@@ -176,6 +176,17 @@
                         $doCalculateRoute = false;
                     }
                 }
+                else if ($fromNoStation && $toStation == $stuff["items"][$fromWalkingStart]["halt"]) {
+                    $doCalculateRoute = false;
+                    // bugfix from poi to station with the same station being the closest one
+                    $toWalkingEnd = $toStation;
+                }
+                else if ($toNoStation && $fromStation == $stuff["items"][$toWalkingEnd]["halt"]) {
+                    $doCalculateRoute = false;
+                    // bugfix from station to poi with the same station being the closest one
+                    $fromWalkingStart = $toWalkingStart;
+                    $fromWalking = true;
+                }
 
                 if ($doCalculateRoute) {
                     $route = $graph->calculate($fromStation, $toStation);
@@ -193,6 +204,16 @@
                     $toWalking = false;
                     $toWalkingStart = null;
                     $toWalkingEnd = null;
+                    if (!isset($stuff["items"][$fromWalkingStart])) {
+                        // a train station is not set in items, because no train stations were
+                        // calculated in a public transport route. add the train station manually
+                        $stuff["items"][$fromWalkingStart] =  station_to_item(get_object_by_id($worldData["stations"], $fromWalkingStart));
+                    }
+                    if (!isset($stuff["items"][$fromWalkingEnd])) {
+                        // a train station is not set in items, because no train stations were
+                        // calculated in a public transport route. add the train station manually
+                        $stuff["items"][$fromWalkingEnd] =  station_to_item(get_object_by_id($worldData["stations"], $fromWalkingEnd));
+                    }
                 }
 
                 $stuff["route"] = $route;
