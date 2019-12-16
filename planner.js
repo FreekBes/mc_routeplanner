@@ -24,6 +24,24 @@ var planner = {
         }
     },
 
+    reverseFromAndTo: function() {
+        var tempTo = planner.to;
+        planner.to = planner.from;
+        planner.from = tempTo;
+        if (planner.from != null) {
+            document.getElementById("from").value = planner.from.name;
+        }
+        else {
+            document.getElementById("from").focus();
+        }
+        if (planner.to != null) {
+            document.getElementById("to").value = planner.to.name;
+        }
+        else {
+            document.getElementById("to").focus();
+        }
+    },
+
     removeAutoCompletes: function() {
         planner.currentFocus = -1;
         var current = document.getElementsByClassName("autocomplete-items");
