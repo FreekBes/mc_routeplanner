@@ -284,6 +284,18 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-283, 69, -1332]
+        },
+        {
+            "id": "Wtdn",
+            "name": "Waterduinen",
+            "location": "Waterduinen",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 1,
+            "coords": [380, 72, -760]
         }
     ],
     "routes": [
@@ -500,11 +512,20 @@
                 {
                     "halt": "Hevn",
                     "platform_forth": 1,
-                    "time_forth": 58,
-                    "warnings_forth": ["single_track", "zombies"],
+                    "time_forth": 28,
+                    "warnings_forth": ["single_track", "zombies", "shared_platform"],
                     "platform_back": 2,
                     "time_back": 49,
                     "warnings_back": ["single_track"]
+                },
+                {
+                    "halt": "Wtdn",
+                    "platform_forth": 1,
+                    "time_forth": 36,
+                    "warnings_forth": ["single_track", "zombies", "shared_platform"],
+                    "platform_back": 1,
+                    "time_back": 29,
+                    "warnings_back": ["single_track", "zombies", "shared_platform"]
                 },
                 {
                     "halt": "Zbrg",
@@ -512,8 +533,8 @@
                     "time_forth": 86,
                     "warnings_forth": ["single_track", "zombies"],
                     "platform_back": 2,
-                    "time_back": 59,
-                    "warnings_back": ["single_track", "zombies"]
+                    "time_back": 36,
+                    "warnings_back": ["single_track", "zombies", "shared_platform"]
                 },
                 {
                     "halt": "Tbrg",
@@ -830,6 +851,14 @@
             "location": "Adliswil",
             "closest_station": "Adw",
             "coords": [-472, 69, -1355]
+        },
+        {
+            "id": "907b9e34",
+            "type": "shop",
+            "name": "Wolwinkel De Breinaald",
+            "location": "Torenburg",
+            "closest_station": "Tnrd",
+            "coords": [-343, 64, 15]
         }
     ]
 }
