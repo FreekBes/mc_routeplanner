@@ -859,6 +859,22 @@
             "location": "Torenburg",
             "closest_station": "Tnrd",
             "coords": [-343, 64, 15]
+        },
+        {
+            "id": "07dc3446",
+            "type": "castle",
+            "name": "Waterduinertempel",
+            "location": "Waterduinen",
+            "closest_station": "Wtdn",
+            "coords": [170, 65, -786]
+        },
+        {
+            "id": "ddac1fda",
+            "type": "stable",
+            "name": "Paardenstal",
+            "location": "Adliswil",
+            "closest_station": "Adw",
+            "coords": [-489, 69, -1312]
         }
     ]
 }
