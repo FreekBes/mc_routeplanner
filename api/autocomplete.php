@@ -43,12 +43,18 @@
 
     require_once("import/worlds.php");
     require_once("import/items.php");
+    require_once("import/PoiCalculator.php");
 
     if (isset($_GET["i"]) && !empty($_GET["i"]) && !empty(trim($_GET["i"]))) {
         $input = strtolower(trim($_GET["i"]));
         $results = array();
 
         if (!isset($_GET["stations_only"])) {
+            if (string_might_be_coords($_GET["i"])) {
+                $inputCoords = string_to_coords($_GET["i"]);
+                array_push($results, coords_to_item($inputCoords, check_for_nearest_station($inputCoords, $worldData["stations"])["id"]));
+            }
+
             foreach ($worldData["pois"] as $poi) {
                 if (strpos(strtolower($poi["name"]), $input) > -1 || (!empty($poi["location"]) && strpos(strtolower($poi["location"]), $input) > -1)) {
                     array_push($results, poi_to_item($poi));

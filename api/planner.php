@@ -96,15 +96,25 @@
                 $fromWalkingStart = null;
                 $fromWalkingEnd = null;
                 if (strlen($_GET["from"]) > 4) {
-                    // from is not a station, but a poi
+                    // from is not a station, but a poi or a coordinate
                     $fromNoStation = true;
                     $coords = [];
-                    foreach ($worldData["pois"] as $poi) {
-                        if ($poi["id"] == $_GET["from"]) {
-                            $coords = $poi["coords"];
-                            $fromWalkingStart = $poi["id"];
-                            $stuff["items"][$poi["id"]] = poi_to_item($poi);
-                            break;
+                    if (string_might_be_coords($_GET["from"])) {
+                        // from is a coordinate
+                        $coords = string_to_coords($_GET["from"]);
+                        $implodedCoords = implode(",", $coords);
+                        $fromWalkingStart = $implodedCoords;
+                        $stuff["items"][$implodedCoords] = coords_to_item($coords, check_for_nearest_station($coords, $worldData["stations"])["id"]);
+                    }
+                    else {
+                        // from is a poi
+                        foreach ($worldData["pois"] as $poi) {
+                            if ($poi["id"] == $_GET["from"]) {
+                                $coords = $poi["coords"];
+                                $fromWalkingStart = $poi["id"];
+                                $stuff["items"][$poi["id"]] = poi_to_item($poi);
+                                break;
+                            }
                         }
                     }
 
@@ -125,15 +135,25 @@
                 $toWalkingStart = null;
                 $toWalkingEnd = null;
                 if (strlen($_GET["to"]) > 4) {
-                    // to is not a station, but a poi
+                    // to is not a station, but a poi or coords
                     $toNoStation = true;
                     $coords = [];
-                    foreach ($worldData["pois"] as $poi) {
-                        if ($poi["id"] == $_GET["to"]) {
-                            $coords = $poi["coords"];
-                            $toWalkingEnd = $poi["id"];
-                            $stuff["items"][$poi["id"]] = poi_to_item($poi);
-                            break;
+                    if (string_might_be_coords($_GET["to"])) {
+                        // to is a coordinate
+                        $coords = string_to_coords($_GET["to"]);
+                        $implodedCoords = implode(",", $coords);
+                        $toWalkingEnd = $implodedCoords;
+                        $stuff["items"][$implodedCoords] = coords_to_item($coords, check_for_nearest_station($coords, $worldData["stations"])["id"]);
+                    }
+                    else {
+                        // to is a poi
+                        foreach ($worldData["pois"] as $poi) {
+                            if ($poi["id"] == $_GET["to"]) {
+                                $coords = $poi["coords"];
+                                $toWalkingEnd = $poi["id"];
+                                $stuff["items"][$poi["id"]] = poi_to_item($poi);
+                                break;
+                            }
                         }
                     }
 

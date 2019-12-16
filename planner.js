@@ -301,7 +301,11 @@ var planner = {
 
         bhtml += '<div class="timeline-station-time"></div>';
         bhtml += '<div class="timeline-station-icon"></div>';
-        bhtml += '<div class="timeline-station-name">Loop '+getDistance(fromCoords, toCoords)+' blokken naar '+toType.toLowerCase()+' '+toName+' <span style="white-space: nowrap;">('+toCoords.join(', ')+')</span></div>';
+        bhtml += '<div class="timeline-station-name">Loop '+getDistance(fromCoords, toCoords)+' blokken naar '+toType.toLowerCase()+' '+toName;
+        if (toType.toLowerCase() != "coördinaten" && toType.toLowerCase() != 'coords') {
+            bhtml += ' <span style="white-space: nowrap;">('+toCoords.join(', ')+')</span>';
+        }
+        bhtml += '</div>';
 
         b.innerHTML = bhtml;
         return b;
@@ -396,6 +400,8 @@ var planner = {
                 return ["icons/place.png", "Kunstwerk"];
             case "enchanting_table":
                 return ["icons/place.png", "Enchanting Table"];
+            case "coords":
+                return ["icons/place.png", "Coördinaten"];
             default:
                 return ["icons/place.png", "Overig"];
         }
