@@ -868,7 +868,7 @@
             ]
         },
         {
-            "type": "tram",
+            "type": "ring_line",
             "line_number": 9,
             "line_name": "//9 [Ringlijn Seehaven]",
             "operator": "BLR",
