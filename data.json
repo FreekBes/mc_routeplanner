@@ -701,7 +701,7 @@
             "coords": [-293, 66, 130]
         },
         {
-            "id": "013224e0",
+            "id": "013224f0",
             "type": "terrain",
             "name": "Jungle",
             "location": null,
@@ -875,6 +875,30 @@
             "location": "Adliswil",
             "closest_station": "Adw",
             "coords": [-489, 69, -1312]
+        },
+        {
+            "id": "fe4b3a8b",
+            "type": "other",
+            "name": "Postkantoor",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-262, 66, 163]
+        },
+        {
+            "id": "f7efe884",
+            "type": "church",
+            "name": "Sint Mandarijnkerk",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-306, 64, 167]
+        },
+        {
+            "id": "fab325cc",
+            "type": "bank",
+            "name": "Bank Post Malone",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-188, 70, 2072]
         }
     ]
 }
