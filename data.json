@@ -179,15 +179,15 @@
         },
         {
             "id": "Hms",
-            "name": "Hamsterdam",
+            "name": "Hamsterdam CS",
             "location": "Hamsterdam",
-            "former_name": null,
-            "building": false,
-            "roofed": false,
+            "former_name": "Hamsterdam",
+            "building": true,
+            "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 1,
-            "coords": [1026, 64, 1202]
+            "platforms": 6,
+            "coords": [1007, 66, 1195]
         },
         {
             "id": "Lvdp",
@@ -573,10 +573,10 @@
                 },
                 {
                     "halt": "Hms",
-                    "platform_forth": 1,
+                    "platform_forth": 2,
                     "time_forth": false,
                     "warnings_forth": [],
-                    "platform_back": 1,
+                    "platform_back": 3,
                     "time_back": 27,
                     "warnings_back": ["single_track"]
                 }
