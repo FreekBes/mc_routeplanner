@@ -256,6 +256,22 @@ input[type=submit]:hover {
     text-align: center;
 }
 
+#metromap {
+    margin: 32px auto;
+    display: block;
+    max-width: 100%;
+    width: 300px;
+    cursor: zoom-in;
+    border-radius: 3px;
+    opacity: 0.4;
+    transition: 0.35s;
+}
+
+#metromap:hover {
+    opacity: 1;
+    transition: 0.1s;
+}
+
 #output {
     margin: 32px auto;
     display: block;

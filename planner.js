@@ -165,6 +165,10 @@ var planner = {
         var outputField = document.getElementById("output");
         outputField.innerHTML = "";
 
+        if (typeof window.metromap == "object") {
+            document.getElementById("metromap").style.display = "none";
+        }
+
         console.log("Van " + planner.from.id + " naar " + planner.to.id);
         if (planner.from.id != planner.to.id) {
             planner.planRequest = $.getJSON( "api/planner.php", {from: planner.from.id, to: planner.to.id, w: worldToLoad, noCache: Math.random()} )

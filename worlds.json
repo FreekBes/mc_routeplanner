@@ -3,18 +3,21 @@
         "name": "Freeks Realm (2019 Reset)",
         "displayName": "Freeks Realm",
         "data": "data.json",
-        "mapSupported": true
+        "mapSupported": false,
+        "metroMap": "imgs/metromap.png"
     },
     "fro": {
         "name": "Freeks Realm (2015-2019)",
         "displayName": "Freeks Realm [OUD]",
         "data": "data-oud.json",
-        "mapSupported": false
+        "mapSupported": false,
+        "metroMap": null
     },
     "blr": {
         "name": "BLR Server (2013-2017)",
         "displayName": "BLR Server",
         "data": "data-blr.json",
-        "mapSupported": false
+        "mapSupported": false,
+        "metroMap": null
     }
 }
