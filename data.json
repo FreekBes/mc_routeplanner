@@ -899,6 +899,38 @@
             "location": "Post Malone",
             "closest_station": "Pml",
             "coords": [-188, 70, 2072]
+        },
+        {
+            "id": "5df851af",
+            "type": "shop",
+            "name": "Glaswinkel De Glasblazer",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-300, 69, 200]
+        },
+        {
+            "id": "56b2c7cf",
+            "type": "shop",
+            "name": "Winkel voor gekleurd glas",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-313, 69, 210]
+        },
+        {
+            "id": "dc459324",
+            "type": "shop",
+            "name": "Brick Shop Steenbakker",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-297, 69, 210]
+        },
+        {
+            "id": "922ec1c2",
+            "type": "shop",
+            "name": "Farmingwinkel Zaad op Maat",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-313, 64, 200]
         }
     ]
 }
