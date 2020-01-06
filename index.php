@@ -48,7 +48,7 @@
         <div id="output"></div>
         <?PHP
         if (!empty($world["metroMap"])) {
-            echo '<img src="'.$world["metroMap"].'" id="metromap" onclick="window.open(this.src);" title="Klik om in te zoomen..." />';
+            echo '<img src="'.$world["metroMap"].'?r='.mt_rand(1,299).'" id="metromap" onclick="window.open(this.src);" title="Klik om in te zoomen..." />';
         }
         ?>
     </body>

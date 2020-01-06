@@ -477,20 +477,20 @@
                 {
                     "halt": "Pml",
                     "platform_forth": 2,
-                    "time_forth": 26,
-                    "warnings_forth": ["skeletons"],
+                    "time_forth": 41,
+                    "warnings_forth": ["skeletons", "single_track"],
                     "platform_back": 1,
                     "time_back": 60,
                     "warnings_back": ["skeletons"]
                 },
                 {
                     "halt": "Shvn",
-                    "platform_forth": 2,
+                    "platform_forth": 1,
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 1,
-                    "time_back": 26,
-                    "warnings_back": ["skeletons"]
+                    "time_back": 41,
+                    "warnings_back": ["skeletons", "single_track"]
                 }
             ]
         },
@@ -614,6 +614,32 @@
                     "platform_back": 3,
                     "time_back": 25,
                     "warnings_back": ["single_track"]
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_number": 8,
+            "line_name": "T8",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Shvn",
+                    "platform_forth": 2,
+                    "time_forth": 313,
+                    "warnings_forth": ["skeletons", "zombies", "single_track"],
+                    "platform_back": 2,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Min",
+                    "platform_forth": 4,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 4,
+                    "time_back": 313,
+                    "warnings_back": ["skeletons", "zombies", "single_track"]
                 }
             ]
         }
