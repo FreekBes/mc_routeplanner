@@ -26,5 +26,24 @@ function startInit() {
                 worldOpt.innerHTML = worlds[possibleWorlds[i]].name;
                 worldOpts.appendChild(worldOpt);
             }
+
+            if (getParameterByName("f") != null) {
+                planner.getById(getParameterByName("f")).then(function(item) {
+                    planner.setFrom(item);
+
+                    if (planner.from != undefined && planner.to != undefined && planner.from != null && planner.to != null) {
+                        planner.plan();
+                    }
+                });
+            }
+            if (getParameterByName("t") != null) {
+                planner.getById(getParameterByName("t")).then(function(item) {
+                    planner.setTo(item);
+
+                    if (planner.from != undefined && planner.to != undefined && planner.from != null && planner.to != null) {
+                        planner.plan();
+                    }
+                });
+            }
         });
 }

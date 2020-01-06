@@ -105,3 +105,11 @@ function detailsTagSupported() {
     var temp = document.createElement("details");
     return (typeof temp.open === "boolean");
 }
+
+function updateUrl(f, fName, t, tName) {
+    if (window.history.replaceState) {
+        var newTitle = "Route van " + fName + " naar " + tName + " | Routeplanner voor " + worlds[worldToLoad].displayName;
+        window.history.replaceState({f: f, t: t}, newTitle, "?f="+encodeURIComponent(f)+"&t="+encodeURIComponent(t));
+        document.title = newTitle;
+    }
+}

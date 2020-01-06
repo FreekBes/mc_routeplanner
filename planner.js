@@ -138,9 +138,28 @@ var planner = {
         }
     },
 
+    getById: function(id) {
+        return new Promise(function(resolve, reject) {
+            planner.autocompleteRequest = $.getJSON( "api/getbyid.php", {id: id, w: worldToLoad, noCache: Math.random()} )
+                .done(function(json) {
+                    if (json["data"] != null) {
+                        resolve(json["data"]);
+                    }
+                    else {
+                        reject();
+                    }
+                })
+                .fail(function() {
+                    reject();
+                });
+        });
+    },
+
     planRequest: null,
     plan: function(event) {
-        event.preventDefault();
+        if (event != null) {
+            event.preventDefault();
+        }
 
         if (planner.from == null) {
             alert("Geef eerst aan vanaf waar je de reis wilt maken.");
@@ -262,6 +281,8 @@ var planner = {
                             var walkingHalt = planner.createTimelineItem(walkingEndItem["name"], walkingEndItem["subtype"], false, true);
                             outputField.appendChild(walkingHalt);
                         }
+
+                        updateUrl(planner.from.id, planner.from.name, planner.to.id, planner.to.name);
                     }
                     else {
                         alert(json["message"]);
