@@ -17,6 +17,28 @@
         return 0;
     }
 
+    function get_item_by_id($worldData, $id) {
+        $id = strtolower(trim($id));
+        $result = array();
+
+        if (strlen($id) == 3 || strlen($id) == 4) {
+            foreach ($worldData["stations"] as $station) {
+                if (strtolower($station["id"]) == $id) {
+                    $result = station_to_item($station);
+                }
+            }
+        }
+        else {
+            foreach ($worldData["pois"] as $poi) {
+                if (strtolower($poi["id"]) == $id) {
+                    $result = poi_to_item($poi);
+                }
+            }
+        }
+
+        return $result;
+    }
+
     function get_object_by_id($objects, $id) {
         return get_object_by($objects, "id", $id);
     }
@@ -31,15 +53,15 @@
     }
 
     function string_might_be_coords($str) {
-        return (strpos($str,",") > -1 || strpos($str," ") > -1 || is_numeric($str));
+        return (substr_count($str,",") >= 2 || substr_count($str," ") >= 2 || is_numeric($str));
     }
 
     function string_to_coords($str) {
         if (string_might_be_coords($str)) {
-            if (strpos($str, ",") > -1) {
+            if (substr_count($str,",") >= 2) {
                 $coords = explode(",", $str);
             }
-            else if (strpos($str, " ") > -1) {
+            else if (substr_count($str," ") >= 2) {
                 $coords = explode(" ", $str);
             }
             else {

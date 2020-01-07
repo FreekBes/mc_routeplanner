@@ -46,23 +46,7 @@
     require_once("import/PoiCalculator.php");
 
     if (isset($_GET["id"]) && !empty($_GET["id"]) && !empty(trim($_GET["id"]))) {
-        $id = strtolower(trim($_GET["id"]));
-        $result = array();
-
-        if (strlen($id) == 3 || strlen($id) == 4) {
-            foreach ($worldData["stations"] as $station) {
-                if (strtolower($station["id"]) == $id) {
-                    $result = station_to_item($station);
-                }
-            }
-        }
-        else {
-            foreach ($worldData["pois"] as $poi) {
-                if (strtolower($poi["id"]) == $id) {
-                    $result = poi_to_item($poi);
-                }
-            }
-        }
+        $result = get_item_by_id($worldData, $_GET["id"]);
 
         if (count($result) > 0) {
             returnData("Item found", $result);

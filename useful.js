@@ -109,7 +109,7 @@ function detailsTagSupported() {
 function updateUrl(f, fName, t, tName) {
     if (window.history.replaceState) {
         var newTitle = "Route van " + fName + " naar " + tName + " | Routeplanner voor " + worlds[worldToLoad].displayName;
-        window.history.replaceState({f: f, t: t}, newTitle, "?f="+encodeURIComponent(f)+"&t="+encodeURIComponent(t));
+        window.history.replaceState({f: f, t: t}, newTitle, "?f="+encodeURIComponent(f)+"&t="+encodeURIComponent(t)+"&w="+worldToLoad);
         document.title = newTitle;
     }
 }
