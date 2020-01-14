@@ -843,7 +843,6 @@
     "routes": [
         {
             "type": "tram",
-            "line_number": 10,
             "line_name": "//10",
             "operator": "BLR",
             "halts": [
@@ -869,7 +868,6 @@
         },
         {
             "type": "ring_line",
-            "line_number": 9,
             "line_name": "//9 [Ringlijn Seehaven]",
             "operator": "BLR",
             "halts": [
@@ -976,7 +974,6 @@
         },
         {
             "type": "tram",
-            "line_number": 2,
             "line_name": "//2",
             "operator": "BLR",
             "halts": [
@@ -1047,7 +1044,6 @@
         },
         {
             "type": "metro",
-            "line_number": 28,
             "line_name": "L28",
             "operator": "BLR",
             "halts": [
@@ -1091,7 +1087,6 @@
         },
         {
             "type": "train",
-            "line_number": 1,
             "line_name": "T1",
             "operator": "BLR",
             "halts": [
@@ -1180,7 +1175,6 @@
         },
         {
             "type": "tram",
-            "line_number": 6,
             "line_name": "//6",
             "operator": "BLR",
             "halts": [
@@ -1233,7 +1227,6 @@
         },
         {
             "type": "metro",
-            "line_number": 31,
             "line_name": "L31",
             "operator": "BLR",
             "halts": [
@@ -1286,7 +1279,6 @@
         },
         {
             "type": "metro",
-            "line_number": 33,
             "line_name": "L33",
             "operator": "BLR",
             "halts": [
@@ -1321,7 +1313,6 @@
         },
         {
             "type": "metro",
-            "line_number": 34,
             "line_name": "L34",
             "operator": "BLR",
             "halts": [
@@ -1356,7 +1347,6 @@
         },
         {
             "type": "metro",
-            "line_number": 32,
             "line_name": "L32",
             "operator": "BLR",
             "halts": [
@@ -1391,7 +1381,6 @@
         },
         {
             "type": "train",
-            "line_number": 2,
             "line_name": "T2",
             "operator": "BLR",
             "halts": [
@@ -1444,7 +1433,6 @@
         },
         {
             "type": "metro",
-            "line_number": 19,
             "line_name": "L19",
             "operator": "BLR",
             "halts": [
@@ -1560,7 +1548,6 @@
         },
         {
             "type": "train",
-            "line_number": 11,
             "line_name": "T11",
             "operator": "BLR",
             "halts": [
@@ -1586,7 +1573,6 @@
         },
         {
             "type": "metro",
-            "line_number": 13,
             "line_name": "L13",
             "operator": "BLR",
             "halts": [
@@ -1612,7 +1598,6 @@
         },
         {
             "type": "metro",
-            "line_number": 14,
             "line_name": "L14",
             "operator": "BLR",
             "halts": [
@@ -1647,7 +1632,6 @@
         },
         {
             "type": "tram",
-            "line_number": 4,
             "line_name": "//4",
             "operator": "BLR",
             "halts": [
@@ -1673,7 +1657,6 @@
         },
         {
             "type": "train",
-            "line_number": 3,
             "line_name": "T3",
             "operator": "BLR",
             "halts": [
@@ -1708,7 +1691,6 @@
         },
         {
             "type": "train",
-            "line_number": 12,
             "line_name": "T12",
             "operator": "BLR",
             "halts": [
@@ -1734,7 +1716,6 @@
         },
         {
             "type": "metro",
-            "line_number": 12,
             "line_name": "L12",
             "operator": "BLR",
             "halts": [
@@ -1760,7 +1741,6 @@
         },
         {
             "type": "metro",
-            "line_number": 11,
             "line_name": "L11",
             "operator": "BLR",
             "halts": [
@@ -1786,7 +1766,6 @@
         },
         {
             "type": "metro",
-            "line_number": 4,
             "line_name": "L4",
             "operator": "BLR",
             "halts": [
@@ -1812,7 +1791,6 @@
         },
         {
             "type": "metro",
-            "line_number": 3,
             "line_name": "L3",
             "operator": "BLR",
             "halts": [
@@ -1838,7 +1816,6 @@
         },
         {
             "type": "metro",
-            "line_number": 1,
             "line_name": "L1",
             "operator": "BLR",
             "halts": [
@@ -1864,7 +1841,6 @@
         },
         {
             "type": "metro",
-            "line_number": 7,
             "line_name": "L7",
             "operator": "BLR",
             "halts": [
@@ -1890,7 +1866,6 @@
         },
         {
             "type": "metro",
-            "line_number": 9,
             "line_name": "L9",
             "operator": "BLR",
             "halts": [
@@ -1916,7 +1891,6 @@
         },
         {
             "type": "metro",
-            "line_number": 2,
             "line_name": "L2",
             "operator": "BLR",
             "halts": [
@@ -1969,7 +1943,6 @@
         },
         {
             "type": "metro",
-            "line_number": 10,
             "line_name": "L10",
             "operator": "BLR",
             "halts": [
@@ -1995,7 +1968,6 @@
         },
         {
             "type": "metro",
-            "line_number": 16,
             "line_name": "L16",
             "operator": "BLR",
             "halts": [
@@ -2021,7 +1993,6 @@
         },
         {
             "type": "train",
-            "line_number": 4,
             "line_name": "T4",
             "operator": "BLR",
             "halts": [
@@ -2047,7 +2018,6 @@
         },
         {
             "type": "train",
-            "line_number": 8,
             "line_name": "L8",
             "operator": "BLR",
             "halts": [
@@ -2073,7 +2043,6 @@
         },
         {
             "type": "metro",
-            "line_number": 30,
             "line_name": "L30",
             "operator": "BLR",
             "halts": [
@@ -2144,7 +2113,6 @@
         },
         {
             "type": "metro",
-            "line_number": 15,
             "line_name": "L15",
             "operator": "BLR",
             "halts": [
@@ -2179,7 +2147,6 @@
         },
         {
             "type": "metro",
-            "line_number": 29,
             "line_name": "L29",
             "operator": "BLR",
             "halts": [
@@ -2205,7 +2172,6 @@
         },
         {
             "type": "metro",
-            "line_number": 17,
             "line_name": "L17",
             "operator": "BLR",
             "halts": [

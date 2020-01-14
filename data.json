@@ -6,6 +6,13 @@
             "run_by": "CraftingTimes",
             "started": 2019,
             "main_station": "Tcs"
+        },
+        "PMT": {
+            "id": "PMT",
+            "name": "Porto Maritimo Treinar",
+            "run_by": "MinaBes",
+            "started": 2020,
+            "main_station": "Poma"
         }
     },
     "stations": [
@@ -238,16 +245,28 @@
             "coords": [-2528, 72, 159]
         },
         {
-            "id": "Min",
-            "name": "Mina's Dorp",
-            "location": "Mina's Dorp",
-            "former_name": null,
-            "building": false,
-            "roofed": false,
+            "id": "Pom",
+            "name": "Porto Maritimo CS",
+            "location": "Porto Maritimo",
+            "former_name": "Mina's Dorp",
+            "building": true,
+            "roofed": true,
             "underground": false,
             "opened": 2019,
             "platforms": 4,
-            "coords": [-2698, 65, 350]
+            "coords": [-2698, 65, 344]
+        },
+        {
+            "id": "Poma",
+            "name": "Porto Maritimo Altura",
+            "location": "Porto Maritimo",
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": 2020,
+            "platforms": 1,
+            "coords": [-2592, 72, 250]
         },
         {
             "id": "Shvn",
@@ -301,7 +320,6 @@
     "routes": [
         {
             "type": "train",
-            "line_number": 1,
             "line_name": "T1",
             "operator": "OSS",
             "halts": [
@@ -336,7 +354,6 @@
         },
         {
             "type": "train",
-            "line_number": 2,
             "line_name": "T2",
             "operator": "OSS",
             "halts": [
@@ -388,26 +405,25 @@
                 {
                     "halt": "Mlnb",
                     "platform_forth": 2,
-                    "time_forth": 30,
+                    "time_forth": 47,
                     "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 97,
                     "warnings_back": ["zombies"]
                 },
                 {
-                    "halt": "Min",
+                    "halt": "Pom",
                     "platform_forth": 3,
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 2,
-                    "time_back": 30,
+                    "time_back": 47,
                     "warnings_back": []
                 }
             ]
         },
         {
             "type": "train",
-            "line_number": 3,
             "line_name": "T3",
             "operator": "OSS",
             "halts": [
@@ -496,7 +512,6 @@
         },
         {
             "type": "train",
-            "line_number": 5,
             "line_name": "T5",
             "operator": "OSS",
             "halts": [
@@ -549,7 +564,6 @@
         },
         {
             "type": "train",
-            "line_number": 6,
             "line_name": "T6",
             "operator": "OSS",
             "halts": [
@@ -584,7 +598,6 @@
         },
         {
             "type": "train",
-            "line_number": 7,
             "line_name": "T7",
             "operator": "OSS",
             "halts": [
@@ -619,7 +632,6 @@
         },
         {
             "type": "train",
-            "line_number": 8,
             "line_name": "T8",
             "operator": "OSS",
             "halts": [
@@ -633,13 +645,38 @@
                     "warnings_back": []
                 },
                 {
-                    "halt": "Min",
+                    "halt": "Pom",
                     "platform_forth": 4,
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 4,
                     "time_back": 313,
                     "warnings_back": ["skeletons", "zombies", "single_track"]
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "H1",
+            "operator": "PMT",
+            "halts": [
+                {
+                    "halt": "Pom",
+                    "platform_forth": 1,
+                    "time_forth": 35,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Poma",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 35,
+                    "warnings_back": ["single_track"]
                 }
             ]
         }
@@ -793,7 +830,7 @@
         {
             "id": "701ab596",
             "type": "bank",
-            "name": "Bank Torenburg",
+            "name": "Bank",
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-268, 64, 123]
@@ -865,7 +902,7 @@
         {
             "id": "cae0c5ab",
             "type": "bank",
-            "name": "Bank Adliswil",
+            "name": "Bank",
             "location": "Adliswil",
             "closest_station": "Adw",
             "coords": [-469, 69, -1352]
@@ -921,7 +958,7 @@
         {
             "id": "fab325cc",
             "type": "bank",
-            "name": "Bank Post Malone",
+            "name": "Bank",
             "location": "Post Malone",
             "closest_station": "Pml",
             "coords": [-188, 70, 2072]
@@ -957,6 +994,30 @@
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-313, 64, 200]
+        },
+        {
+            "id": "0499a77c",
+            "type": "shop",
+            "name": "Prismarineshop Doomed Marine",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-183, 70, 2078]
+        },
+        {
+            "id": "8827ca36",
+            "type": "mine",
+            "name": "Mines",
+            "location": "Porto Maritimo",
+            "closest_station": "Pom",
+            "coords": [-2663, 63, 274]
+        },
+        {
+            "id": "705bc44b",
+            "type": "bank",
+            "name": "Bank",
+            "location": "Porto Maritimo",
+            "closest_station": "Pom",
+            "coords": [-2706, 65, 355]
         }
     ]
 }

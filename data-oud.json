@@ -260,7 +260,6 @@
     "routes": [
         {
             "type": "train",
-            "line_number": 1,
             "line_name": "T1",
             "operator": "OSS",
             "halts": [
@@ -358,7 +357,6 @@
         },
         {
             "type": "train",
-            "line_number": 2,
             "line_name": "T2",
             "operator": "OSS",
             "halts": [
@@ -420,7 +418,6 @@
         },
         {
             "type": "train",
-            "line_number": 3,
             "line_name": "T3",
             "operator": "OSS",
             "halts": [
@@ -473,7 +470,6 @@
         },
         {
             "type": "subway",
-            "line_number": 1,
             "line_name": "M1",
             "operator": "OSS",
             "halts": [
@@ -508,7 +504,6 @@
         },
         {
             "type": "mine",
-            "line_number": 1,
             "line_name": "D1",
             "operator": "SML",
             "halts": [
