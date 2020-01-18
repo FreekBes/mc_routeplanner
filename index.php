@@ -22,7 +22,8 @@
         }
         ?>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <script src="jquery.min.js"></script>
+        <script src="api/jquery.min.js"></script>
+        <script src="api/titletooltipper.js"></script>
         <script><?PHP echo readfile("useful.js"); ?></script>
         <script><?PHP echo readfile("worlds.js"); ?></script>
         <script><?PHP echo readfile("planner.js"); ?></script>
