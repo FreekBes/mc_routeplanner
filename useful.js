@@ -113,3 +113,9 @@ function updateUrl(f, fName, t, tName) {
         document.title = newTitle;
     }
 }
+
+function makeUnique(array) {
+    return array.filter(function(value, index, self) { 
+        return self.indexOf(value) === index;
+    });
+}

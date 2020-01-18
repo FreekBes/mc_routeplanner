@@ -384,7 +384,7 @@ input[type=submit]:hover {
     background-image: url('icons/timeline-end.png');
 }
 
-.timeline-station.instruction .timeline-station-icon, .timeline-station.filler .timeline-station-icon {
+.timeline-station.instruction .timeline-station-icon, .timeline-station.filler .timeline-station-icon, .timeline-station.warnings .timeline-station-icon {
     background-image: url('icons/timeline-line.png');
     padding: 0px 8px 0px 0px;
     height: 100%;
@@ -427,6 +427,19 @@ input[type=submit]:hover {
     text-align: right;
 }
 
+.timeline-station-warnings {
+    text-align: right;
+    position: absolute;
+    right: 38px;
+    padding: 21px 0px !important;
+}
+
+.timeline-station-warnings.inline {
+    position: initial;
+    right: initial;
+    padding: 0px 0px !important;
+}
+
 .timeline-station.transfer .timeline-station-platform, .timeline-station.transfer .timeline-station-line {
     font-size: small;
 }
@@ -456,6 +469,22 @@ details > summary:hover .expand-icon.down {
     margin-top: 6px;
 }
 
+details .timeline-station-warnings {
+    display: none;
+}
+
+details .timeline-station-warnings.combined-warnings {
+    display: inline-block;
+}
+
+details[open] .timeline-station-warnings {
+    display: inline-block;
+}
+
+details[open] .timeline-station-warnings.combined-warnings {
+    display: none;
+}
+
 .expand-icon {
     display: block;
     width: 12px;
@@ -470,6 +499,28 @@ details > summary:hover .expand-icon.down {
 
 .expand-icon.down {
     margin-top: 2px;
+}
+
+.timeline-station-warning-icon {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    opacity: 0.5;
+    background-position: center center;
+    background-size: 17px;
+    background-repeat: no-repeat;
+    transition: 0.35s;
+    cursor: default;
+}
+
+.timeline-station-warnings.smaller-icons .timeline-station-warning-icon {
+    background-size: 15px;
+    width: 17px;
+}
+
+.timeline-station-warning-icon:hover {
+    opacity: 0.7;
+    transition: 0.05s;
 }
 
 @media screen and (max-width: 500px) {
@@ -509,4 +560,71 @@ details > summary:hover .expand-icon.down {
     .autocomplete-items {
         max-height: 180px;
     }
+
+    .timeline-station.normal > * {
+        padding: 2px 6px !important;
+    }
+
+    .timeline-station.normal > .timeline-station-time {
+        padding: 0px 5px !important;
+    }
+
+    .timeline-station.normal > .timeline-station-icon {
+        padding: 2px 0px !important;
+    }
+
+    .timeline-station-warning-icon {
+        width: 25px;
+        height: 25px;
+        background-size: 23px;
+    }
+
+    .timeline-station-warnings.smaller-icons .timeline-station-warning-icon {
+        background-size: 21px;
+        width: 23px;
+    }
+}
+
+/* TOOLTIP FUNCTIONS */
+#tooltip {
+    text-align: center;
+    font-size: 12px;
+    color: #EDEDED;
+    background: #242424;
+    position: absolute;
+    z-index: 100;
+    padding: 8px;
+    transition: 0.1s;
+    margin-top: 6px;
+}
+
+#tooltip:after {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #242424;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    margin-left: -4px;
+}
+
+#tooltip.top:after {
+    border-top-color: transparent;
+    border-bottom: 4px solid #242424;
+    top: -8px;
+    bottom: auto;
+}
+
+#tooltip.left:after {
+    left: 4px;
+    margin: 0;
+}
+
+#tooltip.right:after {
+    right: 4px;
+    left: auto;
+    margin: 0;
 }

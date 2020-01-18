@@ -220,43 +220,82 @@ var planner = {
                         if (route != null) {
                             var lastLine = null;
                             var totalDuration = 0;
+                            var lineSummary = null;
                             var lineGroupOutput = null;
                             var lineGroupFirstStationAdded = false;
+                            var lineWarningsCombined = [];
                             for (i = 0; i < route.halts.length; i++) {
                                 if (route.lines[i] != lastLine && i != route.halts.length - 1) {
                                     if (lineGroupOutput != null) {
                                         lineGroupOutput.appendChild(planner.createTimelineFiller());
+                                        if (lineSummary != null && lineWarningsCombined.length > 0) {
+                                            var warningsSumm = document.createElement('div');
+                                            warningsSumm.className = 'timeline-station-warnings combined-warnings';
+                                            if (!detailsTagSupported()) {
+                                                warningsSumm.setAttribute("style", "right: 4px;");
+                                            }
+                                            for (var j = 0; j < lineWarningsCombined.length; j++) {
+                                                var warningInfo = planner.getWarningIconAndName(lineWarningsCombined[j]);
+                                                warningsSumm.innerHTML += '<span class="timeline-station-warning-icon" onclick="event.stopPropagation(); return false;" style="background-image: url(\''+warningInfo[0]+'\');" rel="tooltip" title="'+warningInfo[1].replace(/"/g, '\\\"')+'"></span>';
+                                            }
+                                            var summ = lineSummary.children[1];
+                                            summ.insertBefore(warningsSumm, summ.children[3]);
+                                        }
                                         outputField.appendChild(lineGroupOutput);
                                     }
                                     lineGroupOutput = document.createElement('details');
                                     lineGroupFirstStationAdded = false;
-                                    var lineSummary = document.createElement('summary');
-                                    lineSummary.setAttribute("title", "Tik/klik om tussenstops te weergeven");
-                                    lineSummary.appendChild(planner.createTimelineLineSummary(route.lines[i], lineData[route.lines[i]]["type"], lineData[route.lines[i]]["operator"], items[route.halts[i+1]]["name"]));
+                                    lineSummary = document.createElement('summary');
+                                    if (detailsTagSupported()) {
+                                        lineSummary.setAttribute("title", "Tik/klik om tussenstops te weergeven");
+                                    }
+                                    lineSummary.appendChild(planner.createTimelineLineSummary(route.lines[i], lineData[route.lines[i]]["type"], lineData[route.lines[i]]["operator"], items[route.halts[i+1]]["name"], route.warnings[i]));
                                     lineGroupOutput.appendChild(lineSummary);
+                                    lineWarningsCombined = [];
                                 }
 
                                 if (i == 0) {
-                                    var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], route.lines[i], toDoStartItem, false);
+                                    var timelineHalt = planner.createTimelineHalt(0, true, items[route.halts[i]]["name"], route.platforms[i], route.lines[i], toDoStartItem, false, route.warnings[i]);
                                     lineSummary.insertBefore(timelineHalt, lineSummary.firstChild);
                                     lineGroupFirstStationAdded = true;
+                                    if (route.warnings[i].length > 0) {
+                                        lineWarningsCombined = makeUnique(lineWarningsCombined.concat(route.warnings[i]));
+                                        // lineGroupOutput.appendChild(planner.createTimelineWarnings(route.warnings[i]));
+                                    }
                                 }
                                 else if (i == route.halts.length - 1) {
                                     totalDuration += route.durations[i-1];
-                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], null, false, toDoEndItem);
+                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2-1], null, false, toDoEndItem, null);
                                     lineGroupOutput.appendChild(planner.createTimelineFiller());
+                                    if (lineSummary != null && lineWarningsCombined.length > 0) {
+                                        var warningsSumm = document.createElement('div');
+                                        warningsSumm.className = 'timeline-station-warnings combined-warnings';
+                                        if (!detailsTagSupported()) {
+                                            warningsSumm.setAttribute("style", "right: 4px;");
+                                        }
+                                        for (var j = 0; j < lineWarningsCombined.length; j++) {
+                                            var warningInfo = planner.getWarningIconAndName(lineWarningsCombined[j]);
+                                            warningsSumm.innerHTML += '<span class="timeline-station-warning-icon" style="background-image: url(\''+warningInfo[0]+'\');" rel="tooltip" title="'+warningInfo[1].replace(/"/g, '\\\"')+'"></span>';
+                                        }
+                                        var summ = lineSummary.children[1];
+                                        summ.insertBefore(warningsSumm, summ.children[3]);
+                                    }
                                     outputField.appendChild(lineGroupOutput);
                                     outputField.appendChild(timelineHalt);
                                 }
                                 else {
                                     totalDuration += route.durations[i-1];
-                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2], route.lines[i], false, false);
+                                    var timelineHalt = planner.createTimelineHalt(totalDuration, route.lines[i] != lastLine, items[route.halts[i]]["name"], route.platforms[i*2], route.lines[i], false, false, route.warnings[i]);
                                     if (!lineGroupFirstStationAdded) {
                                         lineGroupFirstStationAdded = true;
                                         lineSummary.insertBefore(timelineHalt, lineSummary.firstChild);
                                     }
                                     else {
                                         lineGroupOutput.appendChild(timelineHalt);
+                                    }
+                                    if (route.warnings[i].length > 0) {
+                                        lineWarningsCombined = makeUnique(lineWarningsCombined.concat(route.warnings[i]));
+                                        // lineGroupOutput.appendChild(planner.createTimelineWarnings(route.warnings[i]));
                                     }
                                 }
 
@@ -283,6 +322,8 @@ var planner = {
                         }
 
                         updateUrl(planner.from.id, planner.from.name, planner.to.id, planner.to.name);
+
+                        bindTooltips();
                     }
                     else {
                         alert(json["message"]);
@@ -311,7 +352,7 @@ var planner = {
         return b;
     },
 
-    createTimelineHalt: function(time, transfer, name, platform, line, start, end) {
+    createTimelineHalt: function(time, transfer, name, platform, line, start, end, warningsForth) {
         var b = document.createElement('div');
         b.setAttribute("class", "timeline-station"+(transfer ? ' transfer' : ' normal')+(start ? ' start' : '')+(end ? ' end' : ''));
         var bhtml = "";
@@ -326,6 +367,16 @@ var planner = {
         }
         bhtml += '<div class="timeline-station-icon"></div>';
         bhtml += '<div class="timeline-station-name">'+name+'</div>';
+
+        if (warningsForth != null && warningsForth.length > 0 && transfer == false) {
+            bhtml += '<div class="timeline-station-warnings inline smaller-icons">';
+            for (var i = 0; i < warningsForth.length; i++) {
+                var warningInfo = planner.getWarningIconAndName(warningsForth[i]);
+                bhtml += '<span class="timeline-station-warning-icon" style="background-image: url(\''+warningInfo[0]+'\');" rel="tooltip" title="'+warningInfo[1].replace(/"/g, '\\\"')+'"></span>';
+            }
+            bhtml += '</div>';
+        }
+
         if (platform != undefined && platform != null && platform > 0) {
             bhtml += '<div class="timeline-station-platform">'+platform+'</div>';
         }
@@ -354,7 +405,7 @@ var planner = {
         return b;
     },
 
-    createTimelineLineSummary: function(name, type, operator, direction) {
+    createTimelineLineSummary: function(name, type, operator, direction, warningsForth) {
         var b = document.createElement('div');
         b.setAttribute("class", "timeline-station instruction line-summary");
         var bhtml = "";
@@ -362,10 +413,38 @@ var planner = {
         bhtml += '<div class="timeline-station-time">'+operator+'</div>';
         bhtml += '<div class="timeline-station-icon"></div>';
         bhtml += '<div class="timeline-station-name"><b>'+operator+' '+planner.getPublicTransportTypeName(type).toLowerCase()+' '+name+'</b><br/><i>richting '+direction+'</i></div>';
+        if (warningsForth != null && warningsForth.length > 0) {
+            bhtml += '<div class="timeline-station-warnings smaller-icons">';
+            for (var i = 0; i < warningsForth.length; i++) {
+                var warningInfo = planner.getWarningIconAndName(warningsForth[i]);
+                bhtml += '<span class="timeline-station-warning-icon" onclick="event.stopPropagation(); return false;" style="background-image: url(\''+warningInfo[0]+'\');" rel="tooltip" title="'+warningInfo[1].replace(/"/g, '\\\"')+'"></span>';
+            }
+            bhtml += '</div>';
+        }
         if (detailsTagSupported()) {
             bhtml += '<div class="timeline-station-expand"><img class="expand-icon up" src="icons/expand-up.png" /><img class="expand-icon down" src="icons/expand-down.png" /></div>';
         }
         
+        b.innerHTML = bhtml;
+        return b;
+    },
+
+    createTimelineWarnings: function(warnings) {
+        var b = document.createElement('div');
+        b.setAttribute("class", "timeline-station warnings");
+        var bhtml = "";
+
+        bhtml += '<div class="timeline-station-time"></div>';
+        bhtml += '<div class="timeline-station-icon"></div>';
+        bhtml += '<div class="timeline-station-name">';
+
+        for (var i = 0; i < warnings.length; i++) {
+            var warningInfo = planner.getWarningIconAndName(warnings[i]);
+            bhtml += '<span class="timeline-station-warning-icon" style="background-image: url(\''+warningInfo[0]+'\');" rel="tooltip" title="'+warningInfo[1].replace(/"/g, '\\\"')+'"></span>';
+        }
+
+        bhtml += '</div>';
+
         b.innerHTML = bhtml;
         return b;
     },
@@ -447,6 +526,37 @@ var planner = {
                 return ["icons/place.png", "Coördinaten"];
             default:
                 return ["icons/place.png", "Overig"];
+        }
+    },
+
+    getWarningIconAndName: function(warning) {
+        switch (warning) {
+            case "single_track":
+                return ["icons/warnings/single-track.png", "Dit traject gaat gedeeltelijk over enkelspoor."];
+            case "skeletons":
+                return ["icons/warnings/skeletons.png", "Op dit traject kunnen veel skeletons voorkomen."];
+            case "zombies":
+                return ["icons/warnings/zombies.png", "Op dit traject kunnen veel zombies voorkomen."];
+            case "shared_platform":
+                return ["icons/warnings/shared-platform.png", "Dit traject gaat langs een gedeeld perron."];
+            case "mine_track":
+                return ["icons/warnings/mine-track.png", "Deze route gaat over een mijnspoor."];
+            case "own_minecart":
+                return ["icons/warnings/own-minecart.png", "Voor dit traject moet je je eigen minecart meenemen!"];
+            case "cactus_breaker":
+                return ["icons/warnings/no-icon.png", "Dit traject wordt onderbroken door een cactus. Je zult daar opnieuw in moeten stappen."];
+            case "no_stop_take_off":
+                return ["icons/warnings/no-stop-take-off.png", "De minecart zal gelijk wegrijden bij het drukken op de knop. Stap snel in!"];
+            case "no_fence":
+                return ["icons/warnings/no-fence.png", "Langs dit traject staat geen hek! Pas op voor mobs op het spoor."];
+            case "messy":
+                return ["icons/warnings/messy.png", "Dit traject is erg rommelig!"];
+            case "left_side":
+                return ["icons/warnings/left-side.png", "Op dit traject wordt links aangehouden."];
+            case "lever_for_minecart":
+                return ["icons/warnings/lever-for-minecart.png", "Op dit traject moet je levers omschakelen in plaats van op knoppen drukken om minecarts te verkrijgen."];
+            default:
+                return ["icons/warnings/no-icon.png", warning];
         }
     },
 
