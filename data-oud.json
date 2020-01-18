@@ -276,7 +276,7 @@
                     "halt": "Kbr",
                     "platform_forth": 4,
                     "time_forth": 40,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 3,
                     "time_back": 58,
                     "warnings_back": []
@@ -285,19 +285,19 @@
                     "halt": "Hmsd",
                     "platform_forth": 1,
                     "time_forth": 82,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": 40,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 },
                 {
                     "halt": "Riv",
                     "platform_forth": 2,
                     "time_forth": 42,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 82,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 },
                 {
                     "halt": "Prfn",
@@ -306,13 +306,13 @@
                     "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 42,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 },
                 {
                     "halt": "Obk",
                     "platform_forth": 4,
                     "time_forth": 49,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 3,
                     "time_back": 49,
                     "warnings_back": []
@@ -321,19 +321,19 @@
                     "halt": "Hsvn",
                     "platform_forth": 2,
                     "time_forth": 45,
-                    "warnings_forth": ["hyperspeed", "single_track", "shared_platform"],
+                    "warnings_forth": ["single_track", "shared_platform"],
                     "platform_back": 1,
                     "time_back": 49,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 },
 				{
 					"halt": "Slms",
 					"platform_forth": 1,
 					"time_forth": 193,
-					"warnings_forth": ["single_track", "skeletons", "hyperspeed", "shared_platform"],
+					"warnings_forth": ["single_track", "skeletons", "shared_platform"],
 					"platform_back": 1,
 					"time_back": 45,
-					"warnings_back": ["hyperspeed", "single_track", "shared_platform"]
+					"warnings_back": ["single_track", "shared_platform"]
 				},
                 {
                     "halt": "Sbn",
@@ -342,7 +342,7 @@
                     "warnings_forth": ["single_track", "skeletons"],
                     "platform_back": 2,
                     "time_back": 193,
-                    "warnings_back": ["single_track", "skeletons", "hyperspeed", "shared_platform"]
+                    "warnings_back": ["single_track", "skeletons", "shared_platform"]
                 },
 				{
 					"halt": "Sbnh",
@@ -364,7 +364,7 @@
                     "halt": "Gdmn",
                     "platform_forth": 1,
                     "time_forth": 60,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": false,
                     "warnings_back": []
@@ -373,7 +373,7 @@
                     "halt": "Bosd",
                     "platform_forth": 1,
                     "time_forth": 40,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": 60,
                     "warnings_back": []
@@ -382,28 +382,28 @@
                     "halt": "Kbr",
                     "platform_forth": 2,
                     "time_forth": 71,
-                    "warnings_forth": ["single_track", "hyperspeed"],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 1,
                     "time_back": 40,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 },
                 {
                     "halt": "Spkp",
                     "platform_forth": 1,
                     "time_forth": 52,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": 71,
-                    "warnings_back": ["single_track", "hyperspeed"]
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Evrl",
                     "platform_forth": 2,
                     "time_forth": 82,
-                    "warnings_forth": ["hyperspeed"],
+                    "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 52,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 },
                 {
                     "halt": "Obk",
@@ -412,7 +412,7 @@
                     "warnings_forth": [],
                     "platform_back": 5,
                     "time_back": 82,
-                    "warnings_back": ["hyperspeed"]
+                    "warnings_back": []
                 }
             ]
         },
@@ -434,7 +434,7 @@
                     "halt": "Riva",
                     "platform_forth": 1,
                     "time_forth": 83,
-                    "warnings_forth": ["single_track", "shared_platform", "hyperspeed"],
+                    "warnings_forth": ["single_track", "shared_platform"],
                     "platform_back": 1,
                     "time_back": 30,
                     "warnings_back": ["single_track", "shared_platform"]
@@ -446,7 +446,7 @@
                     "warnings_forth": ["single_track"],
                     "platform_back": 4,
                     "time_back": 83,
-                    "warnings_back": ["single_track", "shared_platform", "hyperspeed"]
+                    "warnings_back": ["single_track", "shared_platform"]
                 },
                 {
                     "halt": "End",

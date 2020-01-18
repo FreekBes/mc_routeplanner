@@ -878,97 +878,97 @@
                     "warnings_forth": [],
                     "platform_back": 0,
                     "time_back": false,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Sndb",
                     "platform_forth": 0,
                     "time_forth": 27,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 0,
                     "time_back": 32,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Scs",
                     "platform_forth": 0,
                     "time_forth": 17,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 0,
                     "time_back": 27,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Spdr",
                     "platform_forth": 0,
                     "time_forth": 18,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 0,
                     "time_back": 17,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Shzd",
                     "platform_forth": 0,
                     "time_forth": 13,
-                    "warnings_forth": ["cactus_breaker"],
+                    "warnings_forth": ["cactus_breaker", "single_track"],
                     "platform_back": 0,
                     "time_back": 18,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Bdrp",
                     "platform_forth": 0,
                     "time_forth": 15,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 0,
                     "time_back": 13,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Sirf",
                     "platform_forth": 0,
                     "time_forth": 10,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 0,
                     "time_back": 15,
-                    "warnings_back": ["cactus_breaker"]
+                    "warnings_back": ["cactus_breaker", "single_track"]
                 },
                 {
                     "halt": "Swks",
                     "platform_forth": 0,
                     "time_forth": 25,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 0,
                     "time_back": 10,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Sksp",
                     "platform_forth": 0,
                     "time_forth": 11,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 0,
                     "time_back": 25,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Sbdr",
                     "platform_forth": 0,
                     "time_forth": 48,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 0,
                     "time_back": 11,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Snrd",
                     "platform_forth": 0,
                     "time_forth": false,
-                    "warnings_forth": [],
+                    "warnings_forth": ["single_track"],
                     "platform_back": 0,
                     "time_back": 48,
-                    "warnings_back": []
+                    "warnings_back": ["single_track"]
                 }
             ]
         },
