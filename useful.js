@@ -27,7 +27,9 @@ function onlyUnique(value, index, self) {
 }
 
 function getObjectByKey(array, key, value) {
-    return array.find(x => x[key] === value);
+    return array.find(function(x) {
+        x[key] === value;
+    });
 }
 
 function getIndexByKey(array, key, value) {
