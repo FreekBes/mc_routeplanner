@@ -33,7 +33,9 @@ function getObjectByKey(array, key, value) {
 }
 
 function getIndexByKey(array, key, value) {
-    return array.findIndex(x => x[key] === value);
+    return array.findIndex(function(x) {
+        x[key] === value;
+    });
 }
 
 function getDistance(from, to) {
