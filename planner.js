@@ -483,7 +483,7 @@ var planner = {
     getItemIconAndName: function(type) {
         switch (type) {
             case 'station':
-                return ["icons/place.png", "Station"];
+                return ["icons/station.png", "Station"];
             case 'spawn':
                 return ["icons/place.png", "Spawn"];
             case 'end_portal':
