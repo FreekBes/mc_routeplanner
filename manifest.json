@@ -11,5 +11,42 @@
 	"display": "standalone",
 	"orientation": "portrait",
 	"background_color": "#383839",
-	"theme_color": "#1e90ff"
+	"theme_color": "#1e90ff",
+	"icons": [
+		{
+			"src": "/routeplanner/icons/app-32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "/routeplanner/icons/app-48.png",
+			"sizes": "48x48",
+			"type": "image/png"
+		},
+		{
+			"src": "/routeplanner/icons/app-64.png",
+			"sizes": "64x64",
+			"type": "image/png"
+		},
+		{
+			"src": "/routeplanner/icons/app-128.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "/routeplanner/icons/app-256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "/routeplanner/icons/app-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		},
+		{
+			"src": "/routeplanner/icons/app.png",
+			"sizes": "1024x1024",
+			"type": "image/png"
+		}
+	]
 }
