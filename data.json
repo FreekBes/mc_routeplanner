@@ -1043,6 +1043,198 @@
             "location": "Porto Maritimo",
             "closest_station": "Pom",
             "coords": [-2706, 65, 355]
+        },
+        {
+            "id": "bdf05f4a",
+            "type": "home",
+            "name": "Youri",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-300, 66, 120]
+        },
+        {
+            "id": "1ca6a57e",
+            "type": "home",
+            "name": "Leila",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-314, 66, 102]
+        },
+        {
+            "id": "d9f6a5b0",
+            "type": "home",
+            "name": "Reynaldo",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-296, 66, 94]
+        },
+        {
+            "id": "0f1190f2",
+            "type": "home",
+            "name": "Luke",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-194, 72, 130]
+        },
+        {
+            "id": "fe44bf9d",
+            "type": "home",
+            "name": "Ross",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-175, 72, 152]
+        },
+        {
+            "id": "d9cca5a2",
+            "type": "home",
+            "name": "Jordy",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-224, 68, 72]
+        },
+        {
+            "id": "a212565e",
+            "type": "home",
+            "name": "Peter",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-221, 68, 64]
+        },
+        {
+            "id": "57a0daca",
+            "type": "home",
+            "name": "Morris",
+            "location": "Torenburg",
+            "closest_station": "Tdal",
+            "coords": [-221, 68, 56]
+        },
+        {
+            "id": "6ead794d",
+            "type": "home",
+            "name": "Amaro",
+            "location": "Torenburg",
+            "closest_station": "Tdal",
+            "coords": [-221, 68, 46]
+        },
+        {
+            "id": "3ebc66d0",
+            "type": "home",
+            "name": "Chris",
+            "location": "Torenburg",
+            "closest_station": "Tdal",
+            "coords": [-235, 68, 26]
+        },
+        {
+            "id": "da97f257",
+            "type": "home",
+            "name": "Leila (oud)",
+            "location": "Torenburg",
+            "closest_station": "Tdal",
+            "coords": [-255, 70, 50]
+        },
+        {
+            "id": "1fe1ff78",
+            "type": "home",
+            "name": "Lotti",
+            "location": "Torenburg",
+            "closest_station": "Tdal",
+            "coords": [-256, 70, 57]
+        },
+        {
+            "id": "c7e6caa3",
+            "type": "home",
+            "name": "Ike",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-259, 70, 66]
+        },
+        {
+            "id": "02d84f13",
+            "type": "home",
+            "name": "Maxime",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-256, 70, 67]
+        },
+        {
+            "id": "564b0c97",
+            "type": "home",
+            "name": "Mina",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-256, 70, 77]
+        },
+        {
+            "id": "a1d70d44",
+            "type": "home",
+            "name": "Freek",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-259, 70, 84]
+        },
+        {
+            "id": "32ee8b4b",
+            "type": "home",
+            "name": "Joran",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-283, 66, 93]
+        },
+        {
+            "id": "078dd9cd",
+            "type": "shop",
+            "name": "Concrete Powderwinkel Concrete Angel",
+            "location": "Torenburg",
+            "closest_station": "Tnrd",
+            "coords": [-305, 64, -7]
+        },
+        {
+            "id": "fe00e2f1",
+            "type": "other",
+            "name": "Steen & Betonfabriek",
+            "location": "Torenburg",
+            "closest_station": "Tnrd",
+            "coords": [-305, 64, -18]
+        },
+        {
+            "id": "705f7a51",
+            "type": "enchanting_table",
+            "name": "Enchanting Table",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-205, 68, 2008]
+        },
+        {
+            "id": "62edb706",
+            "type": "other",
+            "name": "Bibliotheek",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-211, 73, 2008]
+        },
+        {
+            "id": "okewtfja",
+            "type": "art",
+            "name": "O.J. Simpson",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-179, 71, 2037]
+        },
+        {
+            "id": "efdfa905",
+            "type": "community_building",
+            "name": "Tent",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-194, 71, 2118]
+        },
+        {
+            "id": "28af5c44",
+            "type": "art",
+            "name": "Kip",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-142, 106, 2125]
         }
     ]
 }
