@@ -315,6 +315,18 @@
             "opened": 2019,
             "platforms": 1,
             "coords": [380, 72, -760]
+        },
+        {
+            "id": "Rss",
+            "name": "Ross",
+            "location": "Ross",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2019,
+            "platforms": 2,
+            "coords": [697, 72, 640]
         }
     ],
     "routes": [
@@ -663,11 +675,20 @@
                 {
                     "halt": "Skp",
                     "platform_forth": 1,
-                    "time_forth": 132,
+                    "time_forth": 60,
                     "warnings_forth": ["single_track"],
                     "platform_back": 1,
                     "time_back": false,
                     "warnings_back": []
+                },
+                {
+                    "halt": "Rss",
+                    "platform_forth": 1,
+                    "time_forth": 76,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 60,
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Hms",
@@ -675,8 +696,8 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 5,
-                    "time_back": 132,
-                    "warnings_back": ["single_track"]
+                    "time_back": 76,
+                    "warnings_back": []
                 }
             ]
         },
@@ -1235,6 +1256,14 @@
             "location": "Post Malone",
             "closest_station": "Pml",
             "coords": [-142, 106, 2125]
+        },
+        {
+            "id": "82e3101c",
+            "type": "shop",
+            "name": "Fencewinkel Hekkenman",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-293, 69, 210]
         }
     ]
 }
