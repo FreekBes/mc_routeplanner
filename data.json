@@ -13,6 +13,13 @@
             "run_by": "MinaBes",
             "started": 2020,
             "main_station": "Poma"
+        },
+        "ICD": {
+            "id": "ICD",
+            "name": "Intercity Direct",
+            "run_by": "CraftingTimes",
+            "started": 2020,
+            "main_station": "Tcs"
         }
     },
     "stations": [
@@ -23,9 +30,9 @@
             "former_name": null,
             "building": true,
             "roofed": true,
-            "underground": false,
+            "underground": true,
             "opened": 2019,
-            "platforms": 6,
+            "platforms": 8,
             "coords": [-255, 66, 138]
         },
         {
@@ -61,7 +68,7 @@
             "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 3,
+            "platforms": 2,
             "coords": [-274, 67, -14]
         },
         {
@@ -82,10 +89,10 @@
             "location": "Eikwoude",
             "former_name": null,
             "building": false,
-            "roofed": false,
-            "underground": false,
+            "roofed": true,
+            "underground": true,
             "opened": 2019,
-            "platforms": 2,
+            "platforms": 4,
             "coords": [-705, 70, 150]
         },
         {
@@ -294,7 +301,7 @@
         },
         {
             "id": "Adw",
-            "name": "Adliswil",
+            "name": "Adliswil Oost",
             "location": "Adliswil",
             "former_name": "Luke's Dorp",
             "building": false,
@@ -315,18 +322,6 @@
             "opened": 2019,
             "platforms": 1,
             "coords": [380, 72, -760]
-        },
-        {
-            "id": "Rss",
-            "name": "Ross",
-            "location": "Ross",
-            "former_name": null,
-            "building": false,
-            "roofed": false,
-            "underground": false,
-            "opened": 2019,
-            "platforms": 2,
-            "coords": [697, 72, 640]
         }
     ],
     "routes": [
@@ -675,20 +670,11 @@
                 {
                     "halt": "Skp",
                     "platform_forth": 1,
-                    "time_forth": 60,
+                    "time_forth": 132,
                     "warnings_forth": ["single_track"],
                     "platform_back": 1,
                     "time_back": false,
                     "warnings_back": []
-                },
-                {
-                    "halt": "Rss",
-                    "platform_forth": 1,
-                    "time_forth": 76,
-                    "warnings_forth": [],
-                    "platform_back": 2,
-                    "time_back": 60,
-                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Hms",
@@ -696,8 +682,8 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 5,
-                    "time_back": 76,
-                    "warnings_back": []
+                    "time_back": 132,
+                    "warnings_back": ["single_track"]
                 }
             ]
         },
