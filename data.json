@@ -322,6 +322,42 @@
             "opened": 2019,
             "platforms": 1,
             "coords": [380, 72, -760]
+        },
+        {
+            "id": "Ssp",
+            "name": "Sunset Peak",
+            "location": "Sunset Peak",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2020,
+            "platforms": 5,
+            "coords": [-677, 63, -317]
+        },
+        {
+            "id": "Tvv",
+            "name": "Torenburg Vliegveld",
+            "location": "Torenburg",
+            "former_name": "Vliegveld Torenburg",
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": 2020,
+            "platforms": 4,
+            "coords": [-514, 72, 303]
+        },
+        {
+            "id": "Rss",
+            "name": "Rosskou CS",
+            "location": "Rosskou",
+            "former_name": "Rosscow CS",
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": 2020,
+            "platforms": 0,
+            "coords": [-1336, 70, -931]
         }
     ],
     "routes": [
@@ -376,7 +412,7 @@
                 {
                     "halt": "Tcs",
                     "platform_forth": 5,
-                    "time_forth": 31,
+                    "time_forth": 26,
                     "warnings_forth": [],
                     "platform_back": 4,
                     "time_back": 48,
@@ -388,7 +424,7 @@
                     "time_forth": 21,
                     "warnings_forth": [],
                     "platform_back": 2,
-                    "time_back": 31,
+                    "time_back": 26,
                     "warnings_back": []
                 },
                 {
@@ -519,6 +555,31 @@
         },
         {
             "type": "train",
+            "line_name": "T4",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Tcs",
+                    "platform_forth": 1,
+                    "time_forth": 39,
+                    "warnings_forth": ["single_track", "left_side"],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Tvv",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 39,
+                    "warnings_back": ["single_track", "left_side"]
+                }
+            ]
+        },
+        {
+            "type": "train",
             "line_name": "T5",
             "operator": "OSS",
             "halts": [
@@ -609,13 +670,22 @@
             "operator": "OSS",
             "halts": [
                 {
+                    "halt": "Ssp",
+                    "platform_forth": 2,
+                    "time_forth": 34,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
                     "halt": "Vil",
                     "platform_forth": 3,
                     "time_forth": 35,
                     "warnings_forth": ["single_track"],
                     "platform_back": 4,
-                    "time_back": false,
-                    "warnings_back": []
+                    "time_back": 34,
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Skwk",
@@ -708,6 +778,74 @@
                     "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 35,
+                    "warnings_back": ["single_track"]
+                }
+            ]
+        },
+        {
+            "type": "subway",
+            "line_name": "M1",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Tvv",
+                    "platform_forth": 4,
+                    "time_forth": 34,
+                    "warnings_forth": [],
+                    "platform_back": 3,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Eik",
+                    "platform_forth": 3,
+                    "time_forth": 41,
+                    "warnings_forth": [],
+                    "platform_back": 4,
+                    "time_back": 35,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Ssp",
+                    "platform_forth": 3,
+                    "time_forth": 84,
+                    "warnings_forth": [],
+                    "platform_back": 5,
+                    "time_back": 41,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rss",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 84,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "IC2",
+            "operator": "ICD",
+            "halts": [
+                {
+                    "halt": "Tcs",
+                    "platform_forth": 8,
+                    "time_forth": 148,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 8,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rss",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 148,
                     "warnings_back": ["single_track"]
                 }
             ]
@@ -1250,6 +1388,46 @@
             "location": "Torenburg",
             "closest_station": "Tcs",
             "coords": [-293, 69, 210]
+        },
+        {
+            "id": "281c8a93",
+            "type": "airport",
+            "name": "Vliegveld Torenburg",
+            "location": "Torenburg",
+            "closest_station": "Tvv",
+            "coords": [-514, 72, 309]
+        },
+        {
+            "id": "5f9b33ca",
+            "type": "viewpoint",
+            "name": "Control Tower",
+            "location": "Torenburg",
+            "closest_station": "Tvv",
+            "coords": [-547, 80, 297]
+        },
+        {
+            "id": "c5d1b159",
+            "type": "food",
+            "name": "Hotdogkraam",
+            "location": "Torenburg",
+            "closest_station": "Tcs",
+            "coords": [-331, 64, 225]
+        },
+        {
+            "id": "fd43ca21",
+            "type": "viewpoint",
+            "name": "Sky Lounge",
+            "location": "Adliswil",
+            "closest_station": "Adw",
+            "coords": [-479, 69, -1311]
+        },
+        {
+            "id": "d9c87caf",
+            "type": "gate",
+            "name": "Blauwe Poort",
+            "location": "Adliswil",
+            "closest_station": "Adw",
+            "coords": [-440, 69, -1278]
         }
     ]
 }
