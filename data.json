@@ -304,12 +304,12 @@
             "name": "Adliswil Oost",
             "location": "Adliswil",
             "former_name": "Luke's Dorp",
-            "building": false,
-            "roofed": false,
+            "building": true,
+            "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 2,
-            "coords": [-283, 69, -1332]
+            "platforms": 4,
+            "coords": [-294, 70, -1335]
         },
         {
             "id": "Wtdn",
@@ -475,7 +475,7 @@
                     "platform_forth": 2,
                     "time_forth": 45,
                     "warnings_forth": [],
-                    "platform_back": 1,
+                    "platform_back": 3,
                     "time_back": false,
                     "warnings_back": []
                 },
