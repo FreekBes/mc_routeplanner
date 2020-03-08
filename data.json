@@ -112,12 +112,12 @@
             "name": "Post Malone",
             "location": "Post Malone",
             "former_name": null,
-            "building": false,
-            "roofed": false,
+            "building": true,
+            "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 2,
-            "coords": [-160, 71, 2079]
+            "platforms": 3,
+            "coords": [-168, 70, 2073]
         },
         {
             "id": "Skp",
@@ -527,7 +527,7 @@
                 {
                     "halt": "Hvl",
                     "platform_forth": 3,
-                    "time_forth": 60,
+                    "time_forth": 67,
                     "warnings_forth": ["skeletons"],
                     "platform_back": 4,
                     "time_back": 66,
@@ -536,10 +536,10 @@
                 {
                     "halt": "Pml",
                     "platform_forth": 2,
-                    "time_forth": 41,
+                    "time_forth": 43,
                     "warnings_forth": ["skeletons", "single_track"],
-                    "platform_back": 1,
-                    "time_back": 60,
+                    "platform_back": 3,
+                    "time_back": 67,
                     "warnings_back": ["skeletons"]
                 },
                 {
@@ -548,7 +548,7 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 1,
-                    "time_back": 41,
+                    "time_back": 43,
                     "warnings_back": ["skeletons", "single_track"]
                 }
             ]
