@@ -120,6 +120,18 @@
             "coords": [-168, 70, 2073]
         },
         {
+            "id": "Pmla",
+            "name": "Post Malone Vliegveld",
+            "location": "Post Malone",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2020,
+            "platforms": 1,
+            "coords": [-326, 64, 1963]
+        },
+        {
             "id": "Skp",
             "name": "Spoorkruispunt",
             "location": null,
@@ -754,6 +766,31 @@
                     "platform_back": 5,
                     "time_back": 132,
                     "warnings_back": ["single_track"]
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "T10",
+            "operator": "OSS",
+            "halts": [
+                {
+                    "halt": "Pml",
+                    "platform_forth": 1,
+                    "time_forth": 36,
+                    "warnings_forth": ["single_track", "skeletons"],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Pmla",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 36,
+                    "warnings_back": ["single_track", "skeletons"]
                 }
             ]
         },
@@ -1428,6 +1465,30 @@
             "location": "Adliswil",
             "closest_station": "Adw",
             "coords": [-440, 69, -1278]
+        },
+        {
+            "id": "b5158c44",
+            "type": "other",
+            "name": "Videotheek",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-183, 71, 2089]
+        },
+        {
+            "id": "54d21343",
+            "type": "food",
+            "name": "Station Bistro",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-161, 70, 2079]
+        },
+        {
+            "id": "2c52ea27",
+            "type": "airport",
+            "name": "Vliegveld Post Malone",
+            "location": "Post Malone",
+            "closest_station": "Pmla",
+            "coords": [-326, 64, 1963]
         }
     ]
 }
