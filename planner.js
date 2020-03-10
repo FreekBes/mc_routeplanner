@@ -484,6 +484,8 @@ var planner = {
         switch (type) {
             case 'station':
                 return ["icons/station.png", "Station"];
+            case 'airport':
+                return ["icons/airport.png", "Vliegveld"];
             case 'spawn':
                 return ["icons/place.png", "Spawn"];
             case 'end_portal':
