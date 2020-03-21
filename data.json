@@ -33,7 +33,18 @@
             "underground": true,
             "opened": 2019,
             "platforms": 8,
-            "coords": [-255, 66, 138]
+            "coords": [-255, 66, 140],
+            "exits": [
+                {
+                    "name": "Marktplein",
+                    "coords": [-255, 66, 140]
+                },
+                {
+                    "name": "Achterzijde",
+                    "coords": [-249, 66, 185]
+                }
+            ],
+            "services": [ "nopoi-minecart", "nopoi-map", "fe4b3a8b" ]
         },
         {
             "id": "Tdal",
@@ -45,7 +56,8 @@
             "underground": false,
             "opened": 2019,
             "platforms": 2,
-            "coords": [-241, 68, 24]
+            "coords": [-241, 68, 24],
+            "services": [ "nopoi-minecart" ]
         },
         {
             "id": "Tzui",
@@ -57,7 +69,8 @@
             "underground": false,
             "opened": 2019,
             "platforms": 2,
-            "coords": [-164, 72, 244]
+            "coords": [-164, 72, 244],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Tnrd",
@@ -81,19 +94,21 @@
             "underground": false,
             "opened": 2019,
             "platforms": 1,
-            "coords": [-12, 72, -53]
+            "coords": [-12, 72, -53],
+            "services": [ "nopoi-minecart", "nopoi-waitingroom" ]
         },
         {
             "id": "Eik",
             "name": "Eikwoude",
             "location": "Eikwoude",
             "former_name": null,
-            "building": false,
+            "building": true,
             "roofed": true,
             "underground": true,
             "opened": 2019,
             "platforms": 4,
-            "coords": [-705, 70, 150]
+            "coords": [-694, 70, 142],
+            "services": [ "nopoi-waitingroom", "nopoi-map", "a97bbd99" ]
         },
         {
             "id": "End",
@@ -117,7 +132,8 @@
             "underground": false,
             "opened": 2019,
             "platforms": 3,
-            "coords": [-168, 70, 2073]
+            "coords": [-168, 70, 2073],
+            "services": [ "nopoi-minecart", "nopoi-waitingroom", "nopoi-map", "54d21343" ]
         },
         {
             "id": "Pmla",
@@ -129,7 +145,18 @@
             "underground": false,
             "opened": 2020,
             "platforms": 1,
-            "coords": [-326, 64, 1963]
+            "coords": [-346, 64, 1965],
+            "exits": [
+                {
+                    "name": "Uitgang",
+                    "coords": [-346, 66, 1965]
+                },
+                {
+                    "name": "Vliegveld",
+                    "coords": [-337, 66, 1967]
+                }
+            ],
+            "services": [ "2c52ea27" ]
         },
         {
             "id": "Skp",
@@ -177,7 +204,8 @@
             "underground": false,
             "opened": 2019,
             "platforms": 4,
-            "coords": [-265, 71, -307]
+            "coords": [-265, 71, -307],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Hvl",
@@ -208,7 +236,7 @@
             "name": "Hamsterdam CS",
             "location": "Hamsterdam",
             "former_name": "Hamsterdam",
-            "building": true,
+            "building": false,
             "roofed": true,
             "underground": false,
             "opened": 2019,
@@ -220,7 +248,7 @@
             "name": "Lavadorp",
             "location": "Lavadorp",
             "former_name": null,
-            "building": true,
+            "building": false,
             "roofed": false,
             "underground": false,
             "opened": 2019,
@@ -237,7 +265,8 @@
             "underground": false,
             "opened": 2019,
             "platforms": 2,
-            "coords": [399, 72, -1176]
+            "coords": [399, 72, -1176],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Tbrg",
@@ -273,7 +302,18 @@
             "underground": false,
             "opened": 2019,
             "platforms": 4,
-            "coords": [-2698, 65, 344]
+            "coords": [-2686, 64, 342],
+            "exits": [
+                {
+                    "name": "Rivierzijde",
+                    "coords": [-2686, 64, 342]
+                },
+                {
+                    "name": "Oceaanzijde",
+                    "coords": [-2710, 64, 342]
+                }
+            ],
+            "services": [ "nopoi-waitingroom", "705bc44b" ]
         },
         {
             "id": "Poma",
@@ -285,7 +325,8 @@
             "underground": false,
             "opened": 2020,
             "platforms": 1,
-            "coords": [-2592, 72, 250]
+            "coords": [-2592, 72, 250],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Shvn",
@@ -304,7 +345,7 @@
             "name": "Torenburg Lasagnafarm",
             "location": "Torenburg",
             "former_name": null,
-            "building": true,
+            "building": false,
             "roofed": true,
             "underground": false,
             "opened": 2019,
@@ -321,7 +362,18 @@
             "underground": false,
             "opened": 2019,
             "platforms": 4,
-            "coords": [-294, 70, -1335]
+            "coords": [-294, 70, -1335],
+            "exits": [
+                {
+                    "name": "Stad",
+                    "coords": [-294, 70, -1335]
+                },
+                {
+                    "name": "Land",
+                    "coords": [-263, 68, -1335]
+                }
+            ],
+            "services": [ "nopoi-waitingroom", "nopoi-minecart" ]
         },
         {
             "id": "Wtdn",
@@ -357,14 +409,25 @@
             "underground": true,
             "opened": 2020,
             "platforms": 4,
-            "coords": [-514, 72, 303]
+            "coords": [-503, 68, 299],
+            "exits": [
+                {
+                    "name": "Uitgang",
+                    "coords": [-503, 68, 299]
+                },
+                {
+                    "name": "Vliegveld",
+                    "coords": [-514, 72, 309]
+                }
+            ],
+            "services": [ "281c8a93" ]
         },
         {
             "id": "Rss",
             "name": "Rosskou CS",
             "location": "Rosskou",
             "former_name": "Rosscow CS",
-            "building": true,
+            "building": false,
             "roofed": true,
             "underground": true,
             "opened": 2020,
@@ -1429,7 +1492,7 @@
         {
             "id": "281c8a93",
             "type": "airport",
-            "name": "Vliegveld Torenburg",
+            "name": "Vliegveld",
             "location": "Torenburg",
             "closest_station": "Tvv",
             "coords": [-514, 72, 309]
@@ -1485,10 +1548,34 @@
         {
             "id": "2c52ea27",
             "type": "airport",
-            "name": "Vliegveld Post Malone",
+            "name": "Vliegveld",
             "location": "Post Malone",
             "closest_station": "Pmla",
             "coords": [-326, 64, 1963]
+        },
+        {
+            "id": "a97bbd99",
+            "type": "bank",
+            "name": "Bank",
+            "location": "Eikwoude",
+            "closest_station": "Eik",
+            "coords": [-701, 70, 146]
+        },
+        {
+            "id": "dfc5597a",
+            "type": "farm",
+            "name": "Schapenweide",
+            "location": "Eikwoude",
+            "closest_station": "Eik",
+            "coords": [-618, 67, 139]
+        },
+        {
+            "id": "2cc67d01",
+            "type": "church",
+            "name": "Post Maloner Kerk",
+            "location": "Post Malone",
+            "closest_station": "Pml",
+            "coords": [-231, 70, 1998]
         }
     ]
 }
