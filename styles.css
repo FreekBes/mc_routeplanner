@@ -7,12 +7,30 @@ body {
     user-select: none;
 }
 
+#content-container {
+    display: block;
+    margin: 0 auto;
+    width: 600px;
+    max-width: 100%;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
 a, a:visited {
     color: #1e90ff;
 }
 
 a:hover, a:focus {
     color: #349bff;
+}
+
+h1 {
+    font-size: 32px;
+    color: #EDEDED;
+    font-weight: bold;
+    text-align: center;
 }
 
 #worldselector-outer {
@@ -110,10 +128,6 @@ td {
 
 i {
     color: #cacaca;
-}
-
-th:after {
-    content: ':';
 }
 
 .autocomplete {
@@ -521,6 +535,105 @@ details[open] .timeline-station-warnings.combined-warnings {
 .timeline-station-warning-icon:hover {
     opacity: 0.7;
     transition: 0.05s;
+}
+
+/* stations overview */
+.station {
+    display: block;
+    margin: 10px 0px;
+    padding: 8px;
+    background-color: rgba(255,255,255,0.05);
+    border: solid 1px rgba(0,0,0,0);
+    transition: 1s;
+}
+
+.station:target {
+    background-color: rgba(255,255,255,0.1);
+    border: solid 1px rgba(30,144,255,1);
+    transition: 0.35s;
+}
+
+.station h3 {
+    display: block;
+    margin: 0px 0px 4px 0px;
+    color: #1e90ff;
+}
+
+.station h4 {
+    display: block;
+    margin: 16px 0px 4px 0px;
+}
+
+.station a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.station a:hover {
+    text-decoration: underline;
+}
+
+.station-overview-list {
+    display: block;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.station-overview-list li {
+    display: block;
+    padding: 1px 0px;
+}
+
+.station-overview-platforms {
+    display: table;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.station-overview-platforms tr {
+    
+}
+
+.station-overview-platforms th {
+    width: 60px;
+    text-align: center;
+}
+
+.station-overview-platforms .line_details {
+    width: 70px;
+    text-align: center;
+}
+
+.station-overview-platforms .line_direction {
+    text-align: left;
+}
+
+.station-overview-platforms tbody tr > * {
+    padding: 4px 12px;
+    border: solid 1px #737475;
+}
+
+.station-overview-services-type {
+    vertical-align: middle;
+    white-space: nowrap;
+    font-weight: normal;
+    text-align: left !important;
+}
+
+.station-overview-services-type img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.station-overview-services-type i {
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: lowercase;
 }
 
 @media screen and (max-width: 500px) {

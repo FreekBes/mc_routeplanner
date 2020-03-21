@@ -43,11 +43,11 @@
         <form id="routeform">
             <table>
                 <tr>
-                    <th>Van</th>
+                    <th>Van:</th>
                     <td class="autocomplete"><input type="text" name="from" id="from" placeholder="Een station of locatie" autocomplete="off" autofocus="autofocus" /></td>
                 </tr>
                 <tr>
-                    <th>Naar</th>
+                    <th>Naar:</th>
                     <td class="autocomplete"><input type="text" name="to" id="to" placeholder="Een station of locatie" autocomplete="off" /></td>
                 </tr>
                 <tr>
@@ -63,5 +63,6 @@
             echo '<img src="'.$world["metroMap"].'?r='.mt_rand(1,299).'" id="metromap" onclick="window.open(this.src);" title="Klik om in te zoomen..." />';
         }
         ?>
+        <div id="stationsoverview" style="text-align: center;"><a href="stations.php?w=<?PHP echo $w; ?>">stationsoverzicht</a></div>
     </body>
 </html>

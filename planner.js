@@ -187,6 +187,7 @@ var planner = {
         if (typeof window.metromap == "object") {
             document.getElementById("metromap").style.display = "none";
         }
+        document.getElementById("stationsoverview").style.display = "none";
 
         console.log("Van " + planner.from.id + " naar " + planner.to.id);
         if (planner.from.id != planner.to.id) {
