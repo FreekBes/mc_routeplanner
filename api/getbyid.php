@@ -46,7 +46,12 @@
     require_once("import/PoiCalculator.php");
 
     if (isset($_GET["id"]) && !empty($_GET["id"]) && !empty(trim($_GET["id"]))) {
-        $result = get_item_by_id($worldData, $_GET["id"]);
+		if (strpos($_GET["id"], ",") != false) {
+			$result = coords_to_item(explode(",", $_GET["id"]), check_for_nearest_station(explode(",", $_GET["id"]), $worldData["stations"])["id"]);
+		}
+		else {
+			$result = get_item_by_id($worldData, $_GET["id"]);
+		}
 
         if (count($result) > 0) {
             returnData("Item found", $result);
