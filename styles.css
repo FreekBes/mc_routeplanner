@@ -108,20 +108,20 @@ h1 {
     margin-left: -75px;
 }
 
-table {
+#routeform table {
     display: inline-table;
     width: 500px;
     max-width: 100%;
 }
 
-th {
+#routeform th {
     padding: 8px 16px;
     width: 41px;
     font-weight: bold;
     vertical-align: middle;
 }
 
-td {
+#routeform td {
     text-align: left;
     vertical-align: middle;
 }
@@ -588,7 +588,7 @@ details[open] .timeline-station-warnings.combined-warnings {
 .station-overview-platforms {
     display: table;
     width: 100%;
-    text-align: center;
+    text-align: left;
     border-collapse: collapse;
 }
 
@@ -641,11 +641,11 @@ details[open] .timeline-station-warnings.combined-warnings {
         font-size: 19px;
     }
 
-    table {
+    #routeform table {
         width: 100%;
     }
 
-    th {
+    #routeform th {
         display: block;
         margin: 0 auto;
         padding: 0px;
@@ -656,7 +656,7 @@ details[open] .timeline-station-warnings.combined-warnings {
         width: 100%;
     }
     
-    td {
+    #routeform td {
         display: block;
         margin: 0 auto;
     }
