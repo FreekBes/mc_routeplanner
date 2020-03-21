@@ -245,6 +245,7 @@ var planner = {
                                         outputField.appendChild(lineGroupOutput);
                                     }
                                     lineGroupOutput = document.createElement('details');
+                                    lineGroupOutput.setAttribute("onclick", "planner.toggleCollapse(event); return false;");
                                     lineGroupFirstStationAdded = false;
                                     lineSummary = document.createElement('summary');
                                     if (detailsTagSupported()) {
@@ -623,5 +624,19 @@ var planner = {
 		else if (u >= 1) {
 			return (u + ':' + m + ':' + s);
 		}
-	}
+    },
+
+    collapsed: true,
+    toggleCollapse: function(event) {
+        if (event != null) {
+            event.preventDefault();
+        }
+        var collapsables = document.getElementsByTagName("details");
+        for (var i = 0; i < collapsables.length; i++) {
+            if (detailsTagSupported()) {
+                collapsables[i].open = planner.collapsed;
+            }
+        }
+        planner.collapsed = !planner.collapsed;
+    }
 };
