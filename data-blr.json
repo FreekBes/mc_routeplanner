@@ -1075,7 +1075,7 @@
                     "warnings_back": ["no_stop_take_off"]
                 },
                 {
-                    "halt": "Knlw",
+                    "halt": "Shv",
                     "platform_forth": 4,
                     "time_forth": false,
                     "warnings_forth": [],
