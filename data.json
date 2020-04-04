@@ -44,7 +44,7 @@
                     "coords": [-249, 66, 185]
                 }
             ],
-            "services": [ "nopoi-minecart", "nopoi-map", "fe4b3a8b" ]
+            "services": [ "nopoi-waitingroom", "nopoi-minecart", "nopoi-map", "fe4b3a8b" ]
         },
         {
             "id": "Tdal",
@@ -305,11 +305,11 @@
             "coords": [-2686, 64, 342],
             "exits": [
                 {
-                    "name": "Rivierzijde",
+                    "name": "Centrum",
                     "coords": [-2686, 64, 342]
                 },
                 {
-                    "name": "Oceaanzijde",
+                    "name": "Haven",
                     "coords": [-2710, 64, 342]
                 }
             ],
@@ -927,12 +927,37 @@
         },
         {
             "type": "train",
-            "line_name": "IC2",
+            "line_name": "IC1",
             "operator": "ICD",
             "halts": [
                 {
                     "halt": "Tcs",
                     "platform_forth": 8,
+                    "time_forth": 171,
+                    "warnings_forth": [],
+                    "platform_back": 8,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Pom",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 5,
+                    "time_back": 171,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "IC2",
+            "operator": "ICD",
+            "halts": [
+                {
+                    "halt": "Tcs",
+                    "platform_forth": 7,
                     "time_forth": 148,
                     "warnings_forth": ["single_track"],
                     "platform_back": 8,
@@ -1576,6 +1601,62 @@
             "location": "Post Malone",
             "closest_station": "Pml",
             "coords": [-231, 70, 1998]
+        },
+        {
+            "id": "ab61c99a",
+            "type": "food",
+            "name": "Kabeljauwvisser",
+            "location": "Porto Maritimo",
+            "closest_station": "Pom",
+            "coords": [-2682, 64, 349]
+        },
+        {
+            "id": "d851c44c",
+            "type": "food",
+            "name": "Café Bar",
+            "location": "Porto Maritimo",
+            "closest_station": "Pom",
+            "coords": [-2649, 63, 318]
+        },
+        {
+            "id": "9900bcbb",
+            "type": "shop",
+            "name": "Bouwmarkt Porto",
+            "location": "Porto Maritimo",
+            "closest_station": "Poma",
+            "coords": [-2606, 66, 243]
+        },
+        {
+            "id": "76a3735e",
+            "type": "farm",
+            "name": "Kleine Wheatfarm",
+            "location": "Porto Maritimo",
+            "closest_station": "Poma",
+            "coords": [-2620, 64, 260]
+        },
+        {
+            "id": "968418d6",
+            "type": "church",
+            "name": "Kerk",
+            "location": "Porto Maritimo",
+            "closest_station": "Poma",
+            "coords": [-2627, 66, 228]
+        },
+        {
+            "id": "07eb3dd8",
+            "type": "other",
+            "name": "Hot Spring",
+            "location": "Porto Maritimo",
+            "closest_station": "Pom",
+            "coords": [-2598, 77, 332]
+        },
+        {
+            "id": "11facbb3",
+            "type": "nether_portal",
+            "name": "Nether Portal",
+            "location": "Porto Maritimo",
+            "closest_station": "Pom",
+            "coords": [-2591, 77, 355]
         }
     ]
 }
