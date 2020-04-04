@@ -301,7 +301,7 @@
             "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 4,
+            "platforms": 5,
             "coords": [-2686, 64, 342],
             "exits": [
                 {
@@ -941,7 +941,7 @@
                 },
                 {
                     "halt": "Pom",
-                    "platform_forth": 0,
+                    "platform_forth": 5,
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 5,
