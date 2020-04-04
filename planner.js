@@ -183,6 +183,7 @@ var planner = {
 
         var outputField = document.getElementById("output");
         outputField.innerHTML = "";
+        planner.collapsed = true;
 
         if (typeof window.metromap == "object") {
             document.getElementById("metromap").style.display = "none";
