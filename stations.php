@@ -40,6 +40,7 @@
                                 }
 
                                 $haltData = array();
+                                $haltData["shared_platform"] = false;
                                 $haltData["line_name"] = $route["line_name"];
                                 $haltData["line_type"] = $route["type"];
                                 $haltData["line_operator"] = $route["operator"];
@@ -63,6 +64,7 @@
                                     }
 
                                     $haltData = array();
+                                    $haltData["shared_platform"] = false;
                                     $haltData["line_name"] = $route["line_name"];
                                     $haltData["line_type"] = $route["type"];
                                     $haltData["line_operator"] = $route["operator"];
@@ -84,11 +86,33 @@
                                     }
                                 }
                                 else if ($hn-1 > -1) {
+                                    // shared platform or single platform
+                                    // check if shared platform...
+                                    if ($hn > 1) {
+                                        $haltData["shared_platform"] = true;
+                                    }
                                     $haltData["direction"] = array();
+                                    for ($cs = 0; $cs < count($route["halts"]); $cs++) {
+                                        if ($route["halts"][$cs]["halt"] != $halt["halt"]) {
+                                            array_push($haltData["direction"], $route["halts"][$cs]["halt"]);
+                                            array_push($station["connections"], $route["halts"][$cs]["halt"]);
+                                        }
+                                        else {
+                                            // insert special keyword "current_station" for the current station
+                                            // later on, this gets replaced with the current station in cursive
+                                            array_push($haltData["direction"], "current_station");
+                                        }
+                                    }
+                                    /*
                                     for ($cs = $hn-1; $cs > -1; $cs--) {
                                         array_push($haltData["direction"], $route["halts"][$cs]["halt"]);
                                         array_push($station["connections"], $route["halts"][$cs]["halt"]);
                                     }
+                                    for ($cs = $hn+1; $cs < count($route["halts"]); $cs++) {
+                                        array_push($haltData["direction"], $route["halts"][$cs]["halt"]);
+                                        array_push($station["connections"], $route["halts"][$cs]["halt"]);
+                                    }
+                                    */
 
                                     if ($halt["platform_forth"] > 0) {
                                         $station["platform_data"][$halt["platform_forth"]-1] = $haltData;
@@ -131,14 +155,19 @@
                                     for ($pn = 0; $pn < $station["platforms"]; $pn++) {
                                         ?>
                                         <tr>
-                                            <th>spoor <?PHP echo $pn+1; ?></th>
+                                            <th>spoor <?PHP echo $pn+1 . ((!empty($station["platform_data"][$pn]) && $station["platform_data"][$pn]["shared_platform"]) ? "<br><small> (<i>verdeeld</i>)</small>" : ""); ?></th>
                                             <?PHP if (!empty($station["platform_data"][$pn])) { ?>
                                                 <td class="line_details"><?PHP echo "<span>".$station["platform_data"][$pn]["line_operator"]."</span> <b>".$station["platform_data"][$pn]["line_name"]."</b>"; ?></td>
                                                 <td class="line_direction">
                                                     <?PHP
                                                         if (count($station["platform_data"][$pn]["direction"]) > 0) {
                                                             for ($hn = 0; $hn < count($station["platform_data"][$pn]["direction"]); $hn++) {
-                                                                $station["platform_data"][$pn]["direction"][$hn] = '<a href="#'.strtolower($station["platform_data"][$pn]["direction"][$hn]).'">'.get_item_by_id($worldData, $station["platform_data"][$pn]["direction"][$hn])["name"].'</a>';
+                                                                if ($station["platform_data"][$pn]["direction"][$hn] != "current_station") {
+                                                                    $station["platform_data"][$pn]["direction"][$hn] = '<a href="#'.strtolower($station["platform_data"][$pn]["direction"][$hn]).'">'.get_item_by_id($worldData, $station["platform_data"][$pn]["direction"][$hn])["name"].'</a>';
+                                                                }
+                                                                else {
+                                                                    $station["platform_data"][$pn]["direction"][$hn] = '<small><i>'.$station["name"].'</i></small>';
+                                                                }
                                                             }
                                                             echo implode(", ", $station["platform_data"][$pn]["direction"]);
                                                         }
