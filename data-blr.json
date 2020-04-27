@@ -3,9 +3,16 @@
         "BLR": {
             "id": "BLR",
             "name": "BLR Vervoer",
-            "run_by": "CraftingTimes",
+            "run_by": "Luke_K7",
             "started": 2014,
             "main_station": "Vil"
+        },
+        "NR": {
+            "id": "SHL",
+            "name": "Sneeuwhavenlijn",
+            "run_by": "CraftingTimes",
+            "started": 2016,
+            "main_station": "Nshv"
         }
     },
 
@@ -20,7 +27,17 @@
             "underground": false,
             "opened": -1,
             "platforms": 4,
-            "coords": [360, 64, 1521]
+            "coords": [360, 64, 1521],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [360, 64, 1521]
+                },
+                {
+                    "name": "Oude Ingang",
+                    "coords": [407, 64, 1516]
+                }
+            ]
         },
         {
             "id": "Wbrj",
@@ -314,7 +331,7 @@
             "id": "Lnmr",
             "name": "Läänemerie",
             "location": "Läänemerie",
-            "former_name": null,
+            "former_name": "Laanemerie",
             "building": true,
             "roofed": true,
             "underground": true,
@@ -451,7 +468,7 @@
             "roofed": true,
             "underground": true,
             "opened": -1,
-            "platforms": 8,
+            "platforms": 10,
             "coords": [551, 64, -816]
         },
         {
@@ -559,7 +576,7 @@
             "roofed": true,
             "underground": true,
             "opened": -1,
-            "platforms": 6,
+            "platforms": 2,
             "coords": [-232, 64, -1762]
         },
         {
@@ -689,10 +706,22 @@
             "former_name": "Sneeuwhaven",
             "building": true,
             "roofed": true,
-            "underground": false,
+            "underground": true,
             "opened": -1,
-            "platforms": 4,
+            "platforms": 5,
             "coords": [82, 64, -481]
+        },
+        {
+            "id": "Nshv",
+            "name": "Sneeuwhaven",
+            "location": "Sneeuwhaven",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 1,
+            "coords": [-1919, 65, -1045]
         },
         {
             "id": "Jwds",
@@ -837,10 +866,2254 @@
             "opened": -1,
             "platforms": 1,
             "coords": [620, 70, -843]
+        },
+        {
+            "id": "Sill",
+            "name": "Sillamäe",
+            "location": "Sillamäe",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [456, 64, 1231]
+        },
+        {
+            "id": "Prow",
+            "name": "Project West",
+            "location": "Project",
+            "former_name": "Schöneweide",
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [1943, 67, 1320],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [1943, 67, 1320]
+                },
+                {
+                    "name": "Achteringang",
+                    "coords": [1942, 67, 1283]
+                },
+                {
+                    "name": "Zij-ingang",
+                    "coords": [1903, 67, 1288]
+                }
+            ]
+        },
+        {
+            "id": "Proc",
+            "name": "Project CS",
+            "location": "Project",
+            "former_name": "Stad CS",
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [2117, 66, 1324]
+        },
+        {
+            "id": "Swhb",
+            "name": "Snowy Harbour",
+            "location": "Snowy Plains",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [380, 64, 2663]
+        },
+        {
+            "id": "Vval",
+            "name": "Väljakul",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2015,
+            "platforms": 6,
+            "coords": [380, 64, 3154]
+        },
+        {
+            "id": "Vcs",
+            "name": "Vanalinn CS",
+            "location": "Vanalinn",
+            "former_name": "Vanalinn",
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 16,
+            "coords": [378, 67, 3434]
+        },
+        {
+            "id": "Vtoo",
+            "name": "Toompea",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 3,
+            "coords": [387, 71, 3293],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [387, 71, 3293]
+                },
+                {
+                    "name": "Luke Huis",
+                    "coords": [388, 64, 3281]
+                }
+            ]
+        },
+        {
+            "id": "Vrae",
+            "name": "Raekoja",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 8,
+            "coords": [382, 67, 3507]
+        },
+        {
+            "id": "Veix",
+            "name": "Eixample",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [454, 64, 3572]
+        },
+        {
+            "id": "Vsis",
+            "name": "Sisemaal",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 9,
+            "coords": [361, 64, 3629],
+            "exits": [
+                {
+                    "name": "Haven",
+                    "coords": [361, 64, 3629]
+                },
+                {
+                    "name": "Overkant",
+                    "coords": [382, 64, 3662]
+                },
+                {
+                    "name": "Luke's Molen",
+                    "coords": [389, 55, 3641]
+                }
+            ]
+        },
+        {
+            "id": "Vmet",
+            "name": "Metsa",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 6,
+            "coords": [214, 67, 3635]
+        },
+        {
+            "id": "Werz",
+            "name": "Werder Zuid",
+            "location": "Werder",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": true,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [82, 65, 3679]
+        },
+        {
+            "id": "Wer",
+            "name": "Werder",
+            "location": "Werder",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [75, 65, 3636]
+        },
+        {
+            "id": "Wern",
+            "name": "Werder Noord",
+            "location": "Werder",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [85, 65, 3588]
+        },
+        {
+            "id": "Vsmi",
+            "name": "Sisemine",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [428, 64, 3718]
+        },
+        {
+            "id": "Vsma",
+            "name": "Sisemane",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [509, 68, 3714],
+            "exits": [
+                {
+                    "name": "Sisemaneplein",
+                    "coords": [509, 68, 3714]
+                },
+                {
+                    "name": "L22",
+                    "coords": [545, 69, 3716]
+                }
+            ]
+        },
+        {
+            "id": "Mbg",
+            "name": "Meersburg",
+            "location": "Meersburg",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 8,
+            "coords": [772, 64, 3503]
+        },
+        {
+            "id": "Mbgb",
+            "name": "Meersbos",
+            "location": "Meersburg",
+            "former_name": "Meersburger Bos",
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [696, 65, 3451]
+        },
+        {
+            "id": "Vvlk",
+            "name": "Valik",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 6,
+            "coords": [602, 64, 3328]
+        },
+        {
+            "id": "Vvir",
+            "name": "Viru",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 6,
+            "coords": [500, 66, 3408]
+        },
+        {
+            "id": "Vvln",
+            "name": "Valine",
+            "location": "Vanalinn",
+            "former_name": "Väline",
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [418, 67, 3426]
+        },
+        {
+            "id": "Vtih",
+            "name": "Tihane",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 5,
+            "coords": [314, 68, 3398]
+        },
+        {
+            "id": "Vpae",
+            "name": "Paevalli",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [236, 71, 3435]
+        },
+        {
+            "id": "Grnw",
+            "name": "Greenwich",
+            "location": "Greenwich",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 6,
+            "coords": [89, 63, 3456]
+        },
+        {
+            "id": "Vsti",
+            "name": "Stipendium",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 7,
+            "coords": [297, 67, 3506]
+        },
+        {
+            "id": "Vkum",
+            "name": "Kumaline",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 6,
+            "coords": [210, 67, 3545]
+        },
+        {
+            "id": "Vwer",
+            "name": "Werderbrug",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [169, 66, 3636]
+        },
+        {
+            "id": "Vmep",
+            "name": "Metsapark",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 3,
+            "coords": [292, 67, 3592],
+            "services": [ "vanaendp" ]
+        },
+        {
+            "id": "Vlic",
+            "name": "Liceu",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [24, 64, 4005]
+        },
+        {
+            "id": "Vcon",
+            "name": "Convention",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [72, 64, 3837]
+        },
+        {
+            "id": "Vvur",
+            "name": "Vuori",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [205, 96, 3808]
+        },
+        {
+            "id": "Vnar",
+            "name": "Narva",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [215, 71, 3724]
+        },
+        {
+            "id": "Kesk",
+            "name": "Kesklinn",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 5,
+            "coords": [509, 69, 3517]
+        },
+        {
+            "id": "Vrev",
+            "name": "Reval",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [575, 63, 3574]
+        },
+        {
+            "id": "Vjar",
+            "name": "Jarva",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [615, 63, 3643]
+        },
+        {
+            "id": "Krbd",
+            "name": "Kruisbergdorp",
+            "location": "Kruisbergdorp",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [553, 68, 3865]
+        },
+        {
+            "id": "Kvil",
+            "name": "Kleine Village",
+            "location": "Kleine Village",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 6,
+            "coords": [838, 63, 4131]
+        },
+        {
+            "id": "Vtbg",
+            "name": "Toompeaberg",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2015,
+            "platforms": 4,
+            "coords": [493, 66, 3331]
+        },
+        {
+            "id": "Vjvk",
+            "name": "Järvekul",
+            "location": "Vanalinn",
+            "former_name": "Väljekul",
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2015,
+            "platforms": 2,
+            "coords": [342, 69, 3263]
+        },
+        {
+            "id": "Pvpa",
+            "name": "PVP Arena",
+            "location": null,
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2015,
+            "platforms": 2,
+            "coords": [71, 66, 2935]
+        },
+        {
+            "id": "Vkol",
+            "name": "Kollinn",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2015,
+            "platforms": 2,
+            "coords": [73, 68, 3268]
+        },
+        {
+            "id": "Vsty",
+            "name": "Style",
+            "location": "Vanalinn",
+            "former_name": "Stadsstrand",
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2015,
+            "platforms": 1,
+            "coords": [421, 63, 3347]
+        },
+        {
+            "id": "Vkir",
+            "name": "Kiriku",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 1,
+            "coords": [530, 73, 3647]
+        },
+        {
+            "id": "Vves",
+            "name": "Veski",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [446, 67, 3485]
+        },
+        {
+            "id": "Vsom",
+            "name": "Somrade",
+            "location": "Vanalinn",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [337, 71, 3797],
+            "exits": [
+                {
+                    "name": "Somrade",
+                    "coords": [337, 71, 3797]
+                },
+                {
+                    "name": "Sisemaal",
+                    "coords": [364, 64, 3762]
+                }
+            ]
+        },
+        {
+            "id": "Wemb",
+            "name": "Wembley",
+            "location": "Wembley",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [274, 65, 4024]
+        },
+        {
+            "id": "Wemo",
+            "name": "Wembley Oost",
+            "location": "Wembley",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 6,
+            "coords": [411, 66, 4119]
+        },
+        {
+            "id": "Wemz",
+            "name": "Wembley Zuid",
+            "location": "Wembley",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [296, 66, 4086]
+        },
+        {
+            "id": "Brdw",
+            "name": "Broadwell",
+            "location": "Broadwell",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [-207, 68, 3634]
+        },
+        {
+            "id": "Blra",
+            "name": "BLR Arena",
+            "location": null,
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [-240, 65, 4233],
+            "exits": [
+                {
+                    "name": "Zuid",
+                    "coords": [-240, 65, 4233]
+                },
+                {
+                    "name": "Noord",
+                    "coords": [-228, 74, 4147]
+                }
+            ]
+        },
+        {
+            "id": "Gren",
+            "name": "Grengiols",
+            "location": "Grengiols",
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [-230, 87, 4510],
+            "services": [ "nopoi-waitingroom" ]
+        },
+        {
+            "id": "Alp",
+            "name": "Alpineplains",
+            "location": null,
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 3,
+            "coords": [-273, 64, 4738]
+        },
+        {
+            "id": "Spo",
+            "name": "Sporenburg",
+            "location": "Sporenburg",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": 2015,
+            "platforms": 4,
+            "coords": [1118, 65, 2957],
+            "services": [ "nopoi-waitingroom" ],
+            "exits": [
+                {
+                    "name": "1",
+                    "coords": [1118, 65, 2957]
+                },
+                {
+                    "name": "2",
+                    "coords": [1118, 65, 2975]
+                }
+            ]
+        },
+        {
+            "id": "Totu",
+            "name": "ToTu-eiland",
+            "location": "ToTu-eiland",
+            "former_name": "TuTo-eiland",
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [1520, 80, 2722]
+        },
+        {
+            "id": "Mnvl",
+            "name": "Mineville",
+            "location": "Mineville",
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [390, 81, 4785]
+        },
+        {
+            "id": "Rsp",
+            "name": "Rossopolis",
+            "location": "Rossopolis",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [825, 64, 4789]
+        },
+        {
+            "id": "Roc",
+            "name": "Rocafort CS",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 8,
+            "coords": [1733, 69, 4168]
+        },
+        {
+            "id": "Vhvn",
+            "name": "Vissershaven",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 6,
+            "coords": [1965, 69, 4132]
+        },
+        {
+            "id": "Msbo",
+            "name": "Mushroom Biome",
+            "location": null,
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2015,
+            "platforms": 4,
+            "coords": [2783, 70, 4650]
+        },
+        {
+            "id": "Elyr",
+            "name": "Elyria",
+            "location": "Elyria",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2015,
+            "platforms": 2,
+            "coords": [4699, 65, 5233]
+        },
+        {
+            "id": "Bdvl",
+            "name": "Brendaville",
+            "location": "Brendaville",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": false,
+            "opened": 2016,
+            "platforms": 2,
+            "coords": [1530, 64, 3604]
+        },
+        {
+            "id": "Bgaz",
+            "name": "Berg aan Zee",
+            "location": "Berg aan Zee",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": 2014,
+            "platforms": 2,
+            "coords": [1909, 63, 3569]
+        },
+        {
+            "id": "Rfve",
+            "name": "Vuurtoreneiland",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": false,
+            "opened": -1,
+            "platforms": 1,
+            "coords": [1771, 69, 4014]
+        },
+        {
+            "id": "Rfct",
+            "name": "Cité",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [1812, 69, 4090],
+            "exits": [
+                {
+                    "name": "Ringlijn",
+                    "coords": [1812, 69, 4090]
+                },
+                {
+                    "name": "L40",
+                    "coords": [1774, 69, 4104]
+                }
+            ]
+        },
+        {
+            "id": "Rfgk",
+            "name": "Grote Kerk",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [1802, 69, 4195]
+        },
+        {
+            "id": "Rfat",
+            "name": "Arc de Triomf",
+            "location": "Rocafort",
+            "former_name": "Arc de Triomphe",
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [1855, 69, 4170]
+        },
+        {
+            "id": "Rfhv",
+            "name": "Rocahaven",
+            "location": "Rocafort",
+            "former_name": "Vissershaven",
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [2002, 63, 4075]
+        },
+        {
+            "id": "Rfbd",
+            "name": "Beursdistrict",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 4,
+            "coords": [1882, 69, 4089]
+        },
+        {
+            "id": "Rfwd",
+            "name": "Winkeldistrict",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [1854, 69, 4301]
+        },
+        {
+            "id": "Rfom",
+            "name": "Oude Markt",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [1827, 69, 4232]
+        },
+        {
+            "id": "Rfnm",
+            "name": "Nieuwmarkt",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [1767, 69, 4232]
+        },
+        {
+            "id": "Mijd",
+            "name": "Mijdrecht",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [1665, 69, 4227]
+        },
+        {
+            "id": "Rfce",
+            "name": "Centrum",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [1665, 69, 4145]
+        },
+        {
+            "id": "Rfst",
+            "name": "Rocastrand",
+            "location": "Rocafort",
+            "former_name": null,
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [1694, 69, 4083]
         }
     ],
 
     "routes": [
+        {
+            "type": "ring_line",
+            "line_name": "L41 [Ringlijn Rocafort]",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vhvn",
+                    "platform_forth": 0,
+                    "time_forth": 31,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfom",
+                    "platform_forth": 0,
+                    "time_forth": 9,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 31,
+                    "warnings_back": ["cactus_breaker"]
+                },
+                {
+                    "halt": "Rfnm",
+                    "platform_forth": 0,
+                    "time_forth": 14,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 9,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Mijd",
+                    "platform_forth": 0,
+                    "time_forth": 8,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 14,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfce",
+                    "platform_forth": 0,
+                    "time_forth": 15,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 8,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfst",
+                    "platform_forth": 0,
+                    "time_forth": 13,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 15,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfct",
+                    "platform_forth": 0,
+                    "time_forth": 9,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 13,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfbd",
+                    "platform_forth": 0,
+                    "time_forth": 16,
+                    "warnings_forth": ["cactus_breaker"],
+                    "platform_back": 0,
+                    "time_back": 9,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vhvn",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 16,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L42",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Rfbd",
+                    "platform_forth": 0,
+                    "time_forth": 15,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfat",
+                    "platform_forth": 3,
+                    "time_forth": 22,
+                    "warnings_forth": [],
+                    "platform_back": 4,
+                    "time_back": 15,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfwd",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 22,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L40",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Rfve",
+                    "platform_forth": 1,
+                    "time_forth": 10,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfct",
+                    "platform_forth": 1,
+                    "time_forth": 9,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 10,
+                    "warnings_back": ["single_track"]
+                },
+                {
+                    "halt": "Roc",
+                    "platform_forth": 8,
+                    "time_forth": 21,
+                    "warnings_forth": [],
+                    "platform_back": 7,
+                    "time_back": 9,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfgk",
+                    "platform_forth": 1,
+                    "time_forth": 13,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 21,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfat",
+                    "platform_forth": 2,
+                    "time_forth": 18,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 13,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vhvn",
+                    "platform_forth": 0,
+                    "time_forth": 10,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 18,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rfhv",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 11,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "T6",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vcs",
+                    "platform_forth": 0,
+                    "time_forth": 22,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Kesk",
+                    "platform_forth": 1,
+                    "time_forth": 31,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 22,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Mbg",
+                    "platform_forth": 4,
+                    "time_forth": 112,
+                    "warnings_forth": ["messy"],
+                    "platform_back": 3,
+                    "time_back": 31,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Bdvl",
+                    "platform_forth": 0,
+                    "time_forth": 52,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 112,
+                    "warnings_back": ["messy"]
+                },
+                {
+                    "halt": "Bgaz",
+                    "platform_forth": 0,
+                    "time_forth": 101,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 52,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Roc",
+                    "platform_forth": 6,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 5,
+                    "time_back": 101,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "T9",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vcs",
+                    "platform_forth": 0,
+                    "time_forth": 10,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vrae",
+                    "platform_forth": 0,
+                    "time_forth": 16,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 10,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsis",
+                    "platform_forth": 0,
+                    "time_forth": 56,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 16,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Wemo",
+                    "platform_forth": 0,
+                    "time_forth": 97,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 56,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Mnvl",
+                    "platform_forth": 4,
+                    "time_forth": 95,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 97,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Rsp",
+                    "platform_forth": 0,
+                    "time_forth": 82,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 95,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Kvil",
+                    "platform_forth": 3,
+                    "time_forth": 116,
+                    "warnings_forth": [],
+                    "platform_back": 4,
+                    "time_back": 82,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Roc",
+                    "platform_forth": 2,
+                    "time_forth": 33,
+                    "warnings_forth": [],
+                    "platform_back": 3,
+                    "time_back": 116,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vhvn",
+                    "platform_forth": 0,
+                    "time_forth": 183,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 33,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Msbo",
+                    "platform_forth": 4,
+                    "time_forth": 330,
+                    "warnings_forth": ["messy"],
+                    "platform_back": 1,
+                    "time_back": 183,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Elyr",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 330,
+                    "warnings_back": ["messy"]
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L35",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Spo",
+                    "platform_forth": 0,
+                    "time_forth": 84,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Totu",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 84,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "T8",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vcs",
+                    "platform_forth": 0,
+                    "time_forth": 44,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vvlk",
+                    "platform_forth": 1,
+                    "time_forth": 108,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 44,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Spo",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 108,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "T5",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vcs",
+                    "platform_forth": 0,
+                    "time_forth": 11,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsti",
+                    "platform_forth": 5,
+                    "time_forth": 28,
+                    "warnings_forth": [],
+                    "platform_back": 4,
+                    "time_back": 11,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Grnw",
+                    "platform_forth": 0,
+                    "time_forth": 60,
+                    "warnings_forth": ["messy"],
+                    "platform_back": 0,
+                    "time_back": 28,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Brdw",
+                    "platform_forth": 2,
+                    "time_forth": 68,
+                    "warnings_forth": ["messy"],
+                    "platform_back": 1,
+                    "time_back": 60,
+                    "warnings_back": ["messy"]
+                },
+                {
+                    "halt": "Blra",
+                    "platform_forth": 0,
+                    "time_forth": 45,
+                    "warnings_forth": ["messy"],
+                    "platform_back": 0,
+                    "time_back": 68,
+                    "warnings_back": ["messy"]
+                },
+                {
+                    "halt": "Gren",
+                    "platform_forth": 0,
+                    "time_forth": 35,
+                    "warnings_forth": ["messy"],
+                    "platform_back": 0,
+                    "time_back": 45,
+                    "warnings_back": ["messy", "shared_platform"]
+                },
+                {
+                    "halt": "Alp",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 35,
+                    "warnings_back": ["messy"]
+                }
+            ]
+        },
+        {
+            "type": "tram",
+            "line_name": "//5",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Wemo",
+                    "platform_forth": 0,
+                    "time_forth": 10,
+                    "warnings_forth": ["left_side", "messy"],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Wemz",
+                    "platform_forth": 0,
+                    "time_forth": 11,
+                    "warnings_forth": ["left_side", "messy"],
+                    "platform_back": 0,
+                    "time_back": 10,
+                    "warnings_back": ["left_side", "messy"]
+                },
+                {
+                    "halt": "Wemb",
+                    "platform_forth": 0,
+                    "time_forth": 30,
+                    "warnings_forth": ["left_side", "messy"],
+                    "platform_back": 0,
+                    "time_back": 11,
+                    "warnings_back": ["left_side", "messy"]
+                },
+                {
+                    "halt": "Vlic",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 0,
+                    "warnings_back": ["left_side", "messy"]
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L23",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vves",
+                    "platform_forth": 0,
+                    "time_forth": 18,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vrae",
+                    "platform_forth": 0,
+                    "time_forth": 17,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 18,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsis",
+                    "platform_forth": 0,
+                    "time_forth": 22,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 17,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsom",
+                    "platform_forth": 0,
+                    "time_forth": 34,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 22,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Wemb",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 34,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "ring_line",
+            "line_name": "L20 [Ringlijn Vanalinn]",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vtoo",
+                    "platform_forth": 0,
+                    "time_forth": 8,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsty",
+                    "platform_forth": 0,
+                    "time_forth": 27,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 0,
+                    "time_back": 0,
+                    "warnings_back": ["single_track", "shared_platform", "cactus_breaker"]
+                },
+                {
+                    "halt": "Vvir",
+                    "platform_forth": 0,
+                    "time_forth": 16,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 0,
+                    "time_back": 27,
+                    "warnings_back": ["single_track", "shared_platform"]
+                },
+                {
+                    "halt": "Kesk",
+                    "platform_forth": 0,
+                    "time_forth": 12,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 0,
+                    "time_back": 16,
+                    "warnings_back": ["single_track", "shared_platform"]
+                },
+                {
+                    "halt": "Vkir",
+                    "platform_forth": 0,
+                    "time_forth": 19,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 0,
+                    "time_back": 12,
+                    "warnings_back": ["single_track", "shared_platform"]
+                },
+                {
+                    "halt": "Vsis",
+                    "platform_forth": 0,
+                    "time_forth": 15,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 0,
+                    "time_back": 19,
+                    "warnings_back": ["single_track", "shared_platform"]
+                },
+                {
+                    "halt": "Vmep",
+                    "platform_forth": 0,
+                    "time_forth": 16,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 0,
+                    "time_back": 15,
+                    "warnings_back": ["single_track", "shared_platform"]
+                },
+                {
+                    "halt": "Vsti",
+                    "platform_forth": 3,
+                    "time_forth": 11,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 3,
+                    "time_back": 16,
+                    "warnings_back": ["single_track", "shared_platform"]
+                },
+                {
+                    "halt": "Vtih",
+                    "platform_forth": 0,
+                    "time_forth": 22,
+                    "warnings_forth": ["single_track", "shared_platform", "cactus_breaker"],
+                    "platform_back": 0,
+                    "time_back": 11,
+                    "warnings_back": ["single_track", "shared_platform"]
+                },
+                {
+                    "halt": "Vtoo",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 22,
+                    "warnings_back": ["single_track", "shared_platform"]
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "T10",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Pvpa",
+                    "platform_forth": 0,
+                    "time_forth": 42,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vkol",
+                    "platform_forth": 0,
+                    "time_forth": 24,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 42,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Grnw",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 24,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "tram",
+            "line_name": "//11",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vvir",
+                    "platform_forth": 0,
+                    "time_forth": 13,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vtbg",
+                    "platform_forth": 0,
+                    "time_forth": 34,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 13,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vval",
+                    "platform_forth": 0,
+                    "time_forth": 18,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 34,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vjvk",
+                    "platform_forth": 0,
+                    "time_forth": 37,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 18,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsti",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 37,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "tram",
+            "line_name": "//3",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vvlk",
+                    "platform_forth": 0,
+                    "time_forth": 17,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 0,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vtbg",
+                    "platform_forth": 0,
+                    "time_forth": 13,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 17,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vvir",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 13,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L22",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vlic",
+                    "platform_forth": 0,
+                    "time_forth": 27,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vcon",
+                    "platform_forth": 0,
+                    "time_forth": 23,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 27,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vvur",
+                    "platform_forth": 0,
+                    "time_forth": 8,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 23,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vnar",
+                    "platform_forth": 0,
+                    "time_forth": 9,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 8,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vmet",
+                    "platform_forth": 0,
+                    "time_forth": 16,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 9,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vkum",
+                    "platform_forth": 0,
+                    "time_forth": 16,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 16,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsti",
+                    "platform_forth": 1,
+                    "time_forth": 18,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 16,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vrae",
+                    "platform_forth": 0,
+                    "time_forth": 17,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 18,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Kesk",
+                    "platform_forth": 0,
+                    "time_forth": 10,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 17,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vrev",
+                    "platform_forth": 1,
+                    "time_forth": 18,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 10,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vjar",
+                    "platform_forth": 1,
+                    "time_forth": 19,
+                    "warnings_forth": [],
+                    "platform_back": 4,
+                    "time_back": 18,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsma",
+                    "platform_forth": 2,
+                    "time_forth": 16,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 19,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Krbd",
+                    "platform_forth": 1,
+                    "time_forth": 71,
+                    "warnings_forth": [],
+                    "platform_back": 4,
+                    "time_back": 16,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Kvil",
+                    "platform_forth": 6,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 5,
+                    "time_back": 71,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L26",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vkum",
+                    "platform_forth": 0,
+                    "time_forth": 15,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vmep",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 15,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "tram",
+            "line_name": "//1",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vcs",
+                    "platform_forth": 0,
+                    "time_forth": 5,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vtih",
+                    "platform_forth": 0,
+                    "time_forth": 7,
+                    "warnings_forth": ["no_stop_take_off"],
+                    "platform_back": 0,
+                    "time_back": 5,
+                    "warnings_back": ["no_stop_take_off"]
+                },
+                {
+                    "halt": "Vsti",
+                    "platform_forth": 0,
+                    "time_forth": 16,
+                    "warnings_forth": ["no_stop_take_off"],
+                    "platform_back": 0,
+                    "time_back": 7,
+                    "warnings_back": ["no_stop_take_off"]
+                },
+                {
+                    "halt": "Vkum",
+                    "platform_forth": 0,
+                    "time_forth": 7,
+                    "warnings_forth": ["no_stop_take_off"],
+                    "platform_back": 0,
+                    "time_back": 16,
+                    "warnings_back": ["no_stop_take_off"]
+                },
+                {
+                    "halt": "Vmet",
+                    "platform_forth": 0,
+                    "time_forth": 8,
+                    "warnings_forth": ["no_stop_take_off"],
+                    "platform_back": 0,
+                    "time_back": 7,
+                    "warnings_back": ["no_stop_take_off"]
+                },
+                {
+                    "halt": "Vwer",
+                    "platform_forth": 0,
+                    "time_forth": 12,
+                    "warnings_forth": ["no_stop_take_off"],
+                    "platform_back": 0,
+                    "time_back": 8,
+                    "warnings_back": ["no_stop_take_off"]
+                },
+                {
+                    "halt": "Wer",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 12,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L25",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Mbg",
+                    "platform_forth": 1,
+                    "time_forth": 16,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Mbgb",
+                    "platform_forth": 1,
+                    "time_forth": 29,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 16,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vvir",
+                    "platform_forth": 0,
+                    "time_forth": 6,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 29,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vvln",
+                    "platform_forth": 0,
+                    "time_forth": 13,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 6,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vcs",
+                    "platform_forth": 0,
+                    "time_forth": 8,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 13,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vtih",
+                    "platform_forth": 0,
+                    "time_forth": 14,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 8,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vpae",
+                    "platform_forth": 0,
+                    "time_forth": 15,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 14,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Grnw",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 15,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L24",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Werz",
+                    "platform_forth": 0,
+                    "time_forth": 18,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Wern",
+                    "platform_forth": 0,
+                    "time_forth": 14,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 18,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vmet",
+                    "platform_forth": 0,
+                    "time_forth": 30,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 14,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsis",
+                    "platform_forth": 0,
+                    "time_forth": 15,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 30,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsmi",
+                    "platform_forth": 0,
+                    "time_forth": 14,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 15,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsma",
+                    "platform_forth": 0,
+                    "time_forth": 51,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 14,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Mbg",
+                    "platform_forth": 8,
+                    "time_forth": 46,
+                    "warnings_forth": [],
+                    "platform_back": 7,
+                    "time_back": 51,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vvlk",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 46,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L21",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vval",
+                    "platform_forth": 0,
+                    "time_forth": 22,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vtoo",
+                    "platform_forth": 0,
+                    "time_forth": 16,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 22,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vcs",
+                    "platform_forth": 0,
+                    "time_forth": 11,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 16,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vrae",
+                    "platform_forth": 0,
+                    "time_forth": 18,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 11,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Veix",
+                    "platform_forth": 0,
+                    "time_forth": 21,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 18,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vsis",
+                    "platform_forth": 0,
+                    "time_forth": 24,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 21,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vmet",
+                    "platform_forth": 0,
+                    "time_forth": 23,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 24,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Werz",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 23,
+                    "warnings_back": []
+                }
+            ]
+        },
         {
             "type": "tram",
             "line_name": "//10",
@@ -1657,6 +3930,58 @@
         },
         {
             "type": "train",
+            "line_name": "T7",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Vil",
+                    "platform_forth": 4,
+                    "time_forth": 71,
+                    "warnings_forth": [],
+                    "platform_back": 6,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Grns",
+                    "platform_forth": 6,
+                    "time_forth": 33,
+                    "warnings_forth": [],
+                    "platform_back": 4,
+                    "time_back": 71,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Sill",
+                    "platform_forth": 0,
+                    "time_forth": 183,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 33,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Prow",
+                    "platform_forth": 0,
+                    "time_forth": 26,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 183,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Proc",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 26,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "train",
             "line_name": "T3",
             "operator": "BLR",
             "halts": [
@@ -1681,11 +4006,38 @@
                 {
                     "halt": "Wbr",
                     "platform_forth": 3,
-                    "time_forth": false,
+                    "time_forth": 144,
                     "warnings_forth": [],
                     "platform_back": 3,
                     "time_back": 58,
                     "warnings_back": []
+                },
+                {
+                    "halt": "Swhb",
+                    "platform_forth": 0,
+                    "time_forth": 63,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 144,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vval",
+                    "platform_forth": 2,
+                    "time_forth": 37,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 63,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Vcs",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 37,
+                    "warnings_back": ["no_stop_take_off"]
                 }
             ]
         },
@@ -2171,6 +4523,31 @@
             ]
         },
         {
+            "type": "other",
+            "line_name": "Sneeuwhavenlijn",
+            "operator": "SHL",
+            "halts": [
+                {
+                    "halt": "Shv",
+                    "platform_forth": 0,
+                    "time_forth": 41,
+                    "warnings_forth": ["single_track", "own_minecart"],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Nshv",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": ["single_track", "own_minecart"]
+                }
+            ]
+        },
+        {
             "type": "metro",
             "line_name": "L17",
             "operator": "BLR",
@@ -2232,6 +4609,22 @@
             "location": "Walbrugge",
             "closest_station": "Wbr",
             "coords": [304, 64, 1484]
+        },
+        {
+            "id": "tempelba",
+            "type": "other",
+            "name": "Tempelbaai",
+            "location": "Tempelbaai",
+            "closest_station": "Nshv",
+            "coords": [-2418, 65, -583]
+        },
+        {
+            "id": "vanaendp",
+            "type": "end_portal",
+            "name": "End Portal",
+            "location": "Vanalinn",
+            "closest_station": "Vmep",
+            "coords": [287, 67, 3595]
         }
     ]
 }
