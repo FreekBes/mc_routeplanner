@@ -299,7 +299,7 @@
             "former_name": "Mina's Dorp",
             "building": true,
             "roofed": true,
-            "underground": false,
+            "underground": true,
             "opened": 2019,
             "platforms": 5,
             "coords": [-2686, 64, 342],
@@ -960,7 +960,7 @@
                     "platform_forth": 7,
                     "time_forth": 148,
                     "warnings_forth": ["single_track"],
-                    "platform_back": 8,
+                    "platform_back": 7,
                     "time_back": false,
                     "warnings_back": []
                 },
