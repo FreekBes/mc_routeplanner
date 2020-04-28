@@ -57,7 +57,7 @@
 
             foreach ($worldData["pois"] as $poi) {
                 if (strpos(strtolower($poi["name"]), $input) > -1 || (!empty($poi["location"]) && strpos(strtolower($poi["location"]), $input) > -1)) {
-                    array_push($results, poi_to_item($poi));
+                    array_push($results, poi_to_item($poi, check_for_nearest_station($poi["coords"], $worldData["stations"])["id"]));
                 }
             }
 

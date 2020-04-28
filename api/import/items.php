@@ -18,6 +18,8 @@
     }
 
     function get_item_by_id($worldData, $id) {
+        require_once("PoiCalculator.php");
+        
         $id = strtolower(trim($id));
         $result = array();
 
@@ -31,7 +33,7 @@
         else {
             foreach ($worldData["pois"] as $poi) {
                 if (strtolower($poi["id"]) == $id) {
-                    $result = poi_to_item($poi);
+                    $result = poi_to_item($poi, check_for_nearest_station($poi["coords"], $worldData["stations"])["id"]);
                 }
             }
         }
@@ -108,14 +110,14 @@
         return $res;
     }
 
-    function poi_to_item($poi) {
+    function poi_to_item($poi, $nearestHaltId) {
         $res = array();
         $res["id"] = $poi["id"];
         $res["type"] = "poi";
         $res["subtype"] = $poi["type"];
         $res["name"] = $poi["name"];
         $res["location"] = $poi["location"];
-        $res["halt"] = $poi["closest_station"];
+        $res["halt"] = $nearestHaltId;
         $res["coords"] = $poi["coords"];
         return $res;
     }

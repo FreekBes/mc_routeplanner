@@ -112,7 +112,7 @@
                             if ($poi["id"] == $_GET["from"]) {
                                 $coords = $poi["coords"];
                                 $fromWalkingStart = $poi["id"];
-                                $stuff["items"][$poi["id"]] = poi_to_item($poi);
+                                $stuff["items"][$poi["id"]] = poi_to_item($poi, check_for_nearest_station($poi["coords"], $worldData["stations"])["id"]);
                                 break;
                             }
                         }
@@ -151,7 +151,7 @@
                             if ($poi["id"] == $_GET["to"]) {
                                 $coords = $poi["coords"];
                                 $toWalkingEnd = $poi["id"];
-                                $stuff["items"][$poi["id"]] = poi_to_item($poi);
+                                $stuff["items"][$poi["id"]] = poi_to_item($poi, check_for_nearest_station($poi["coords"], $worldData["stations"])["id"]);
                                 break;
                             }
                         }
