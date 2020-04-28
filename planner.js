@@ -527,6 +527,8 @@ var planner = {
                 return ["icons/place.png", "Kunstwerk"];
             case "enchanting_table":
                 return ["icons/place.png", "Enchanting Table"];
+            case "post_office":
+                return ["icons/place.png", "Postkantoor"];
             case "coords":
                 return ["icons/place.png", "Coördinaten"];
             default:
@@ -560,6 +562,8 @@ var planner = {
                 return ["icons/warnings/left-side.png", "Op dit traject wordt links aangehouden."];
             case "lever_for_minecart":
                 return ["icons/warnings/lever-for-minecart.png", "Op dit traject moet je levers omschakelen in plaats van op knoppen drukken om minecarts te verkrijgen."];
+            case "nether":
+                return ["icons/warnings/no-icon.png", "Deze lijn gaat via de nether. Pas op voor ghasts, pigmen en ander gespuis!"];
             default:
                 return ["icons/warnings/no-icon.png", warning];
         }

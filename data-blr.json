@@ -13,6 +13,13 @@
             "run_by": "CraftingTimes",
             "started": 2016,
             "main_station": "Nshv"
+        },
+        "MNK": {
+            "id": "MNK",
+            "name": "Metro Nederkalstel",
+            "run_by": "Rik",
+            "started": 2013,
+            "main_station": "Nkrm"
         }
     },
 
@@ -37,7 +44,8 @@
                     "name": "Oude Ingang",
                     "coords": [407, 64, 1516]
                 }
-            ]
+            ],
+            "services": [ "endpearl", "7bb0742d" ]
         },
         {
             "id": "Wbrj",
@@ -73,7 +81,8 @@
             "underground": false,
             "opened": -1,
             "platforms": 2,
-            "coords": [581, 69, 1002]
+            "coords": [581, 69, 1002],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Vil",
@@ -85,7 +94,17 @@
             "underground": true,
             "opened": -1,
             "platforms": 8,
-            "coords": [351, 71, 488]
+            "coords": [351, 71, 488],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [426, 72, 491]
+                },
+                {
+                    "name": "Village",
+                    "coords": [351, 71, 488]
+                }
+            ]
         },
         {
             "id": "Berg",
@@ -125,15 +144,25 @@
         },
         {
             "id": "Moln",
-            "name": "Molen",
+            "name": "Molen / Netherspawn",
             "location": "Dorp",
-            "former_name": null,
+            "former_name": "Molen",
             "building": false,
             "roofed": true,
             "underground": true,
             "opened": 2013,
-            "platforms": 4,
-            "coords": [430, 63, 402]
+            "platforms": 8,
+            "coords": [430, 63, 402],
+            "exits": [
+                {
+                    "name": "Overworld",
+                    "coords":  [430, 63, 402]
+                },
+                {
+                    "name": "Nether",
+                    "coords": [446, 57, 418]
+                }
+            ]
         },
         {
             "id": "Hotl",
@@ -145,7 +174,8 @@
             "underground": true,
             "opened": 2013,
             "platforms": 4,
-            "coords": [484, 64, 404]
+            "coords": [484, 64, 404],
+            "services": [ "9ad4fb90" ]
         },
         {
             "id": "Bank",
@@ -200,12 +230,13 @@
             "name": "Sam",
             "location": "Sams Dorp",
             "former_name": null,
-            "building": false,
+            "building": true,
             "roofed": true,
-            "underground": true,
+            "underground": false,
             "opened": -1,
             "platforms": 2,
-            "coords": [-198, 66, 892]
+            "coords": [-198, 66, 892],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Csdp",
@@ -253,7 +284,18 @@
             "underground": true,
             "opened": 2013,
             "platforms": 10,
-            "coords": [484, 63, 136]
+            "coords": [484, 63, 136],
+            "services": [ "e557d19b", "f48ada01" ],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [484, 63, 136]
+                },
+                {
+                    "name": "Vuurtoren",
+                    "coords": [467, 63, 150]
+                }
+            ]
         },
         {
             "id": "Smcl",
@@ -275,9 +317,10 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
-            "coords": [509, 63, -12]
+            "coords": [509, 63, -12],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Wvrv",
@@ -287,7 +330,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [559, 63, -212]
         },
@@ -299,7 +342,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 6,
             "coords": [720, 64, -451]
         },
@@ -325,14 +368,15 @@
             "underground": true,
             "opened": -1,
             "platforms": 2,
-            "coords": [1783, 63, -430]
+            "coords": [1783, 63, -430],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Lnmr",
             "name": "Läänemerie",
             "location": "Läänemerie",
             "former_name": "Laanemerie",
-            "building": true,
+            "building": false,
             "roofed": true,
             "underground": true,
             "opened": -1,
@@ -361,7 +405,7 @@
             "underground": false,
             "opened": -1,
             "platforms": 6,
-            "coords": [1814, 62, -161]
+            "coords": [2361, 64, -191]
         },
         {
             "id": "Rvdl",
@@ -373,19 +417,21 @@
             "underground": false,
             "opened": -1,
             "platforms": 1,
-            "coords": [2480, 65, -576]
+            "coords": [2480, 65, -576],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Spkp",
             "name": "Schapenkoepel",
-            "location": null,
+            "location": "Schapenkoepel",
             "former_name": null,
             "building": true,
             "roofed": true,
             "underground": false,
             "opened": -1,
             "platforms": 2,
-            "coords": [3815, 63, -188]
+            "coords": [3815, 63, -188],
+            "services": [ "allsheep" ]
         },
         {
             "id": "Msmn",
@@ -404,7 +450,7 @@
             "name": "MESA Kolonie",
             "location": "Mesa",
             "former_name": null,
-            "building": false,
+            "building": true,
             "roofed": true,
             "underground": false,
             "opened": -1,
@@ -469,7 +515,22 @@
             "underground": true,
             "opened": -1,
             "platforms": 10,
-            "coords": [551, 64, -816]
+            "coords": [551, 64, -816],
+            "exits": [
+                {
+                    "name": "Dorpsstraat",
+                    "coords": [551, 64, -816]
+                },
+                {
+                    "name": "Gemeentehuis",
+                    "coords": [551, 64, -842]
+                },
+                {
+                    "name": "Haven",
+                    "coords": [500, 64, -838]
+                }
+            ],
+            "services": [ "nopoi-map" ]
         },
         {
             "id": "Snrd",
@@ -503,9 +564,19 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 8,
-            "coords": [443, 65, -416]
+            "coords": [443, 65, -416],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [443, 65, -416]
+                },
+                {
+                    "name": "Bosdorp",
+                    "coords": [479, 64, -460]
+                }
+            ]
         },
         {
             "id": "Idfn",
@@ -553,7 +624,8 @@
             "underground": true,
             "opened": -1,
             "platforms": 2,
-            "coords": [-21, 67, -1659]
+            "coords": [-21, 67, -1659],
+            "services": [ "c12fe881", "d00789b5" ]
         },
         {
             "id": "Fhst",
@@ -587,9 +659,36 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 6,
-            "coords": [-123, 68, -418]
+            "coords": [-123, 68, -418],
+            "exits": [
+                {
+                    "name": "Stationsplein",
+                    "coords": [-123, 68, -418]
+                },
+                {
+                    "name": "Strandkade",
+                    "coords": [-139, 68, -428]
+                },
+                {
+                    "name": "Steigerkade",
+                    "coords": [-139, 68, -409]
+                },
+                {
+                    "name": "Winkelcentrum Binnen",
+                    "coords": [-117, 68, -398]
+                },
+                {
+                    "name": "Winkelcentrum Buiten",
+                    "coords": [-134, 68, -398]
+                },
+                {
+                    "name": "Strandboulevard",
+                    "coords": [-80, 68, -401]
+                }
+            ],
+            "services": [ "nopoi-map" ]
         },
         {
             "id": "Bcs",
@@ -601,19 +700,44 @@
             "underground": true,
             "opened": -1,
             "platforms": 6,
-            "coords": [-83, 69, -240]
+            "coords": [-92, 69, -238],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [-92, 69, -238]
+                },
+                {
+                    "name": "Achteringang",
+                    "coords": [-91, 69, -228]
+                }
+            ],
+            "services": [ "nopoi-map", "943081c3" ]
         },
         {
             "id": "Bwsw",
             "name": "Woestijnwijk",
             "location": "Boligus",
             "former_name": null,
-            "building": true,
+            "building": false,
             "roofed": true,
             "underground": true,
             "opened": -1,
             "platforms": 6,
-            "coords": [2, 70, -145]
+            "coords": [2, 70, -145],
+            "exits": [
+                {
+                    "name": "Plein",
+                    "coords": [2, 70, -145]
+                },
+                {
+                    "name": "Haven",
+                    "coords": [27, 65, -171]
+                },
+                {
+                    "name": "Strand",
+                    "coords": [38, 70, -165]
+                }
+            ]
         },
         {
             "id": "Bhvn",
@@ -649,7 +773,17 @@
             "underground": false,
             "opened": -1,
             "platforms": 7,
-            "coords": [262, 65, -435]
+            "coords": [262, 65, -436],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [262, 65, -436]
+                },
+                {
+                    "name": "Zuid",
+                    "coords": [271, 63, -394]
+                }
+            ]
         },
         {
             "id": "Shzd",
@@ -661,7 +795,17 @@
             "underground": true,
             "opened": -1,
             "platforms": 4,
-            "coords": [463, 69, -679]
+            "coords": [463, 69, -679],
+            "exits": [
+                {
+                    "name": "Metro",
+                    "coords": [463, 69, -679]
+                },
+                {
+                    "name": "Ringlijn en Tram",
+                    "coords": [457, 64, -630]
+                }
+            ]
         },
         {
             "id": "Ocaz",
@@ -697,7 +841,8 @@
             "underground": false,
             "opened": -1,
             "platforms": 2,
-            "coords": [288, 63, -354]
+            "coords": [288, 63, -354],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Shv",
@@ -707,9 +852,10 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 5,
-            "coords": [82, 64, -481]
+            "coords": [82, 64, -481],
+            "services": [ "nopoi-map" ]
         },
         {
             "id": "Nshv",
@@ -745,7 +891,18 @@
             "underground": true,
             "opened": -1,
             "platforms": 2,
-            "coords": [-162, 68, 111]
+            "coords": [-162, 68, 111],
+            "exits": [
+                {
+                    "name": "Woestijn",
+                    "coords": [-162, 68, 111]
+                },
+                {
+                    "name": "XP-Farm",
+                    "coords": [-151, 57, 119]
+                }
+            ],
+            "services": [ "rikxpfrm" ]
         },
         {
             "id": "Marn",
@@ -757,7 +914,8 @@
             "underground": true,
             "opened": -1,
             "platforms": 2,
-            "coords": [19, 70, 151]
+            "coords": [19, 70, 151],
+            "services": [ "mobarena" ]
         },
         {
             "id": "Jwmn",
@@ -836,7 +994,7 @@
             "name": "Winkelstraat",
             "location": "Seehaven",
             "former_name": null,
-            "building": false,
+            "building": true,
             "roofed": true,
             "underground": false,
             "opened": -1,
@@ -890,6 +1048,7 @@
             "opened": -1,
             "platforms": 2,
             "coords": [1943, 67, 1320],
+            "services": [ "nopoi-map" ],
             "exits": [
                 {
                     "name": "Hoofdingang",
@@ -951,7 +1110,18 @@
             "underground": true,
             "opened": -1,
             "platforms": 16,
-            "coords": [378, 67, 3434]
+            "coords": [378, 67, 3434],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [378, 67, 3434]
+                },
+                {
+                    "name": "Tram",
+                    "coords": [353, 65, 3446]
+                }
+            ],
+            "services": [ "nopoi-map" ]
         },
         {
             "id": "Vtoo",
@@ -973,7 +1143,8 @@
                     "name": "Luke Huis",
                     "coords": [388, 64, 3281]
                 }
-            ]
+            ],
+            "services": [ "nopoi-map", "df8ed4c8" ]
         },
         {
             "id": "Vrae",
@@ -985,7 +1156,8 @@
             "underground": true,
             "opened": -1,
             "platforms": 8,
-            "coords": [382, 67, 3507]
+            "coords": [382, 67, 3507],
+            "services": [ "nopoi-map", "d963a701" ]
         },
         {
             "id": "Veix",
@@ -997,7 +1169,8 @@
             "underground": true,
             "opened": -1,
             "platforms": 2,
-            "coords": [454, 64, 3572]
+            "coords": [454, 64, 3572],
+            "services": [ "minicity" ]
         },
         {
             "id": "Vsis",
@@ -1007,7 +1180,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 9,
             "coords": [361, 64, 3629],
             "exits": [
@@ -1033,9 +1206,10 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 6,
-            "coords": [214, 67, 3635]
+            "coords": [214, 67, 3635],
+            "services": [ "b678a238" ]
         },
         {
             "id": "Werz",
@@ -1045,7 +1219,7 @@
             "building": false,
             "roofed": false,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [82, 65, 3679]
         },
@@ -1057,7 +1231,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [75, 65, 3636]
         },
@@ -1069,7 +1243,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [85, 65, 3588]
         },
@@ -1081,7 +1255,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [428, 64, 3718]
         },
@@ -1093,7 +1267,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [509, 68, 3714],
             "exits": [
@@ -1117,7 +1291,8 @@
             "underground": true,
             "opened": -1,
             "platforms": 8,
-            "coords": [772, 64, 3503]
+            "coords": [772, 64, 3503],
+            "services": [ "nopoi-waitingroom", "nopoi-map" ]
         },
         {
             "id": "Mbgb",
@@ -1129,7 +1304,8 @@
             "underground": false,
             "opened": -1,
             "platforms": 2,
-            "coords": [696, 65, 3451]
+            "coords": [696, 65, 3451],
+            "services": [ "nopoi-waitingroom", "nopoi-map" ]
         },
         {
             "id": "Vvlk",
@@ -1139,7 +1315,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 6,
             "coords": [602, 64, 3328]
         },
@@ -1151,9 +1327,23 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 6,
-            "coords": [500, 66, 3408]
+            "coords": [500, 66, 3408],
+            "exits": [
+                {
+                    "name": "Links",
+                    "coords": [500, 66, 3408]
+                },
+                {
+                    "name": "Rechts",
+                    "coords": [500, 66, 3424]
+                },
+                {
+                    "name": "Tramperrons",
+                    "coords": [523, 66, 3386]
+                }
+            ]
         },
         {
             "id": "Vvln",
@@ -1165,7 +1355,17 @@
             "underground": true,
             "opened": -1,
             "platforms": 2,
-            "coords": [418, 67, 3426]
+            "coords": [418, 67, 3426],
+            "exits": [
+                {
+                    "name": "Sluis",
+                    "coords": [418, 67, 3426]
+                },
+                {
+                    "name": "Steiger",
+                    "coords": [416, 63, 3406]
+                }
+            ]
         },
         {
             "id": "Vtih",
@@ -1175,9 +1375,23 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 5,
-            "coords": [314, 68, 3398]
+            "coords": [314, 68, 3398],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [314, 68, 3398]
+                },
+                {
+                    "name": "Kerk",
+                    "coords": [314, 67, 3432]
+                },
+                {
+                    "name": "Tram",
+                    "coords": [297, 67, 3450]
+                }
+            ]
         },
         {
             "id": "Vpae",
@@ -1199,7 +1413,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 6,
             "coords": [89, 63, 3456]
         },
@@ -1213,7 +1427,17 @@
             "underground": true,
             "opened": -1,
             "platforms": 7,
-            "coords": [297, 67, 3506]
+            "coords": [297, 67, 3506],
+            "exits": [
+                {
+                    "name": "Museumplein",
+                    "coords": [297, 67, 3506]
+                },
+                {
+                    "name": "Tramplein",
+                    "coords": [301, 67, 3472]
+                }
+            ]
         },
         {
             "id": "Vkum",
@@ -1223,7 +1447,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2016,
             "platforms": 6,
             "coords": [210, 67, 3545]
         },
@@ -1247,10 +1471,10 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 3,
             "coords": [292, 67, 3592],
-            "services": [ "vanaendp" ]
+            "services": [ "vanaendp", "e97784fb" ]
         },
         {
             "id": "Vlic",
@@ -1260,7 +1484,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [24, 64, 4005]
         },
@@ -1272,7 +1496,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [72, 64, 3837]
         },
@@ -1284,7 +1508,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [205, 96, 3808]
         },
@@ -1296,9 +1520,10 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
-            "coords": [215, 71, 3724]
+            "coords": [215, 71, 3724],
+            "services": [ "narvakas" ]
         },
         {
             "id": "Kesk",
@@ -1310,7 +1535,26 @@
             "underground": true,
             "opened": -1,
             "platforms": 5,
-            "coords": [509, 69, 3517]
+            "coords": [509, 69, 3517],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [509, 69, 3517]
+                },
+                {
+                    "name": "Zij-ingang",
+                    "coords": [497, 69, 3510]
+                },
+                {
+                    "name": "Treinperrons",
+                    "coords": [511, 66, 3497]
+                },
+                {
+                    "name": "Metroperrons",
+                    "coords": [506, 69, 3530]
+                }
+            ],
+            "services": [ "9dadb28c" ]
         },
         {
             "id": "Vrev",
@@ -1322,7 +1566,8 @@
             "underground": false,
             "opened": -1,
             "platforms": 4,
-            "coords": [575, 63, 3574]
+            "coords": [575, 63, 3574],
+            "services": [ "nopoi-waitingroom", "nopoi-map" ]
         },
         {
             "id": "Vjar",
@@ -1356,7 +1601,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 6,
             "coords": [838, 63, 4131]
         },
@@ -1387,14 +1632,15 @@
         {
             "id": "Pvpa",
             "name": "PVP Arena",
-            "location": null,
+            "location": "Snowy Plains",
             "former_name": null,
             "building": false,
             "roofed": false,
             "underground": false,
             "opened": 2015,
             "platforms": 2,
-            "coords": [71, 66, 2935]
+            "coords": [71, 66, 2935],
+            "services": [ "pvparena" ]
         },
         {
             "id": "Vkol",
@@ -1428,7 +1674,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 1,
             "coords": [530, 73, 3647]
         },
@@ -1440,7 +1686,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [446, 67, 3485]
         },
@@ -1510,7 +1756,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [-207, 68, 3634]
         },
@@ -1534,7 +1780,8 @@
                     "name": "Noord",
                     "coords": [-228, 74, 4147]
                 }
-            ]
+            ],
+            "services": [ "blrarena" ]
         },
         {
             "id": "Gren",
@@ -1552,14 +1799,15 @@
         {
             "id": "Alp",
             "name": "Alpineplains",
-            "location": null,
+            "location": "Alpineplains",
             "former_name": null,
             "building": true,
             "roofed": false,
             "underground": false,
             "opened": -1,
             "platforms": 3,
-            "coords": [-273, 64, 4738]
+            "coords": [-273, 64, 4738],
+            "services": [ "98767e8e" ]
         },
         {
             "id": "Spo",
@@ -1845,10 +2093,59 @@
             "opened": -1,
             "platforms": 2,
             "coords": [1694, 69, 4083]
+        },
+        {
+            "id": "Wksd",
+            "name": "Wolkenstad",
+            "location": "Wolkenstad",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [5080, 235, -171]
+        },
+        {
+            "id": "Nkrm",
+            "name": "Netherkasteel Rik",
+            "location": "Nether",
+            "former_name": "Nederkalstel",
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": -1,
+            "platforms": 2,
+            "coords": [-891, 66, 1747]
         }
     ],
 
     "routes": [
+        {
+            "type": "metro",
+            "line_name": "L27 [Netherlijn]",
+            "operator": "BLR",
+            "halts": [
+                {
+                    "halt": "Moln",
+                    "platform_forth": 0,
+                    "time_forth": 80,
+                    "warnings_forth": ["nether"],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Wksd",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 80,
+                    "warnings_back": ["nether"]
+                }
+            ]
+        },
         {
             "type": "ring_line",
             "line_name": "L41 [Ringlijn Rocafort]",
@@ -4523,6 +4820,31 @@
             ]
         },
         {
+            "type": "metro",
+            "line_name": "Nederkalstel",
+            "operator": "MNK",
+            "halts": [
+                {
+                    "halt": "Moln",
+                    "platform_forth": 0,
+                    "time_forth": 28,
+                    "warnings_forth": ["nether", "messy"],
+                    "platform_back": 0,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Nkrm",
+                    "platform_forth": 0,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 0,
+                    "time_back": 28,
+                    "warnings_back": ["nether", "messy"]
+                }
+            ]
+        },
+        {
             "type": "other",
             "line_name": "Sneeuwhavenlijn",
             "operator": "SHL",
@@ -4531,7 +4853,7 @@
                     "halt": "Shv",
                     "platform_forth": 0,
                     "time_forth": 41,
-                    "warnings_forth": ["single_track", "own_minecart"],
+                    "warnings_forth": ["nether", "single_track", "own_minecart"],
                     "platform_back": 0,
                     "time_back": false,
                     "warnings_back": []
@@ -4543,7 +4865,7 @@
                     "warnings_forth": [],
                     "platform_back": 0,
                     "time_back": false,
-                    "warnings_back": ["single_track", "own_minecart"]
+                    "warnings_back": ["nether", "single_track", "own_minecart"]
                 }
             ]
         },
@@ -4607,7 +4929,6 @@
             "type": "spawn",
             "name": "World Spawn",
             "location": "Walbrugge",
-            "closest_station": "Wbr",
             "coords": [304, 64, 1484]
         },
         {
@@ -4615,7 +4936,6 @@
             "type": "other",
             "name": "Tempelbaai",
             "location": "Tempelbaai",
-            "closest_station": "Nshv",
             "coords": [-2418, 65, -583]
         },
         {
@@ -4623,8 +4943,273 @@
             "type": "end_portal",
             "name": "End Portal",
             "location": "Vanalinn",
-            "closest_station": "Vmep",
             "coords": [287, 67, 3595]
+        },
+        {
+            "id": "rikxpfrm",
+            "type": "other",
+            "name": "XP-Farm",
+            "location": "Woestijn",
+            "coords": [-151, 57, 119]
+        },
+        {
+            "id": "98767e8e",
+            "type": "shop",
+            "name": "Anvilwinkel",
+            "location": "Alpineplains",
+            "coords": [-276, 64, 4735]
+        },
+        {
+            "id": "c12fe881",
+            "type": "post_office",
+            "name": "Postkantoor Arhos Island",
+            "location": "Arhos Island",
+            "coords": [-23, 71, -1657]
+        },
+        {
+            "id": "d00789b5",
+            "type": "food",
+            "name": "Wapen van Arhos Island",
+            "location": "Arhos Island",
+            "coords": [-42, 55, -1659]
+        },
+        {
+            "id": "47a1c3e2",
+            "type": "hotel",
+            "name": "Vissershotel",
+            "location": "Arhos Island",
+            "coords": [11, 64, -1644]
+        },
+        {
+            "id": "2ab104fa",
+            "type": "mine",
+            "name": "Openbare Mijn",
+            "location": "Arhos Island",
+            "coords": [-22, 63, -1634]
+        },
+        {
+            "id": "blrarena",
+            "type": "other",
+            "name": "BLR Arena",
+            "location": null,
+            "coords": [-240, 65, 4233]
+        },
+        {
+            "id": "943081c3",
+            "type": "post_office",
+            "name": "BLR Postkantoor",
+            "location": "Boligus",
+            "coords": [-89, 74, -236]
+        },
+        {
+            "id": "minicity",
+            "type": "art",
+            "name": "Vanalinn Mini City Experience",
+            "location": "Vanalinn",
+            "coords": [453, 53, 3586]
+        },
+        {
+            "id": "ab19d653",
+            "type": "hotel",
+            "name": "Vanalinn Hotel",
+            "location": "Vanalinn",
+            "coords": [445, 64, 3583]
+        },
+        {
+            "id": "850fd9ca",
+            "type": "art",
+            "name": "Vrijheidsbeeld",
+            "location": "Boligus",
+            "coords": [117, 65, -206]
+        },
+        {
+            "id": "9ad4fb90",
+            "type": "hotel",
+            "name": "Hotel Val de Contobre",
+            "location": "Dorp",
+            "coords": [484, 64, 405]
+        },
+        {
+            "id": "endpearl",
+            "type": "shop",
+            "name": "Enderpearl Transport",
+            "location": "Walbrugge",
+            "coords": [370, 64, 1514]
+        },
+        {
+            "id": "7bb0742d",
+            "type": "food",
+            "name": "Wapen van Walbrugge",
+            "location": "Walbrugge",
+            "coords": [370, 64, 1528]
+        },
+        {
+            "id": "0f6e46f5",
+            "type": "other",
+            "name": "Fabriek Wapen Van",
+            "location": "Walbrugge",
+            "coords": [414, 64, 1543]
+        },
+        {
+            "id": "9dadb28c",
+            "type": "food",
+            "name": "Wapen van Kesklinn TOGO",
+            "location": "Vanalinn",
+            "coords": [507, 65, 3515]
+        },
+        {
+            "id": "c8e013e0",
+            "type": "shop",
+            "name": "Winkel",
+            "location": "Läänemerie",
+            "coords": [1928, 67, -247]
+        },
+        {
+            "id": "0e278e65",
+            "type": "post_office",
+            "name": "Postkantoor Läänemerie",
+            "location": "Läänemerie",
+            "coords": [1960, 70, -236]
+        },
+        {
+            "id": "cbe93697",
+            "type": "mine",
+            "name": "MESA Mijn van Folisio",
+            "location": "Mesa",
+            "coords": [4865, 63, -1207]
+        },
+        {
+            "id": "b678a238",
+            "type": "other",
+            "name": "Bibliotheek Vanalinn",
+            "location": "Vanalinn",
+            "coords": [222, 67, 3627]
+        },
+        {
+            "id": "e97784fb",
+            "type": "other",
+            "name": "Cave Spider XP Farm",
+            "location": "Vanalinn",
+            "coords": [280, 58, 3589]
+        },
+        {
+            "id": "mobarena",
+            "type": "other",
+            "name": "MobArena",
+            "location": "Woestijn",
+            "coords": [16, 75, 136]
+        },
+        {
+            "id": "e557d19b",
+            "type": "post_office",
+            "name": "BLR Postkantoor Moeras",
+            "location": "Dorp",
+            "coords": [472, 56, 147]
+        },
+        {
+            "id": "f48ada01",
+            "type": "shop",
+            "name": "Rent-A-Cooker Moeras",
+            "location": "Dorp",
+            "coords": [479, 56, 143]
+        },
+        {
+            "id": "narvakas",
+            "type": "castle",
+            "name": "Narva",
+            "location": "Vanalinn",
+            "coords": [201, 71, 3726]
+        },
+        {
+            "id": "nkasteel",
+            "type": "castle",
+            "name": "Nieuw Kasteel",
+            "location": "Crisisdorp",
+            "coords": [-385, 70, 226]
+        },
+        {
+            "id": "pvparena",
+            "type": "other",
+            "name": "PVP Arena",
+            "location": "Snowy Plains",
+            "coords": [66, 66, 2956]
+        },
+        {
+            "id": "3d26f2cb",
+            "type": "shop",
+            "name": "Freeks Iron Armor Shop",
+            "location": "Snowy Plains",
+            "coords": [72, 66, 2949]
+        },
+        {
+            "id": "d963a701",
+            "type": "shop",
+            "name": "Tourist Shop",
+            "location": "Vanalinn",
+            "coords": [380, 61, 3520]
+        },
+        {
+            "id": "352f7d39",
+            "type": "other",
+            "name": "Oude Hut",
+            "location": "Rivierdal",
+            "coords": [2653, 76, -703]
+        },
+        {
+            "id": "allsheep",
+            "type": "farm",
+            "name": "Schapenkoepel",
+            "location": "Schapenkoepel",
+            "coords": [3819, 63, -193]
+        },
+        {
+            "id": "5a3433ad",
+            "type": "church",
+            "name": "Kerk van Landsmeer",
+            "location": "Vanalinn",
+            "coords": [333, 71, 3800]
+        },
+        {
+            "id": "vanmusea",
+            "type": "other",
+            "name": "Geschiedenis van Vanalinn",
+            "location": "Vanalinn",
+            "coords": [296, 67, 3523]
+        },
+        {
+            "id": "df8ed4c8",
+            "type": "food",
+            "name": "Wapen van Toompea",
+            "location": "Vanalinn",
+            "coords": [379, 63, 3284]
+        },
+        {
+            "id": "5e034f94",
+            "type": "bank",
+            "name": "Bank van Vanalinn",
+            "location": "Vanalinn",
+            "coords": [422, 67, 3429]
+        },
+        {
+            "id": "2e1965f8",
+            "type": "viewpoint",
+            "name": "Vuurtoren",
+            "location": "Rocafort",
+            "coords": [1760, 71, 4009]
+        },
+        {
+            "id": "8aa4a1b8",
+            "type": "church",
+            "name": "Werder Kerk",
+            "location": "Werder",
+            "coords": [93, 65, 3693]
+        },
+        {
+            "id": "kerstdrp",
+            "type": "other",
+            "name": "Kerstdorp",
+            "location": "Kerstdorp",
+            "coords": [-972, 71, 1829]
         }
     ]
 }
