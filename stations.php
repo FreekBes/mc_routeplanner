@@ -87,8 +87,8 @@
                                 }
                                 else if ($hn-1 > -1) {
                                     // shared platform or single platform
-                                    // check if shared platform...
-                                    if ($hn > 1) {
+                                    // check if shared platform... (not at start or end of a line)
+                                    if ($hn > 1 && $hn != count($route["halts"])) {
                                         $haltData["shared_platform"] = true;
                                     }
                                     $haltData["direction"] = array();
@@ -97,7 +97,7 @@
                                             array_push($haltData["direction"], $route["halts"][$cs]["halt"]);
                                             array_push($station["connections"], $route["halts"][$cs]["halt"]);
                                         }
-                                        else {
+                                        else if ($haltData["shared_platform"]) {
                                             // insert special keyword "current_station" for the current station
                                             // later on, this gets replaced with the current station in cursive
                                             array_push($haltData["direction"], "current_station");
@@ -137,7 +137,7 @@
                     $station["connections"] = array_diff($station["connections"], array($station["id"]));
                     ?>
                     <div class="station" id="<?PHP echo strtolower($station["id"]); ?>">
-                        <h3><a href="/routeplanner/?t=<?PHP echo $station["id"]; ?>"><?PHP echo $station["name"]; ?></a><?PHP if (!empty($station["location"]) && strpos(strtolower($station["name"]), strtolower($station["location"])) === false) { ?> <small style="font-size: small; font-weight: normal; margin-top: -4px;">(<?PHP echo $station["location"]; ?>)</small><?PHP } ?></h3>
+                        <h3><a href="/routeplanner/?w=<?PHP echo $w; ?>&t=<?PHP echo $station["id"]; ?>"><?PHP echo $station["name"]; ?></a><?PHP if (!empty($station["location"]) && strpos(strtolower($station["name"]), strtolower($station["location"])) === false) { ?> <small style="font-size: small; font-weight: normal; margin-top: -4px;">(<?PHP echo $station["location"]; ?>)</small><?PHP } ?></h3>
                         <ul class="station-overview-list">
                             <li>Stationsgebouw: <i><?PHP echo ($station["building"] ? "ja" : "nee" ); ?></i></li>
                             <li>Overdekt perron: <i><?PHP echo ($station["roofed"] ? "ja (kan gedeeltelijk zijn)" : "nee" ); ?></i></li>
@@ -265,7 +265,7 @@
                                             ?>
                                             <tr>
                                                 <th><?PHP echo $station["exits"][$en]["name"]; ?></th>
-                                                <td><a href="/routeplanner/?t=<?PHP echo implode("%2C", $station["exits"][$en]["coords"]); ?>"><?PHP echo implode(", ", $station["exits"][$en]["coords"]); ?></a></td>
+                                                <td><a href="/routeplanner/?w=<?PHP echo $w; ?>&t=<?PHP echo implode("%2C", $station["exits"][$en]["coords"]); ?>"><?PHP echo implode(", ", $station["exits"][$en]["coords"]); ?></a></td>
                                             </tr>
                                             <?PHP
                                         }
@@ -274,7 +274,7 @@
                                         ?>
                                         <tr>
                                             <th>Hoofdingang</th>
-                                            <td><a href="/routeplanner/?t=<?PHP echo implode("%2C", $station["coords"]); ?>"><?PHP echo implode(", ", $station["coords"]); ?></a></td>
+                                            <td><a href="/routeplanner/?w=<?PHP echo $w; ?>&t=<?PHP echo implode("%2C", $station["coords"]); ?>"><?PHP echo implode(", ", $station["coords"]); ?></a></td>
                                         </tr>
                                         <?PHP
                                     }
