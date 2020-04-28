@@ -32,7 +32,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 4,
             "coords": [360, 64, 1521],
             "exits": [
@@ -55,7 +55,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2016,
             "platforms": 2,
             "coords": [278, 64, 1569]
         },
@@ -67,7 +67,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 8,
             "coords": [349, 74, 1042]
         },
@@ -79,7 +79,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [581, 69, 1002],
             "services": [ "nopoi-waitingroom" ]
@@ -92,7 +92,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 8,
             "coords": [351, 71, 488],
             "exits": [
@@ -114,7 +114,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [317, 98, 539]
         },
@@ -126,7 +126,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [188, 69, 325]
         },
@@ -197,7 +197,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [380, 64, 233]
         },
@@ -209,7 +209,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 4,
             "coords": [70, 63, 540]
         },
@@ -233,7 +233,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [-198, 66, 892],
             "services": [ "nopoi-waitingroom" ]
@@ -246,7 +246,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [-161, 72, 321]
         },
@@ -258,7 +258,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [-333, 63, 299]
         },
@@ -270,7 +270,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [542, 63, 402]
         },
@@ -305,7 +305,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [1232, 64, 9]
         },
@@ -354,7 +354,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [1617, 58, -354]
         },
@@ -366,7 +366,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [1783, 63, -430],
             "services": [ "nopoi-waitingroom" ]
@@ -379,7 +379,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [1894, 63, -257]
         },
@@ -391,7 +391,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [1814, 62, -161]
         },
@@ -403,7 +403,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 6,
             "coords": [2361, 64, -191]
         },
@@ -415,7 +415,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 1,
             "coords": [2480, 65, -576],
             "services": [ "nopoi-waitingroom" ]
@@ -428,7 +428,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [3815, 63, -188],
             "services": [ "allsheep" ]
@@ -441,7 +441,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 4,
             "coords": [4346, 71, -928]
         },
@@ -453,7 +453,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [4876, 68, -958]
         },
@@ -465,7 +465,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [7019, 64, -946]
         },
@@ -477,7 +477,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 4,
             "coords": [9585, 65, -382]
         },
@@ -489,7 +489,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 4,
             "coords": [9762, 93, -504]
         },
@@ -501,7 +501,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 4,
             "coords": [531, 64, -585]
         },
@@ -513,7 +513,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 10,
             "coords": [551, 64, -816],
             "exits": [
@@ -540,7 +540,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [536, 64, -1099]
         },
@@ -552,7 +552,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [556, 63, -1275]
         },
@@ -586,7 +586,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [1208, 63, -736]
         },
@@ -598,7 +598,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [1340, 72, -646]
         },
@@ -610,7 +610,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 6,
             "coords": [126, 66, -1095]
         },
@@ -622,7 +622,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [-21, 67, -1659],
             "services": [ "c12fe881", "d00789b5" ]
@@ -635,7 +635,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 6,
             "coords": [-85, 63, -1064]
         },
@@ -647,7 +647,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [-232, 64, -1762]
         },
@@ -698,7 +698,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 6,
             "coords": [-92, 69, -238],
             "exits": [
@@ -721,7 +721,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 6,
             "coords": [2, 70, -145],
             "exits": [
@@ -747,7 +747,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [3, 69, -254]
         },
@@ -759,7 +759,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 6,
             "coords": [94, 64, -243]
         },
@@ -771,7 +771,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 7,
             "coords": [262, 65, -436],
             "exits": [
@@ -793,7 +793,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 4,
             "coords": [463, 69, -679],
             "exits": [
@@ -815,7 +815,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [357, 73, -640]
         },
@@ -827,7 +827,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 0,
             "coords": [223, 63, -535]
         },
@@ -839,7 +839,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [288, 63, -354],
             "services": [ "nopoi-waitingroom" ]
@@ -865,7 +865,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 1,
             "coords": [-1919, 65, -1045]
         },
@@ -877,7 +877,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 4,
             "coords": [-250, 93, -179]
         },
@@ -889,7 +889,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [-162, 68, 111],
             "exits": [
@@ -912,7 +912,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [19, 70, 151],
             "services": [ "mobarena" ]
@@ -925,7 +925,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [-190, 71, -177]
         },
@@ -937,7 +937,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [-180, 70, -250]
         },
@@ -949,7 +949,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [50, 69, -244]
         },
@@ -961,7 +961,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [429, 64, -973]
         },
@@ -973,7 +973,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 1,
             "coords": [472, 63, -751]
         },
@@ -985,7 +985,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 1,
             "coords": [572, 73, -665]
         },
@@ -997,7 +997,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [585, 65, -744]
         },
@@ -1009,7 +1009,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 1,
             "coords": [693, 70, -816]
         },
@@ -1021,7 +1021,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 1,
             "coords": [620, 70, -843]
         },
@@ -1033,7 +1033,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [456, 64, 1231]
         },
@@ -1045,7 +1045,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [1943, 67, 1320],
             "services": [ "nopoi-map" ],
@@ -1072,7 +1072,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [2117, 66, 1324]
         },
@@ -1084,7 +1084,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [380, 64, 2663]
         },
@@ -1108,7 +1108,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 16,
             "coords": [378, 67, 3434],
             "exits": [
@@ -1131,7 +1131,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 3,
             "coords": [387, 71, 3293],
             "exits": [
@@ -1154,7 +1154,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 8,
             "coords": [382, 67, 3507],
             "services": [ "nopoi-map", "d963a701" ]
@@ -1167,7 +1167,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [454, 64, 3572],
             "services": [ "minicity" ]
@@ -1289,7 +1289,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 8,
             "coords": [772, 64, 3503],
             "services": [ "nopoi-waitingroom", "nopoi-map" ]
@@ -1302,7 +1302,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [696, 65, 3451],
             "services": [ "nopoi-waitingroom", "nopoi-map" ]
@@ -1353,7 +1353,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [418, 67, 3426],
             "exits": [
@@ -1401,7 +1401,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [236, 71, 3435]
         },
@@ -1409,11 +1409,11 @@
             "id": "Grnw",
             "name": "Greenwich",
             "location": "Greenwich",
-            "former_name": null,
+            "former_name": "Roofed Plains",
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": 2015,
+            "opened": 2014,
             "platforms": 6,
             "coords": [89, 63, 3456]
         },
@@ -1425,7 +1425,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 7,
             "coords": [297, 67, 3506],
             "exits": [
@@ -1447,7 +1447,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": 2016,
+            "opened": 2015,
             "platforms": 6,
             "coords": [210, 67, 3545]
         },
@@ -1459,7 +1459,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [169, 66, 3636]
         },
@@ -1533,7 +1533,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 5,
             "coords": [509, 69, 3517],
             "exits": [
@@ -1564,7 +1564,7 @@
             "building": true,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 4,
             "coords": [575, 63, 3574],
             "services": [ "nopoi-waitingroom", "nopoi-map" ]
@@ -1577,7 +1577,7 @@
             "building": true,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [615, 63, 3643]
         },
@@ -1589,7 +1589,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [553, 68, 3865]
         },
@@ -1698,7 +1698,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [337, 71, 3797],
             "exits": [
@@ -1720,7 +1720,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [274, 65, 4024]
         },
@@ -1732,7 +1732,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 6,
             "coords": [411, 66, 4119]
         },
@@ -1744,7 +1744,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [296, 66, 4086]
         },
@@ -1768,7 +1768,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [-240, 65, 4233],
             "exits": [
@@ -1791,7 +1791,7 @@
             "building": true,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [-230, 87, 4510],
             "services": [ "nopoi-waitingroom" ]
@@ -1804,7 +1804,7 @@
             "building": true,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 3,
             "coords": [-273, 64, 4738],
             "services": [ "98767e8e" ]
@@ -1840,7 +1840,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [1520, 80, 2722]
         },
@@ -1852,7 +1852,7 @@
             "building": true,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [390, 81, 4785]
         },
@@ -1864,7 +1864,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2016,
             "platforms": 2,
             "coords": [825, 64, 4789]
         },
@@ -1876,7 +1876,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 8,
             "coords": [1733, 69, 4168]
         },
@@ -1888,7 +1888,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 6,
             "coords": [1965, 69, 4132]
         },
@@ -1948,7 +1948,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 1,
             "coords": [1771, 69, 4014]
         },
@@ -1960,7 +1960,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [1812, 69, 4090],
             "exits": [
@@ -1982,7 +1982,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [1802, 69, 4195]
         },
@@ -1994,7 +1994,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [1855, 69, 4170]
         },
@@ -2006,7 +2006,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [2002, 63, 4075]
         },
@@ -2018,7 +2018,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 4,
             "coords": [1882, 69, 4089]
         },
@@ -2030,7 +2030,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [1854, 69, 4301]
         },
@@ -2042,7 +2042,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [1827, 69, 4232]
         },
@@ -2054,7 +2054,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [1767, 69, 4232]
         },
@@ -2066,7 +2066,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2015,
             "platforms": 2,
             "coords": [1665, 69, 4227]
         },
@@ -2078,7 +2078,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2016,
             "platforms": 2,
             "coords": [1665, 69, 4145]
         },
@@ -2090,7 +2090,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
-            "opened": -1,
+            "opened": 2016,
             "platforms": 2,
             "coords": [1694, 69, 4083]
         },
@@ -2102,7 +2102,7 @@
             "building": true,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2014,
             "platforms": 2,
             "coords": [5080, 235, -171]
         },
@@ -2114,7 +2114,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
-            "opened": -1,
+            "opened": 2013,
             "platforms": 2,
             "coords": [-891, 66, 1747]
         }

@@ -26,7 +26,8 @@
             "underground": false,
             "opened": 2018,
             "platforms": 6,
-            "coords": [31, 68, -35]
+            "coords": [31, 68, -35],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Kbrl",
@@ -74,7 +75,8 @@
             "underground": false,
             "opened": 2018,
             "platforms": 2,
-            "coords": [15, 65, 437]
+            "coords": [15, 65, 437],
+            "services": [ "nopoi-waitingroom", "fddbf202", "38682e59" ]
         },
         {
             "id": "Riv",
@@ -110,7 +112,8 @@
             "underground": false,
             "opened": 2018,
             "platforms": 2,
-            "coords": [-1141, 79, 987]
+            "coords": [-1141, 79, 987],
+            "services": [ "f4a5521d" ]
         },
         {
             "id": "Hsvn",
@@ -122,7 +125,8 @@
             "underground": true,
             "opened": 2018,
             "platforms": 2,
-            "coords": [-1924, 79, 1007]
+            "coords": [-1924, 79, 1007],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "End",
@@ -134,7 +138,8 @@
             "underground": false,
             "opened": 2019,
             "platforms": 2,
-            "coords": [-847, 67, -360]
+            "coords": [-847, 67, -360],
+            "services": [ "1ec30122" ]
         },
         {
             "id": "Spkp",
@@ -158,7 +163,8 @@
             "underground": false,
             "opened": 2019,
             "platforms": 3,
-            "coords": [-4383, 69, 972]
+            "coords": [-4383, 69, 972],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Sbnm",
@@ -206,7 +212,8 @@
             "underground": false,
             "opened": 2019,
             "platforms": 2,
-            "coords": [-1302, 72, 190]
+            "coords": [-1302, 72, 190],
+            "services": [ "nopoi-waitingroom" ]
         },
         {
             "id": "Obk",
@@ -535,7 +542,6 @@
             "type": "end_portal",
             "name": "End Portal",
             "location": "End Village",
-            "closest_station": "End",
             "coords": [-852, 73, -362]
         },
         {
@@ -543,7 +549,6 @@
             "type": "nether_portal",
             "name": "Nether Shrine",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrs",
             "coords": [-54, 69, 17]
         },
 		{
@@ -551,7 +556,6 @@
             "type": "spawn",
             "name": "Spawn",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [28, 68, 33]
         },
         {
@@ -559,7 +563,6 @@
             "type": "farm",
             "name": "Lasagnafarm",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrl",
             "coords": [82, 67, 20]
         },
 		{
@@ -567,7 +570,6 @@
             "type": "farm",
             "name": "Wheatfarm",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [69, 66, -93]
         },
         {
@@ -575,7 +577,6 @@
             "type": "farm",
             "name": "Beesten",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [-39, 68, -56]
         },
         {
@@ -583,7 +584,6 @@
             "type": "farm",
             "name": "Kassen",
             "location": "Spitsbergen",
-            "closest_station": "Sbn",
             "coords": [-4432, 67, 1000]
         },
         {
@@ -591,7 +591,6 @@
             "type": "farm",
             "name": "Amaro's Wortelfarm",
             "location": "Hamsterdijk",
-            "closest_station": "Hmsd",
             "coords": [0, 73, 433]
         },
         {
@@ -599,7 +598,6 @@
             "type": "farm",
             "name": "Boerderij",
             "location": "Rivierdam",
-            "closest_station": "Riva",
             "coords": [-546, 64, 840]
         },
         {
@@ -607,7 +605,6 @@
             "type": "other",
             "name": "Stadhuis",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrs",
             "coords": [-22, 71, 0]
         },
         {
@@ -615,7 +612,6 @@
             "type": "community_building",
             "name": "Communityhuis Kerkbrugge",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrl",
             "coords": [38, 67, 26]
         },
         {
@@ -623,7 +619,6 @@
             "type": "community_building",
             "name": "Communityhuis Spitsbergen",
             "location": "Spitsbergen",
-            "closest_station": "Sbn",
             "coords": [-4382, 70, 957]
         },
         {
@@ -631,7 +626,6 @@
             "type": "community_building",
             "name": "Houthakkershutje",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrs",
             "coords": [-15, 72, 173]
         },
         {
@@ -639,7 +633,6 @@
             "type": "church",
             "name": "Kerk van Notch",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [17, 68, 20]
         },
         {
@@ -647,7 +640,6 @@
             "type": "food",
             "name": "Café voor Pampus",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrs",
             "coords": [-28, 69, 20]
         },
         {
@@ -655,7 +647,6 @@
             "type": "food",
             "name": "Etenopslag",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrl",
             "coords": [57, 67, 20]
         },
         {
@@ -663,7 +654,6 @@
             "type": "food",
             "name": "Gratis kip & veren",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrl",
             "coords": [99, 67, 20]
         },
         {
@@ -671,7 +661,6 @@
             "type": "shop",
             "name": "Bakkerij Lekker Brood",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrl",
             "coords": [66, 67, 20]
         },
         {
@@ -679,7 +668,6 @@
             "type": "shop",
             "name": "Amaro's Illegale Praktijken & co.",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrl",
             "coords": [47, 67, 20]
         },
         {
@@ -687,7 +675,6 @@
             "type": "stable",
             "name": "Grote Paardenstal",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrs",
             "coords": [-49, 70, 59]
         },
         {
@@ -695,7 +682,6 @@
             "type": "stable",
             "name": "Kleine Paardenstal",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrl",
             "coords": [52, 67, 20]
         },
         {
@@ -703,7 +689,6 @@
             "type": "stable",
             "name": "Paardenstal",
             "location": "Rivierdam",
-            "closest_station": "Riv",
             "coords": [-560, 64, 866]
         },
         {
@@ -711,7 +696,6 @@
             "type": "castle",
             "name": "Kasteel Pierrefonds",
             "location": "Pierrefonds",
-            "closest_station": "Prfn",
             "coords": [-1107, 79, 1023]
         },
         {
@@ -719,7 +703,6 @@
             "type": "castle",
             "name": "Slot Hamstervania",
             "location": "Hamstervania",
-            "closest_station": "Hsvn",
             "coords": [-1924, 79, 1030]
         },
         {
@@ -727,7 +710,6 @@
             "type": "viewpoint",
             "name": "Klokkentoren",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrl",
             "coords": [108, 67, -13]
         },
         {
@@ -735,7 +717,6 @@
             "type": "viewpoint",
             "name": "Verdedigingstoren",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [85, 67, -37]
         },
         {
@@ -743,7 +724,6 @@
             "type": "viewpoint",
             "name": "Uitkijktoren",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrs",
             "coords": [-38, 70, 61]
         },
         {
@@ -751,7 +731,6 @@
             "type": "viewpoint",
             "name": "Stationstoren",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [29, 68, -55]
         },
         {
@@ -759,7 +738,6 @@
             "type": "viewpoint",
             "name": "Uitkijktoren",
             "location": "Hamsterdijk",
-            "closest_station": "Hmsd",
             "coords": [0, 73, 433]
         },
         {
@@ -767,7 +745,6 @@
             "type": "gate",
             "name": "Toegangspoort",
             "location": "Rivierdam",
-            "closest_station": "Riv",
             "coords": [-530, 64, 865]
         },
         {
@@ -775,7 +752,6 @@
             "type": "gate",
             "name": "Bospoort",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [37, 68, 81]
         },
         {
@@ -783,7 +759,6 @@
             "type": "gate",
             "name": "Paardenpoort",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrs",
             "coords": [-39, 70, 81]
         },
         {
@@ -791,7 +766,6 @@
             "type": "gate",
             "name": "Steigerpoort",
             "location": "Kerkbrugge",
-            "closest_station": "Kbrs",
             "coords": [-74, 69, 19]
         },
         {
@@ -799,7 +773,6 @@
             "type": "gate",
             "name": "Mesapoort",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [-74, 67, -56]
         },
         {
@@ -807,7 +780,6 @@
             "type": "gate",
             "name": "Scheve Poort",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [37, 68, -69]
         },
         {
@@ -815,7 +787,6 @@
             "type": "gate",
             "name": "Kanaalpoort",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [113, 67, -31]
         },
         {
@@ -823,7 +794,6 @@
             "type": "terrain",
             "name": "Mesa",
             "location": "",
-            "closest_station": "Gdmn",
             "coords": [-1, 70, -1456]
         },
         {
@@ -831,7 +801,6 @@
             "type": "terrain",
             "name": "Savanne",
             "location": "",
-            "closest_station": "Hmsd",
             "coords": [-24, 64, 947]
         },
         {
@@ -839,7 +808,6 @@
             "type": "other",
             "name": "Leila's Shack",
             "location": "",
-            "closest_station": "Bosd",
             "coords": [1720, 72, -2424]
         },
         {
@@ -847,7 +815,6 @@
             "type": "other",
             "name": "Mission: Fail Mining Shelter",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [11, 63, 7]
         },
         {
@@ -855,7 +822,6 @@
             "type": "other",
             "name": "Muurtunnel",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [-57, 70, 50]
         },
         {
@@ -863,7 +829,6 @@
             "type": "other",
             "name": "BegrAFKplaats",
             "location": "Kerkbrugge",
-            "closest_station": "Kbr",
             "coords": [18, 68, 35]
         }
     ]
