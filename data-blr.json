@@ -326,7 +326,7 @@
             "id": "Wvrv",
             "name": "Waverveen",
             "location": "Waverveen",
-            "former_name": null,
+            "former_name": "Empire (L17)",
             "building": false,
             "roofed": true,
             "underground": true,
@@ -767,7 +767,7 @@
             "id": "Zmr",
             "name": "Zeemoeras",
             "location": "Zeemoeras",
-            "former_name": null,
+            "former_name": "Muddyswamp",
             "building": true,
             "roofed": true,
             "underground": false,
@@ -4907,7 +4907,7 @@
                     "time_forth": 17,
                     "warnings_forth": [],
                     "platform_back": 0,
-                    "time_back": 73,
+                    "time_back": 36,
                     "warnings_back": []
                 },
                 {
