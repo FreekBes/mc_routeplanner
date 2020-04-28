@@ -107,8 +107,8 @@
 
                         // choose nearest node with lowest *total* cost
                         if (count($solutions[$key]->lines) > 0 && $adj[$adjKey]->line != end($solutions[$key]->lines)) {
-                            // last line doesn't equal the next one, add 15 seconds of transfer time
-                            $d = $adj[$adjKey]->duration + $solutions[$key]->distance + 15;
+                            // last line doesn't equal the next one, add 25 seconds of transfer time
+                            $d = $adj[$adjKey]->duration + $solutions[$key]->distance + 25;
                         }
                         else {
                             // continuing on the same line, do not add transfer time
@@ -121,8 +121,8 @@
                             $dist = $d;
                             $lines = array_merge($solutions[$key]->lines, array($adj[$adjKey]->line));
                             if (count($solutions[$key]->lines) > 0 && $adj[$adjKey]->line != end($solutions[$key]->lines)) {
-                                // last line doesn't equal the next one, add 15 seconds of transfer time
-                                $durations = array_merge($solutions[$key]->durations, array($adj[$adjKey]->duration + 15));
+                                // last line doesn't equal the next one, add 25 seconds of transfer time
+                                $durations = array_merge($solutions[$key]->durations, array($adj[$adjKey]->duration + 25));
                             }
                             else {
                                 // continuing on the same line, do not add transfer time
