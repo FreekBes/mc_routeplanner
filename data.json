@@ -42,6 +42,10 @@
                 {
                     "name": "Achterzijde",
                     "coords": [-249, 66, 185]
+                },
+                {
+                    "name": "Havenbrug",
+                    "coords": [-157, 68, 144]
                 }
             ],
             "services": [ "nopoi-waitingroom", "nopoi-minecart", "nopoi-map", "fe4b3a8b" ]
@@ -68,7 +72,7 @@
             "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 2,
+            "platforms": 3,
             "coords": [-164, 72, 244],
             "services": [ "nopoi-waitingroom" ]
         },
@@ -131,7 +135,7 @@
             "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 3,
+            "platforms": 5,
             "coords": [-168, 70, 2073],
             "services": [ "nopoi-minecart", "nopoi-waitingroom", "nopoi-map", "54d21343" ]
         },
@@ -592,8 +596,8 @@
                 },
                 {
                     "halt": "Tzui",
-                    "platform_forth": 2,
-                    "time_forth": 66,
+                    "platform_forth": 3,
+                    "time_forth": 67,
                     "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 20,
@@ -601,20 +605,20 @@
                 },
                 {
                     "halt": "Hvl",
-                    "platform_forth": 3,
-                    "time_forth": 67,
+                    "platform_forth": 2,
+                    "time_forth": 71,
                     "warnings_forth": ["skeletons"],
                     "platform_back": 4,
-                    "time_back": 66,
+                    "time_back": 67,
                     "warnings_back": []
                 },
                 {
                     "halt": "Pml",
-                    "platform_forth": 2,
+                    "platform_forth": 3,
                     "time_forth": 43,
                     "warnings_forth": ["skeletons", "single_track"],
-                    "platform_back": 3,
-                    "time_back": 67,
+                    "platform_back": 4,
+                    "time_back": 71,
                     "warnings_back": ["skeletons"]
                 },
                 {
@@ -972,6 +976,31 @@
                     "platform_back": 0,
                     "time_back": 148,
                     "warnings_back": ["single_track"]
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "IC3",
+            "operator": "ICD",
+            "halts": [
+                {
+                    "halt": "Tcs",
+                    "platform_forth": 10,
+                    "time_forth": 147,
+                    "warnings_forth": ["single_track", "skeletons"],
+                    "platform_back": 10,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Pml",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 147,
+                    "warnings_back": ["single_track", "skeletons"]
                 }
             ]
         }
