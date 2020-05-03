@@ -337,12 +337,23 @@
             "name": "Sneeuwhaven",
             "location": "Sneeuwhaven",
             "former_name": "Taigahaven",
-            "building": false,
-            "roofed": false,
+            "building": true,
+            "roofed": true,
             "underground": false,
             "opened": 2019,
             "platforms": 2,
-            "coords": [-152, 72, 2392]
+            "coords": [-152, 68, 2416],
+            "services": [ "nopoi-waitingroom", "nopoi-map", "acbd9d14" ],
+            "exits": [
+                {
+                    "name": "Stationshal",
+                    "coords": [-152, 68, 2416]
+                },
+                {
+                    "name": "Brugzijde",
+                    "coords": [-152, 64, 2371]
+                }
+            ]
         },
         {
             "id": "Tlsf",
@@ -1686,6 +1697,13 @@
             "location": "Porto Maritimo",
             "closest_station": "Pom",
             "coords": [-2591, 77, 355]
+        },
+        {
+            "id": "acbd9d14",
+            "type": "food",
+            "name": "Sneeuwbistro",
+            "location": "Sneeuwhaven",
+            "coords": [-148, 68, 2411]
         }
     ]
 }
