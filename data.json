@@ -282,7 +282,7 @@
             "underground": true,
             "opened": 2019,
             "platforms": 4,
-            "coords": [401, 72, -2300]
+            "coords": [421, 79, -2306]
         },
         {
             "id": "Mlnb",
@@ -561,12 +561,21 @@
             "operator": "OSS",
             "halts": [
                 {
+                    "halt": "Tbrg",
+                    "platform_forth": 3,
+                    "time_forth": 120,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
                     "halt": "Adw",
                     "platform_forth": 2,
                     "time_forth": 45,
                     "warnings_forth": [],
                     "platform_back": 3,
-                    "time_back": false,
+                    "time_back": 120,
                     "warnings_back": []
                 },
                 {
@@ -1704,6 +1713,13 @@
             "name": "Sneeuwbistro",
             "location": "Sneeuwhaven",
             "coords": [-148, 68, 2411]
+        },
+        {
+            "id": "a3fabc2d",
+            "type": "farm",
+            "name": "Kleine Kas",
+            "location": "Sneeuwhaven",
+            "coords": [-126, 65, 2362]
         }
     ]
 }

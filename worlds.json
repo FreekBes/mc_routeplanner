@@ -11,7 +11,7 @@
         "displayName": "Freeks Realm [OUD]",
         "data": "data-oud.json",
         "mapSupported": false,
-        "metroMap": null
+        "metroMap": "imgs/metromap_old.png"
     },
     "blr": {
         "name": "BLR Server (2013-2017)",
