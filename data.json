@@ -448,6 +448,19 @@
             "opened": 2020,
             "platforms": 0,
             "coords": [-1336, 70, -931]
+        },
+        {
+            "id": "Ggbr",
+            "name": "Golden Gate Bridge",
+            "location": null,
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": 2020,
+            "platforms": 2,
+            "coords": [1468, 68, -2294],
+            "services": [ "nopoi-minecart", "484963aa" ]
         }
     ],
     "routes": [
@@ -561,12 +574,21 @@
             "operator": "OSS",
             "halts": [
                 {
+                    "halt": "Ggbr",
+                    "platform_forth": 2,
+                    "time_forth": 77,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
                     "halt": "Tbrg",
                     "platform_forth": 3,
                     "time_forth": 120,
                     "warnings_forth": [],
                     "platform_back": 2,
-                    "time_back": false,
+                    "time_back": 77,
                     "warnings_back": []
                 },
                 {
@@ -1720,6 +1742,20 @@
             "name": "Kleine Kas",
             "location": "Sneeuwhaven",
             "coords": [-126, 65, 2362]
+        },
+        {
+            "id": "484963aa",
+            "type": "other",
+            "name": "Bootverhuur De Rode Boot",
+            "location": null,
+            "coords": [1468, 65, -2283]
+        },
+        {
+            "id": "23ac9ca9",
+            "type": "art",
+            "name": "Golden Gate Bridge",
+            "location": null,
+            "coords": [1274, 72, -2300]
         }
     ]
 }
