@@ -55,19 +55,64 @@
     }
 
     function string_might_be_coords($str) {
-        return (substr_count($str,",") >= 2 || substr_count($str," ") >= 2 || is_numeric($str));
+        if ($str == "-") {
+            return true;
+        }
+        $splittedStr = null;
+        if (substr_count($str,",") >= 1) {
+            $splittedStr = explode(",", $str);
+            $splittedStr = array_slice($splittedStr, 0, 3);
+            
+        }
+        if (substr_count($str," ") >= 1) {
+            $splittedStr = explode(" ", $str);
+            $splittedStr = array_slice($splittedStr, 0, 3);
+        }
+        if (empty($splittedStr)) {
+            return is_numeric($str);
+        }
+        else {
+            $splitCount = count($splittedStr);
+            $coords = array();
+            for ($i = 0; $i < $splitCount; $i++) {
+                $splittedStr[$i] = trim($splittedStr[$i]);
+                if (!empty($splittedStr[$i])) {
+                    if ($splittedStr[$i] == "-") {
+                        $coords[$i] = true;
+                    }
+                    else {
+                        $coords[$i] = is_numeric($splittedStr[$i]);
+                    }
+                }
+                else {
+                    $coords[$i] = true;
+                }
+            }
+            $coords = array_unique($coords);
+            if (count($coords) > 1) {
+                return false;
+            }
+            else {
+                return $coords[0];
+            }
+        }
     }
 
     function string_to_coords($str) {
         if (string_might_be_coords($str)) {
-            if (substr_count($str,",") >= 2) {
+            if (substr_count($str,",") >= 1) {
                 $coords = explode(",", $str);
             }
-            else if (substr_count($str," ") >= 2) {
+            else if (substr_count($str," ") >= 1) {
                 $coords = explode(" ", $str);
             }
             else {
-                $coords = array(intval($str), 0, 0);
+                $coords = array(intval($str));
+            }
+
+            if (count($coords) == 2) {
+                $coords[2] = $coords[1];
+                $coords[1] = 0;
             }
 
             while (count($coords) < 3) {
