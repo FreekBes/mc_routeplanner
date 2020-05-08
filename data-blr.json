@@ -423,7 +423,7 @@
         {
             "id": "Spkp",
             "name": "Schapenkoepel",
-            "location": "Schapenkoepel",
+            "location": null,
             "former_name": null,
             "building": true,
             "roofed": true,
@@ -5159,7 +5159,7 @@
             "id": "allsheep",
             "type": "farm",
             "name": "Schapenkoepel",
-            "location": "Schapenkoepel",
+            "location": null,
             "coords": [3819, 63, -193]
         },
         {
