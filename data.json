@@ -20,6 +20,13 @@
             "run_by": "CraftingTimes",
             "started": 2020,
             "main_station": "Tcs"
+        },
+        "ML": {
+            "id": "ML",
+            "name": "Metro Luke",
+            "run_by": "LukeK73571",
+            "started": 2020,
+            "main_station": "Adw"
         }
     },
     "stations": [
@@ -374,9 +381,9 @@
             "former_name": "Luke's Dorp",
             "building": true,
             "roofed": true,
-            "underground": false,
+            "underground": true,
             "opened": 2019,
-            "platforms": 4,
+            "platforms": 6,
             "coords": [-294, 70, -1335],
             "exits": [
                 {
@@ -474,6 +481,51 @@
             "platforms": 2,
             "coords": [2940, 72, -3843],
             "services": [ "nopoi-map" ]
+        },
+        {
+            "id": "Ssnp",
+            "name": "Sisinepoort",
+            "location": "Adliswil",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2020,
+            "platforms": 2,
+            "coords": [-443, 69, -1268],
+            "exits": [
+                {
+                    "name": "Hoofdingang Rechts",
+                    "coords": [-443, 69, -1268]
+                },
+                {
+                    "name": "Hoofdingang Links",
+                    "coords": [-443, 69, -1288]
+                }
+            ],
+            "services": [ "nopoi-map", "nopoi-waitingroom", "5aa6703d" ]
+        },
+        {
+            "id": "Rsmn",
+            "name": "Ristumine",
+            "location": "Adliswil",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2020,
+            "platforms": 2,
+            "coords": [-382, 66, -1363],
+            "exits": [
+                {
+                    "name": "Kade",
+                    "coords": [-382, 66, -1363]
+                },
+                {
+                    "name": "Brug",
+                    "coords": [-351, 70, -1336]
+                }
+            ]
         }
     ],
     "routes": [
@@ -1067,6 +1119,31 @@
                     "warnings_back": ["single_track", "skeletons"]
                 }
             ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L1",
+            "operator": "ML",
+            "halts": [
+                {
+                    "halt": "Adw",
+                    "platform_forth": 5,
+                    "time_forth": 28,
+                    "warnings_forth": [],
+                    "platform_back": 6,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Ssnp",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 31,
+                    "warnings_back": []
+                }
+            ]
         }
     ],
     
@@ -1076,7 +1153,6 @@
             "type": "spawn",
             "name": "World Spawn",
             "location": null,
-            "closest_station": "Spn",
             "coords": [1, 64, -16]
         },
         {
@@ -1084,7 +1160,6 @@
             "type": "farm",
             "name": "Kleine Wheatfarm",
             "location": "Torenburg",
-            "closest_station": "Tdal",
             "coords": [-250, 70, 22]
         },
         {
@@ -1092,7 +1167,6 @@
             "type": "farm",
             "name": "Lasagnafarm",
             "location": "Torenburg",
-            "closest_station": "Tlsf",
             "coords": [-394, 64, 115]
         },
         {
@@ -1100,7 +1174,6 @@
             "type": "mine",
             "name": "Dalmijn",
             "location": "Torenburg",
-            "closest_station": "Tdal",
             "coords": [-256, 70, 33]
         },
         {
@@ -1108,7 +1181,6 @@
             "type": "shop",
             "name": "Torenburger Markt",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-255, 64, 119]
         },
         {
@@ -1116,7 +1188,6 @@
             "type": "town_hall",
             "name": "Stadhuis",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-257, 66, 108]
         },
         {
@@ -1124,7 +1195,6 @@
             "type": "castle",
             "name": "Stronghold",
             "location": "End Village",
-            "closest_station": "End",
             "coords": [-1134, 70, 167]
         },
         {
@@ -1132,7 +1202,6 @@
             "type": "nether_portal",
             "name": "Netherzaal",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-268, 66, 103]
         },
         {
@@ -1140,7 +1209,6 @@
             "type": "enchanting_table",
             "name": "Enchantingzaal",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-247, 66, 103]
         },
         {
@@ -1148,7 +1216,6 @@
             "type": "stable",
             "name": "Paardenstal",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-293, 66, 130]
         },
         {
@@ -1156,7 +1223,6 @@
             "type": "terrain",
             "name": "Jungle",
             "location": null,
-            "closest_station": "Lvdp",
             "coords": [2962, 64, -3872]
         },
         {
@@ -1164,7 +1230,6 @@
             "type": "end_portal",
             "name": "End Portal",
             "location": "End Village",
-            "closest_station": "End",
             "coords": [-1134, 70, 167]
         },
         {
@@ -1172,7 +1237,6 @@
             "type": "farm",
             "name": "Schapenfarm",
             "location": "Heaven",
-            "closest_station": "Hevn",
             "coords": [408, 90, -452]
         },
         {
@@ -1180,7 +1244,6 @@
             "type": "food",
             "name": "Bakkerij Lekker Brood",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-303, 64, 91]
         },
         {
@@ -1188,7 +1251,6 @@
             "type": "terrain",
             "name": "Ice Peaks",
             "location": null,
-            "closest_station": "Pml",
             "coords": [236, 80, 2099]
         },
         {
@@ -1196,7 +1258,6 @@
             "type": "nether_portal",
             "name": "Nether Portal",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-181, 70, 2114]
         },
         {
@@ -1204,7 +1265,6 @@
             "type": "mine",
             "name": "Mijn",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-168, 70, 2098]
         },
         {
@@ -1212,7 +1272,6 @@
             "type": "viewpoint",
             "name": "Illager Outpost",
             "location": null,
-            "closest_station": "Skp",
             "coords": [279, 70, 584]
         },
         {
@@ -1220,7 +1279,6 @@
             "type": "bank",
             "name": "Bank",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-268, 64, 123]
         },
         {
@@ -1228,7 +1286,6 @@
             "type": "shop",
             "name": "Houthandel Grooteboom",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-296, 66, 109]
         },
         {
@@ -1236,7 +1293,6 @@
             "type": "shop",
             "name": "Steenhandel Keigoed",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-284, 66, 106]
         },
         {
@@ -1244,7 +1300,6 @@
             "type": "shop",
             "name": "Natuurwinkel Groen Gras",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-271, 64, 130]
         },
         {
@@ -1252,7 +1307,6 @@
             "type": "shop",
             "name": "Muziekwinkel SquareSound",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-281, 66, 77]
         },
         {
@@ -1260,7 +1314,6 @@
             "type": "shop",
             "name": "Dyewinkel De Axolotl",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-229, 66, 128]
         },
         {
@@ -1268,7 +1321,6 @@
             "type": "other",
             "name": "Dokhuis",
             "location": "Torenburg",
-            "closest_station": "Tnrd",
             "coords": [-293, 64, -19]
         },
         {
@@ -1276,7 +1328,6 @@
             "type": "viewpoint",
             "name": "Keepleintorens",
             "location": "Torenburg",
-            "closest_station": "Tnrd",
             "coords": [-318, 64, 13]
         },
         {
@@ -1284,7 +1335,6 @@
             "type": "art",
             "name": "Keemonument",
             "location": "Torenburg",
-            "closest_station": "Tnrd",
             "coords": [-305, 64, 18]
         },
         {
@@ -1292,15 +1342,20 @@
             "type": "bank",
             "name": "Bank",
             "location": "Adliswil",
-            "closest_station": "Adw",
-            "coords": [-469, 69, -1352]
+            "coords": [-445, 69, -1328]
+        },
+        {
+            "id": "2e3a3457",
+            "type": "gate",
+            "name": "Sisinepoort",
+            "location": "Adliswil",
+            "coords": [-436, 69, -1283]
         },
         {
             "id": "e6563235",
             "type": "shop",
             "name": "Terracottawinkel Kleurige Steen",
             "location": "Adliswil",
-            "closest_station": "Adw",
             "coords": [-472, 69, -1355]
         },
         {
@@ -1308,7 +1363,6 @@
             "type": "shop",
             "name": "Wolwinkel De Breinaald",
             "location": "Torenburg",
-            "closest_station": "Tnrd",
             "coords": [-343, 64, 15]
         },
         {
@@ -1316,7 +1370,6 @@
             "type": "castle",
             "name": "Waterduinertempel",
             "location": "Waterduinen",
-            "closest_station": "Wtdn",
             "coords": [170, 65, -786]
         },
         {
@@ -1324,7 +1377,6 @@
             "type": "stable",
             "name": "Paardenstal",
             "location": "Adliswil",
-            "closest_station": "Adw",
             "coords": [-489, 69, -1312]
         },
         {
@@ -1332,7 +1384,6 @@
             "type": "other",
             "name": "Postkantoor",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-262, 66, 163]
         },
         {
@@ -1340,7 +1391,6 @@
             "type": "church",
             "name": "Sint Mandarijnkerk",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-306, 64, 167]
         },
         {
@@ -1348,7 +1398,6 @@
             "type": "bank",
             "name": "Bank",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-188, 70, 2072]
         },
         {
@@ -1356,7 +1405,6 @@
             "type": "shop",
             "name": "Glaswinkel De Glasblazer",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-300, 69, 200]
         },
         {
@@ -1364,7 +1412,6 @@
             "type": "shop",
             "name": "Winkel voor gekleurd glas",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-313, 69, 210]
         },
         {
@@ -1372,7 +1419,6 @@
             "type": "shop",
             "name": "Brick Shop Steenbakker",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-297, 69, 210]
         },
         {
@@ -1380,7 +1426,6 @@
             "type": "shop",
             "name": "Farmingwinkel Zaad op Maat",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-313, 64, 200]
         },
         {
@@ -1388,7 +1433,6 @@
             "type": "shop",
             "name": "Prismarineshop Doomed Marine",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-183, 70, 2078]
         },
         {
@@ -1396,7 +1440,6 @@
             "type": "mine",
             "name": "Mines",
             "location": "Porto Maritimo",
-            "closest_station": "Pom",
             "coords": [-2663, 63, 274]
         },
         {
@@ -1404,7 +1447,6 @@
             "type": "bank",
             "name": "Bank",
             "location": "Porto Maritimo",
-            "closest_station": "Pom",
             "coords": [-2706, 65, 355]
         },
         {
@@ -1412,7 +1454,6 @@
             "type": "home",
             "name": "Youri",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-300, 66, 120]
         },
         {
@@ -1420,7 +1461,6 @@
             "type": "home",
             "name": "Leila",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-314, 66, 102]
         },
         {
@@ -1428,7 +1468,6 @@
             "type": "home",
             "name": "Reynaldo",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-296, 66, 94]
         },
         {
@@ -1436,7 +1475,6 @@
             "type": "home",
             "name": "Luke",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-194, 72, 130]
         },
         {
@@ -1444,7 +1482,6 @@
             "type": "home",
             "name": "Ross",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-175, 72, 152]
         },
         {
@@ -1452,7 +1489,6 @@
             "type": "home",
             "name": "Jordy",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-224, 68, 72]
         },
         {
@@ -1460,7 +1496,6 @@
             "type": "home",
             "name": "Peter",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-221, 68, 64]
         },
         {
@@ -1468,7 +1503,6 @@
             "type": "home",
             "name": "Morris",
             "location": "Torenburg",
-            "closest_station": "Tdal",
             "coords": [-221, 68, 56]
         },
         {
@@ -1476,7 +1510,6 @@
             "type": "home",
             "name": "Amaro",
             "location": "Torenburg",
-            "closest_station": "Tdal",
             "coords": [-221, 68, 46]
         },
         {
@@ -1484,7 +1517,6 @@
             "type": "home",
             "name": "Chris",
             "location": "Torenburg",
-            "closest_station": "Tdal",
             "coords": [-235, 68, 26]
         },
         {
@@ -1492,7 +1524,6 @@
             "type": "home",
             "name": "Leila (oud)",
             "location": "Torenburg",
-            "closest_station": "Tdal",
             "coords": [-255, 70, 50]
         },
         {
@@ -1500,7 +1531,6 @@
             "type": "home",
             "name": "Lotti",
             "location": "Torenburg",
-            "closest_station": "Tdal",
             "coords": [-256, 70, 57]
         },
         {
@@ -1508,7 +1538,6 @@
             "type": "home",
             "name": "Ike",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-259, 70, 66]
         },
         {
@@ -1516,7 +1545,6 @@
             "type": "home",
             "name": "Maxime",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-256, 70, 67]
         },
         {
@@ -1524,7 +1552,6 @@
             "type": "home",
             "name": "Mina",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-256, 70, 77]
         },
         {
@@ -1532,7 +1559,6 @@
             "type": "home",
             "name": "Freek",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-259, 70, 84]
         },
         {
@@ -1540,7 +1566,6 @@
             "type": "home",
             "name": "Joran",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-283, 66, 93]
         },
         {
@@ -1548,7 +1573,6 @@
             "type": "shop",
             "name": "Concrete Powderwinkel Concrete Angel",
             "location": "Torenburg",
-            "closest_station": "Tnrd",
             "coords": [-305, 64, -7]
         },
         {
@@ -1556,7 +1580,6 @@
             "type": "other",
             "name": "Steen & Betonfabriek",
             "location": "Torenburg",
-            "closest_station": "Tnrd",
             "coords": [-305, 64, -18]
         },
         {
@@ -1564,7 +1587,6 @@
             "type": "enchanting_table",
             "name": "Enchanting Table",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-205, 68, 2008]
         },
         {
@@ -1572,7 +1594,6 @@
             "type": "other",
             "name": "Bibliotheek",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-211, 73, 2008]
         },
         {
@@ -1580,7 +1601,6 @@
             "type": "art",
             "name": "O.J. Simpson",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-179, 71, 2037]
         },
         {
@@ -1588,7 +1608,6 @@
             "type": "community_building",
             "name": "Tent",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-194, 71, 2118]
         },
         {
@@ -1596,7 +1615,6 @@
             "type": "art",
             "name": "Kip",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-142, 106, 2125]
         },
         {
@@ -1604,7 +1622,6 @@
             "type": "shop",
             "name": "Fencewinkel Hekkenman",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-293, 69, 210]
         },
         {
@@ -1612,7 +1629,6 @@
             "type": "airport",
             "name": "Vliegveld",
             "location": "Torenburg",
-            "closest_station": "Tvv",
             "coords": [-514, 72, 309]
         },
         {
@@ -1620,7 +1636,6 @@
             "type": "viewpoint",
             "name": "Control Tower",
             "location": "Torenburg",
-            "closest_station": "Tvv",
             "coords": [-547, 80, 297]
         },
         {
@@ -1628,7 +1643,6 @@
             "type": "food",
             "name": "Hotdogkraam",
             "location": "Torenburg",
-            "closest_station": "Tcs",
             "coords": [-331, 64, 225]
         },
         {
@@ -1636,7 +1650,6 @@
             "type": "viewpoint",
             "name": "Sky Lounge",
             "location": "Adliswil",
-            "closest_station": "Adw",
             "coords": [-479, 69, -1311]
         },
         {
@@ -1644,7 +1657,6 @@
             "type": "gate",
             "name": "Blauwe Poort",
             "location": "Adliswil",
-            "closest_station": "Adw",
             "coords": [-440, 69, -1278]
         },
         {
@@ -1652,7 +1664,6 @@
             "type": "other",
             "name": "Videotheek",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-183, 71, 2089]
         },
         {
@@ -1660,7 +1671,6 @@
             "type": "food",
             "name": "Station Bistro",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-161, 70, 2079]
         },
         {
@@ -1668,7 +1678,6 @@
             "type": "airport",
             "name": "Vliegveld",
             "location": "Post Malone",
-            "closest_station": "Pmla",
             "coords": [-326, 64, 1963]
         },
         {
@@ -1676,7 +1685,6 @@
             "type": "bank",
             "name": "Bank",
             "location": "Eikwoude",
-            "closest_station": "Eik",
             "coords": [-701, 70, 146]
         },
         {
@@ -1684,7 +1692,6 @@
             "type": "farm",
             "name": "Schapenweide",
             "location": "Eikwoude",
-            "closest_station": "Eik",
             "coords": [-618, 67, 139]
         },
         {
@@ -1692,7 +1699,6 @@
             "type": "church",
             "name": "Post Maloner Kerk",
             "location": "Post Malone",
-            "closest_station": "Pml",
             "coords": [-231, 70, 1998]
         },
         {
@@ -1700,7 +1706,6 @@
             "type": "food",
             "name": "Kabeljauwvisser",
             "location": "Porto Maritimo",
-            "closest_station": "Pom",
             "coords": [-2682, 64, 349]
         },
         {
@@ -1708,7 +1713,6 @@
             "type": "food",
             "name": "Café Bar",
             "location": "Porto Maritimo",
-            "closest_station": "Pom",
             "coords": [-2649, 63, 318]
         },
         {
@@ -1716,7 +1720,6 @@
             "type": "shop",
             "name": "Bouwmarkt Porto",
             "location": "Porto Maritimo",
-            "closest_station": "Poma",
             "coords": [-2606, 66, 243]
         },
         {
@@ -1724,7 +1727,6 @@
             "type": "farm",
             "name": "Kleine Wheatfarm",
             "location": "Porto Maritimo",
-            "closest_station": "Poma",
             "coords": [-2620, 64, 260]
         },
         {
@@ -1732,7 +1734,6 @@
             "type": "church",
             "name": "Kerk",
             "location": "Porto Maritimo",
-            "closest_station": "Poma",
             "coords": [-2627, 66, 228]
         },
         {
@@ -1740,7 +1741,6 @@
             "type": "other",
             "name": "Hot Spring",
             "location": "Porto Maritimo",
-            "closest_station": "Pom",
             "coords": [-2598, 77, 332]
         },
         {
@@ -1748,7 +1748,6 @@
             "type": "nether_portal",
             "name": "Nether Portal",
             "location": "Porto Maritimo",
-            "closest_station": "Pom",
             "coords": [-2591, 77, 355]
         },
         {
@@ -1778,6 +1777,41 @@
             "name": "Golden Gate Bridge",
             "location": null,
             "coords": [1274, 72, -2300]
+        },
+        {
+            "id": "b7af01fa",
+            "type": "other",
+            "name": "Lasagnamolen",
+            "location": "Torenburg",
+            "coords": [-333, 70, 56]
+        },
+        {
+            "id": "9fcbdbae",
+            "type": "farm",
+            "name": "Bijenfestijn",
+            "location": "Torenburg",
+            "coords": [-456, 64, 73]
+        },
+        {
+            "id": "spleefer",
+            "type": "other",
+            "name": "Spleef Arena",
+            "location": "Eikwoude",
+            "coords": [-573, 64, 6]
+        },
+        {
+            "id": "5f5a5177",
+            "type": "community_building",
+            "name": "Herberg De Warme Stek",
+            "location": "Hoogvallei",
+            "coords": [-142, 71, 1180]
+        },
+        {
+            "id": "5aa6703d",
+            "type": "food",
+            "name": "Stationsbistro De Blauwe Poort",
+            "location": "Adliswil",
+            "coords": [-433, 59, -1278]
         }
     ]
 }
