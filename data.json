@@ -96,6 +96,18 @@
             "coords": [-274, 67, -14]
         },
         {
+            "id": "Ttbg",
+            "name": "Torenburg Triomfboog",
+            "location": "Torenburg",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2020,
+            "platforms": 2,
+            "coords": [-278, 64, -150]
+        },
+        {
             "id": "Spn",
             "name": "Spawn",
             "location": null,
@@ -256,9 +268,9 @@
         },
         {
             "id": "Lvdp",
-            "name": "Lavadorp",
+            "name": "Gameboi's Ranch",
             "location": "Lavadorp",
-            "former_name": null,
+            "former_name": "Lavadorp",
             "building": false,
             "roofed": false,
             "underground": false,
@@ -688,10 +700,19 @@
                 {
                     "halt": "Vil",
                     "platform_forth": 1,
-                    "time_forth": 29,
+                    "time_forth": 19,
                     "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": 35,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Ttbg",
+                    "platform_forth": 2,
+                    "time_forth": 21,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 19,
                     "warnings_back": []
                 },
                 {
@@ -700,7 +721,7 @@
                     "time_forth": 27,
                     "warnings_forth": [],
                     "platform_back": 2,
-                    "time_back": 29,
+                    "time_back": 21,
                     "warnings_back": []
                 },
                 {
@@ -1550,7 +1571,14 @@
             "type": "home",
             "name": "Luke",
             "location": "Torenburg",
-            "coords": [-194, 72, 130]
+            "coords": [-287, 66, 114]
+        },
+        {
+            "id": "d437e8e5",
+            "type": "home",
+            "name": "Alan",
+            "location": "Torenburg",
+            "coords": [-225, 64, 86]
         },
         {
             "id": "fe44bf9d",
@@ -1728,13 +1756,6 @@
             "coords": [-479, 69, -1311]
         },
         {
-            "id": "d9c87caf",
-            "type": "gate",
-            "name": "Sisinepoort",
-            "location": "Adliswil",
-            "coords": [-440, 69, -1278]
-        },
-        {
             "id": "253d046b",
             "type": "viewpoint",
             "name": "Sisinepoort",
@@ -1901,6 +1922,41 @@
             "name": "Stationsbistro De Blauwe Poort",
             "location": "Adliswil",
             "coords": [-433, 59, -1278]
+        },
+        {
+            "id": "elytrato",
+            "type": "shop",
+            "name": "Elytrawinkel",
+            "location": "Torenburg",
+            "coords": [-514, 72, 297]
+        },
+        {
+            "id": "gameboi9",
+            "type": "farm",
+            "name": "Gameboi's Ranch",
+            "location": "Lavadorp",
+            "coords": [-233, 69, -726]
+        },
+        {
+            "id": "bdd243cf",
+            "type": "shop",
+            "name": "Houthandel Slotboom",
+            "location": "Adliswil",
+            "coords": [-456, 69, -1311]
+        },
+        {
+            "id": "8ad0df72",
+            "type": "shop",
+            "name": "Steenhandel Adlissteen",
+            "location": "Adliswil",
+            "coords": [-458, 69, -1355]
+        },
+        {
+            "id": "7e234d4b",
+            "type": "shop",
+            "name": "Glaswinkel Glashelder",
+            "location": "Adliswil",
+            "coords": [-445, 69, -1360]
         }
     ]
 }
