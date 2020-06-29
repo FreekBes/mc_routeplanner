@@ -1,202 +1,237 @@
-<?PHP
-set_time_limit(0);
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <title>Kaart van Freeks Realm</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+        <script src="planner.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/ico" href="favicon.ico" />
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            #map {
+                width: 100%;
+                height: 100%;
+                background-color: #000000;
+            }
+            .map-icon {
+                background: red;
+            }
+        </style>
+        <script>
+            function getCookie(name, defaultValue) {
+                var re = new RegExp(name + "=([^;]+)");
+                var value = re.exec(document.cookie);
+                return (value != null) ? unescape(value[1]) : defaultValue;
+            }
 
-if (isset($_GET["debug"])) {
-    error_reporting(E_ALL); ini_set('display_errors', 1);
-}
+            function setCookie(name, value) {
+                document.cookie = name + " = " + value + "; expires=Mon, 14 Sep 2025 18:49:22 GMT; path=/";
+            }
 
-function getDifference($a, $b) {
-    return abs($a - $b);
-}
+            function popupCenter(url, title, w, h) {
+                // Fixes dual-screen position                             Most browsers      Firefox
+                const dualScreenLeft = window.screenLeft !==  undefined ? window.screenLeft : window.screenX;
+                const dualScreenTop = window.screenTop !==  undefined   ? window.screenTop  : window.screenY;
 
-function getMiddlePoint($firstPos, $secPos) {
-    $diffX = getDifference($firstPos[0], $secPos[0]);
-    $diffY = getDifference($firstPos[1], $secPos[1]);
-    $lowestX = min($firstPos[0], $secPos[0]);
-    $lowestY = min($firstPos[1], $secPos[1]);
-    return [$lowestX + $diffX * 0.5, $lowestY + $diffY * 0.5];
-}
+                const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+                const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
 
-function drawArrow($image, $fromx, $fromy, $tox, $toy, $color, $headlen = 8) {
-    $angle = atan2($toy-$fromy, $tox-$fromx);
+                const systemZoom = width / window.screen.availWidth;
+                const left = (width - w) / 2 / systemZoom + dualScreenLeft
+                const top = (height - h) / 2 / systemZoom + dualScreenTop
+                const newWindow = window.open(url, title, 
+                `
+                scrollbars=yes,
+                width=${w / systemZoom}, 
+                height=${h / systemZoom}, 
+                top=${top}, 
+                left=${left}
+                `
+                )
 
-    $points = array(
-        $tox, $toy,
-        $tox - $headlen * cos($angle - pi() / 7), $toy - $headlen * sin($angle - pi() / 7),
-        $tox - $headlen * cos($angle + pi() / 7), $toy - $headlen * sin($angle + pi() / 7),
-    );
-    imagefilledpolygon($image, $points, 3, $color);
-    imagepolygon($image, $points, 3, $color);
+                if (window.focus) newWindow.focus();
+            }
 
-    $middlePoint = getMiddlePoint([$points[2], $points[3]], [$points[4], $points[5]]);
-    $tox = $middlePoint[0];
-    $toy = $middlePoint[1];
-    if ($tox != $fromx && $toy != $fromy) {
-        $k = ($toy - $fromy) / ($tox - $fromx);
-    }
-    else {
-        $k = $headlen;
-    }
-    $a = ($headlen * 0.1) / sqrt(1 + pow($k, 2));
-    $linePoints = array(
-        round($fromx - (1+$k)*$a), round($fromy + (1-$k)*$a),
-        round($fromx - (1-$k)*$a), round($fromy - (1+$k)*$a),
-        round($tox + (1+$k)*$a), round($toy - (1-$k)*$a),
-        round($tox + (1-$k)*$a), round($toy + (1+$k)*$a)
-    );
-    imagefilledpolygon($image, $linePoints, 4, $color);
-    return imagepolygon($image, $linePoints, 4, $color);
-}
+            function calcRoute(event) {
+                event.preventDefault();
+                // window.open(event.target.href, 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=420,height=700');
+                popupCenter(event.target.href, "Reisplanner", 420, 750);
+                return true;
+            }
 
-header('Access-Control-Allow-Origin: *'); 
-header('Pragma: public');
-header('Content-Type: image/png');
+            function getIconBG(iconType) {
+                switch (iconType) {
+                    case "station":
+                        return "icons/station_bg.png";
+                    case "bank":
+                        return "icons/bank_bg.png";
+                    case "shop":
+                        return "icons/shop_bg.png";
+                    case "home":
+                        return "icons/shadow.png";
+                    default:
+                        return "icons/other_bg.png";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script>
+            L.CRS.mc = L.extend({}, L.CRS.Simple, {
+                projection: L.Projection.LonLat,
+                transformation: new L.Transformation(0.0625, 0, 0.0625, 0),
 
-// expire cached image in 7 days
-header('Cache-Control: max-age=604800, public');
-header('Expires: '. gmdate('D, d M Y H:i:s \G\M\T', time() + 604800));
+                scale: function(zoom) {
+                    return Math.pow(2, zoom);
+                },
 
-$mapDate = "2019-09-09";
-$mapSource = "map/map-".$mapDate.".png";
+                zoom: function(scale) {
+                    return Math.log(scale) / Math.LN2;
+                },
 
-$minWorldX = -3264;
-$maxWorldX = 4320 + 15;
-$minWorldY = -4528;
-$maxWorldY = 5792 + 15;
-$mapWidth = -$minWorldX + $maxWorldX;
-$mapHeight = -$minWorldY + $maxWorldY;
+                distance: function(latlng1, latlng2) {
+                    var dx = latlng2.lng - latlng1.lng;
+                    var dy = latlng2.lat - latlng1.lat;
 
-if (!isset($_GET["start"]) || !isset($_GET["end"])) {
-    // http_response_code(400);
-    header("Location: ".$mapSource);
-    die();
-}
-else {
-    $start = explode(",", $_GET["start"]);
-    $start[0] = intval($start[0]);
-    $start[1] = intval($start[1]);
-    $start[2] = intval($start[2]);
-    $end = explode(",", $_GET["end"]);
-    $end[0] = intval($end[0]);
-    $end[1] = intval($end[1]);
-    $end[2] = intval($end[2]);
-}
+                    return Math.sqrt(dx * dx + dy * dy);
+                },
 
-if (isset($_GET["debug"])) {
-    header('Content-Type: text/html');
-    echo implode(",", $start) . "<br>";
-    echo implode(",", $end) . "<br>";
-}
+                infinite: true
+            });
 
-if (!isset($_GET["size"])) {
-    $mapWidth = 300;
-}
-else {
-    $mapWidth = intval($_GET["size"]);
-    if ($mapWidth < 100) {
-        $mapWidth = 100;
-    }
-    else if ($mapWidth > 2000) {
-        $mapWidth = 2000;
-    }
-}
+            L.TileLayer.MinecraftLayer = L.TileLayer.extend({
+                getTileUrl: function(coords) {
+                    return L.TileLayer.prototype.getTileUrl.call(this, coords);
+                }
+            });
 
-$topLeftCorner = array();
-$topLeftCorner[0] = getDifference($minWorldX, ($start[0] < $end[0] ? $start[0] : $end[0])) - 14;
-$topLeftCorner[1] = getDifference($minWorldY, ($start[2] < $end[2] ? $start[2] : $end[2])) - 14;
+            L.TileLayer.minecraftLayer = function(templateUrl, options) {
+                return new L.TileLayer.MinecraftLayer(templateUrl, options);
+            }
 
-$bottomRightCorner = array();
-$bottomRightCorner[0] = getDifference($minWorldX, ($start[0] > $end[0] ? $start[0] : $end[0])) + 28;
-$bottomRightCorner[1] = getDifference($minWorldY, ($start[2] > $end[2] ? $start[2] : $end[2])) + 28;
+            
+            var theMap = L.map('map', {
+                crs: L.CRS.mc,
+                center: [0, 0],
+                zoom: 15
+            });
 
-$zoomedMapWidth = $bottomRightCorner[0] - $topLeftCorner[0];
-$zoomedMapHeight = $bottomRightCorner[1] - $topLeftCorner[1];
-$w = 0;
+            L.TileLayer.minecraftLayer('papyrus/{id}/{z}/{x}/{y}.png', {
+                attribution: 'Map generated by <a href="https://github.com/mjungnickel18/papyruscs" target="_blank">PapyrusCS</a>',
+                maxNativeZoom: 20,
+                minNativeZoom: 11,
+                tms: false,
+                maxZoom: 22,
+                minZoom: 11,
+                id: 'dim0',
+                tileSize: 512,
+                noWrap: true,
+                defaultRadius: 1,
+                zIndex: 1
+            }).addTo(theMap);
 
-if (isset($_GET["debug"])) {
-    echo "topLeftCorner: " . $topLeftCorner[0] . "," . $topLeftCorner[1] . "<br>";
-    echo "bottomRightCorner: " . $bottomRightCorner[0] . "," . $bottomRightCorner[1] . "<br>";
-}
+            var dataRequest = new XMLHttpRequest();
+            dataRequest.addEventListener("load", function() {
+                var data = JSON.parse(this.responseText);
+                console.log(data);
 
-if ($zoomedMapHeight > $zoomedMapWidth) {
-    $w = $zoomedMapHeight;
-    $topLeftCorner[0] = $topLeftCorner[0] - round(($zoomedMapHeight - $zoomedMapWidth) * 0.5) - 7;
-}
-else {
-    $w = $zoomedMapWidth;
-    $topLeftCorner[1] = $topLeftCorner[1] - round(($zoomedMapWidth - $zoomedMapHeight) * 0.5) - 7;
-}
+                var stationIcon = L.icon({
+                    iconUrl: "icons/station.png",
+                    iconSize: 16,
+                    shadowUrl: getIconBG("station"),
+                    shadowSize: 18
+                });
+                for (var i = 0; i < data.stations.length; i++) {
+                    var tempLatLng = L.CRS.mc.pointToLatLng(L.point(data.stations[i].coords[0], data.stations[i].coords[2]), 16);
+                    var tempMarker = L.marker(tempLatLng, {
+                        icon: stationIcon,
+                        keyboard: true,
+                        id: data.stations[i].id,
+                        title: data.stations[i].name,
+                        alt: "Station",
+                        riseOnHover: true,
+                        zIndexOffset: 100
+                    });
+                    var popupText = '<big><b>'+data.stations[i].name+'</b></big><br>Station<br>';
+                    if (data.stations[i].location != null) {
+                        popupText += '<i>'+data.stations[i].location+'</i><br>';
+                    }
+                    popupText += '<br><a onclick="calcRoute(event)" target="_blank" href="https://freekb.es/routeplanner/?t=' + data.stations[i].id + '">Routebeschrijving >></a>';
+                    tempMarker.bindPopup(popupText);
+                    tempMarker.addTo(theMap);
+                }
 
-$resizedBy = $mapWidth / $w;
+                for (var i = 0; i < data.pois.length; i++) {
+                    if (data.pois[i]["type"] == "home") {
+                        continue;
+                    }
+                    var itemIconAndName = planner.getItemIconAndName(data.pois[i]["type"]);
+                    var poiIcon = L.icon({
+                        iconUrl: itemIconAndName[0],
+                        iconSize: 14,
+                        shadowUrl: getIconBG(data.pois[i]["type"]),
+                        shadowSize: 18
+                    });
+                    var tempLatLng = L.CRS.mc.pointToLatLng(L.point(data.pois[i].coords[0], data.pois[i].coords[2]), 16);
+                    var tempMarker = L.marker(tempLatLng, {
+                        icon: poiIcon,
+                        keyboard: false,
+                        id: data.pois[i].id,
+                        title: data.pois[i].name,
+                        alt: "POI",
+                        riseOnHover: true
+                    });
+                    var popupText = '<big><b>'+data.pois[i].name+'</b></big><br>'+itemIconAndName[1]+'<br>';
+                    if (data.pois[i].location != null) {
+                        popupText += '<i>'+data.pois[i].location+'</i><br>';
+                    }
+                    popupText += '<br><a onclick="calcRoute(event)" target="_blank" href="https://freekb.es/routeplanner/?t=' + data.pois[i].id + '">Routebeschrijving >></a>';
+                    tempMarker.bindPopup(popupText);
+                    tempMarker.addTo(theMap);
+                }
+            });
+            dataRequest.open("GET", "data.json");
+            dataRequest.send();
 
-if (isset($_GET["debug"])) {
-    echo "zoomed size: " . $w . "<br>";
-    echo "canvas size: " . $mapWidth . "<br>";
-    echo "resize by: " . $resizedBy . "<br>";
-}
+            theMap.on('click', function(e) {
+                console.log(L.CRS.mc.latLngToPoint(e.latlng, 16));
+            });
 
-$drawer = imagecreatetruecolor($mapWidth, $mapWidth);
+            function updateCookiesAndUrl(event) {
+                var center = L.CRS.mc.latLngToPoint(theMap.getCenter(), 16);
+                setCookie("z", theMap.getZoom());
+                setCookie("cx", center.x);
+                setCookie("cy", center.y);
+                window.location.hash = "#"+theMap.getZoom()+"/"+center.x+"/"+center.y;
+            }
 
-// draw map
-$mapImage = imagecreatefrompng($mapSource);
-if (!$mapImage) {
-    echo "memory peak usage: " . memory_get_peak_usage() . " bytes";
-    http_response_code(503);
-    die();
-}
-$success = imagecopyresized($drawer, $mapImage, 0, 0, $topLeftCorner[0], $topLeftCorner[1], $mapWidth, $mapWidth, $w, $w);
-imagedestroy($mapImage);
-if (!$success) {
-    echo "memory peak usage: " . memory_get_peak_usage() . " bytes";
-    http_response_code(500);
-    die();
-}
+            theMap.on('zoomend', updateCookiesAndUrl);
 
-// create arrow overlay
-$arrowOverlay = imagecreatetruecolor($mapWidth, $mapWidth);
-$transparent = imagecolorallocatealpha($arrowOverlay, 0, 0, 0, 127);
-$arrowColor = imagecolorallocate($arrowOverlay, 255, 0, 0);
-imagefill($arrowOverlay, 0, 0, $transparent);
-$newStartingX = -1 * ($topLeftCorner[0] - getDifference($minWorldX, $start[0] + 0.5)) * $resizedBy;
-$newStartingY = -1 * ($topLeftCorner[1] - getDifference($minWorldY, $start[2] + 0.5)) * $resizedBy;
-$newEndingX = -1 * ($topLeftCorner[0] - getDifference($minWorldX, $end[0] + 0.5)) * $resizedBy;
-$newEndingY = -1 * ($topLeftCorner[1] - getDifference($minWorldY, $end[2] + 0.5)) * $resizedBy;
-if (isset($_GET["debug"])) {
-    echo "newStartingX: " . $newStartingX . "<br>";
-    echo "newStartingY: " . $newStartingY . "<br>";
-    echo "newEndingX: " . $newEndingX . "<br>";
-    echo "newEndingY: " . $newEndingY . "<br>";
-}
-// imageline($arrowOverlay, $newStartingX, $newStartingY, $newEndingX, $newEndingY, $arrowColor);
-drawArrow($arrowOverlay, $newStartingX, $newStartingY, $newEndingX, $newEndingY, $arrowColor, round($mapWidth * 0.08));
+            theMap.on('moveend', updateCookiesAndUrl);
 
-$arrowOverlaySuccess = imagecopyresized($drawer, $arrowOverlay, 0, 0, 0, 0, $mapWidth, $mapWidth, $mapWidth, $mapWidth);
-imagedestroy($arrowOverlay);
+            // RESTORE POSITION
+            var cookieCenter = [parseInt(getCookie("cx")), parseInt(getCookie("cy"))];
+            var cookieZoom = parseInt(getCookie("z"));
+            if (window.location.hash != "" && window.location.hash != null) {
+                var parsedHash = window.location.hash.substr(1).split("/");
+                if (parsedHash.length == 3) {
+                    cookieCenter = [parseInt(parsedHash[1]), parseInt(parsedHash[2])];
+                    cookieZoom = parseInt(parsedHash[0]);
+                }
+            }
 
-// create text overlay
-$overlaySize = 450;
-$textOverlay = imagecreatetruecolor($overlaySize, $overlaySize);
-$textColor = imagecolorallocate($textOverlay, 255, 255, 255);
-$transparent = imagecolorallocatealpha($textOverlay, 0, 0, 0, 127);
-$semiTransparent = imagecolorallocatealpha($textOverlay, 0, 0, 0, 64);
-imagefill($textOverlay, 0, 0, $transparent);
-$textSize = 5;
-$text = "Kaart van ".$mapDate;
-$length = strlen($text);
-$tw = $length * imagefontwidth($textSize);
-$th = imagefontheight($textSize);
-imagefilledrectangle($textOverlay, $overlaySize-$tw-6, $overlaySize-$th-6, $overlaySize, $overlaySize, $semiTransparent);
-imagerectangle($textOverlay, $overlaySize-$tw-6, $overlaySize-$th-6, $overlaySize+1, $overlaySize+1, $semiTransparent);
-imagestring($textOverlay, 5, $overlaySize-$tw-3, $overlaySize-$th-3, $text, $textColor);
-$overlaySuccess = imagecopyresampled($drawer, $textOverlay, 0, 0, 0, 0, $mapWidth, $mapWidth, $overlaySize, $overlaySize);
-imagedestroy($textOverlay);
-
-if (!isset($_GET["debug"])) {
-    // output image
-    imagepng($drawer);
-    imagedestroy($drawer);
-}
-else {
-    echo "memory peak usage: " . memory_get_peak_usage() . "bytes";
-}
-?>
+            if (!isNaN(cookieCenter[0]) && !isNaN(cookieCenter[1]) && !isNaN(cookieZoom)) {
+                theMap.setView(L.CRS.mc.pointToLatLng(L.point(cookieCenter[0], cookieCenter[1]), 16), cookieZoom);
+            }
+        </script>
+    </body>
+</html>

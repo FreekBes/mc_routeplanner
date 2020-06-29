@@ -63,6 +63,6 @@
             echo '<img src="'.$world["metroMap"].'?r='.mt_rand(1,299).'" id="metromap" onclick="window.open(this.src);" title="Klik om in te zoomen..." />';
         }
         ?>
-        <div id="stationsoverview" style="text-align: center;"><a href="stations.php?w=<?PHP echo $w; ?>">stationsoverzicht</a></div>
+        <div id="stationsoverview" style="text-align: center;"><a href="stations.php?w=<?PHP echo $w; ?>">Stationsoverzicht</a><br><br><a href="map.php">Dynamic Map</a></div>
     </body>
 </html>
