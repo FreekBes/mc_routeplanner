@@ -163,7 +163,10 @@
                     });
                     var popupText = '<big><b>'+data.stations[i].name+'</b></big><br>Station<br>';
                     if (data.stations[i].location != null) {
-                        popupText += '<i>'+data.stations[i].location+'</i><br>';
+                        popupText += '<i>'+data.stations[i].location+' <small>('+data.stations[i].coords.join(', ')+')</small></i><br>';
+                    }
+                    else {
+                        popupText += '<i>'+data.stations[i].coords.join(', ')+'</i><br>';
                     }
                     popupText += '<br><a onclick="calcRoute(event)" target="_blank" href="https://freekb.es/routeplanner/?t=' + data.stations[i].id + '">Routebeschrijving >></a>';
                     tempMarker.bindPopup(popupText);
@@ -192,7 +195,10 @@
                     });
                     var popupText = '<big><b>'+data.pois[i].name+'</b></big><br>'+itemIconAndName[1]+'<br>';
                     if (data.pois[i].location != null) {
-                        popupText += '<i>'+data.pois[i].location+'</i><br>';
+                        popupText += '<i>'+data.pois[i].location+' <small>('+data.pois[i].coords.join(', ')+')</small></i><br>';
+                    }
+                    else {
+                        popupText += '<i>'+data.pois[i].coords.join(', ')+'</i><br>';
                     }
                     popupText += '<br><a onclick="calcRoute(event)" target="_blank" href="https://freekb.es/routeplanner/?t=' + data.pois[i].id + '">Routebeschrijving >></a>';
                     tempMarker.bindPopup(popupText);

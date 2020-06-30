@@ -1364,13 +1364,6 @@
             "coords": [-168, 70, 2098]
         },
         {
-            "id": "33df675d",
-            "type": "viewpoint",
-            "name": "Illager Outpost",
-            "location": null,
-            "coords": [279, 70, 584]
-        },
-        {
             "id": "701ab596",
             "type": "bank",
             "name": "Bank",
@@ -1442,7 +1435,7 @@
         },
         {
             "id": "2e3a3457",
-            "type": "gate",
+            "type": "viewpoint",
             "name": "Sisinepoort",
             "location": "Adliswil",
             "coords": [-436, 69, -1283]
@@ -1757,7 +1750,7 @@
         },
         {
             "id": "253d046b",
-            "type": "viewpoint",
+            "type": "gate",
             "name": "Sisinepoort",
             "location": "Adliswil",
             "coords": [-440, 69, -1278]
@@ -1957,6 +1950,111 @@
             "name": "Glaswinkel Glashelder",
             "location": "Adliswil",
             "coords": [-445, 69, -1360]
+        },
+        {
+            "id": "f0ef4a0a",
+            "type": "castle",
+            "name": "Kasteel",
+            "location": "Adliswil",
+            "coords": [-402, 72, -1477]
+        },
+        {
+            "id": "lamafarm",
+            "type": "farm",
+            "name": "Lamafarm",
+            "location": "Adliswil",
+            "coords": [-542, 69, -1342]
+        },
+        {
+            "id": "93f7aa5d",
+            "type": "other",
+            "name": "Sluis",
+            "location": "Adliswil",
+            "coords": [-514, 62, -1371]
+        },
+        {
+            "id": "fefc01a3",
+            "type": "mine",
+            "name": "Mine",
+            "location": "Lavadorp",
+            "coords": [-219, 71, -755]
+        },
+        {
+            "id": "spookyyy",
+            "type": "art",
+            "name": "Lotti's Spook",
+            "location": "Spookywooky",
+            "coords": [196, 79, -275]
+        },
+        {
+            "id": "5fdbbadb",
+            "type": "mine",
+            "name": "Mijn",
+            "location": "Spookywooky",
+            "coords": [207, 65, -253]
+        },
+        {
+            "id": "636f1e90",
+            "type": "art",
+            "name": "Het Omgekeerde Huis",
+            "location": "Heaven",
+            "coords": [386, 79, -444]
+        },
+        {
+            "id": "30e0afae",
+            "type": "gate",
+            "name": "Triomfboog",
+            "location": "Torenburg",
+            "coords": [-302, 64, -141]
+        },
+        {
+            "id": "13fc8dbd",
+            "type": "viewpoint",
+            "name": "Triomfboog",
+            "location": "Torenburg",
+            "coords": [-303, 64, -150]
+        },
+        {
+            "id": "toremine",
+            "type": "mine",
+            "name": "Torenburger Mijnbouw",
+            "location": "Torenburg",
+            "coords": [-326, 64, -49]
+        },
+        {
+            "id": "5462a25c",
+            "type": "farm",
+            "name": "Graanveld",
+            "location": "Eikwoude",
+            "coords": [-564, 66, 122]
+        },
+        {
+            "id": "b1a4e185",
+            "type": "farm",
+            "name": "Koeienveld",
+            "location": "Eikwoude",
+            "coords": [-644, 69, 170]
+        },
+        {
+            "id": "fe99a590",
+            "type": "farm",
+            "name": "Paddenstoelenkelder",
+            "location": "Torenburg",
+            "coords": [-318, 64, 161]
+        },
+        {
+            "id": "b7284ca1",
+            "type": "art",
+            "name": "Ravijnbrug",
+            "location": null,
+            "coords": [553, 72, 640]
+        },
+        {
+            "id": "9f55d5ce",
+            "type": "community_building",
+            "name": "Stationsgebouw Spawn",
+            "location": null,
+            "coords": [-19, 73, -55]
         }
     ]
 }
