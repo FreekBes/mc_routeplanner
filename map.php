@@ -205,7 +205,7 @@
                     tempMarker.addTo(theMap);
                 }
             });
-            dataRequest.open("GET", "data.json");
+            dataRequest.open("GET", "data.json?nc="+Math.random());
             dataRequest.send();
 
             theMap.on('click', function(e) {
