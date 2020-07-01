@@ -503,7 +503,7 @@
             "roofed": true,
             "underground": true,
             "opened": 2020,
-            "platforms": 2,
+            "platforms": 4,
             "coords": [-443, 69, -1268],
             "exits": [
                 {
@@ -540,6 +540,40 @@
             "opened": 2020,
             "platforms": 1,
             "coords": [-532, 69, -1347]
+        },
+        {
+            "id": "Toom",
+            "name": "Toompea",
+            "location": "Adliswil",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2020,
+            "platforms": 4,
+            "coords": [-464, 68, -1442],
+            "exits": [
+                {
+                    "name": "Plein",
+                    "coords": [-464, 68, -1442]
+                },
+                {
+                    "name": "Kade",
+                    "coords": [-450, 64, -1420]
+                }
+            ]
+        },
+        {
+            "id": "Wroc",
+            "name": "Wroclaw",
+            "location": "Adliswil",
+            "former_name": "Kimalane",
+            "building": false,
+            "roofed": false,
+            "underground": false,
+            "opened": 2020,
+            "platforms": 1,
+            "coords": [-561, 69, -1435]
         }
     ],
     "routes": [
@@ -1175,8 +1209,8 @@
             "halts": [
                 {
                     "halt": "Adw",
-                    "platform_forth": 5,
-                    "time_forth": 28,
+                    "platform_forth": 6,
+                    "time_forth": 31,
                     "warnings_forth": [],
                     "platform_back": 6,
                     "time_back": false,
@@ -1184,10 +1218,10 @@
                 },
                 {
                     "halt": "Ssnp",
-                    "platform_forth": 1,
+                    "platform_forth": 2,
                     "time_forth": 17,
                     "warnings_forth": [],
-                    "platform_back": 2,
+                    "platform_back": 3,
                     "time_back": 31,
                     "warnings_back": []
                 },
@@ -1203,6 +1237,56 @@
             ]
         },
         {
+            "type": "metro",
+            "line_name": "L2",
+            "operator": "ML",
+            "halts": [
+                {
+                    "halt": "Adw",
+                    "platform_forth": 5,
+                    "time_forth": 36,
+                    "warnings_forth": [],
+                    "platform_back": 5,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Toom",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 36,
+                    "warnings_back": []
+                }
+            ]
+        },
+        {
+            "type": "metro",
+            "line_name": "L3",
+            "operator": "ML",
+            "halts": [
+                {
+                    "halt": "Ssnp",
+                    "platform_forth": 1,
+                    "time_forth": 29,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 4,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Toom",
+                    "platform_forth": 4,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 3,
+                    "time_back": 29,
+                    "warnings_back": ["single_track"]
+                }
+            ]
+        },
+        {
             "type": "tram",
             "line_name": "LT1",
             "operator": "ML",
@@ -1211,7 +1295,7 @@
                     "halt": "Adwc",
                     "platform_forth": 11,
                     "time_forth": 16,
-                    "warnings_forth": ["single_track"],
+                    "warnings_forth": ["single_track", "shared_platform"],
                     "platform_back": 11,
                     "time_back": false,
                     "warnings_back": []
@@ -1219,11 +1303,20 @@
                 {
                     "halt": "Adsh",
                     "platform_forth": 0,
+                    "time_forth": 16,
+                    "warnings_forth": ["single_track", "shared_platform"],
+                    "platform_back": 0,
+                    "time_back": 16,
+                    "warnings_back": ["single_track", "shared_platform"]
+                },
+                {
+                    "halt": "Wroc",
+                    "platform_forth": 0,
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 0,
                     "time_back": 16,
-                    "warnings_back": ["single_track"]
+                    "warnings_back": ["single_track", "shared_platform"]
                 }
             ]
         }
@@ -1336,7 +1429,7 @@
             "coords": [408, 90, -452]
         },
         {
-            "id": "42609829",
+            "id": "abb8a017",
             "type": "food",
             "name": "Bakkerij Lekker Brood",
             "location": "Torenburg",
@@ -1366,7 +1459,7 @@
         {
             "id": "701ab596",
             "type": "bank",
-            "name": "Bank",
+            "name": "Bank (centrum)",
             "location": "Torenburg",
             "coords": [-268, 64, 123]
         },
@@ -1954,7 +2047,7 @@
         {
             "id": "f0ef4a0a",
             "type": "castle",
-            "name": "Kasteel",
+            "name": "Toompea",
             "location": "Adliswil",
             "coords": [-402, 72, -1477]
         },
@@ -2055,6 +2148,27 @@
             "name": "Stationsgebouw Spawn",
             "location": null,
             "coords": [-19, 73, -55]
+        },
+        {
+            "id": "13c0afde",
+            "type": "shop",
+            "name": "Armorshop Alsjeblieft",
+            "location": "Adliswil",
+            "coords": [-510, 69, -1292]
+        },
+        {
+            "id": "e0da0cd5",
+            "type": "bank",
+            "name": "Bank",
+            "location": "Lavadorp",
+            "coords": [-312, 68, -704]
+        },
+        {
+            "id": "94d08262",
+            "type": "bank",
+            "name": "Bank (Triomfboog)",
+            "location": "Torenburg",
+            "coords": [-278, 64, -125]
         }
     ]
 }
