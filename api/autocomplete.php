@@ -47,6 +47,7 @@
 
     if (isset($_GET["i"]) && !empty($_GET["i"]) && !empty(trim($_GET["i"]))) {
         $input = strtolower(trim($_GET["i"]));
+        $inputPoiTypes = get_poi_type_by_synonyms($input);
         $results = array();
 
         if (!isset($_GET["stations_only"])) {
@@ -56,7 +57,7 @@
             }
 
             foreach ($worldData["pois"] as $poi) {
-                if (strpos(strtolower($poi["name"]), $input) > -1 || (!empty($poi["location"]) && strpos(strtolower($poi["location"]), $input) > -1)) {
+                if (strpos(strtolower($poi["name"]), $input) > -1 || (isset($poi["tags"]) && (in_array($input, $poi["tags"]) || in_array($input."s", $poi["tags"]))) || in_array($poi["type"], $inputPoiTypes) || (!empty($poi["location"]) && strpos(strtolower($poi["location"]), $input) > -1)) {
                     array_push($results, poi_to_item($poi, check_for_nearest_station($poi["coords"], $worldData["stations"])["id"]));
                 }
             }
@@ -68,7 +69,7 @@
         // add stations to top of the list
         $stationResults = array();
         foreach ($worldData["stations"] as $station) {
-            if (strpos(strtolower($station["name"]), $input) > -1 || (!empty($station["location"]) && strpos(strtolower($station["location"]), $input) > -1) || (!empty($station["former_name"]) && strpos(strtolower($station["former_name"]), $input) > -1)) {
+            if (strpos(strtolower($station["name"]), $input) > -1 || (!empty($station["location"]) && strpos(strtolower($station["location"]), $input) > -1) || (!empty($station["former_name"]) && strpos(strtolower($station["former_name"]), $input) > -1) || in_array("station", $inputPoiTypes)) {
                 array_push($stationResults, station_to_item($station));
             }
         }

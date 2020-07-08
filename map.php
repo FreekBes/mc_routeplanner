@@ -165,7 +165,7 @@
                                     alt: "V",
                                     zIndexOffset: 1000
                                 });
-                                var popupText = '<big><b>'+results["data"][i].name+'</b></big><br>'+planner.getItemIconAndName(results["data"][i]["type"])[1]+'<br>';
+                                var popupText = '<big><b>'+results["data"][i].name+'</b></big><br>'+planner.getItemIconAndName(results["data"][i]["subtype"])[1]+'<br>';
                                 if (results["data"][i].location != null) {
                                     popupText += '<i>'+results["data"][i].location+' <small>('+results["data"][i].coords.join(', ')+')</small></i><br>';
                                 }

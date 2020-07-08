@@ -79,6 +79,7 @@
 			"	\"name\": \"$3\",",
 			"	\"location\": \"$4\",",
 			"	\"coords\": [$5, $6, $7]",
+			"	\"tags\": [$9]",
 			"}$0"
 		],
 		"description": "Een POI (Point Of Interest)"

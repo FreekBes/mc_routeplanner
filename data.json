@@ -1356,7 +1356,8 @@
             "type": "shop",
             "name": "Torenburger Markt",
             "location": "Torenburg",
-            "coords": [-255, 64, 119]
+            "coords": [-255, 64, 119],
+            "tags": ["nametags", "arrows", "coal", "saddles", "experience", "experience bottles", "xp", "xp bottles", "glowstone"]
         },
         {
             "id": "84de6367",
@@ -1433,7 +1434,8 @@
             "type": "food",
             "name": "Bakkerij Lekker Brood",
             "location": "Torenburg",
-            "coords": [-303, 64, 91]
+            "coords": [-303, 64, 91],
+            "tags": ["bread", "brood", "taart", "cakes", "pies", "cookies", "pumpkin pies"]
         },
         {
             "id": "c18a0082",
@@ -1468,42 +1470,48 @@
             "type": "shop",
             "name": "Houthandel Grooteboom",
             "location": "Torenburg",
-            "coords": [-296, 66, 109]
+            "coords": [-296, 66, 109],
+            "tags": ["wood", "hout", "bamboo", "scaffolding", "steigers", "dark oak", "acacia", "jungle", "birch", "oak", "spruce"]
         },
         {
             "id": "52b4bcaa",
             "type": "shop",
             "name": "Steenhandel Keigoed",
             "location": "Torenburg",
-            "coords": [-284, 66, 106]
+            "coords": [-284, 66, 106],
+            "tags": ["stone", "steen", "bricks", "stonebricks", "stone bricks", "obsidian", "cobblestone", "andesite", "diorite", "granite", "smooth stone", "sandstone", "red sandstone", "nether bricks", "netherrack"]
         },
         {
             "id": "beb1ebec",
             "type": "shop",
             "name": "Natuurwinkel Groen Gras",
             "location": "Torenburg",
-            "coords": [-271, 64, 130]
+            "coords": [-271, 64, 130],
+            "tags": ["leaves", "snow blocks", "terracotta", "soul sand", "sand", "dirt", "coarse dirt", "grass", "lily pads", "ice", "vines", "grass blocks", "podzol", "gravel"]
         },
         {
             "id": "096113b4",
             "type": "shop",
             "name": "Muziekwinkel SquareSound",
             "location": "Torenburg",
-            "coords": [-281, 66, 77]
+            "coords": [-281, 66, 77],
+            "tags": ["music", "muziek", "platen", "discs", "music discs", "c418"]
         },
         {
             "id": "d61b5eb4",
             "type": "shop",
             "name": "Dyewinkel De Axolotl",
             "location": "Torenburg",
-            "coords": [-229, 66, 128]
+            "coords": [-229, 66, 128],
+            "tags": ["dyes", "kleurstoffen", "kleuren", "colors"]
         },
         {
             "id": "f6c106cf",
             "type": "other",
             "name": "Dokhuis",
             "location": "Torenburg",
-            "coords": [-293, 64, -19]
+            "coords": [-293, 64, -19],
+            "tags": ["boats"]
         },
         {
             "id": "3cf9a5f9",
@@ -1538,14 +1546,16 @@
             "type": "shop",
             "name": "Terracottawinkel Kleurige Steen",
             "location": "Adliswil",
-            "coords": [-472, 69, -1355]
+            "coords": [-472, 69, -1355],
+            "tags": ["terracotta"]
         },
         {
             "id": "907b9e34",
             "type": "shop",
             "name": "Wolwinkel De Breinaald",
             "location": "Torenburg",
-            "coords": [-343, 64, 15]
+            "coords": [-343, 64, 15],
+            "tags": ["wool", "wol"]
         },
         {
             "id": "07dc3446",
@@ -1563,10 +1573,11 @@
         },
         {
             "id": "fe4b3a8b",
-            "type": "other",
+            "type": "post_office",
             "name": "Postkantoor",
             "location": "Torenburg",
-            "coords": [-262, 66, 163]
+            "coords": [-262, 66, 163],
+            "tags": ["book and quills", "books", "writable books"]
         },
         {
             "id": "f7efe884",
@@ -1587,35 +1598,40 @@
             "type": "shop",
             "name": "Glaswinkel De Glasblazer",
             "location": "Torenburg",
-            "coords": [-300, 69, 200]
+            "coords": [-300, 69, 200],
+            "tags": ["glass", "glass blocks", "glass panes"]
         },
         {
             "id": "56b2c7cf",
             "type": "shop",
             "name": "Winkel voor gekleurd glas",
             "location": "Torenburg",
-            "coords": [-313, 69, 210]
+            "coords": [-313, 69, 210],
+            "tags": ["glass", "glass blocks", "glass panes", "colored glass", "colored glass blocks", "colored glass panes"]
         },
         {
             "id": "dc459324",
             "type": "shop",
             "name": "Brick Shop Steenbakker",
             "location": "Torenburg",
-            "coords": [-297, 69, 210]
+            "coords": [-297, 69, 210],
+            "tags": ["bricks", "stonebricks", "netherbricks"]
         },
         {
             "id": "922ec1c2",
             "type": "shop",
             "name": "Farmingwinkel Zaad op Maat",
             "location": "Torenburg",
-            "coords": [-313, 64, 200]
+            "coords": [-313, 64, 200],
+            "tags": ["food", "farms", "farming", "composters", "beehives", "hoes", "buckets", "bone meal", "seeds", "wheat", "beetroot seeds", "beetroots", "wheat seeds", "pumpkin seeds", "pumpkins", "melon seeds", "melons", "carrots", "potatoes", "sweet berries", "berries", "sugar canes", "lily pads"]
         },
         {
             "id": "0499a77c",
             "type": "shop",
             "name": "Prismarineshop Doomed Marine",
             "location": "Post Malone",
-            "coords": [-183, 70, 2078]
+            "coords": [-183, 70, 2078],
+            "tags": ["prismarine", "underwater blocks"]
         },
         {
             "id": "8827ca36",
@@ -1762,14 +1778,16 @@
             "type": "shop",
             "name": "Concrete Powderwinkel Concrete Angel",
             "location": "Torenburg",
-            "coords": [-305, 64, -7]
+            "coords": [-305, 64, -7],
+            "tags": ["concrete", "beton", "concrete powder", "betonpoeder", "betonpoeier"]
         },
         {
             "id": "fe00e2f1",
             "type": "other",
             "name": "Steen & Betonfabriek",
             "location": "Torenburg",
-            "coords": [-305, 64, -18]
+            "coords": [-305, 64, -18],
+            "tags": ["concrete", "beton", "concrete powder", "betonpoeder", "betonpoeier"]
         },
         {
             "id": "705f7a51",
@@ -1783,7 +1801,8 @@
             "type": "other",
             "name": "Bibliotheek",
             "location": "Post Malone",
-            "coords": [-211, 73, 2008]
+            "coords": [-211, 73, 2008],
+            "tags": ["books", "bookshelfs", "bookshelves", "shelves", "shelfs"]
         },
         {
             "id": "okewtfja",
@@ -1811,7 +1830,8 @@
             "type": "shop",
             "name": "Fencewinkel Hekkenman",
             "location": "Torenburg",
-            "coords": [-293, 69, 210]
+            "coords": [-293, 69, 210],
+            "tags": ["fences", "walls", "iron bars", "bars", "hekken", "hekjes"]
         },
         {
             "id": "281c8a93",
@@ -1832,7 +1852,8 @@
             "type": "food",
             "name": "Hotdogkraam",
             "location": "Torenburg",
-            "coords": [-331, 64, 225]
+            "coords": [-331, 64, 225],
+            "tags": ["porkchop", "cooked porkchop"]
         },
         {
             "id": "fd43ca21",
@@ -1867,7 +1888,8 @@
             "type": "food",
             "name": "Station Bistro",
             "location": "Post Malone",
-            "coords": [-161, 70, 2079]
+            "coords": [-161, 70, 2079],
+            "tags": ["cooked beef", "beef", "cooked rabbit"]
         },
         {
             "id": "2c52ea27",
@@ -1902,7 +1924,8 @@
             "type": "food",
             "name": "Kabeljauwvisser",
             "location": "Porto Maritimo",
-            "coords": [-2682, 64, 349]
+            "coords": [-2682, 64, 349],
+            "tags": ["cod", "cooked cod", "fish"]
         },
         {
             "id": "d851c44c",
@@ -1951,7 +1974,8 @@
             "type": "food",
             "name": "Sneeuwbistro",
             "location": "Sneeuwhaven",
-            "coords": [-148, 68, 2411]
+            "coords": [-148, 68, 2411],
+            "tags": ["cooked salmon", "salmon", "fish"]
         },
         {
             "id": "a3fabc2d",
@@ -1965,7 +1989,8 @@
             "type": "other",
             "name": "Bootverhuur De Rode Boot",
             "location": null,
-            "coords": [1468, 65, -2283]
+            "coords": [1468, 65, -2283],
+            "tags": ["boats"]
         },
         {
             "id": "23ac9ca9",
@@ -1979,14 +2004,16 @@
             "type": "other",
             "name": "Lasagnamolen",
             "location": "Torenburg",
-            "coords": [-333, 70, 56]
+            "coords": [-333, 70, 56],
+            "tags": ["windmill", "mill"]
         },
         {
             "id": "9fcbdbae",
             "type": "farm",
             "name": "Bijenfestijn",
             "location": "Torenburg",
-            "coords": [-456, 64, 73]
+            "coords": [-456, 64, 73],
+            "tags": ["honey", "bees"]
         },
         {
             "id": "spleefer",
@@ -1997,7 +2024,7 @@
         },
         {
             "id": "5f5a5177",
-            "type": "community_building",
+            "type": "hotel",
             "name": "Herberg De Warme Stek",
             "location": "Hoogvallei",
             "coords": [-142, 71, 1180]
@@ -2007,14 +2034,16 @@
             "type": "food",
             "name": "Stationsbistro De Blauwe Poort",
             "location": "Adliswil",
-            "coords": [-433, 59, -1278]
+            "coords": [-433, 59, -1278],
+            "tags": ["cooked rabbit"]
         },
         {
             "id": "elytrato",
             "type": "shop",
             "name": "Elytrawinkel",
             "location": "Torenburg",
-            "coords": [-514, 72, 297]
+            "coords": [-514, 72, 297],
+            "tags": ["fireworks", "elytras", "enchanting", "enchantments", "enchants", "phantom membranes", "membranes"]
         },
         {
             "id": "gameboi9",
@@ -2028,21 +2057,24 @@
             "type": "shop",
             "name": "Houthandel Slotboom",
             "location": "Adliswil",
-            "coords": [-456, 69, -1311]
+            "coords": [-456, 69, -1311],
+            "tags": ["wood", "hout", "oak", "birch", "spruce", "jungle", "acacia", "dark oak", "warped stems", "warped", "stems"]
         },
         {
             "id": "8ad0df72",
             "type": "shop",
             "name": "Steenhandel Adlissteen",
             "location": "Adliswil",
-            "coords": [-458, 69, -1355]
+            "coords": [-458, 69, -1355],
+            "tags": ["stone", "steen", "bricks", "andesite", "diorite", "granite", "smooth stone", "stonebricks", "cobblestone"]
         },
         {
             "id": "7e234d4b",
             "type": "shop",
             "name": "Glaswinkel Glashelder",
             "location": "Adliswil",
-            "coords": [-445, 69, -1360]
+            "coords": [-445, 69, -1360],
+            "tags": ["glass", "glass blocks", "glass panes"]
         },
         {
             "id": "f0ef4a0a",
@@ -2154,7 +2186,8 @@
             "type": "shop",
             "name": "Armorshop Alsjeblieft",
             "location": "Adliswil",
-            "coords": [-510, 69, -1292]
+            "coords": [-510, 69, -1292],
+            "tags": ["chainmail armor", "armor", "chain armor"]
         },
         {
             "id": "e0da0cd5",
