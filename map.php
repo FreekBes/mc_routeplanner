@@ -5,6 +5,7 @@
         <title>Kaart van Freeks Realm</title>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+        <script src="useful.js"></script>
         <script src="planner.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -24,8 +25,53 @@
             .map-icon {
                 background: red;
             }
+            .leaflet-control-input {
+                display: inline-block;
+                vertical-align: middle;
+                border: none;
+                border-bottom-right-radius: 0px !important;
+                border-top-right-radius: 0px !important;
+                border-top-left-radius: 4px !important;
+                border-bottom-left-radius: 4px !important;
+
+                height: 26px;
+                max-width: 220px;
+                padding: 0px 0px 0px 6px;
+                line-height: 26px;
+                text-align: left;
+                color: black;
+                background-color: #fff;
+                outline: none;
+                -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
+            }
+            .leaflet-control-input:hover, .leaflet-control-input:hover + a {
+                background-color: #f4f4f4;
+            }
+            .leaflet-touch .leaflet-control-input {
+                height: 30px;
+            }
+            .leaflet-control-search {
+                display: inline-block !important;
+                vertical-align: middle;
+                border-bottom-right-radius: 4px !important;
+                border-top-right-radius: 4px !important;
+                border-top-left-radius: 0px !important;
+                border-bottom-left-radius: 0px !important;
+            }
         </style>
         <script>
+            // SEARCH FROM Q PARAMETER (SEE BOTTOM OF CODE)
+            var q = getParameterByName("q");
+            
+            var leafletRedMarkerIcon = new L.Icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            });
+            
             function getCookie(name, defaultValue) {
                 var re = new RegExp(name + "=([^;]+)");
                 var value = re.exec(document.cookie);
@@ -49,11 +95,11 @@
                 const top = (height - h) / 2 / systemZoom + dualScreenTop
                 const newWindow = window.open(url, title, 
                 `
-                scrollbars=yes,
-                width=${w / systemZoom}, 
-                height=${h / systemZoom}, 
-                top=${top}, 
-                left=${left}
+                    scrollbars=yes,
+                    width=${w / systemZoom}, 
+                    height=${h / systemZoom}, 
+                    top=${top}, 
+                    left=${left}
                 `
                 )
 
@@ -79,6 +125,81 @@
                         return "icons/shadow.png";
                     default:
                         return "icons/other_bg.png";
+                }
+            }
+
+            var searchMarkers = null;
+            var searchRequest = null;
+            function mapSearch(event) {
+                if (event != null) {
+                    event.stopPropagation();
+                }
+                var q = document.getElementById("search-input").value.trim();
+
+                if (searchRequest != null) {
+                    searchRequest.abort();
+                    searchRequest = null;
+                }
+
+                if (q != "") {
+                    theMap.removeLayer(poiMarkers);
+                    if (searchMarkers != null) {
+                        theMap.removeLayer(searchMarkers);
+                        searchMarkers = null;
+                    }
+
+                    searchRequest = new XMLHttpRequest();
+                    searchRequest.addEventListener("load", function(event) {
+                        var results = JSON.parse(this.responseText);
+                        console.log(results);
+
+                        var futureSearchMarkers = [];
+                        if (results["data"].length > 0) {
+                            for (var i = 0; i < results["data"].length; i++) {
+                                var tempLatLng = L.CRS.mc.pointToLatLng(L.point(results["data"][i].coords[0], results["data"][i].coords[2]), 16);
+                                var tempMarker = L.marker(tempLatLng, {
+                                    icon: leafletRedMarkerIcon,
+                                    keyboard: true,
+                                    id: results["data"][i].id,
+                                    title: results["data"][i].name + (results["data"][i].location != null ? ", " + results["data"][i].location : ""),
+                                    alt: "V",
+                                    zIndexOffset: 1000
+                                });
+                                var popupText = '<big><b>'+results["data"][i].name+'</b></big><br>'+planner.getItemIconAndName(results["data"][i]["type"])[1]+'<br>';
+                                if (results["data"][i].location != null) {
+                                    popupText += '<i>'+results["data"][i].location+' <small>('+results["data"][i].coords.join(', ')+')</small></i><br>';
+                                }
+                                else {
+                                    popupText += '<i>'+results["data"][i].coords.join(', ')+'</i><br>';
+                                }
+                                popupText += '<br><a onclick="calcRoute(event)" target="_blank" href="https://freekb.es/routeplanner/?t=' + results["data"][i].id + '">Routebeschrijving >></a>';
+                                tempMarker.bindPopup(popupText);
+                                futureSearchMarkers.push(tempMarker);
+                            }
+
+                            searchMarkers = L.featureGroup(futureSearchMarkers);
+                            theMap.addLayer(searchMarkers);
+
+                            theMap.fitBounds(searchMarkers.getBounds().pad(0.05), {
+                                maxZoom: 18
+                            });
+                            /*
+                            if (!theMap.getBounds().intersects(searchMarkers.getBounds())) {
+                                
+                            }
+                            */
+                        }
+                        else {
+                            alert("Geen resultaten gevonden.");
+                        }
+                    });
+                    searchRequest.open('GET', 'api/autocomplete.php?i='+encodeURIComponent(q));
+                    searchRequest.send();
+                }
+                else {
+                    theMap.removeLayer(searchMarkers);
+                    searchMarkers = L.layerGroup([]);
+                    theMap.addLayer(poiMarkers);
                 }
             }
         </script>
@@ -139,11 +260,60 @@
                 zIndex: 1
             }).addTo(theMap);
 
+            L.Control.Search = L.Control.extend({
+                onAdd: function(map) {
+                    var searchDiv = L.DomUtil.create('div');
+                    searchDiv.setAttribute("class", "leaflet-control leaflet-bar");
+                    L.DomEvent.disableClickPropagation(searchDiv);
+                    L.DomEvent.disableScrollPropagation(searchDiv);
+
+                    var searchBar = L.DomUtil.create('input');
+                    searchBar.setAttribute("id", "search-input");
+                    searchBar.setAttribute("class", "leaflet-control-input");
+                    searchBar.setAttribute("type", "text");
+                    searchBar.setAttribute("placeholder", "Zoeken");
+                    searchBar.addEventListener("keyup", function(event) {
+                        event.stopPropagation();
+                        if (event.keyCode === 13) {
+                            mapSearch(event);
+                        }
+                    });
+
+                    
+                    var searchBtn = L.DomUtil.create('a');
+                    searchBtn.setAttribute("class", "leaflet-control-search");
+                    searchBtn.setAttribute("href", "#");
+                    searchBtn.setAttribute("title", "Search");
+                    searchBtn.setAttribute("aria-label", "Search");
+                    searchBtn.setAttribute("role", "button");
+                    searchBtn.setAttribute("style", "font-family: monospace;");
+                    searchBtn.innerHTML = "&#x1F50E;&#xFE0E;";
+                    searchBtn.addEventListener("click", mapSearch);
+
+                    searchDiv.appendChild(searchBar);
+                    searchDiv.appendChild(searchBtn);
+
+                    return searchDiv;
+                },
+                
+                onRemove: function(map) {
+                    // Nothing to do here
+                }
+            });
+
+            L.control.search = function(opts) {
+                return new L.Control.Search(opts);
+            }
+
+            L.control.search({ position: 'topright' }).addTo(theMap);
+
+            var poiMarkers = null;
             var dataRequest = new XMLHttpRequest();
             dataRequest.addEventListener("load", function() {
                 var data = JSON.parse(this.responseText);
                 console.log(data);
 
+                var futurePoiMarkers = [];
                 var stationIcon = L.icon({
                     iconUrl: "icons/station.png",
                     iconSize: 16,
@@ -170,9 +340,10 @@
                     }
                     popupText += '<br><a onclick="calcRoute(event)" target="_blank" href="https://freekb.es/routeplanner/?t=' + data.stations[i].id + '">Routebeschrijving >></a>';
                     tempMarker.bindPopup(popupText);
-                    tempMarker.addTo(theMap);
+                    // tempMarker.addTo(theMap);
+                    futurePoiMarkers.push(tempMarker);
                 }
-
+                
                 for (var i = 0; i < data.pois.length; i++) {
                     if (data.pois[i]["type"] == "home") {
                         continue;
@@ -202,8 +373,12 @@
                     }
                     popupText += '<br><a onclick="calcRoute(event)" target="_blank" href="https://freekb.es/routeplanner/?t=' + data.pois[i].id + '">Routebeschrijving >></a>';
                     tempMarker.bindPopup(popupText);
-                    tempMarker.addTo(theMap);
+                    // tempMarker.addTo(theMap);
+                    futurePoiMarkers.push(tempMarker);
                 }
+
+                poiMarkers = L.layerGroup(futurePoiMarkers);
+                poiMarkers.addTo(theMap);
             });
             dataRequest.open("GET", "data.json?nc="+Math.random());
             dataRequest.send();
@@ -217,26 +392,35 @@
                 setCookie("z", theMap.getZoom());
                 setCookie("cx", center.x);
                 setCookie("cy", center.y);
-                window.location.hash = "#"+theMap.getZoom()+"/"+center.x+"/"+center.y;
+                window.location.hash = "#"+theMap.getZoom()+"/"+center.x+"/"+center.y+"?q="+encodeURIComponent(document.getElementById("search-input").value);
             }
 
             theMap.on('zoomend', updateCookiesAndUrl);
 
             theMap.on('moveend', updateCookiesAndUrl);
 
-            // RESTORE POSITION
-            var cookieCenter = [parseInt(getCookie("cx")), parseInt(getCookie("cy"))];
-            var cookieZoom = parseInt(getCookie("z"));
-            if (window.location.hash != "" && window.location.hash != null) {
-                var parsedHash = window.location.hash.substr(1).split("/");
-                if (parsedHash.length == 3) {
-                    cookieCenter = [parseInt(parsedHash[1]), parseInt(parsedHash[2])];
-                    cookieZoom = parseInt(parsedHash[0]);
-                }
+            // SEARCH FOR Q PARAMETER
+            if (typeof q === "string") {
+                document.getElementById("search-input").value = q;
+                setTimeout(function() {
+                    mapSearch();
+                }, 500);
             }
+            else {
+                // RESTORE POSITION
+                var cookieCenter = [parseInt(getCookie("cx")), parseInt(getCookie("cy"))];
+                var cookieZoom = parseInt(getCookie("z"));
+                if (window.location.hash != "" && window.location.hash != null) {
+                    var parsedHash = window.location.hash.substr(1).split("/");
+                    if (parsedHash.length == 3) {
+                        cookieCenter = [parseInt(parsedHash[1]), parseInt(parsedHash[2])];
+                        cookieZoom = parseInt(parsedHash[0]);
+                    }
+                }
 
-            if (!isNaN(cookieCenter[0]) && !isNaN(cookieCenter[1]) && !isNaN(cookieZoom)) {
-                theMap.setView(L.CRS.mc.pointToLatLng(L.point(cookieCenter[0], cookieCenter[1]), 16), cookieZoom);
+                if (!isNaN(cookieCenter[0]) && !isNaN(cookieCenter[1]) && !isNaN(cookieZoom)) {
+                    theMap.setView(L.CRS.mc.pointToLatLng(L.point(cookieCenter[0], cookieCenter[1]), 16), cookieZoom);
+                }
             }
         </script>
     </body>
