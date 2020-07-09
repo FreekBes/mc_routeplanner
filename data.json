@@ -269,14 +269,25 @@
         {
             "id": "Lvdp",
             "name": "Gameboi's Ranch",
-            "location": "Lavadorp",
+            "location": "Lavadrop",
             "former_name": "Lavadorp",
             "building": false,
             "roofed": false,
             "underground": false,
             "opened": 2019,
             "platforms": 2,
-            "coords": [-282, 69, -745]
+            "coords": [-266, 70, -735],
+            "services": [ "nopoi-minecart", "2a89d073" ],
+            "exits": [
+                {
+                    "name": "Ranch",
+                    "coords": [-266, 70, -735]
+                },
+                {
+                    "name": "Village",
+                    "coords": [-283, 69, -736]
+                }
+            ]
         },
         {
             "id": "Zbrg",
@@ -1939,7 +1950,8 @@
             "type": "shop",
             "name": "Bouwmarkt Porto",
             "location": "Porto Maritimo",
-            "coords": [-2606, 66, 243]
+            "coords": [-2606, 66, 243],
+            "tags": ["wood", "stone", "acacia", "oak", "birch", "dark oak", "andesite", "cobblestone", "stonebricks", "gravel", "dirt"]
         },
         {
             "id": "76a3735e",
@@ -2049,7 +2061,7 @@
             "id": "gameboi9",
             "type": "farm",
             "name": "Gameboi's Ranch",
-            "location": "Lavadorp",
+            "location": "Lavadrop",
             "coords": [-233, 69, -726]
         },
         {
@@ -2101,7 +2113,7 @@
             "id": "fefc01a3",
             "type": "mine",
             "name": "Mine",
-            "location": "Lavadorp",
+            "location": "Lavadrop",
             "coords": [-219, 71, -755]
         },
         {
@@ -2193,7 +2205,7 @@
             "id": "e0da0cd5",
             "type": "bank",
             "name": "Bank",
-            "location": "Lavadorp",
+            "location": "Lavadrop",
             "coords": [-312, 68, -704]
         },
         {
@@ -2202,6 +2214,14 @@
             "name": "Bank (Triomfboog)",
             "location": "Torenburg",
             "coords": [-278, 64, -125]
+        },
+        {
+            "id": "2a89d073",
+            "type": "food",
+            "name": "GFC",
+            "location": "Lavadrop",
+            "coords": [-281, 73, -753],
+            "tags": ["cooked chicken", "potatoes", "potato", "baked potato", "baked potatoes"]
         }
     ]
 }
