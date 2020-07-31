@@ -421,18 +421,6 @@
             "services": [ "nopoi-waitingroom", "nopoi-minecart" ]
         },
         {
-            "id": "Wtdn",
-            "name": "Waterduinen",
-            "location": "Waterduinen",
-            "former_name": null,
-            "building": false,
-            "roofed": false,
-            "underground": false,
-            "opened": 2019,
-            "platforms": 1,
-            "coords": [380, 72, -760]
-        },
-        {
             "id": "Ssp",
             "name": "Sunset Peak",
             "location": "Sunset Peak",
@@ -581,10 +569,10 @@
             "former_name": "Kimalane",
             "building": false,
             "roofed": false,
-            "underground": false,
+            "underground": true,
             "opened": 2020,
-            "platforms": 1,
-            "coords": [-561, 69, -1435]
+            "platforms": 2,
+            "coords": [-572, 69, -1433]
         }
     ],
     "routes": [
@@ -858,20 +846,11 @@
                 {
                     "halt": "Hevn",
                     "platform_forth": 1,
-                    "time_forth": 28,
-                    "warnings_forth": ["single_track", "zombies", "shared_platform"],
+                    "time_forth": 59,
+                    "warnings_forth": ["single_track", "zombies"],
                     "platform_back": 2,
                     "time_back": 49,
                     "warnings_back": ["single_track"]
-                },
-                {
-                    "halt": "Wtdn",
-                    "platform_forth": 1,
-                    "time_forth": 36,
-                    "warnings_forth": ["single_track", "zombies", "shared_platform"],
-                    "platform_back": 1,
-                    "time_back": 29,
-                    "warnings_back": ["single_track", "zombies", "shared_platform"]
                 },
                 {
                     "halt": "Zbrg",
@@ -879,8 +858,8 @@
                     "time_forth": 86,
                     "warnings_forth": ["single_track", "zombies"],
                     "platform_back": 2,
-                    "time_back": 36,
-                    "warnings_back": ["single_track", "zombies", "shared_platform"]
+                    "time_back": 60,
+                    "warnings_back": ["single_track", "zombies"]
                 },
                 {
                     "halt": "Tbrg",
@@ -1264,10 +1243,19 @@
                 {
                     "halt": "Toom",
                     "platform_forth": 2,
-                    "time_forth": false,
+                    "time_forth": 17,
                     "warnings_forth": [],
                     "platform_back": 1,
                     "time_back": 36,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Wroc",
+                    "platform_forth": 2,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 17,
                     "warnings_back": []
                 }
             ]
@@ -2222,6 +2210,34 @@
             "location": "Lavadrop",
             "coords": [-281, 73, -753],
             "tags": ["cooked chicken", "potatoes", "potato", "baked potato", "baked potatoes"]
+        },
+        {
+            "id": "c16c608d",
+            "type": "castle",
+            "name": "Torenburcht",
+            "location": "Torenburg",
+            "coords": [-201, 78, 213]
+        },
+        {
+            "id": "3a851905",
+            "type": "viewpoint",
+            "name": "Kasteeltoren",
+            "location": "Torenburg",
+            "coords": [-226, 83, 192]
+        },
+        {
+            "id": "b0aaf1d2",
+            "type": "other",
+            "name": "Embassy of Steinadler Republik",
+            "location": "Torenburg",
+            "coords": [-231, 64, 109]
+        },
+        {
+            "id": "reusradl",
+            "type": "other",
+            "name": "Reuzenrad",
+            "location": "Adliswil",
+            "coords": [-585, 73, -1424]
         }
     ]
 }
