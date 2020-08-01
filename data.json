@@ -573,6 +573,18 @@
             "opened": 2020,
             "platforms": 2,
             "coords": [-572, 69, -1433]
+        },
+        {
+            "id": "Wait",
+            "name": "Western Air Temple",
+            "location": null,
+            "former_name": null,
+            "building": true,
+            "roofed": false,
+            "underground": false,
+            "opened": 2020,
+            "platforms": 2,
+            "coords": [-290, 72, -2148]
         }
     ],
     "routes": [
@@ -706,10 +718,19 @@
                 {
                     "halt": "Tbrg",
                     "platform_forth": 3,
-                    "time_forth": 120,
+                    "time_forth": 60,
                     "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": 77,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Wait",
+                    "platform_forth": 1,
+                    "time_forth": 60,
+                    "warnings_forth": [],
+                    "platform_back": 2,
+                    "time_back": 60,
                     "warnings_back": []
                 },
                 {
@@ -718,7 +739,7 @@
                     "time_forth": 45,
                     "warnings_forth": [],
                     "platform_back": 3,
-                    "time_back": 120,
+                    "time_back": 60,
                     "warnings_back": []
                 },
                 {
