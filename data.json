@@ -92,8 +92,19 @@
             "roofed": true,
             "underground": false,
             "opened": 2019,
-            "platforms": 2,
-            "coords": [-274, 67, -14]
+            "platforms": 3,
+            "coords": [-274, 67, -14],
+            "services": [ "nopoi-waitingroom", "nopoi-minecart", "nopoi-map" ],
+            "exits": [
+                {
+                    "name": "Hoofdingang",
+                    "coords": [-274, 67, -14]
+                },
+                {
+                    "name": "Pretparklijn",
+                    "coords": [-280, 67, -18]
+                }
+            ]
         },
         {
             "id": "Ttbg",
@@ -386,6 +397,50 @@
             ]
         },
         {
+            "id": "Rist",
+            "name": "Ristumine",
+            "location": "Adliswil",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2020,
+            "platforms": 2,
+            "coords": [-382, 66, -1364],
+            "exits": [
+                {
+                    "name": "Kade",
+                    "coords": [-382, 66, -1364]
+                },
+                {
+                    "name": "Brug",
+                    "coords": [-351, 70, -1336]
+                }
+            ]
+        },
+        {
+            "id": "Idtl",
+            "name": "Idatalu",
+            "location": "Adliswil",
+            "former_name": null,
+            "building": false,
+            "roofed": true,
+            "underground": true,
+            "opened": 2020,
+            "platforms": 2,
+            "coords": [-316, 67, -1227],
+            "exits": [
+                {
+                    "name": "Farm",
+                    "coords": [-316, 67, -1227]
+                },
+                {
+                    "name": "Stad",
+                    "coords": [-373, 67, -1227]
+                }
+            ]
+        },
+        {
             "id": "Tlsf",
             "name": "Torenburg Lasagnafarm",
             "location": "Torenburg",
@@ -396,6 +451,18 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-452, 66, 159]
+        },
+        {
+            "id": "Pret",
+            "name": "Pretpark",
+            "location": "Pretpark",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2020,
+            "platforms": 1,
+            "coords": [-581, 64, -29]
         },
         {
             "id": "Adw",
@@ -502,19 +569,27 @@
             "roofed": true,
             "underground": true,
             "opened": 2020,
-            "platforms": 4,
-            "coords": [-443, 69, -1268],
+            "platforms": 6,
+            "coords": [-426, 69, -1278],
             "exits": [
                 {
-                    "name": "Hoofdingang Rechts",
+                    "name": "Plein",
+                    "coords": [-426, 69, -1278]
+                },
+                {
+                    "name": "Straat Rechts",
                     "coords": [-443, 69, -1268]
                 },
                 {
-                    "name": "Hoofdingang Links",
+                    "name": "Straat Links",
                     "coords": [-443, 69, -1288]
+                },
+                {
+                    "name": "Zug",
+                    "coords": [-465, 66, -1288]
                 }
             ],
-            "services": [ "nopoi-map", "nopoi-waitingroom", "5aa6703d" ]
+            "services": [ "nopoi-map", "nopoi-waitingroom" ]
         },
         {
             "id": "Adwc",
@@ -536,6 +611,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2020,
             "platforms": 1,
             "coords": [-532, 69, -1347]
@@ -727,7 +803,7 @@
                 {
                     "halt": "Wait",
                     "platform_forth": 1,
-                    "time_forth": 60,
+                    "time_forth": 62,
                     "warnings_forth": [],
                     "platform_back": 2,
                     "time_back": 60,
@@ -739,7 +815,7 @@
                     "time_forth": 45,
                     "warnings_forth": [],
                     "platform_back": 3,
-                    "time_back": 60,
+                    "time_back": 62,
                     "warnings_back": []
                 },
                 {
@@ -771,10 +847,10 @@
                 },
                 {
                     "halt": "Tnrd",
-                    "platform_forth": 1,
+                    "platform_forth": 2,
                     "time_forth": 27,
                     "warnings_forth": [],
-                    "platform_back": 2,
+                    "platform_back": 3,
                     "time_back": 21,
                     "warnings_back": []
                 },
@@ -1228,12 +1304,21 @@
                     "warnings_back": []
                 },
                 {
+                    "halt": "Rist",
+                    "platform_forth": 2,
+                    "time_forth": 15,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 14,
+                    "warnings_back": []
+                },
+                {
                     "halt": "Ssnp",
                     "platform_forth": 2,
                     "time_forth": 17,
                     "warnings_forth": [],
                     "platform_back": 3,
-                    "time_back": 31,
+                    "time_back": 15,
                     "warnings_back": []
                 },
                 {
@@ -1287,13 +1372,22 @@
             "operator": "ML",
             "halts": [
                 {
-                    "halt": "Ssnp",
+                    "halt": "Idtl",
                     "platform_forth": 1,
-                    "time_forth": 29,
+                    "time_forth": 17,
                     "warnings_forth": ["single_track"],
-                    "platform_back": 4,
+                    "platform_back": 2,
                     "time_back": false,
                     "warnings_back": []
+                },
+                {
+                    "halt": "Ssnp",
+                    "platform_forth": 1,
+                    "time_forth": 27,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 4,
+                    "time_back": 15,
+                    "warnings_back": ["single_track"]
                 },
                 {
                     "halt": "Toom",
@@ -1301,7 +1395,7 @@
                     "time_forth": false,
                     "warnings_forth": [],
                     "platform_back": 3,
-                    "time_back": 29,
+                    "time_back": 28,
                     "warnings_back": ["single_track"]
                 }
             ]
@@ -1337,6 +1431,31 @@
                     "platform_back": 0,
                     "time_back": 16,
                     "warnings_back": ["single_track", "shared_platform"]
+                }
+            ]
+        },
+        {
+            "type": "train",
+            "line_name": "Pretparklijn",
+            "operator": "",
+            "halts": [
+                {
+                    "halt": "Tnrd",
+                    "platform_forth": 1,
+                    "time_forth": 41,
+                    "warnings_forth": ["single_track"],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Pret",
+                    "platform_forth": 1,
+                    "time_forth": false,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": 41,
+                    "warnings_back": ["single_track"]
                 }
             ]
         }
@@ -2038,10 +2157,42 @@
         },
         {
             "id": "spleefer",
-            "type": "other",
+            "type": "attraction",
             "name": "Spleef Arena",
-            "location": "Eikwoude",
+            "location": "Pretpark",
             "coords": [-573, 64, 6]
+        },
+        {
+            "id": "78cff7f3",
+            "type": "attraction",
+            "name": "Springkussen",
+            "location": "Pretpark",
+            "coords": [-553, 65, -47],
+            "tags": ["bouncy castle"]
+        },
+        {
+            "id": "checkers",
+            "type": "attraction",
+            "name": "Dambord",
+            "location": "Pretpark",
+            "coords": [-545, 64, -74],
+            "tags": ["checkers", "boardgame", "bordspel"]
+        },
+        {
+            "id": "d52689dc",
+            "type": "attraction",
+            "name": "Bumper Boats",
+            "location": "Pretpark",
+            "coords": [-603, 64, -27],
+            "tags": ["botsauto", "botsautootjes", "botsautotjes", "bumperboats", "bumpercars"]
+        },
+        {
+            "id": "5c87c4a2",
+            "type": "attraction",
+            "name": "Target Practice",
+            "location": "Pretpark",
+            "coords": [-534, 65, -53],
+            "tags": ["shootout", "targets", "shoot the targets", "shoot", "shoot-the-targets", "boogschieten", "schieten", "bow", "shotbow"]
         },
         {
             "id": "5f5a5177",
@@ -2049,14 +2200,6 @@
             "name": "Herberg De Warme Stek",
             "location": "Hoogvallei",
             "coords": [-142, 71, 1180]
-        },
-        {
-            "id": "5aa6703d",
-            "type": "food",
-            "name": "Stationsbistro De Blauwe Poort",
-            "location": "Adliswil",
-            "coords": [-433, 59, -1278],
-            "tags": ["cooked rabbit"]
         },
         {
             "id": "elytrato",
@@ -2079,7 +2222,7 @@
             "name": "Houthandel Slotboom",
             "location": "Adliswil",
             "coords": [-456, 69, -1311],
-            "tags": ["wood", "hout", "oak", "birch", "spruce", "jungle", "acacia", "dark oak", "warped stems", "warped", "stems"]
+            "tags": ["wood", "hout", "oak", "birch", "spruce", "jungle", "acacia", "dark oak", "warped stems", "warped", "stems", "bread", "food"]
         },
         {
             "id": "8ad0df72",
@@ -2259,6 +2402,59 @@
             "name": "Reuzenrad",
             "location": "Adliswil",
             "coords": [-585, 73, -1424]
+        },
+        {
+            "id": "baguette",
+            "type": "food",
+            "name": "Restaurant Baguette",
+            "location": "Pretpark",
+            "coords": [-564, 64, -57],
+            "tags": ["bread", "brood", "rabbit", "rabbit stew", "stew"]
+        },
+        {
+            "id": "doolhoff",
+            "type": "attraction",
+            "name": "Doolhof",
+            "location": "Pretpark",
+            "coords": [-555, 64, -56],
+            "tags": ["maze", "doolhof"]
+        },
+        {
+            "id": "ludoludo",
+            "type": "attraction",
+            "name": "Mens erger je niet!",
+            "location": "Pretpark",
+            "coords": [-612, 64, -58],
+            "tags": ["ludo", "boardgame", "bordspel"]
+        },
+        {
+            "id": "smalbaan",
+            "type": "attraction",
+            "name": "Miniature Train",
+            "location": "Pretpark",
+            "coords": [-636, 64, -62],
+            "tags": ["mini train", "train station", "station", "small train", "smalspoorbaan"]
+        },
+        {
+            "id": "a7dd7596",
+            "type": "viewpoint",
+            "name": "Dakterras Uitzichtpunt",
+            "location": "Adliswil",
+            "coords": [-258, 68, -1290]
+        },
+        {
+            "id": "11edc0df",
+            "type": "farm",
+            "name": "Idatalu",
+            "location": "Adliswil",
+            "coords": [-286, 67, -1227]
+        },
+        {
+            "id": "668a3d8a",
+            "type": "farm",
+            "name": "Farm",
+            "location": "Adliswil",
+            "coords": [-677, 64, -1342]
         }
     ]
 }
