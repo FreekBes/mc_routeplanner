@@ -485,6 +485,8 @@ var planner = {
 
     getItemIconAndName: function(type) {
         switch (type) {
+            case 'halt':
+                return ["icons/station.png", "Halte"];
             case 'station':
                 return ["icons/station.png", "Station"];
             case 'airport':
@@ -529,6 +531,8 @@ var planner = {
                 return ["icons/place.png", "Enchanting Table"];
             case "post_office":
                 return ["icons/place.png", "Postkantoor"];
+            case "attraction":
+                return ["icons/place.png", "Attractie"];
             case "coords":
                 return ["icons/place.png", "Coördinaten"];
             default:
@@ -573,36 +577,9 @@ var planner = {
         var b = document.createElement('div');
         b.setAttribute("class", "item");
         var bhtml = "";
-        switch (item.type) {
-            case "station":
-                bhtml += '<img src="icons/station.png" alt="Station" />';
-                break;
-            case "location":
-                bhtml += '<img src="icons/location.png" alt="Plaats" />';
-                break;
-            case "poi":
-                bhtml += '<img src="'+planner.getItemIconAndName(item.subtype)[0]+'" alt="'+planner.getItemIconAndName(item.subtype)[1]+'" />';
-                break;
-            default:
-                bhtml += '<img src="icons/place.png" alt="Overig" />';
-                break;
-        }
+        bhtml += '<img src="'+planner.getItemIconAndName(item.subtype)[0]+'" alt="'+planner.getItemIconAndName(item.subtype)[1]+'" />';
         bhtml += '<span class="autocomplete-list-item-details"><span>' + item.name + '</span>';
-        bhtml += '<small class="location">';
-        switch (item.type) {
-            case "station":
-                bhtml += 'Station';
-                break;
-            case "location":
-                bhtml += 'Plaats';
-                break;
-            case "poi":
-                bhtml += planner.getItemIconAndName(item.subtype)[1];
-                break;
-            default:
-                bhtml += 'Overig';
-                break;
-        }
+        bhtml += '<small class="location">' + planner.getItemIconAndName(item.subtype)[1];
         if (item.location != "" && item.location != null && item.location != undefined) {
             bhtml += ' &bull; ';
             bhtml += item.location;

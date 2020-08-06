@@ -79,6 +79,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
+            "tram_only": true,
             "opened": 2014,
             "platforms": 2,
             "coords": [581, 69, 1002],
@@ -815,6 +816,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
+            "tram_only": true,
             "opened": 2014,
             "platforms": 2,
             "coords": [357, 73, -640]
@@ -827,6 +829,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2014,
             "platforms": 0,
             "coords": [223, 63, -535]
@@ -839,6 +842,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
+            "tram_only": true,
             "opened": 2014,
             "platforms": 2,
             "coords": [288, 63, -354],
@@ -925,6 +929,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
+            "tram_only": true,
             "opened": 2014,
             "platforms": 2,
             "coords": [-190, 71, -177]
@@ -937,6 +942,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
+            "tram_only": true,
             "opened": 2014,
             "platforms": 2,
             "coords": [-180, 70, -250]
@@ -949,6 +955,7 @@
             "building": false,
             "roofed": true,
             "underground": false,
+            "tram_only": true,
             "opened": 2014,
             "platforms": 2,
             "coords": [50, 69, -244]
@@ -961,6 +968,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 2,
             "coords": [429, 64, -973]
@@ -973,6 +981,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 1,
             "coords": [472, 63, -751]
@@ -985,6 +994,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 1,
             "coords": [572, 73, -665]
@@ -997,6 +1007,7 @@
             "building": true,
             "roofed": true,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 2,
             "coords": [585, 65, -744]
@@ -1009,6 +1020,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 1,
             "coords": [693, 70, -816]
@@ -1021,6 +1033,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 1,
             "coords": [620, 70, -843]
@@ -1231,6 +1244,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 2,
             "coords": [75, 65, 3636]
@@ -1459,6 +1473,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 2,
             "coords": [169, 66, 3636]
@@ -1613,6 +1628,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 4,
             "coords": [493, 66, 3331]
@@ -1625,6 +1641,7 @@
             "building": false,
             "roofed": false,
             "underground": false,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 2,
             "coords": [342, 69, 3263]
@@ -1744,6 +1761,7 @@
             "building": false,
             "roofed": true,
             "underground": true,
+            "tram_only": true,
             "opened": 2015,
             "platforms": 2,
             "coords": [296, 66, 4086]

@@ -116,6 +116,7 @@
             function getIconBG(iconType) {
                 switch (iconType) {
                     case "station":
+                    case "halt":
                         return "icons/station_bg.png";
                     case "bank":
                         return "icons/bank_bg.png";
@@ -331,7 +332,7 @@
                         riseOnHover: true,
                         zIndexOffset: 100
                     });
-                    var popupText = '<big><b>'+data.stations[i].name+'</b></big><br>Station<br>';
+                    var popupText = '<big><b>'+data.stations[i].name+'</b></big><br>'+(data.stations[i]["tram_only"] ? "Halte" : "Station" )+'<br>';
                     if (data.stations[i].location != null) {
                         popupText += '<i>'+data.stations[i].location+' <small>('+data.stations[i].coords.join(', ')+')</small></i><br>';
                     }

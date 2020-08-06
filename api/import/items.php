@@ -148,6 +148,9 @@
         $res["id"] = $station["id"];
         $res["type"] = "station";
         $res["subtype"] = "station";
+        if (isset($station["tram_only"]) && $station["tram_only"] === true) {
+            $res["subtype"] = "halt";
+        }
         $res["name"] = $station["name"];
         $res["location"] = $station["location"];
         $res["halt"] = $station["id"];
@@ -181,6 +184,7 @@
             case "subway":
             case "tram":
             case "halte":
+            case "halt":
                 return array("station");
             case "bank":
                 return array("bank");
