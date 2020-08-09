@@ -288,7 +288,7 @@
             "opened": 2019,
             "platforms": 2,
             "coords": [-266, 70, -735],
-            "services": [ "nopoi-minecart", "2a89d073" ],
+            "services": [ "nopoi-minecart", "2a89d073", "679c9613" ],
             "exits": [
                 {
                     "name": "Ranch",
@@ -477,15 +477,15 @@
             "coords": [-294, 70, -1335],
             "exits": [
                 {
-                    "name": "Stad",
+                    "name": "Rivier",
                     "coords": [-294, 70, -1335]
                 },
                 {
-                    "name": "Land",
+                    "name": "Oost",
                     "coords": [-263, 68, -1335]
                 }
             ],
-            "services": [ "nopoi-waitingroom", "nopoi-minecart" ]
+            "services": [ "nopoi-waitingroom", "nopoi-minecart", "67e32fac", "ca37bc48" ]
         },
         {
             "id": "Ssp",
@@ -1669,7 +1669,7 @@
         {
             "id": "cae0c5ab",
             "type": "bank",
-            "name": "Bank",
+            "name": "Bank (centrum)",
             "location": "Adliswil",
             "coords": [-445, 69, -1328]
         },
@@ -2255,13 +2255,6 @@
             "coords": [-542, 69, -1342]
         },
         {
-            "id": "93f7aa5d",
-            "type": "other",
-            "name": "Sluis",
-            "location": "Adliswil",
-            "coords": [-514, 62, -1371]
-        },
-        {
             "id": "fefc01a3",
             "type": "mine",
             "name": "Mine",
@@ -2363,7 +2356,7 @@
         {
             "id": "94d08262",
             "type": "bank",
-            "name": "Bank (Triomfboog)",
+            "name": "Bank (triomfboog)",
             "location": "Torenburg",
             "coords": [-278, 64, -125]
         },
@@ -2455,6 +2448,52 @@
             "name": "Farm",
             "location": "Adliswil",
             "coords": [-677, 64, -1342]
+        },
+        {
+            "id": "hamtoren",
+            "type": "viewpoint",
+            "name": "Hamtoren",
+            "location": "Adliswil",
+            "coords": [-305, 66, -1280],
+            "tags": ["castle", "tower"]
+        },
+        {
+            "id": "ed38eb93",
+            "type": "shop",
+            "name": "Lampenwinkel Groot Licht",
+            "location": "Torenburg",
+            "coords": [-293, 64, 210],
+            "tags": ["lights", "torches", "torch", "lamps", "lampen", "glowstone", "campfires", "lanterns", "shroomlights", "shroom lights", "end rods", "sea lanterns", "sea pickles", "jack 'o lanterns", "jack o lanterns", "jack-o-lanterns", "lit pumpkins", "redstone torch", "redstone lamps", "soul lanterns", "soul torch"]
+        },
+        {
+            "id": "679c9613",
+            "type": "shop",
+            "name": "Lamp Shop",
+            "location": "Lavadrop",
+            "coords": [-279, 73, -746],
+            "tags": ["lights", "torches", "torch", "lamps","lampen", "glowstone", "campfires", "lanterns", "shroomlights", "shroom lights", "end rods", "sea lanterns", "redstone torch", "redstone lamps"]
+        },
+        {
+            "id": "80ac23dd",
+            "type": "other",
+            "name": "Lindamäe Park",
+            "location": "Adliswil",
+            "coords": [-414, 66, -1339]
+        },
+        {
+            "id": "ca37bc48",
+            "type": "food",
+            "name": "Station Bistro",
+            "location": "Adliswil",
+            "coords": [-289, 70, -1324],
+            "tags": ["cooked porkchop", "porkchop", "pumpkin pies"]
+        },
+        {
+            "id": "67e32fac",
+            "type": "bank",
+            "name": "Bank (oost)",
+            "location": "Adliswil",
+            "coords": [-289, 70, -1346]
         }
     ]
 }
