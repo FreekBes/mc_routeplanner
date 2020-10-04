@@ -55,7 +55,7 @@
                     "coords": [-157, 68, 144]
                 }
             ],
-            "services": [ "nopoi-waitingroom", "nopoi-minecart", "nopoi-map", "fe4b3a8b" ]
+            "services": [ "nopoi-waitingroom", "nopoi-minecart", "nopoi-map", "fe4b3a8b", "c6bc09ed" ]
         },
         {
             "id": "Tdal",
@@ -116,7 +116,17 @@
             "underground": false,
             "opened": 2020,
             "platforms": 2,
-            "coords": [-278, 64, -150]
+            "coords": [-278, 64, -150],
+            "exits": [
+                {
+                    "name": "Plein",
+                    "coords": [-278, 64, -150]
+                },
+                {
+                    "name": "Achter",
+                    "coords": [-280, 64, -165]
+                }
+            ]
         },
         {
             "id": "Spn",
@@ -201,7 +211,7 @@
             "roofed": true,
             "underground": true,
             "opened": 2019,
-            "platforms": 4,
+            "platforms": 5,
             "coords": [399, 85, 155]
         },
         {
@@ -442,7 +452,7 @@
         },
         {
             "id": "Tlsf",
-            "name": "Torenburg Lasagnafarm",
+            "name": "Lasagnafarm",
             "location": "Torenburg",
             "former_name": null,
             "building": false,
@@ -497,7 +507,17 @@
             "underground": true,
             "opened": 2020,
             "platforms": 5,
-            "coords": [-677, 63, -317]
+            "coords": [-677, 63, -317],
+            "exits": [
+                {
+                    "name": "Dal",
+                    "coords": [-677, 63, -317]
+                },
+                {
+                    "name": "Berg",
+                    "coords": [-658, 125, -321]
+                }
+            ]
         },
         {
             "id": "Tvv",
@@ -521,18 +541,6 @@
                 }
             ],
             "services": [ "281c8a93" ]
-        },
-        {
-            "id": "Rss",
-            "name": "Rosskou CS",
-            "location": "Rosskou",
-            "former_name": "Rosscow CS",
-            "building": false,
-            "roofed": true,
-            "underground": true,
-            "opened": 2020,
-            "platforms": 0,
-            "coords": [-1336, 70, -931]
         },
         {
             "id": "Ggbr",
@@ -661,6 +669,18 @@
             "opened": 2020,
             "platforms": 2,
             "coords": [-290, 72, -2148]
+        },
+        {
+            "id": "Chvi",
+            "name": "Chrisville",
+            "location": "Chrisville",
+            "former_name": null,
+            "building": true,
+            "roofed": true,
+            "underground": false,
+            "opened": 2020,
+            "platforms": 3,
+            "coords": [524, 72, 172]
         }
     ],
     "routes": [
@@ -704,12 +724,21 @@
             "operator": "OSS",
             "halts": [
                 {
-                    "halt": "Skp",
+                    "halt": "Chvi",
                     "platform_forth": 3,
-                    "time_forth": 48,
+                    "time_forth": 18,
+                    "warnings_forth": [],
+                    "platform_back": 1,
+                    "time_back": false,
+                    "warnings_back": []
+                },
+                {
+                    "halt": "Skp",
+                    "platform_forth": 4,
+                    "time_forth": 49,
                     "warnings_forth": [],
                     "platform_back": 2,
-                    "time_back": false,
+                    "time_back": 18,
                     "warnings_back": []
                 },
                 {
@@ -718,7 +747,7 @@
                     "time_forth": 26,
                     "warnings_forth": [],
                     "platform_back": 4,
-                    "time_back": 48,
+                    "time_back": 49,
                     "warnings_back": []
                 },
                 {
@@ -933,10 +962,10 @@
             "halts": [
                 {
                     "halt": "Skp",
-                    "platform_forth": 4,
+                    "platform_forth": 5,
                     "time_forth": 48,
                     "warnings_forth": ["single_track"],
-                    "platform_back": 4,
+                    "platform_back": 5,
                     "time_back": false,
                     "warnings_back": []
                 },
@@ -1177,15 +1206,6 @@
                     "platform_back": 5,
                     "time_back": 41,
                     "warnings_back": []
-                },
-                {
-                    "halt": "Rss",
-                    "platform_forth": 0,
-                    "time_forth": false,
-                    "warnings_forth": [],
-                    "platform_back": 0,
-                    "time_back": 84,
-                    "warnings_back": []
                 }
             ]
         },
@@ -1211,31 +1231,6 @@
                     "platform_back": 5,
                     "time_back": 171,
                     "warnings_back": []
-                }
-            ]
-        },
-        {
-            "type": "train",
-            "line_name": "IC2",
-            "operator": "ICD",
-            "halts": [
-                {
-                    "halt": "Tcs",
-                    "platform_forth": 7,
-                    "time_forth": 148,
-                    "warnings_forth": ["single_track"],
-                    "platform_back": 7,
-                    "time_back": false,
-                    "warnings_back": []
-                },
-                {
-                    "halt": "Rss",
-                    "platform_forth": 0,
-                    "time_forth": false,
-                    "warnings_forth": [],
-                    "platform_back": 0,
-                    "time_back": 148,
-                    "warnings_back": ["single_track"]
                 }
             ]
         },
@@ -1513,6 +1508,13 @@
             "coords": [-492, 72, -1338]
         },
         {
+            "id": "ca242977",
+            "type": "church",
+            "name": "Eikwouder Kathedraal",
+            "location": "Eikwoude",
+            "coords": [-638, 66, 85]
+        },
+        {
             "id": "e8013dcb",
             "type": "art",
             "name": "Coronazuil",
@@ -1706,7 +1708,7 @@
         {
             "id": "ddac1fda",
             "type": "stable",
-            "name": "Paardenstal",
+            "name": "Paardenstal Centrum",
             "location": "Adliswil",
             "coords": [-489, 69, -1312]
         },
@@ -2202,6 +2204,13 @@
             "coords": [-142, 71, 1180]
         },
         {
+            "id": "c6bc09ed",
+            "type": "hotel",
+            "name": "Hotel Torenburg",
+            "location": "Torenburg",
+            "coords": [-268, 67, 146]
+        },
+        {
             "id": "elytrato",
             "type": "shop",
             "name": "Elytrawinkel",
@@ -2215,6 +2224,34 @@
             "name": "Gameboi's Ranch",
             "location": "Lavadrop",
             "coords": [-233, 69, -726]
+        },
+        {
+            "id": "e2bf1acb",
+            "type": "art",
+            "name": "MF Doom",
+            "location": "Lavadrop",
+            "coords": [-274, 87, -564]
+        },
+        {
+            "id": "a41a0437",
+            "type": "art",
+            "name": "Ore Cube",
+            "location": "Lavadrop",
+            "coords": [-196, 69, -773]
+        },
+        {
+            "id": "95a937a6",
+            "type": "other",
+            "name": "Temple",
+            "location": "Lavadrop",
+            "coords": [-125, 79, -795]
+        },
+        {
+            "id": "33a9dc85",
+            "type": "other",
+            "name": "Pyramide",
+            "location": null,
+            "coords": [-211, 70, -1004]
         },
         {
             "id": "bdd243cf",
@@ -2288,6 +2325,13 @@
             "name": "Triomfboog",
             "location": "Torenburg",
             "coords": [-302, 64, -141]
+        },
+        {
+            "id": "rosskou1",
+            "type": "other",
+            "name": "Rosskou",
+            "location": "Rosskou",
+            "coords": [-1336, 70, -931]
         },
         {
             "id": "13fc8dbd",
@@ -2494,6 +2538,38 @@
             "name": "Bank (oost)",
             "location": "Adliswil",
             "coords": [-289, 70, -1346]
+        },
+        {
+            "id": "bierieee",
+            "type": "food",
+            "name": "Bieriegarten",
+            "location": "Adliswil",
+            "coords": [-553, 69, -1296],
+            "tags": ["honey", "honey bottles"]
+        },
+        {
+            "id": "3d94c0f1",
+            "type": "stable",
+            "name": "Paardenstal Oost",
+            "location": "Adliswil",
+            "coords": [-301, 70, -1368],
+            "tags": []
+        },
+        {
+            "id": "glazedtc",
+            "type": "shop",
+            "name": "Glazed Terracotta Shop",
+            "location": "Adliswil",
+            "coords": [-470, 70, -1456],
+            "tags": ["glazed terracotta", "terracotta", "geglazuurde terracotta", "glazuur"]
+        },
+        {
+            "id": "firework",
+            "type": "attraction",
+            "name": "Vuurwerkshow",
+            "location": "Adliswil",
+            "coords": [-471, 69, -1340],
+            "tags": ["vuurwerk", "fireworks"]
         }
     ]
 }
